@@ -23,7 +23,7 @@ Connection on serial port 5760
 Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
 Home: -35.363262 149.165237 alt=584.000000m hdg=353.000000
 Smoothing reset at 0.001
-Log Directory: 
+Log Directory:
 Telemetry log: mav.tlog
 Waiting for heartbeat from tcp:127.0.0.1:5760
 MAV> bind port 5762 for SERIAL1

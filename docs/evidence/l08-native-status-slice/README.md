@@ -43,7 +43,7 @@ Scheduling: requested 1 Hz, priority 171, declared 100 µs allowance. That allow
 
 ## Observation, resource notes and rollback
 
-The isolated build completed successfully in 1m8.500s. The full [build output](build.txt) and [configuration output](configure.txt) are retained. There were 223 compiler warning records in upstream paths, including macro redefinitions and existing conversion/move warnings; no warning names an added FL_Status source. This is a successful build with warnings, not a warning-free claim.
+The isolated build completed successfully in 1m8.500s. The full [build output](build.txt) and [configuration output](configure.txt) are retained. Copied build/configuration/console transcripts have trailing spaces removed for publication; original byte-for-byte logs remain under `.local/l08/`. The applicable patch preserves Git context-line prefixes, including blank context lines. There were 223 compiler warning records in upstream paths, including macro redefinitions and existing conversion/move warnings; no warning names an added FL_Status source. This is a successful build with warnings, not a warning-free claim.
 
 The custom manual run retained 13 `FL L08` messages, tick 1 through 61, always stepping by five. Reception intervals were 4.996–5.005 s. Stock heartbeat observations covered 66.04 s and modes 0/4; all 71 vehicle heartbeat samples were disarmed. All received extended states were on-ground. Each custom report matched the nearest stock heartbeat’s mode/arming state (at most 0.409 s apart). STABILIZE → GUIDED → STABILIZE was requested manually; no arm, takeoff or destination request was sent.
 

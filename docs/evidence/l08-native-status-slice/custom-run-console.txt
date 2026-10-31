@@ -34,7 +34,7 @@ Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.par
 Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
 Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
 Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
-Log Directory: 
+Log Directory:
 Telemetry log: mav.tlog
 Waiting for heartbeat from tcp:127.0.0.1:5760
 MAV> AP: RCInput: decoding UDP (Pulses)
