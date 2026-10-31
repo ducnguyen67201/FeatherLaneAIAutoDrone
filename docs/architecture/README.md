@@ -1,0 +1,101 @@
+# Core ArduPilot architecture
+
+[Open the core diagram](../assets/architecture/ardupilot-code-stack.svg) · [Editable diagram source](ardupilot-code-stack.json) · [Master learning plan](../MASTER-LEARNING-PLAN.md)
+
+This is the single maintained architecture for FeatherLane. It shows the native mission stack we intend to build inside our maintained ArduPilot-derived codebase and the upstream flight capabilities we reuse. The external console and optional perception supply requests and observations. Native C++ owns in-flight task progression and policy.
+
+**Status:** ArduPilot/macOS, native mission ownership, upstream maintenance and mission-selected optional perception are confirmed directions. Module names, ingress contracts, resource budgets and detailed integration remain proposed. Read the [phase registry](../phases/registry.json) for current acquisition/build progress; source acquisition is separate from a qualified executable, custom firmware or a successful simulation. Consolidating this page does not change implementation or UI/architecture approval flags.
+
+## Module ownership
+
+The diagram is a selected module/responsibility view, not an exhaustive call graph. Layer groupings are explanatory; arrows do not imply that every module calls only the layer beneath it. ArduPilot paths below refer to the selected source checkout, and must be checked against its pinned revision.
+
+| Ownership | Component | Responsibility |
+| --- | --- | --- |
+| BUILD native | Candidate `FL_Mission`, proposed `libraries/FL_Mission/` | Bounded task state, required-input validity, motion limits, completion and abort/continue policy. |
+| BUILD native | Candidate `ModeFeatherLane`, proposed `ArduCopter/mode_featherlane.cpp` | Mode entry/exit and vehicle glue that uses qualified navigation/controllers. |
+| BUILD integration | Scoped ingress and status/logging | Validate/version requests and observations; report actual native state, rejection and transition reasons. Exact message mapping is undecided. |
+| REUSE | `GCS_MAVLink`, Copter handlers | Supported protocol requests, mission transfer and telemetry. Acceptance is separate from achieved behavior. |
+| REUSE | `AP_Mission`, stock AUTO/GUIDED/other modes | Stored mission facilities and stock execution choices. Only the selected mode owns flight execution. |
+| REUSE | `AC_WPNav` and qualified avoidance path | Navigation/reference generation; obstacle avoidance additionally needs usable sensing, configuration and mode integration. |
+| REUSE | `AC_PosControl`, `AC_AttitudeControl` | Follow references using estimated state and produce control demand. |
+| REUSE | `AP_AHRS`, configured EKF and sensors | Estimated attitude, position, velocity and validity. External navigation needs an actual qualified estimate producer. |
+| REUSE | `AP_Motors`, `AP_HAL` and selected backend | Motor mixing and platform/simulator output. |
+| REUSE authority | Arming checks, manual override and configured failsafes | Retain upstream authority; qualify interaction with our task policy. |
+| BUILD/INTEGRATE externally | Python/uv session API, React/MUI console, optional compute and evidence | Prepare requests, launch/clean owned simulation processes, produce bounded observations and display/record firmware state. |
+
+## Mission inputs and execution
+
+A mission declares its steps, coordinate destination or target rule, frame/origin, motion/operating limits, required capabilities, input-validity requirements, completion conditions and failure/terminal policy. Vehicle state and required observations continue to arrive during execution; they are not frozen configuration data.
+
+- A coordinate/route task can run without a target detector. Suitable stored routes may use existing AUTO/AP_Mission behavior.
+- An object-dependent step requires qualified acquisition/identity and spatial localization. Helicopter is one example target; arbitrary object recognition is not assumed.
+- Mixed missions can navigate to a coordinate and then enable a target-dependent step. Missing unused perception does not block coordinate tasks; missing required capabilities reject or interrupt the relevant step.
+
+The native coordinator validates and retains the accepted goal, rather than replacing the vehicle estimator or generating individual motor speeds. Navigation/avoidance chooses feasible references; position and attitude/rate controllers follow them; mixing/output drives the selected simulated vehicle. New measurements close the feedback loop. Arrival requires measured position, speed, clearance and dwell as appropriate, rather than a command acknowledgment alone.
+
+Detailed teaching examples live under guides:
+
+- [One mission, path illustration and ArduPilot code](../guides/mission-contract-and-path.md).
+- [Simple request, bounded search and landing](../guides/mission-request-execution.md).
+- [AI mission and smooth movement explanation](../AI-MISSION-AND-MOTION-DESIGN.md).
+
+Search and landing-site assessment are additional capabilities; a successful approach-and-hold does not establish them. The guides are explanations of this core design, not alternative architecture versions.
+
+## Native mission runtime
+
+External tooling submits bounded operator/configuration input and the observations required by the active step. A qualified ingress checks source, frame, units, timestamps/clock conversion, sequence/reset behavior, quality/uncertainty, limits, active mode and authority. The native mission tick accepts usable data, advances the task and selects a feasible reference or the configured fallback. Firmware reports actual state and reasons to the console/evidence tools.
+
+MAVLink is an integration option, not an automatic connection to a new mode. Stock GUIDED setpoints do not automatically feed our custom mode; the schema, receiver and acknowledgment/rejection contract need qualification. Determine whether existing messages suffice before choosing a custom dialect.
+
+Native callbacks must be bounded and nonblocking. Keep heavy inference, browser calls, slow I/O and any separately qualified large estimator/planner outside critical callbacks. Native placement can remove a decision boundary; end-to-end latency benefits and scheduler impact remain unmeasured.
+
+## Failure behavior and authority
+
+A stale required target, invalid range, uncertain route or insufficient stopping space invokes the explicit policy for that active step. A static coordinate task does not inherit an unnecessary detector heartbeat requirement. If the same producer supplies required vehicle localization, its loss still matters.
+
+UI/ground-link loss, observation-producer loss, GPS loss and invalid localization are distinct failures. Native execution may continue under its preauthorized policy only while its required inputs and vehicle conditions support it. Hold, return and landing depend on actual navigation/capability; never substitute fabricated state or hidden simulator truth. Reconnecting the browser observes the native task and cannot silently restart or re-arm it.
+
+Existing arming restrictions, configured failsafes and manual override retain authority. A custom mode must initialize, schedule and exit correctly. Reusing libraries does not automatically inherit all AUTO/GUIDED behavior, obstacle avoidance or smoothing semantics.
+
+## Local deployment
+
+The initial flight runtime is our selected ArduPilot-derived SITL executable. It contains the proposed native mission behavior alongside the reused flight stack. External local tooling supplies the console/API, owned-process lifecycle, optional perception and evidence. The browser is not required to keep the native control loop running.
+
+| Placement | Intended role | Qualification status |
+| --- | --- | --- |
+| macOS | Development, tooling and first basic SITL qualification | Qualify the actual Mac, source pin and tools in the learning phases. |
+| Instrumented simulator, preferably Gazebo | Later scene physics and configured sensors with the selected SITL build | Compatible simulator/plugin versions are selected and measured later. |
+| Isolated Linux environment | Fallback if the required Mac tool/simulator combination cannot be qualified | Candidate placement; requires its own scoped setup. |
+| SkyDive | Separate preserved screen/input demonstration | No qualified ArduPilot bridge is assumed. |
+
+Keep the application API local/loopback and use one selected flight endpoint and active mode for a run. Optional hardware/companion deployment requires separate design and qualification; no cloud/fleet hosting is introduced by this core.
+
+## Maintaining our code against upstream
+
+1. Record upstream origin, commit and matching submodules, then qualify an unchanged flight baseline.
+2. Keep native modules and scoped integration patches identifiable against that base; preserve the last qualified build/configuration.
+3. Review an update on an integration branch, including changes to modes, navigation, estimation, scheduling, message handling, parameters and failsafes.
+4. Resolve semantic and textual conflicts, rebuild and repeat affected qualification scenarios before adopting the new pin. A clean merge is not behavioral compatibility.
+5. Retain actual timing/load, nominal/failure outcomes and rollback evidence. Use existing checks/manual observations; new automated tests require an explicit user request.
+
+## Evidence and limits
+
+The upstream source explanations were researched at revision [`363ab1b5efdb67a0d0ade62984685b6d44d0f40d`](https://github.com/ArduPilot/ardupilot/commit/363ab1b5efdb67a0d0ade62984685b6d44d0f40d). This is a research reference, not the qualified project version. Consult the actual source-acquisition record for the selected base.
+
+Primary references supporting the reused responsibilities:
+
+- [Stored mission facilities](https://github.com/ArduPilot/ardupilot/blob/363ab1b5efdb67a0d0ade62984685b6d44d0f40d/libraries/AP_Mission/AP_Mission.h), [AUTO execution](https://github.com/ArduPilot/ardupilot/blob/363ab1b5efdb67a0d0ade62984685b6d44d0f40d/ArduCopter/mode_auto.cpp) and [GUIDED execution](https://github.com/ArduPilot/ardupilot/blob/363ab1b5efdb67a0d0ade62984685b6d44d0f40d/ArduCopter/mode_guided.cpp).
+- [Position/navigation responsibilities](https://ardupilot.org/dev/docs/code-overview-copter-poscontrol-and-navigation.html) and [attitude/motor control](https://ardupilot.org/dev/docs/apmcopter-programming-attitude-control-2.html).
+- [Custom Copter modes](https://ardupilot.org/dev/docs/apmcopter-adding-a-new-flight-mode.html), [scheduling](https://ardupilot.org/dev/docs/code-overview-scheduling-your-new-code-to-run-intermittently.html) and [threading constraints](https://ardupilot.org/dev/docs/learning-ardupilot-threading.html).
+- [Conditional BendyRuler avoidance](https://ardupilot.org/copter/docs/common-oa-bendyruler.html) and [external vehicle estimation](https://ardupilot.org/dev/docs/mavlink-nongps-position-estimation.html).
+
+## Direction and diagram approval record
+
+The user's 2026-10-31 decisions selected ArduPilot/macOS, native in-flight mission ownership, deliberate upstream maintenance, optional perception by mission and a learning-first implementation plan. The subsequent cleanup request selected one maintained core architecture and removed competing views from this folder. See [D13–D18](../DECISIONS.md).
+
+This is the retained design baseline. Exact candidate names/contracts/layout are still proposed; consolidation is not a firmware implementation, deployment or UI approval. Preserve actual approval source/date/scope when a detailed design is explicitly approved. Implementation progress belongs in the phase registry and evidence records.
+
+## Documentation maintenance
+
+Keep this README, locally generated `ardupilot-code-stack.html` and editable `ardupilot-code-stack.json` as the only files in this directory. The public static SVG is exported under `docs/assets/architecture/`; the HTML viewer and review receipts remain ignored. Task illustrations belong with guides/assets, learning diagrams with phase docs, and generated checks/receipts/history in ignored local working folders. Update this core instead of adding another competing overview. Generate and validate the core through Archify; retain fresh evidence outside this folder.

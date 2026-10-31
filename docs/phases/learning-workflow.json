@@ -1,0 +1,163 @@
+{
+  "schema_version": 2,
+  "diagram_type": "workflow",
+  "meta": {
+    "title": "First seven learning phases — progress and proposed sequence",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "docs/phases/learning-workflow.html",
+    "legend": {
+      "entries": {
+        "backend": {
+          "label": "Learning phase; see status"
+        },
+        "security": {
+          "label": "Next proposed phase"
+        }
+      }
+    }
+  },
+  "lanes": [
+    {
+      "id": "setup",
+      "label": "Get an unchanged simulation working"
+    },
+    {
+      "id": "understand",
+      "label": "Connect the code to one movement"
+    },
+    {
+      "id": "experiment",
+      "label": "Make one small change"
+    },
+    {
+      "id": "arrival",
+      "label": "Explain measured stopping"
+    }
+  ],
+  "mainPath": [
+    "L01",
+    "L02",
+    "L03",
+    "L04",
+    "L05",
+    "L06",
+    "L07"
+  ],
+  "nodes": [
+    {
+      "id": "L01",
+      "lane": "setup",
+      "col": 0,
+      "type": "backend",
+      "label": "01 Get source",
+      "sublabel": "complete · Source folders / pin"
+    },
+    {
+      "id": "L02",
+      "lane": "setup",
+      "col": 1,
+      "type": "security",
+      "label": "02 Launch SITL",
+      "sublabel": "Next proposed · planned"
+    },
+    {
+      "id": "L03",
+      "lane": "setup",
+      "col": 2,
+      "type": "backend",
+      "label": "03 First flight",
+      "sublabel": "planned · Takeoff, hold, land"
+    },
+    {
+      "id": "L04",
+      "lane": "understand",
+      "col": 2,
+      "type": "backend",
+      "label": "04 Trace code",
+      "sublabel": "planned · Read one command path"
+    },
+    {
+      "id": "L05",
+      "lane": "understand",
+      "col": 3,
+      "type": "backend",
+      "label": "05 One goal",
+      "sublabel": "planned · Stock navigation"
+    },
+    {
+      "id": "L06",
+      "lane": "experiment",
+      "col": 3,
+      "type": "backend",
+      "label": "06 One speed",
+      "sublabel": "planned · Predict and compare"
+    },
+    {
+      "id": "L07",
+      "lane": "arrival",
+      "col": 3,
+      "type": "backend",
+      "label": "07 Observe stop",
+      "sublabel": "planned · Position, speed, dwell"
+    }
+  ],
+  "edges": [
+    {
+      "from": "L01",
+      "to": "L02",
+      "label": "Evidence retained",
+      "role": "main"
+    },
+    {
+      "from": "L02",
+      "to": "L03",
+      "label": "Evidence retained",
+      "role": "main"
+    },
+    {
+      "from": "L03",
+      "to": "L04",
+      "label": "Evidence retained",
+      "role": "main"
+    },
+    {
+      "from": "L04",
+      "to": "L05",
+      "label": "Evidence retained",
+      "role": "main"
+    },
+    {
+      "from": "L05",
+      "to": "L06",
+      "label": "Evidence retained",
+      "role": "main"
+    },
+    {
+      "from": "L06",
+      "to": "L07",
+      "label": "Evidence retained",
+      "role": "main"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "One phase, one observable result",
+      "items": [
+        "Next proposed learning phase: L02. Statuses and actual evidence are recorded in the registry.",
+        "Before a change, explain the behavior and predict the result. Afterward, retain evidence and explain the difference.",
+        "L01–L04 add no custom flight behavior. L05–L07 reuse stock behavior; early learning needs no detector or application UI."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "Then add capability in small slices",
+      "items": [
+        "Later master groups cover native mission code, instrumented sensing/avoidance, the approved operator UI and optional object goals.",
+        "Bounded search, landing and hardware have their own additional prerequisites; SkyDive stays a separate deferred branch.",
+        "The source registry, reusable card template and master plan define the detailed scopes. This diagram is a learning sequence, not implementation or UI approval."
+      ]
+    }
+  ]
+}

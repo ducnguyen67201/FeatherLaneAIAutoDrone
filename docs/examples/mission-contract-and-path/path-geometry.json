@@ -1,0 +1,16 @@
+{
+  "status": "illustrative_geometry_not_observed_ArduPilot_output",
+  "frame": "LOCAL_NED_m_relative_to_EKF_origin",
+  "start_ned_m": [0, 0, -8],
+  "goal_ned_m": [40, 0, -8],
+  "obstacle_rectangle": {"north_m": [15, 25], "east_m": [-4, 4]},
+  "illustrative_exclusion_expansion_m": 2,
+  "illustrative_route_ned_m": [[0, 0, -8], [10, -9, -8], [30, -9, -8], [40, 0, -8]],
+  "notes": [
+    "The polyline demonstrates a possible detour; it was not calculated by or flown in ArduPilot.",
+    "All heights are relative to the EKF origin, not above-ground-level claims.",
+    "The rectangle is assumed occupied across the relevant flight-height slab.",
+    "The expansion stands for vehicle extent and uncertainty/clearance; the example value is not qualified.",
+    "Curve smoothing requires a fresh clearance and dynamics check."
+  ]
+}

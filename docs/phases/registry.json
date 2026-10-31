@@ -1,0 +1,1259 @@
+{
+  "schema_version": 1,
+  "project": "FeatherLane AI Auto Drone",
+  "recorded_date": "2026-10-31",
+  "scope": "ArduPilot source acquisition and learning documentation; separate from FeatherLaneFlight and the SkyDive prototype",
+  "autopilot": "ArduPilot",
+  "development_os": "macOS",
+  "active_implementation_phase": "P01",
+  "next_proposed_phase": "P01",
+  "implementation_started": true,
+  "ui_approved": false,
+  "architecture_approved": false,
+  "roadmap": "../ROADMAP.md",
+  "phases": [
+    {
+      "id": "P00",
+      "title": "Direction and documentation baseline",
+      "status": "complete",
+      "optional": false
+    },
+    {
+      "id": "P01",
+      "title": "Project foundation and ArduPilot on macOS",
+      "status": "in_progress",
+      "optional": false
+    },
+    {
+      "id": "P02",
+      "title": "Initial UI and continuous SkyDive approach",
+      "status": "planned",
+      "optional": false
+    },
+    {
+      "id": "P03",
+      "title": "Instrumented ArduPilot missions",
+      "status": "planned",
+      "optional": false
+    },
+    {
+      "id": "P04",
+      "title": "Optional object perception and spatial goals",
+      "status": "planned",
+      "optional": false
+    },
+    {
+      "id": "P05",
+      "title": "Obstacle-aware routes and controlled arrival",
+      "status": "planned",
+      "optional": false
+    },
+    {
+      "id": "P06",
+      "title": "GPS-denied localization",
+      "status": "planned",
+      "optional": false
+    },
+    {
+      "id": "P07",
+      "title": "Ground-link loss and local continuity",
+      "status": "planned",
+      "optional": false
+    },
+    {
+      "id": "P08",
+      "title": "Repeatability and combined failures",
+      "status": "planned",
+      "optional": false
+    },
+    {
+      "id": "P09",
+      "title": "Optional physical-drone qualification",
+      "status": "optional",
+      "optional": true
+    }
+  ],
+  "foundation": "Maintain pinned ArduPilot-derived code; native C++ in-flight mission behavior and supervision",
+  "foundation_direction_confirmed": {
+    "date": "2026-10-31",
+    "source": "User clarification and request to show ArduPilot as core foundation with reuse/build responsibilities",
+    "scope": "ArduPilot foundation and reuse/build direction; revised diagram layouts and full detailed design remain proposed"
+  },
+  "upstream_checkout_created": true,
+  "native_mission_direction_confirmed": {
+    "date": "2026-10-31",
+    "source": "User: inside the autopilot; maintain our own logic and integrate upstream updates; this is plan and rule",
+    "scope": "Native mission placement and maintained ArduPilot-derived code. Detailed module/mode names, message contracts and diagram layouts remain proposed."
+  },
+  "custom_firmware_implemented": false,
+  "mission_capability_direction_confirmed": {
+    "date": "2026-10-31",
+    "source": "User clarification: detector is optional; missions may go to GPS point A or acquire an object and approach it",
+    "scope": "Mission-selected capabilities and extensible targets. Exact schema, supported targets and diagram layouts remain proposed; no implementation."
+  },
+  "execution_unit": "learning_phase",
+  "capability_milestone_ids_preserved": true,
+  "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
+  "active_learning_phase": null,
+  "next_proposed_learning_phase": "L02",
+  "learning_direction_confirmed": {
+    "date": "2026-10-31",
+    "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
+    "scope": "Learning-first phase structure and progression. L01 source acquisition/orientation executed separately on 2026-10-31; future detailed cards and rendered learning workflow remain proposed."
+  },
+  "learning_groups": [
+    {
+      "id": "M01",
+      "title": "Get a working baseline and understand it",
+      "track": "core",
+      "milestones": [
+        "P01"
+      ],
+      "outcome": "Read the source, run unchanged SITL and explain one stock flight."
+    },
+    {
+      "id": "M02",
+      "title": "Learn movement with one change at a time",
+      "track": "core",
+      "milestones": [
+        "P03"
+      ],
+      "outcome": "Fly to one coordinate, change speed and measure stopping using stock behavior."
+    },
+    {
+      "id": "M03",
+      "title": "Add our native mission behavior in small slices",
+      "track": "core",
+      "milestones": [
+        "P03"
+      ],
+      "outcome": "Admit a coordinate task, execute it natively and report arrival/abort reasons."
+    },
+    {
+      "id": "M04",
+      "title": "Observe one obstacle then avoid it",
+      "track": "core",
+      "milestones": [
+        "P03",
+        "P05"
+      ],
+      "outcome": "Qualify a scene/sensor, prove stock avoidance, then integrate the selected native path."
+    },
+    {
+      "id": "M05",
+      "title": "Add a small operator interface",
+      "track": "core",
+      "milestones": [
+        "P02",
+        "P03"
+      ],
+      "outcome": "Approve a working React/MUI preview, then connect the approved controls to native state."
+    },
+    {
+      "id": "M06",
+      "title": "Add optional object-based goals",
+      "track": "object_capability",
+      "milestones": [
+        "P04"
+      ],
+      "outcome": "Detect a supported target, localize it and reuse the known-goal approach."
+    },
+    {
+      "id": "M07",
+      "title": "Explore bounded search and landing as separate extensions",
+      "track": "optional_extension",
+      "milestones": [],
+      "outcome": "Qualify search, landing-site evidence and landing separately; approach-and-hold does not prove these."
+    },
+    {
+      "id": "M08",
+      "title": "Handle individual failures before combining them",
+      "track": "qualification",
+      "milestones": [
+        "P06",
+        "P07",
+        "P08"
+      ],
+      "outcome": "Separate link failures and GPS-denied navigation, then retain repeatability evidence."
+    },
+    {
+      "id": "S",
+      "title": "Retained separate SkyDive demonstration",
+      "track": "deferred_skydive",
+      "milestones": [
+        "P02"
+      ],
+      "outcome": "Preserve the prototype and separately qualify screen/input behavior; no ArduPilot bridge."
+    },
+    {
+      "id": "H",
+      "title": "Optional hardware planning",
+      "track": "optional_hardware",
+      "milestones": [
+        "P09"
+      ],
+      "outcome": "Define a separately authorized hardware program after relevant simulation evidence."
+    }
+  ],
+  "learning_phases": [
+    {
+      "id": "L01",
+      "slug": "source-and-orientation",
+      "title": "Get the source and identify the main folders",
+      "group": "M01",
+      "status": "complete",
+      "depends_on": [],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Create a dedicated upstream-derived checkout and record its source revision without changing flight behavior.",
+      "concept": "Source code, a checkout, a commit and a built executable are different things.",
+      "read_focus": [
+        "Project README and direction; upstream source-download guide.",
+        "Selected checkout: ardupilot — ArduCopter/, libraries/, Tools/, waf and pinned submodules."
+      ],
+      "change_scope": "Source acquisition and local version/origin notes only; no firmware edits or simulator installation.",
+      "steps": [
+        "Choose a dedicated checkout location and inspect existing paths before creating it.",
+        "Clone the official source, select and record a base revision and matching submodules.",
+        "Walk through the three main folders and explain where vehicle logic, reusable libraries and developer tools live."
+      ],
+      "success": [
+        "Origin, exact commit and submodule revisions are recorded.",
+        "The user can point to vehicle code versus shared libraries; no build/flight success is inferred."
+      ],
+      "evidence": [
+        "Checkout path, credential-free origin, commit and submodule listing.",
+        "A short folder map and untouched-baseline status."
+      ],
+      "rollback": "Keep the acquired source separate; revert only task-owned notes/checkout changes if needed and preserve unrelated paths.",
+      "teach_back": "Which folder contains Copter-specific behavior, and which contains reused controllers?",
+      "record": "2026-10-31: source acquisition and guided orientation complete. Copter-4.7.2 at fb773567896014da007bca58358704d4a0d8516f; main worktree and all 21 recursive submodules clean and matching parent pins. Source only, not build/flight qualified. Learner identified ArduCopter/; shared-controller location clarified. [Execution record](../../evidence/l01-source-and-orientation/README.md), [revision manifest](../../evidence/l01-source-and-orientation/source-baseline.json) and [Git output](../../evidence/l01-source-and-orientation/git-evidence.txt). L02 remains planned; P01 remains in_progress. Follow-up location correction: visible `ardupilot/` development checkout on local branch `featherlane/dev`, with the source pin and all submodules unchanged."
+    },
+    {
+      "id": "L02",
+      "slug": "basic-sitl-setup",
+      "title": "Build and launch basic SITL",
+      "group": "M01",
+      "status": "planned",
+      "depends_on": [
+        "L01"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Run one unchanged ArduCopter SITL instance on the selected environment while disarmed.",
+      "concept": "SITL is the autopilot executable plus simulated sensors/physics; a 3D world can come later.",
+      "read_focus": [
+        "Official macOS build setup and the selected source revision's prerequisite/build scripts.",
+        "Tools/autotest/sim_vehicle.py and the actual build output/startup log."
+      ],
+      "change_scope": "Machine/toolchain qualification, scoped dependencies and a reproducible basic SITL launch; no Gazebo, ROS, AI or product UI.",
+      "steps": [
+        "Record actual Mac architecture/OS and inspect required tools and any prerequisite script before using it.",
+        "Qualify the unchanged build and launch one standard vehicle with the minimum useful ground-console view.",
+        "Read heartbeat/mode/readiness, then stop only owned processes and repeat the launch."
+      ],
+      "success": [
+        "One disarmed instance starts, reports usable state and shuts down cleanly.",
+        "Actual versions, endpoint and repeatable commands are recorded. A platform blocker is recorded as blocked, not complete."
+      ],
+      "evidence": [
+        "Mac/toolchain version tuple, source pin, start/stop commands and startup log.",
+        "Any native-Mac limitation and a bounded fallback decision."
+      ],
+      "rollback": "Stop owned simulator processes and return to the recorded baseline; document installed dependencies and preserve user configuration.",
+      "teach_back": "Which process runs ArduPilot, and where do its sensor measurements come from?",
+      "record": null
+    },
+    {
+      "id": "L03",
+      "slug": "first-stock-flight",
+      "title": "Watch one takeoff hold and landing",
+      "group": "M01",
+      "status": "planned",
+      "depends_on": [
+        "L02"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Perform one simple stock simulated flight through the existing console.",
+      "concept": "A requested command, an acknowledgment and achieved movement are separate events.",
+      "read_focus": [
+        "Selected stock mode and console commands qualified for this build.",
+        "Telemetry/log fields for mode, altitude, vertical speed, landed state and arming."
+      ],
+      "change_scope": "No custom flight code. Use the unchanged vehicle and a clear basic scene.",
+      "steps": [
+        "Explain the expected takeoff, hold, land and disarm sequence before running it.",
+        "Issue each supported action and observe its resulting state.",
+        "Save a short command/state timeline and cleanly end the session."
+      ],
+      "success": [
+        "Takeoff, a controlled hold, landing and disarm are observed and recorded.",
+        "Rejected/unready states are explained rather than hidden by a success label."
+      ],
+      "evidence": [
+        "Command/state timeline and the retained simulator/flight log.",
+        "Observed limitations and one sentence explaining the result."
+      ],
+      "rollback": "Use the qualified simulator stop/terminal procedure and restore its baseline configuration.",
+      "teach_back": "What evidence tells us that takeoff actually happened rather than merely being accepted?",
+      "record": null
+    },
+    {
+      "id": "L04",
+      "slug": "trace-one-command",
+      "title": "Trace one flight command through the code",
+      "group": "M01",
+      "status": "planned",
+      "depends_on": [
+        "L03"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Follow one observed command from its receiver or active mode to navigation, control and motor output.",
+      "concept": "Mission, mode, navigation, feedback control and estimation have distinct jobs.",
+      "read_focus": [
+        "Selected checkout: relevant GCS_MAVLink handler and active mode file.",
+        "The calls actually used by that mode into AC_WPNav, AC_PosControl, AC_AttitudeControl, AP_Motors and estimator state."
+      ],
+      "change_scope": "Read-only walkthrough and annotations; optional existing debugger/log tools only after checking their effect on timing.",
+      "steps": [
+        "Choose one action from the previous flight and locate its actual receiver/mode path.",
+        "Read only the functions needed to connect the action to reference generation and control.",
+        "Draw the observed chain in plain language and connect each stage to the saved flight timeline."
+      ],
+      "success": [
+        "The user can explain the selected path and identify which part estimates state versus produces motor demand.",
+        "Source links/line references match the pinned checkout, rather than older tutorial APIs."
+      ],
+      "evidence": [
+        "A short source-linked walkthrough for one command.",
+        "A note about any gaps or timing effect of observation tools."
+      ],
+      "rollback": "Remove only optional task-owned debug instrumentation; keep the unchanged baseline available.",
+      "teach_back": "Where is the destination selected, and where are individual motor outputs calculated?",
+      "record": null
+    },
+    {
+      "id": "L05",
+      "slug": "one-coordinate",
+      "title": "Fly to one known coordinate",
+      "group": "M02",
+      "status": "planned",
+      "depends_on": [
+        "L04"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Reach one nearby known destination using a qualified stock AUTO or GUIDED path.",
+      "concept": "A destination needs a frame, units, origin and altitude reference.",
+      "read_focus": [
+        "The selected stock destination-ingress path and coordinate conversion.",
+        "Existing mission/path illustration for frame terminology."
+      ],
+      "change_scope": "One destination via existing console/mission tooling; no custom mission runtime or target detector.",
+      "steps": [
+        "Write down the goal and coordinate/height conventions and predict the movement.",
+        "Use one qualified stock execution path in an obstacle-free scene.",
+        "Compare requested goal with measured vehicle position and speed."
+      ],
+      "success": [
+        "The intended coordinate is reached through the selected stock path.",
+        "The origin/sign conventions and actual terminal behavior are documented."
+      ],
+      "evidence": [
+        "Goal/frame, parameters and measured trajectory.",
+        "Source-linked explanation of destination acceptance."
+      ],
+      "rollback": "Restore the known mission/parameters and use the qualified terminal procedure.",
+      "teach_back": "What would change if the same numeric coordinate used a different origin or altitude frame?",
+      "record": null
+    },
+    {
+      "id": "L06",
+      "slug": "one-speed-change",
+      "title": "Change one speed limit and compare",
+      "group": "M02",
+      "status": "planned",
+      "depends_on": [
+        "L05"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Repeat the same route with one changed speed setting and explain the difference.",
+      "concept": "Speed limits influence travel time; acceleration and stopping remain separate constraints.",
+      "read_focus": [
+        "The selected mode's actual speed parameter/API, units and persistence semantics.",
+        "Measured position and velocity traces from L05."
+      ],
+      "change_scope": "One qualified speed setting; keep route, controller tuning and scene fixed.",
+      "steps": [
+        "Record the original setting and predict the visible effect of the change.",
+        "Repeat the identical route with the single change.",
+        "Compare actual speed/travel/stop behavior, then restore or explicitly retain the chosen setting."
+      ],
+      "success": [
+        "The changed setting and observed effect are clear, including any difference from the prediction.",
+        "No unexplained additional parameter or controller changes were introduced."
+      ],
+      "evidence": [
+        "Before/after values, comparable run logs and a short explanation."
+      ],
+      "rollback": "Restore the recorded original setting and repeat the baseline if needed.",
+      "teach_back": "Did the requested speed equal the observed speed throughout the route, and why?",
+      "record": null
+    },
+    {
+      "id": "L07",
+      "slug": "measure-arrival",
+      "title": "Measure stopping and arrival",
+      "group": "M02",
+      "status": "planned",
+      "depends_on": [
+        "L06"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Distinguish passing a waypoint from reaching a low-speed held destination.",
+      "concept": "Completion is a measured position, speed and dwell condition.",
+      "read_focus": [
+        "Selected waypoint/hold behavior and relevant recorded telemetry.",
+        "Current proposed arrival thresholds, to be fixed for the scenario before qualification."
+      ],
+      "change_scope": "Manual/log-based observation of stopping; no new controller or automatic test suite.",
+      "steps": [
+        "Define the scenario's position, speed and dwell conditions before the run.",
+        "Observe deceleration, first entry into the region and continued hold.",
+        "Compare the waypoint-reached indicator with the full arrival contract."
+      ],
+      "success": [
+        "Arrival/stop behavior is measured honestly, including drift, overshoot or failure.",
+        "The user can explain why a waypoint flag alone may be insufficient."
+      ],
+      "evidence": [
+        "Position/speed/dwell timeline and the chosen scenario thresholds."
+      ],
+      "rollback": "Return to the L05 configuration; retain the failed run and reason if arrival is not achieved.",
+      "teach_back": "What evidence distinguishes a pass-through from a controlled stop?",
+      "record": null
+    },
+    {
+      "id": "L08",
+      "slug": "native-status-slice",
+      "title": "Add a small native status slice",
+      "group": "M03",
+      "status": "planned",
+      "depends_on": [
+        "L07"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Prove one bounded custom native component can build and report status while the stock flight mode remains active.",
+      "concept": "Our native task logic belongs inside the maintained autopilot while reusing upstream flight facilities.",
+      "read_focus": [
+        "Chosen revision's mode/module registration, build and scheduling conventions.",
+        "Native mission architecture and update-maintenance policy."
+      ],
+      "change_scope": "One minimal native component/build/scheduling slice and bounded status output. Stock mode retains flight execution; custom mode activation/movement follows in L10.",
+      "steps": [
+        "Select the smallest native component/status slice and list its necessary build/scheduling plumbing.",
+        "Add bounded status output while the qualified stock mode continues to own movement.",
+        "Build and manually verify the reported state and return to the untouched stock build."
+      ],
+      "success": [
+        "The native status slice builds and reports actual status while stock mode retains flight execution.",
+        "Custom commits/diffs remain identifiable against the untouched baseline."
+      ],
+      "evidence": [
+        "Scoped diff, build result, status output and scheduling/resource notes."
+      ],
+      "rollback": "Revert the isolated custom slice or select the retained upstream build.",
+      "teach_back": "Which part is our addition, and which stock behavior still owns movement?",
+      "record": null
+    },
+    {
+      "id": "L09",
+      "slug": "native-task-contract",
+      "title": "Admit one typed coordinate task",
+      "group": "M03",
+      "status": "planned",
+      "depends_on": [
+        "L08"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Accept or reject a bounded coordinate-task definition in the native component without initiating movement.",
+      "concept": "Data validation and authorization precede navigation.",
+      "read_focus": [
+        "Proposed mission contract, actual ingress/receiver and native state model.",
+        "Frame/origin/reset, units, limits and required-input rules."
+      ],
+      "change_scope": "One small typed task and its actual scoped ingress/status contract; no general language interpreter or movement.",
+      "steps": [
+        "Choose/version the minimal coordinate task and identify its producer/receiver.",
+        "Implement bounded acceptance/rejection and explicit reasons for invalid frame, limits or prerequisites.",
+        "Manually submit a valid example and relevant invalid cases without starting flight execution."
+      ],
+      "success": [
+        "Valid data is accepted and invalid/unsupported data is rejected with reasons.",
+        "Task admission cannot silently arm or start motion."
+      ],
+      "evidence": [
+        "Exact schema/message mapping, submitted examples and native responses."
+      ],
+      "rollback": "Disable/remove the scoped ingress change and retain the L08 status baseline.",
+      "teach_back": "Why can a syntactically valid coordinate still be an invalid mission?",
+      "record": null
+    },
+    {
+      "id": "L10",
+      "slug": "native-known-goal",
+      "title": "Execute one accepted native goal",
+      "group": "M03",
+      "status": "planned",
+      "depends_on": [
+        "L09"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Use the native mode adapter to execute one already accepted coordinate task in a clear scene.",
+      "concept": "Our coordinator selects the goal; reused navigation and controllers calculate movement.",
+      "read_focus": [
+        "Qualified mode entry/exit and initialization from the selected revision.",
+        "Actual native call path into navigation/control; stock GUIDED messages are not assumed to feed this mode."
+      ],
+      "change_scope": "One native known-goal execution path with vehicle/authority/navigation checks; reuse the L05 goal.",
+      "steps": [
+        "Specify qualified entry/exit and the currently valid inputs before enabling movement.",
+        "Connect the accepted task to the selected existing navigation/control path.",
+        "Run the same known-goal scenario and compare its movement with the stock baseline."
+      ],
+      "success": [
+        "The native owner executes the accepted goal and retains upstream authority/failsafe behavior.",
+        "Any difference from the stock baseline is explained and recorded."
+      ],
+      "evidence": [
+        "Scoped integration diff, build pin, native state events and comparative trajectory."
+      ],
+      "rollback": "Return to the retained stock build/mode and baseline scenario.",
+      "teach_back": "Which part of the code changed the destination, and which generated motor demand?",
+      "record": null
+    },
+    {
+      "id": "L11",
+      "slug": "native-arrival-abort",
+      "title": "Add native arrival and operator abort",
+      "group": "M03",
+      "status": "planned",
+      "depends_on": [
+        "L10"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Report measured arrival and execute one qualified operator-abort path with clear native reasons.",
+      "concept": "A task lifecycle is different from the lower-level controller loop.",
+      "read_focus": [
+        "Native state transitions, L07 arrival observations and selected supported fallback.",
+        "Upstream arming, override and failsafe interaction."
+      ],
+      "change_scope": "Small native arrival/dwell and operator-stop transitions; no arbitrary failure framework.",
+      "steps": [
+        "Bind the measured arrival contract and bounded input-validity checks to the active task.",
+        "Implement one qualified operator-stop/abort transition with actual response reporting.",
+        "Manually demonstrate nominal arrival and an interrupted run."
+      ],
+      "success": [
+        "Completion follows measured conditions, and abort shows actual state/reason.",
+        "Reconnect or duplicate requests do not restart or re-arm the task."
+      ],
+      "evidence": [
+        "State transition timeline, nominal/abort logs and measured terminal behavior."
+      ],
+      "rollback": "Revert the isolated lifecycle addition and use the last qualified configuration.",
+      "teach_back": "Can a task be complete while the aircraft remains airborne, and what policy follows?",
+      "record": null
+    },
+    {
+      "id": "L12",
+      "slug": "instrumented-scene",
+      "title": "Connect one instrumented simulator scene",
+      "group": "M04",
+      "status": "planned",
+      "depends_on": [
+        "L11"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Run the qualified flight baseline in one simple instrumented scene, preferably Gazebo.",
+      "concept": "The scene/physics simulator and the SITL flight runtime have separate responsibilities.",
+      "read_focus": [
+        "Official Gazebo plugin documentation and compatibility for the actual environment.",
+        "The selected world, vehicle plugin and sensor configuration."
+      ],
+      "change_scope": "One compatible simulator/plugin/world integration; no AI, ROS by default or obstacle-avoidance changes.",
+      "steps": [
+        "Select and record a compatible version tuple and native-Mac versus explicitly scoped fallback.",
+        "Launch one simple scene and verify the physics/sensor connection.",
+        "Repeat the existing baseline movement and document simulator differences."
+      ],
+      "success": [
+        "The chosen scene and SITL exchange the intended outputs/measurements reproducibly.",
+        "No compatibility or collision evidence is claimed from a successful install alone."
+      ],
+      "evidence": [
+        "Pinned simulator/plugin versions, launch files/commands and one baseline log."
+      ],
+      "rollback": "Stop owned scene processes and return to basic SITL with the previous profile.",
+      "teach_back": "Which program calculates flight control, and which simulates the world?",
+      "record": null
+    },
+    {
+      "id": "L13",
+      "slug": "observe-one-obstacle",
+      "title": "Observe one obstacle sensor",
+      "group": "M04",
+      "status": "planned",
+      "depends_on": [
+        "L12"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "See usable distance/proximity observations for one static obstacle before using them for control.",
+      "concept": "A visible obstacle and a valid metric obstacle observation are different.",
+      "read_focus": [
+        "Selected sensor geometry, mounting frame, range, timestamp and validity fields.",
+        "Actual observation transport and the downstream consumer."
+      ],
+      "change_scope": "One simulated obstacle sensor and bounded observation path; no autonomous dodge behavior.",
+      "steps": [
+        "Place one obstacle at known evaluation positions and configure one sensor.",
+        "Inspect observation direction, distance, timestamps, coverage and absence/invalid states.",
+        "Compare measurements with declared evaluation truth without feeding hidden truth into autonomy."
+      ],
+      "success": [
+        "Sensor values and invalid/out-of-view behavior are understood and recorded.",
+        "Required clearance directions and coverage limits are explicit."
+      ],
+      "evidence": [
+        "Sensor configuration, observation samples and comparison notes."
+      ],
+      "rollback": "Disable the new sensor/integration and retain the baseline scene.",
+      "teach_back": "Can a target bounding box establish the distance or clearance measured by this sensor?",
+      "record": null
+    },
+    {
+      "id": "L14",
+      "slug": "stock-obstacle-avoidance",
+      "title": "Qualify one stock avoidance scenario",
+      "group": "M04",
+      "status": "planned",
+      "depends_on": [
+        "L13"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Demonstrate one clear/blocked obstacle scenario using a documented supported stock mode and existing avoidance.",
+      "concept": "Avoidance needs a destination, usable observations and a qualified mode/configuration.",
+      "read_focus": [
+        "Selected stock avoidance behavior and its mode/input constraints.",
+        "AC_WPNav_OA/AP_OAPathPlanner or the actual chosen code path in the pinned source."
+      ],
+      "change_scope": "One stock avoidance configuration and static scene; no custom planner or native-mode avoidance yet.",
+      "steps": [
+        "Fix conservative motion/clearance criteria and the intended supported stock mode.",
+        "Run a clear route and a route with the single obstacle.",
+        "Observe the detour or bounded failure and inspect actual clearance/stop behavior."
+      ],
+      "success": [
+        "The recorded stock path behaves as configured, with limitations retained.",
+        "A detected obstacle is not assumed to guarantee a globally feasible route."
+      ],
+      "evidence": [
+        "Exact parameters, sensor profile, route/clearance observations and failures."
+      ],
+      "rollback": "Restore baseline parameters and the clear scene.",
+      "teach_back": "What additional inputs made avoidance work compared with a plain waypoint command?",
+      "record": null
+    },
+    {
+      "id": "L15",
+      "slug": "native-avoidance-integration",
+      "title": "Reuse avoidance in our native path",
+      "group": "M04",
+      "status": "planned",
+      "depends_on": [
+        "L14",
+        "L11"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Connect the qualified avoidance path to our native task and repeat the same scene.",
+      "concept": "Custom modes do not automatically inherit stock AUTO/GUIDED behavior.",
+      "read_focus": [
+        "Native adapter type/initialization and the selected avoidance handoff.",
+        "Planner processing/error/success and upstream mode/failsafe interaction."
+      ],
+      "change_scope": "One explicit native avoidance integration and blocked-route policy; no general urban planner.",
+      "steps": [
+        "Identify the exact shared navigation/avoidance objects and failure semantics.",
+        "Integrate the qualified path while preserving native task ownership and input validity.",
+        "Compare clear, single-obstacle and blocked behavior with L14."
+      ],
+      "success": [
+        "Our mode uses the intended avoidance path and reports blocked/invalid outcomes honestly.",
+        "No infinite continuation on missing observations or unknown route viability is claimed."
+      ],
+      "evidence": [
+        "Integration diff, scenario comparison, native reasons and actual trajectory."
+      ],
+      "rollback": "Return to the last qualified native clear-scene build or the stock avoidance baseline.",
+      "teach_back": "Which stock feature was reused, and which integration did we still need to write?",
+      "record": null
+    },
+    {
+      "id": "L16",
+      "slug": "operator-preview",
+      "title": "Show a minimal working operator preview",
+      "group": "M05",
+      "status": "planned",
+      "depends_on": [
+        "L11"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Present a focused interactive React/MUI preview for one mission before application UI integration.",
+      "concept": "A preview demonstrates controls and states; it does not prove vehicle execution.",
+      "read_focus": [
+        "Control-console requirements and current native state/request contract.",
+        "The intended real React/MUI components and shared theme."
+      ],
+      "change_scope": "One isolated working preview with labeled fixtures and disconnected callbacks; no live vehicle control.",
+      "steps": [
+        "Build only connection/state, one coordinate mission, Start/Stop and event/result display.",
+        "Demonstrate pending, rejection, active, complete, stale and aborted states.",
+        "Show the working preview and record explicit approval of the shown scope before L17 integration."
+      ],
+      "success": [
+        "The interactive preview is usable and its actual approval source/date/scope is recorded.",
+        "Static architecture images are not counted as UI approval."
+      ],
+      "evidence": [
+        "Preview artifact/source and the actual shown-scope approval record when obtained."
+      ],
+      "rollback": "Remove only task-owned preview processes/assets; retain needed component code and recorded review context.",
+      "teach_back": "Which displayed states came from fixtures, and which would need firmware telemetry?",
+      "record": null
+    },
+    {
+      "id": "L17",
+      "slug": "approved-console-integration",
+      "title": "Connect the approved minimal console",
+      "group": "M05",
+      "status": "planned",
+      "depends_on": [
+        "L16"
+      ],
+      "optional": false,
+      "additional_prerequisite": "Explicit approval of the working L16 preview scope; new scope needs its own preview.",
+      "goal": "Connect the approved controls to operator requests and firmware-reported state for one mission.",
+      "concept": "The browser observes and requests; native code owns in-flight progression.",
+      "read_focus": [
+        "Approved preview scope and the qualified native ingress/status contract.",
+        "External session/process ownership and stale/reconnect behavior."
+      ],
+      "change_scope": "Only the approved console scope and smallest necessary external session adapter.",
+      "steps": [
+        "Integrate the approved controls and bounded event/status display.",
+        "Exercise start/rejection/stop and reconnect against the qualified native mission.",
+        "Remove obsolete preview scaffolding and leave a clear start/stop entry point."
+      ],
+      "success": [
+        "The UI reports actual native state and a reconnect cannot silently restart a mission.",
+        "Only owned processes are launched/cleaned and obsolete preview material is removed."
+      ],
+      "evidence": [
+        "Approval reference, source diff, manual UI/mission observations and cleanup record."
+      ],
+      "rollback": "Stop owned tooling and return to the existing console/qualified native baseline.",
+      "teach_back": "What happens to an already accepted native mission when the browser closes?",
+      "record": null
+    },
+    {
+      "id": "L18",
+      "slug": "optional-target-acquisition",
+      "title": "Recognize one supported target without moving",
+      "group": "M06",
+      "status": "planned",
+      "depends_on": [
+        "L12"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Qualify acquisition/identity for one chosen target class or reference in simulation.",
+      "concept": "A detector finds image regions; supported targets and identity need evaluation.",
+      "read_focus": [
+        "Selected detector/tracker classes, license/runtime and representative imagery.",
+        "Held-out scene/viewpoint evaluation and target-absence/identity-switch cases."
+      ],
+      "change_scope": "One optional perception capability and its observations; no motion triggered by detections.",
+      "steps": [
+        "Define one target/instance rule and representative labeled/negative scenes.",
+        "Evaluate an existing model first and adapt only if necessary.",
+        "Record acquisition failures, false detections, absence and identity continuity on held-out scenes."
+      ],
+      "success": [
+        "The supported target claim matches retained evaluation evidence and limitations.",
+        "An unsupported class is reported explicitly rather than assumed recognized."
+      ],
+      "evidence": [
+        "Model/profile/license references, dataset split rationale and actual outcomes."
+      ],
+      "rollback": "Disable the optional worker; retain coordinate-only missions and preserve weights/data outside scope.",
+      "teach_back": "What does this detector output, and what does it still not know about the object?",
+      "record": null
+    },
+    {
+      "id": "L19",
+      "slug": "target-spatial-goal",
+      "title": "Estimate one object stopping goal without moving",
+      "group": "M06",
+      "status": "planned",
+      "depends_on": [
+        "L18",
+        "L13"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Produce a bounded metric stopping goal from target observations and a qualified range/pose source.",
+      "concept": "Pixels, relative direction and a metric navigation destination are different representations.",
+      "read_focus": [
+        "Camera/range calibration, capture-time pose, transforms, frames and uncertainty.",
+        "Object extent, vehicle extent and stopping-region construction."
+      ],
+      "change_scope": "One geometry/goal producer and native input validation; no autonomous object approach yet.",
+      "steps": [
+        "Verify range conventions and camera-to-body/navigation transforms.",
+        "Build a stopping region outside the target's occupied space and attach quality/time/uncertainty.",
+        "Compare goal error with evaluation truth across the bounded scenario."
+      ],
+      "success": [
+        "Goal geometry and validity limits are measured and the native receiver rejects stale/invalid goals.",
+        "Hidden simulator object coordinates do not drive claimed sensor-based goals."
+      ],
+      "evidence": [
+        "Calibration/profile, frame contract, goal observations and error results."
+      ],
+      "rollback": "Disable the object-goal producer and retain the qualified coordinate task.",
+      "teach_back": "Why is the center of a detection box not a safe destination in meters?",
+      "record": null
+    },
+    {
+      "id": "L20",
+      "slug": "object-approach",
+      "title": "Approach one confirmed static object",
+      "group": "M06",
+      "status": "planned",
+      "depends_on": [
+        "L19",
+        "L15"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Use the accepted object stopping goal with the existing native approach/arrival machinery.",
+      "concept": "Perception changes the goal source while qualified flight execution remains reusable.",
+      "read_focus": [
+        "Goal-admission hysteresis/age policy and native active-step capability requirements.",
+        "The previously qualified route, clearance, stop and abort behavior."
+      ],
+      "change_scope": "One object-dependent task step; no unbounded search or arbitrary landing.",
+      "steps": [
+        "Enable the required target/geometry capability only for this task.",
+        "Approach a confirmed static target using the accepted stable goal.",
+        "Manually exercise absence/stale identity/large goal correction and retain the bounded outcome."
+      ],
+      "success": [
+        "Measured arrival and clearance meet the fixed scenario contract, or the failure reason is retained.",
+        "Coordinate missions still run without an unused detector."
+      ],
+      "evidence": [
+        "Native/perception timelines, arrival/clearance measurements and failed cases."
+      ],
+      "rollback": "Select the retained coordinate mission and disable the optional perception path.",
+      "teach_back": "Which part changed compared with the known-coordinate mission?",
+      "record": null
+    },
+    {
+      "id": "L21",
+      "slug": "bounded-search",
+      "title": "Search one bounded area",
+      "group": "M07",
+      "status": "planned",
+      "depends_on": [
+        "L20"
+      ],
+      "optional": true,
+      "additional_prerequisite": null,
+      "goal": "Visit a small declared set of observation viewpoints and terminate with found/not-found.",
+      "concept": "A target description supplies what to seek; a search region and policy supply where to look.",
+      "read_focus": [
+        "Request-to-action notes, camera visibility and permitted route/viewpoint geometry.",
+        "Time/energy/geographic limits and preauthorized no-target policy."
+      ],
+      "change_scope": "One bounded search policy using existing motion/perception; no language-driven exploration outside its limits.",
+      "steps": [
+        "Fix a small search region/viewpoint set, visibility assumptions and termination rules.",
+        "Visit permitted viewpoints while recording actual coverage and confirmed candidates.",
+        "Demonstrate target absence and budget exhaustion without expanding the search silently."
+      ],
+      "success": [
+        "The search ends within its declared bounds with explicit evidence/reason.",
+        "Occluded or unobserved space is not claimed searched."
+      ],
+      "evidence": [
+        "Viewpoint/coverage record, budgets and found/not-found outcomes."
+      ],
+      "rollback": "Disable the search step and return to one confirmed-target approach.",
+      "teach_back": "How does the system choose where to go before it sees the target?",
+      "record": null
+    },
+    {
+      "id": "L22",
+      "slug": "landing-site-observation",
+      "title": "Assess one candidate landing patch",
+      "group": "M07",
+      "status": "planned",
+      "depends_on": [
+        "L20"
+      ],
+      "optional": true,
+      "additional_prerequisite": null,
+      "goal": "Assess one bounded candidate ground patch without commanding a landing.",
+      "concept": "Recognizing the nearby object does not establish landing-surface or descent suitability.",
+      "read_focus": [
+        "Selected ground sensing/geometry, footprint, surface assumptions and descent corridor.",
+        "Validity/uncertainty and no-qualified-site policy."
+      ],
+      "change_scope": "One observable landing-site assessment capability; no general arbitrary-terrain claim or descent control.",
+      "steps": [
+        "Choose a simple declared surface and required footprint/clearance evidence.",
+        "Evaluate one acceptable and one unsuitable/unknown patch.",
+        "Publish a bounded candidate plus validity reasons for native acceptance/rejection."
+      ],
+      "success": [
+        "The candidate claim matches measured surface/corridor evidence and rejected cases.",
+        "An unknown patch is not treated as acceptable merely because it is beside the target."
+      ],
+      "evidence": [
+        "Surface/corridor observations, assessment limits and acceptance/rejection reasons."
+      ],
+      "rollback": "Disable site assessment and retain the approach-and-hold task.",
+      "teach_back": "What additional evidence is required for landing beyond locating the truck?",
+      "record": null
+    },
+    {
+      "id": "L23",
+      "slug": "qualified-site-landing",
+      "title": "Land at one qualified simulated site",
+      "group": "M07",
+      "status": "planned",
+      "depends_on": [
+        "L22",
+        "L15"
+      ],
+      "optional": true,
+      "additional_prerequisite": null,
+      "goal": "Execute and verify landing at one admitted static simulated site using qualified ArduPilot behavior.",
+      "concept": "A landing command, descent guidance and confirmed touchdown are separate conditions.",
+      "read_focus": [
+        "Selected LAND/precision-landing path, mode handoff and required estimator/target inputs.",
+        "Site validity during descent and feasible interruption/terminal policy."
+      ],
+      "change_scope": "One native landing handoff and touchdown verification for the admitted scenario.",
+      "steps": [
+        "Qualify the selected landing path and native handoff in the simple site scenario.",
+        "Execute descent while checking required state/site observations.",
+        "Verify touchdown and terminal state; record the feasible outcome when the site/input becomes invalid."
+      ],
+      "success": [
+        "Actual touchdown/terminal evidence is retained, with no arbitrary-site capability inferred.",
+        "Landing failure/interruption is distinguished from arrival or a paused simulator."
+      ],
+      "evidence": [
+        "Site admission, mode/flight timeline and actual landing/failure outcomes."
+      ],
+      "rollback": "Return to the qualified approach-and-hold scenario and previous mode/build.",
+      "teach_back": "What measurement proves that landing completed?",
+      "record": null
+    },
+    {
+      "id": "L24",
+      "slug": "one-link-failure",
+      "title": "Handle one link failure at a time",
+      "group": "M08",
+      "status": "planned",
+      "depends_on": [
+        "L17",
+        "L11"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Demonstrate distinct native outcomes for UI, ground and observation-producer link loss in separate runs.",
+      "concept": "Different links have different owners and failure consequences.",
+      "read_focus": [
+        "Native cached task policy, heartbeat ownership and selected failsafe configuration.",
+        "Required versus unused observation producers."
+      ],
+      "change_scope": "One failure type per run and a narrowly scoped response/status change if required.",
+      "steps": [
+        "Fix the expected policy for one link and retain a nominal baseline.",
+        "Disconnect that link in a bounded simulation and observe the actual response/reconnect behavior.",
+        "Repeat separately for the next relevant link; split code work if the response requires another independent behavior."
+      ],
+      "success": [
+        "Each link failure is labeled correctly and no reconnect silently re-arms/restarts.",
+        "Observation-producer loss is not reported as merely a lost browser view."
+      ],
+      "evidence": [
+        "Per-link configuration, event timelines and observed native/vehicle response."
+      ],
+      "rollback": "Restore the connection/configuration and return to the retained nominal baseline.",
+      "teach_back": "Why may losing the browser be different from losing the navigation/perception producer?",
+      "record": null
+    },
+    {
+      "id": "L25",
+      "slug": "external-pose-baseline",
+      "title": "Qualify one alternative pose source with GPS available",
+      "group": "M08",
+      "status": "planned",
+      "depends_on": [
+        "L12",
+        "L11"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Observe and integrate one selected alternative pose source before relying on it for GPS-denied movement.",
+      "concept": "A map or an IMU alone is not a qualified position estimate.",
+      "read_focus": [
+        "Selected sensor/estimator assumptions, origin/frame/time alignment and quality/reset semantics.",
+        "ArduPilot external-navigation integration for the pinned build."
+      ],
+      "change_scope": "One source/profile and observation/integration qualification; split sensor setup, alignment and fusion into additional cards if any becomes a separate unfamiliar change.",
+      "steps": [
+        "Select one appropriate estimator/sensor source and define the alignment contract.",
+        "Observe its drift/quality while GPS remains available for baseline comparison.",
+        "Qualify its intended ArduPilot integration without claiming GPS-denied flight."
+      ],
+      "success": [
+        "Alternative pose validity, frame alignment and limitations are measured.",
+        "Evaluation truth is not secretly used as the alternative sensor-only estimate."
+      ],
+      "evidence": [
+        "Sensor/estimator/profile pin, alignment/quality results and observed reset/loss behavior."
+      ],
+      "rollback": "Disable the alternative source configuration and retain the GPS baseline.",
+      "teach_back": "What produces the alternative position estimate before ArduPilot can use it?",
+      "record": null
+    },
+    {
+      "id": "L26",
+      "slug": "gps-off-known-goal",
+      "title": "Fly one known goal with GPS unavailable",
+      "group": "M08",
+      "status": "planned",
+      "depends_on": [
+        "L25",
+        "L11"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Run the bounded known-goal mission using the qualified alternative navigation source.",
+      "concept": "Losing GPS differs from losing all usable localization.",
+      "read_focus": [
+        "Qualified source selection/transition and navigation-health policy.",
+        "Known-goal behavior and actual feasible fallback when position validity is lost."
+      ],
+      "change_scope": "One GPS-unavailable-from-start scenario; GPS loss during flight follows as a separate run/change.",
+      "steps": [
+        "Fix the navigation inputs and verify there is no hidden ground-truth control path.",
+        "Repeat the known-goal mission with GPS unavailable from the start.",
+        "Separately examine in-flight GPS loss only after the baseline works."
+      ],
+      "success": [
+        "Actual trajectory error and terminal behavior are retained with explicit sensing provenance.",
+        "Invalid localization produces the qualified feasible response rather than assumed Hold/RTL."
+      ],
+      "evidence": [
+        "Input provenance, source configuration, trajectory error and failure outcomes."
+      ],
+      "rollback": "Restore the qualified GPS profile and nominal scenario.",
+      "teach_back": "Why does turning off GPS not automatically mean the vehicle can still hold position?",
+      "record": null
+    },
+    {
+      "id": "L27",
+      "slug": "repeatability-and-combinations",
+      "title": "Repeat the qualified scenarios then combine failures",
+      "group": "M08",
+      "status": "planned",
+      "depends_on": [
+        "L15",
+        "L24",
+        "L26"
+      ],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Run a fixed evidence campaign for only the capabilities actually qualified.",
+      "concept": "One successful run is not repeatability or a general reliability claim.",
+      "read_focus": [
+        "Actual accepted scenario/phase evidence, fixed thresholds and version/configuration pins.",
+        "Capability-specific P08 campaign and failure metrics."
+      ],
+      "change_scope": "Manual/existing-check campaign; no new automated tests, snapshots or test scaffolding.",
+      "steps": [
+        "Predeclare nominal and individual-fault scenarios and their counts before tuning.",
+        "Retain all outcomes and compare against fixed criteria.",
+        "Combine faults only after each relevant capability passes; include object/search/landing cases only when their own prerequisites passed."
+      ],
+      "success": [
+        "Reported counts include failures, exclusions and unsupported cases.",
+        "Phase/milestone completion reflects actual evidence rather than an optimistic aggregate."
+      ],
+      "evidence": [
+        "Scenario manifest, all run outcomes, versions and accepted limits."
+      ],
+      "rollback": "Retain the last qualified version/configuration and fix one failed capability at a time.",
+      "teach_back": "What claim does this campaign support, and what remains unproven?",
+      "record": null
+    },
+    {
+      "id": "S01",
+      "slug": "skydive-prototype-review",
+      "title": "Review the separate SkyDive prototype",
+      "group": "S",
+      "status": "planned",
+      "depends_on": [],
+      "optional": false,
+      "additional_prerequisite": null,
+      "goal": "Document reusable screen/input behavior and its limits without changing the prototype.",
+      "concept": "A visual game demonstration and an instrumented ArduPilot flight are different evidence paths.",
+      "read_focus": [
+        "Existing prototype recordings/configuration and the unresolved contact report.",
+        "Capture, region tracking, HUD decoding and key scheduling responsibilities."
+      ],
+      "change_scope": "Read-only review and a scoped reuse note; no changes to the preserved prototype.",
+      "steps": [
+        "Inspect the existing source/evidence within scope.",
+        "Identify reusable pieces and distinguish tracking from semantic detection.",
+        "Record the interface limits and proposed separate integration."
+      ],
+      "success": [
+        "Existing evidence is labeled honestly and prototype/private files remain preserved."
+      ],
+      "evidence": [
+        "Reuse map, actual evidence references and limitations."
+      ],
+      "rollback": "No prototype modifications to revert; preserve the reviewed originals.",
+      "teach_back": "Which claims can this visual demonstration support, and which need instrumented SITL evidence?",
+      "record": null
+    },
+    {
+      "id": "S02",
+      "slug": "skydive-demonstration",
+      "title": "Integrate the separate approved SkyDive demonstration",
+      "group": "S",
+      "status": "planned",
+      "depends_on": [
+        "S01",
+        "L17"
+      ],
+      "optional": false,
+      "additional_prerequisite": "Any added SkyDive UI scope requires its own working preview approval.",
+      "goal": "Qualify one selected-region visual approach through the separate game adapter.",
+      "concept": "Screen/input control has different Stop and arrival semantics from ArduPilot.",
+      "read_focus": [
+        "Approved backend/target-selection UI scope and prototype reuse note.",
+        "Focus/permissions/input handling and visual review criteria."
+      ],
+      "change_scope": "One separate backend/scene/command profile; split UI additions behind the existing preview gate.",
+      "steps": [
+        "Show/approve any added interactive UI scope before integration.",
+        "Integrate only scoped reusable adapter pieces and one scene/profile.",
+        "Perform the fixed continuous-approach review and retain all outcomes and cleanup."
+      ],
+      "success": [
+        "The proposed repeatability gate is actually observed or its limitation/failure retained.",
+        "No metric arrival or ArduPilot bridge is inferred from visual closeness."
+      ],
+      "evidence": [
+        "Shown-scope approval, recordings, configuration and actual visual review."
+      ],
+      "rollback": "Stop owned tooling, release inputs and preserve the original prototype/configuration.",
+      "teach_back": "Why is a paused game not the same as a landed or hovering aircraft?",
+      "record": null
+    },
+    {
+      "id": "H01",
+      "slug": "hardware-program-definition",
+      "title": "Define a separate hardware qualification program",
+      "group": "H",
+      "status": "planned",
+      "depends_on": [
+        "L27"
+      ],
+      "optional": true,
+      "additional_prerequisite": null,
+      "goal": "Document a scoped hardware program before selecting any physical implementation work.",
+      "concept": "Simulation evidence does not qualify a real vehicle or authorize operation.",
+      "read_focus": [
+        "Qualified simulation subset and actual hardware/resource/sensor requirements.",
+        "Separate physical-deployment and operating-context requirements."
+      ],
+      "change_scope": "Planning only until separately scoped authorization; no purchase, provisioning or physical operation.",
+      "steps": [
+        "Choose the relevant proven simulation subset and identify transfer gaps.",
+        "Draft the hardware/process deployment and qualification sequence.",
+        "Keep procurement/physical work subject to its separately authorized scope."
+      ],
+      "success": [
+        "The proposed hardware scope, limits, resources and qualification plan are concrete and reviewable."
+      ],
+      "evidence": [
+        "Separate proposed hardware/deployment/qualification document and actual decisions."
+      ],
+      "rollback": "Retain the simulation baseline; no physical state is changed by this planning card.",
+      "teach_back": "Which simulation assumptions need new evidence on actual hardware?",
+      "record": null
+    }
+  ],
+  "source_baseline": {
+    "date": "2026-10-31",
+    "checkout_path": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/ardupilot",
+    "origin": "https://github.com/ArduPilot/ardupilot.git",
+    "tag": "Copter-4.7.2",
+    "commit": "fb773567896014da007bca58358704d4a0d8516f",
+    "status": "source_only_unqualified",
+    "submodule_count": 21,
+    "record": "../evidence/l01-source-and-orientation/README.md",
+    "revision_manifest": "../evidence/l01-source-and-orientation/source-baseline.json",
+    "checkout_relative_path": "ardupilot",
+    "development_branch": "featherlane/dev",
+    "relocation_record": "../evidence/l01-source-and-orientation/checkout-relocation.json",
+    "development_origin": "https://github.com/ducnguyen67201/FeatherLaneArduPilot.git",
+    "upstream_origin": "https://github.com/ArduPilot/ardupilot.git"
+  },
+  "execution_summary": "L01 source acquisition/orientation is complete; the unchanged source baseline is recorded in [the L01 evidence](evidence/l01-source-and-orientation/README.md). P01 is in progress. No build, simulator or flight has been qualified; L02 remains planned.",
+  "repositories": {
+    "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
+    "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
+    "upstream": "https://github.com/ArduPilot/ardupilot.git",
+    "visibility": "public",
+    "project_default_branch": "main",
+    "firmware_development_branch": "featherlane/dev",
+    "firmware_submodule": "ardupilot",
+    "authorization": {
+      "date": "2026-10-31",
+      "source": "User requested public repositories on their profile and selected Full project + linked firmware fork."
+    }
+  }
+}

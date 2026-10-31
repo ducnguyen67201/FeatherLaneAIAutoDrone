@@ -1,0 +1,456 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "Core architecture — our ArduPilot-derived mission stack",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "docs/architecture/ardupilot-code-stack.html"
+  },
+  "components": [
+    {
+      "id": "spec",
+      "type": "database",
+      "label": "Mission configuration",
+      "sublabel": "Mission type · goal · required capabilities",
+      "pos": [
+        40,
+        50
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "handlers",
+      "type": "security",
+      "label": "Session / UI tooling",
+      "sublabel": "PROPOSED Python · no flight mission FSM",
+      "pos": [
+        430,
+        50
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "perception",
+      "type": "backend",
+      "label": "Optional target perception",
+      "sublabel": "Object tasks only · qualified spatial goal",
+      "pos": [
+        850,
+        50
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "client",
+      "type": "backend",
+      "label": "MAVLink client",
+      "sublabel": "Configure / start / stop · telemetry",
+      "pos": [
+        430,
+        240
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "gcs",
+      "type": "backend",
+      "label": "GCS_MAVLink",
+      "sublabel": "libraries/GCS_MAVLink/ + Copter handler",
+      "pos": [
+        40,
+        470
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "mission",
+      "type": "backend",
+      "label": "AP_Mission",
+      "sublabel": "libraries/AP_Mission/",
+      "pos": [
+        850,
+        470
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "modes",
+      "type": "backend",
+      "label": "Stock AUTO / GUIDED / other modes",
+      "sublabel": "ArduCopter/mode_*.cpp",
+      "pos": [
+        430,
+        720
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "nav",
+      "type": "backend",
+      "label": "AC_WPNav",
+      "sublabel": "libraries/AC_WPNav/",
+      "pos": [
+        40,
+        970
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "position",
+      "type": "backend",
+      "label": "AC_PosControl",
+      "sublabel": "libraries/AC_AttitudeControl/",
+      "pos": [
+        430,
+        970
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "attitude",
+      "type": "backend",
+      "label": "AC_AttitudeControl",
+      "sublabel": "libraries/AC_AttitudeControl/",
+      "pos": [
+        850,
+        970
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "sensors",
+      "type": "backend",
+      "label": "Sensor frontends / drivers",
+      "sublabel": "IMU · GPS · barometer · external nav",
+      "pos": [
+        40,
+        1220
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "ahrs",
+      "type": "backend",
+      "label": "AP_AHRS + configured EKF",
+      "sublabel": "libraries/AP_AHRS/ · AP_NavEKF3/",
+      "pos": [
+        850,
+        720
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "safety",
+      "type": "security",
+      "label": "Arming checks / failsafe handlers",
+      "sublabel": "Upstream vehicle checks and configured failsafes retain authority",
+      "pos": [
+        40,
+        1470
+      ],
+      "size": [
+        1110,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "motors",
+      "type": "backend",
+      "label": "AP_Motors",
+      "sublabel": "libraries/AP_Motors/",
+      "pos": [
+        430,
+        1220
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "hal",
+      "type": "backend",
+      "label": "AP_HAL + platform backend",
+      "sublabel": "libraries/AP_HAL/ + platform backend",
+      "pos": [
+        850,
+        1220
+      ],
+      "size": [
+        300,
+        90
+      ],
+      "tag": ""
+    },
+    {
+      "id": "native-mission",
+      "type": "security",
+      "label": "BUILD · FL_Mission (candidate)",
+      "sublabel": "PROPOSED C++ · state, freshness, policy",
+      "pos": [
+        430,
+        470
+      ],
+      "size": [
+        300,
+        90
+      ]
+    },
+    {
+      "id": "native-mode",
+      "type": "security",
+      "label": "BUILD · ModeFeatherLane (candidate)",
+      "sublabel": "PROPOSED ArduCopter mode adapter",
+      "pos": [
+        40,
+        720
+      ],
+      "size": [
+        300,
+        90
+      ]
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "EXTERNAL TOOLING — console/session API, perception and run evidence; no authoritative flight FSM",
+      "wraps": [
+        "spec",
+        "handlers",
+        "perception",
+        "client"
+      ],
+      "pad": 20
+    },
+    {
+      "kind": "region",
+      "label": "OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior",
+      "wraps": [
+        "gcs",
+        "mission",
+        "modes",
+        "nav",
+        "position",
+        "attitude",
+        "sensors",
+        "ahrs",
+        "safety",
+        "motors",
+        "hal",
+        "native-mission",
+        "native-mode"
+      ],
+      "pad": 35
+    },
+    {
+      "kind": "region",
+      "label": "L1 · Message entry, our native mission state and existing mission storage",
+      "wraps": [
+        "gcs",
+        "native-mission",
+        "mission"
+      ],
+      "pad": 15
+    },
+    {
+      "kind": "region",
+      "label": "L2 · Selected mode / adapter and shared estimated state",
+      "wraps": [
+        "native-mode",
+        "modes",
+        "ahrs"
+      ],
+      "pad": 15
+    },
+    {
+      "kind": "region",
+      "label": "L3 · Reused navigation and controllers",
+      "wraps": [
+        "nav",
+        "position",
+        "attitude"
+      ],
+      "pad": 15
+    },
+    {
+      "kind": "region",
+      "label": "L4 · Sensor and platform interfaces / output",
+      "wraps": [
+        "sensors",
+        "motors",
+        "hal"
+      ],
+      "pad": 15
+    },
+    {
+      "kind": "region",
+      "label": "CROSS-CUTTING · Reused arming and failsafe behavior",
+      "wraps": [
+        "safety"
+      ],
+      "pad": 15
+    }
+  ],
+  "connections": [
+    {
+      "id": "config-handler",
+      "from": "spec",
+      "to": "handlers",
+      "label": "Load"
+    },
+    {
+      "id": "perception-handler",
+      "from": "perception",
+      "to": "handlers",
+      "label": "If required"
+    },
+    {
+      "id": "handler-client",
+      "from": "handlers",
+      "to": "client",
+      "label": "Operator / observation input"
+    },
+    {
+      "id": "client-gcs",
+      "from": "client",
+      "to": "gcs",
+      "label": "MAVLink request"
+    },
+    {
+      "id": "gcs-client",
+      "from": "gcs",
+      "to": "client",
+      "label": "Telemetry / ACK"
+    },
+    {
+      "id": "nav-position",
+      "from": "nav",
+      "to": "position",
+      "label": "References"
+    },
+    {
+      "id": "position-attitude",
+      "from": "position",
+      "to": "attitude",
+      "label": "Control targets"
+    },
+    {
+      "id": "estimate-position",
+      "from": "ahrs",
+      "to": "position",
+      "label": "State feedback"
+    },
+    {
+      "id": "motor-hal",
+      "from": "motors",
+      "to": "hal",
+      "label": "Output API"
+    },
+    {
+      "id": "native-api",
+      "from": "gcs",
+      "to": "native-mission",
+      "label": "New API"
+    },
+    {
+      "id": "native-adapter",
+      "from": "native-mission",
+      "to": "native-mode",
+      "label": "Bounded mission tick"
+    },
+    {
+      "id": "native-nav",
+      "from": "native-mode",
+      "to": "nav",
+      "label": "Native references"
+    },
+    {
+      "id": "auto-stock",
+      "from": "mission",
+      "to": "modes",
+      "label": "AUTO callbacks"
+    }
+  ],
+  "cards": [
+    {
+      "dot": "rose",
+      "title": "BUILD inside the autopilot",
+      "items": [
+        "FL_Mission / ModeFeatherLane are candidate names, not existing or implemented upstream modules.",
+        "Our C++ extension owns in-flight mission state, observation freshness, stop/continue policy and mission events.",
+        "The mode adapter reuses navigation/controllers. Existing arming, manual override and failsafe semantics must be qualified and retained.",
+        "Mission-selected capabilities: coordinate/route tasks need no target detector; object-dependent steps require qualified perception/localization."
+      ]
+    },
+    {
+      "dot": "emerald",
+      "title": "REUSE and explicit interfaces",
+      "items": [
+        "Stock AUTO / AP_Mission and GUIDED remain baseline choices. Only the selected mode runs; custom behavior does not imply simultaneous AUTO execution.",
+        "The new mission/observation API and handler mapping remain unqualified; stock Guided messages do not automatically target the custom mode.",
+        "External perception supplies timestamped goals/estimates. No blocking inference, browser work or slow I/O belongs in critical callbacks."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "Maintenance and evidence",
+      "items": [
+        "Maintain identifiable custom commits against pinned upstream/submodules. Review integrations and requalify before adopting an update.",
+        "Native placement removes a process/message boundary for internal decisions; end-to-end latency benefit remains unmeasured.",
+        "Maintained core design. Native placement is user-confirmed; exact names, message contracts and timing budgets remain proposed. Current learning progress is recorded in the phase registry."
+      ]
+    }
+  ]
+}

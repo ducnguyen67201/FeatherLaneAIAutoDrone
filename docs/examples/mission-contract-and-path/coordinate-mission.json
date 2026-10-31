@@ -1,0 +1,61 @@
+{
+  "example_schema": "featherlane-mission-draft-0",
+  "status": "illustrative_only_not_an_executable_mission_format",
+  "mission_id": "coordinate-approach-and-hold",
+  "backend": "arducopter_sitl",
+  "preconditions": {
+    "start_state": "already_airborne_in_qualified_simulation",
+    "navigation": "valid_position_velocity_attitude",
+    "origin": "bound_to_current_qualified_ekf_origin",
+    "vehicle_profile": "qualified_sitl_vehicle_profile_required"
+  },
+  "frame": "LOCAL_NED_m_relative_to_EKF_origin",
+  "steps": [
+    {
+      "type": "navigate",
+      "goal_ned_m": [
+        40,
+        0,
+        -8
+      ]
+    },
+    {
+      "type": "hold",
+      "position_tolerance_m": 1,
+      "speed_tolerance_mps": 0.3,
+      "dwell_s": 2
+    }
+  ],
+  "motion_limits": {
+    "horizontal_speed_mps": 2,
+    "horizontal_acceleration_mps2": 1,
+    "reference_jerk_mps3": 1
+  },
+  "operating_region": {
+    "north_m": [
+      -2,
+      42
+    ],
+    "east_m": [
+      -14,
+      14
+    ],
+    "down_m": [
+      -12,
+      -3
+    ]
+  },
+  "required_capabilities": [
+    "vehicle_navigation",
+    "qualified_obstacle_observations",
+    "qualified_avoidance_integration"
+  ],
+  "target_perception": null,
+  "execution_policy": {
+    "deadline_s": 60,
+    "route_blocked": "qualified_brake_hold_abort_profile_required",
+    "navigation_invalid": "scenario_specific_qualified_fallback_required",
+    "terminal_action": "hold_at_goal_until_authorized_transition"
+  },
+  "input_validity_profile": "qualified_nav_and_obstacle_freshness_profile_required"
+}

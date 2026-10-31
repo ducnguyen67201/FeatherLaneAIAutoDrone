@@ -1,0 +1,201 @@
+{
+  "phase": "L01",
+  "observed_at": "2026-10-31T16:20:38.592796-04:00",
+  "checkout_path": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/ardupilot",
+  "checkout_relative_path": "ardupilot",
+  "origin": "https://github.com/ArduPilot/ardupilot.git",
+  "selected_tag": "Copter-4.7.2",
+  "commit": "fb773567896014da007bca58358704d4a0d8516f",
+  "commit_metadata": [
+    "fb773567896014da007bca58358704d4a0d8516f",
+    "2026-10-13T07:37:18+09:00",
+    "Plane: version to 4.7.2"
+  ],
+  "tag_commit": "fb773567896014da007bca58358704d4a0d8516f",
+  "selection_reason": "Official Copter-4.7.2 stable release selected for a fixed source baseline after checking the live upstream release page and Git tag; not inherited from an earlier research revision.",
+  "release_reference": "https://github.com/ArduPilot/ardupilot/releases/tag/Copter-4.7.2",
+  "git_version": "git version 2.50.1 (Apple Git-155)",
+  "shallow": true,
+  "head_state": "local development branch featherlane/dev at selected release commit",
+  "worktree_clean": true,
+  "recursive_submodules_match": true,
+  "recursive_submodule_count": 21,
+  "submodules": [
+    {
+      "path": "modules/ChibiOS",
+      "commit": "d103983f4362e5506bcf7062ccacf345fc0c0859",
+      "origin": "https://github.com/ArduPilot/ChibiOS.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/CrashDebug",
+      "commit": "599965086437137ec0fe66e185611f43f335f889",
+      "origin": "https://github.com/ardupilot/CrashDebug",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/CrashDebug/CrashCatcher",
+      "commit": "4cf6e11df3a081b0f573a7834ed8e1e4000af73e",
+      "origin": "https://github.com/ardupilot/CrashCatcher.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/CrashDebug/CrashCatcher/CppUTest",
+      "commit": "011f371fdb5d7e441fb023be67295783e053df4a",
+      "origin": "https://github.com/ardupilot/CppUTest.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/CrashDebug/mri",
+      "commit": "b35c89451b41a45b7f5b580acaff555315ac88e2",
+      "origin": "https://github.com/ardupilot/mri.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/CrashDebug/mri/CppUTest",
+      "commit": "011f371fdb5d7e441fb023be67295783e053df4a",
+      "origin": "https://github.com/ardupilot/CppUTest.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/DroneCAN/DSDL",
+      "commit": "04e0e818b06c180eb1720fcdf16484d0f12895ee",
+      "origin": "https://github.com/DroneCAN/DSDL.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/DroneCAN/dronecan_dsdlc",
+      "commit": "de47a8972b7d8c59e50c3acfab5754db29798caa",
+      "origin": "https://github.com/DroneCAN/dronecan_dsdlc",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/DroneCAN/libcanard",
+      "commit": "601ed35467e0ac38819df17cd7c918de19f62d58",
+      "origin": "https://github.com/DroneCAN/libcanard",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/DroneCAN/libcanard/drivers/avr/avr-can-lib",
+      "commit": "9c6bc9118de66d6edaf1b8539e2b9717ba26d123",
+      "origin": "https://github.com/rennerm/avr-can-lib",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/DroneCAN/pydronecan",
+      "commit": "08cda37aaf2958657399606653b99ceb5a6beae0",
+      "origin": "https://github.com/DroneCAN/pydronecan",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/Micro-CDR",
+      "commit": "3d1b17703c7cf4f22def2910bc845bdb5152d7b5",
+      "origin": "https://github.com/ardupilot/Micro-CDR.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/Micro-XRCE-DDS-Client",
+      "commit": "97175304425c5bee87c6fddd99de1ef8d0c394dc",
+      "origin": "https://github.com/ardupilot/Micro-XRCE-DDS-Client.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/gbenchmark",
+      "commit": "d572f4777349d43653b21d6c2fc63020ab326db2",
+      "origin": "https://github.com/google/benchmark.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/gsoap",
+      "commit": "e1f690585d4803402584962bfaa8240ecaf1db30",
+      "origin": "https://github.com/ArduPilot/gsoap",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/gtest",
+      "commit": "c5fed93f941865a0e912e9baf46ded713506590a",
+      "origin": "https://github.com/ArduPilot/googletest",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/littlefs",
+      "commit": "34be692aafaaf4319a18e415b08aa4332697408b",
+      "origin": "https://github.com/ArduPilot/littlefs.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/lwip",
+      "commit": "a6bf350c679ed8ba042ad58bf81cc540d61bb605",
+      "origin": "https://github.com/ArduPilot/lwip.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/mavlink",
+      "commit": "288b907c384a892c8519bfe271682424b1e1a3a0",
+      "origin": "https://github.com/ArduPilot/mavlink",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/mavlink/pymavlink",
+      "commit": "ec06837a50688b5974094876c3c9d1b8bf86629d",
+      "origin": "https://github.com/ArduPilot/pymavlink.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    },
+    {
+      "path": "modules/waf",
+      "commit": "35eadbb64e2052099a853b571e507c33032b392c",
+      "origin": "https://github.com/ArduPilot/waf.git",
+      "matches_parent_gitlink": true,
+      "worktree_clean": true
+    }
+  ],
+  "build_directory_present": false,
+  "surrounding_project_git_initialized": true,
+  "custom_firmware_changes": false,
+  "baseline_status": "source acquired; build, simulator and flight unqualified",
+  "independently_verified": false,
+  "learner_checkpoint": {
+    "learner_response": "ArduCopter here ?",
+    "observed_understanding": "Learner identified ArduCopter/ for vehicle behavior; assistant clarified libraries/AC_AttitudeControl/ for reused position and attitude controllers. Independent mastery is not claimed."
+  },
+  "acquisition_commands": [
+    "git clone --depth 1 --single-branch --branch Copter-4.7.2 --no-recurse-submodules https://github.com/ArduPilot/ardupilot.git .local/upstream/ardupilot",
+    "git -C .local/upstream/ardupilot submodule update --init --recursive --depth 1 --jobs 4"
+  ],
+  "initial_checkout_path": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/upstream/ardupilot",
+  "initial_checkout_relative_path": ".local/upstream/ardupilot",
+  "initial_head_state": "detached at selected release commit",
+  "development_branch": "featherlane/dev",
+  "relocation_record": "checkout-relocation.json",
+  "development_origin": "https://github.com/ducnguyen67201/FeatherLaneArduPilot.git",
+  "upstream_origin": "https://github.com/ArduPilot/ardupilot.git",
+  "initial_surrounding_project_git_initialized": false,
+  "publication": {
+    "date": "2026-10-31",
+    "project_repository": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
+    "firmware_repository": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
+    "firmware_branch": "featherlane/dev",
+    "firmware_commit_unchanged": true,
+    "note": "The original origin/acquisition commands remain historical provenance. Current origin is development_origin; official source is retained as upstream."
+  }
+}
