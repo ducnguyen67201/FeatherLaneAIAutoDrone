@@ -1,0 +1,355 @@
+{
+  "date": "2026-10-31",
+  "qualification_scope": "Two sequential fresh disarmed stock native macOS SITL starts and owned-process shutdowns; no flight qualification",
+  "runs": [
+    {
+      "run": 1,
+      "directory": ".local/l02/run1",
+      "heartbeat_count": 65,
+      "armed_heartbeat_count": 0,
+      "observed_modes": [
+        "STABILIZE"
+      ],
+      "bad_data_records_in_tlog": 0,
+      "mavproxy_reported_mav_errors": [
+        4,
+        4
+      ],
+      "gps_using_messages": [
+        "EKF3 IMU0 is using GPS",
+        "EKF3 IMU1 is using GPS"
+      ],
+      "latest": {
+        "HEARTBEAT": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 81,
+          "custom_mode": 0,
+          "system_status": 3,
+          "mavlink_version": 3
+        },
+        "SYS_STATUS": {
+          "mavpackettype": "SYS_STATUS",
+          "onboard_control_sensors_present": 1399979055,
+          "onboard_control_sensors_enabled": 1382128687,
+          "onboard_control_sensors_health": 1467063343,
+          "load": 0,
+          "voltage_battery": 12600,
+          "current_battery": 0,
+          "battery_remaining": 100,
+          "drop_rate_comm": 0,
+          "errors_comm": 0,
+          "errors_count1": 0,
+          "errors_count2": 0,
+          "errors_count3": 0,
+          "errors_count4": 0,
+          "onboard_control_sensors_present_extended": 0,
+          "onboard_control_sensors_enabled_extended": 0,
+          "onboard_control_sensors_health_extended": 0
+        },
+        "GPS_RAW_INT": {
+          "mavpackettype": "GPS_RAW_INT",
+          "time_usec": 63163000,
+          "fix_type": 6,
+          "lat": -353632621,
+          "lon": 1491652374,
+          "alt": 584090,
+          "eph": 121,
+          "epv": 200,
+          "vel": 0,
+          "cog": 0,
+          "satellites_visible": 10,
+          "alt_ellipsoid": 584090,
+          "h_acc": 300,
+          "v_acc": 300,
+          "vel_acc": 0,
+          "hdg_acc": 0,
+          "yaw": 0
+        },
+        "EKF_STATUS_REPORT": {
+          "mavpackettype": "EKF_STATUS_REPORT",
+          "flags": 831,
+          "velocity_variance": 0.008135528303682804,
+          "pos_horiz_variance": 0.004683897364884615,
+          "pos_vert_variance": 1.8362141418037936e-05,
+          "compass_variance": 0.02105860598385334,
+          "terrain_alt_variance": 0.0,
+          "airspeed_variance": 0.0
+        },
+        "GLOBAL_POSITION_INT": {
+          "mavpackettype": "GLOBAL_POSITION_INT",
+          "time_boot_ms": 63352,
+          "lat": -353632622,
+          "lon": 1491652375,
+          "alt": 584080,
+          "relative_alt": -1,
+          "vx": -1,
+          "vy": 1,
+          "vz": 0,
+          "hdg": 35466
+        },
+        "VFR_HUD": {
+          "mavpackettype": "VFR_HUD",
+          "airspeed": 0.02228527143597603,
+          "groundspeed": 0.022285105660557747,
+          "heading": 354,
+          "throttle": 0,
+          "alt": 584.0800170898438,
+          "climb": 8.580912981415167e-05
+        },
+        "ESC_TELEMETRY_1_TO_4": {
+          "mavpackettype": "ESC_TELEMETRY_1_TO_4",
+          "temperature": [
+            32,
+            32,
+            32,
+            32
+          ],
+          "voltage": [
+            1679,
+            1679,
+            1679,
+            1679
+          ],
+          "current": [
+            80,
+            80,
+            80,
+            80
+          ],
+          "totalcurrent": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "rpm": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "count": [
+            22841,
+            22841,
+            22841,
+            22841
+          ]
+        },
+        "TERRAIN_REPORT": {
+          "mavpackettype": "TERRAIN_REPORT",
+          "lat": -353632622,
+          "lon": 1491652375,
+          "spacing": 0,
+          "terrain_height": 0.0,
+          "current_height": 584.0800170898438,
+          "pending": 504,
+          "loaded": 0
+        }
+      },
+      "simulator_stop": [
+        {
+          "pid": 48041,
+          "signal": "SIGTERM",
+          "wait_result": null,
+          "still_running": false
+        }
+      ],
+      "cleanup": {
+        "session": "89e2aa37f714a1d7",
+        "owned_remaining": [],
+        "lsof_exit": 1,
+        "lsof_stdout": ""
+      },
+      "ekf_flags_decoded": [
+        "EKF_ATTITUDE",
+        "EKF_VELOCITY_HORIZ",
+        "EKF_VELOCITY_VERT",
+        "EKF_POS_HORIZ_REL",
+        "EKF_POS_HORIZ_ABS",
+        "EKF_POS_VERT_ABS",
+        "EKF_PRED_POS_HORIZ_REL",
+        "EKF_PRED_POS_HORIZ_ABS"
+      ],
+      "heartbeat_source_counts": {
+        "255:230": 63,
+        "1:1": 65
+      },
+      "vehicle_source": "1:1"
+    },
+    {
+      "run": 2,
+      "directory": ".local/l02/run2",
+      "heartbeat_count": 83,
+      "armed_heartbeat_count": 0,
+      "observed_modes": [
+        "STABILIZE"
+      ],
+      "bad_data_records_in_tlog": 0,
+      "mavproxy_reported_mav_errors": [
+        4
+      ],
+      "gps_using_messages": [
+        "EKF3 IMU0 is using GPS",
+        "EKF3 IMU1 is using GPS"
+      ],
+      "latest": {
+        "HEARTBEAT": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 81,
+          "custom_mode": 0,
+          "system_status": 3,
+          "mavlink_version": 3
+        },
+        "SYS_STATUS": {
+          "mavpackettype": "SYS_STATUS",
+          "onboard_control_sensors_present": 1399979055,
+          "onboard_control_sensors_enabled": 1382128687,
+          "onboard_control_sensors_health": 1467063343,
+          "load": 0,
+          "voltage_battery": 12600,
+          "current_battery": 0,
+          "battery_remaining": 100,
+          "drop_rate_comm": 0,
+          "errors_comm": 0,
+          "errors_count1": 0,
+          "errors_count2": 0,
+          "errors_count3": 0,
+          "errors_count4": 0,
+          "onboard_control_sensors_present_extended": 0,
+          "onboard_control_sensors_enabled_extended": 0,
+          "onboard_control_sensors_health_extended": 0
+        },
+        "GPS_RAW_INT": {
+          "mavpackettype": "GPS_RAW_INT",
+          "time_usec": 81163000,
+          "fix_type": 6,
+          "lat": -353632621,
+          "lon": 1491652374,
+          "alt": 584090,
+          "eph": 121,
+          "epv": 200,
+          "vel": 0,
+          "cog": 0,
+          "satellites_visible": 10,
+          "alt_ellipsoid": 584090,
+          "h_acc": 300,
+          "v_acc": 300,
+          "vel_acc": 0,
+          "hdg_acc": 0,
+          "yaw": 0
+        },
+        "EKF_STATUS_REPORT": {
+          "mavpackettype": "EKF_STATUS_REPORT",
+          "flags": 831,
+          "velocity_variance": 0.008515954948961735,
+          "pos_horiz_variance": 0.004945411346852779,
+          "pos_vert_variance": 8.191176675609313e-06,
+          "compass_variance": 0.01818595826625824,
+          "terrain_alt_variance": 0.0,
+          "airspeed_variance": 0.0
+        },
+        "GLOBAL_POSITION_INT": {
+          "mavpackettype": "GLOBAL_POSITION_INT",
+          "time_boot_ms": 81359,
+          "lat": -353632622,
+          "lon": 1491652375,
+          "alt": 584080,
+          "relative_alt": -1,
+          "vx": -1,
+          "vy": 1,
+          "vz": 0,
+          "hdg": 35440
+        },
+        "VFR_HUD": {
+          "mavpackettype": "VFR_HUD",
+          "airspeed": 0.023277079686522484,
+          "groundspeed": 0.023276371881365776,
+          "heading": 354,
+          "throttle": 0,
+          "alt": 584.0800170898438,
+          "climb": -0.00018144366913475096
+        },
+        "ESC_TELEMETRY_1_TO_4": {
+          "mavpackettype": "ESC_TELEMETRY_1_TO_4",
+          "temperature": [
+            32,
+            32,
+            32,
+            32
+          ],
+          "voltage": [
+            1679,
+            1679,
+            1679,
+            1679
+          ],
+          "current": [
+            80,
+            80,
+            80,
+            80
+          ],
+          "totalcurrent": [
+            1,
+            1,
+            1,
+            1
+          ],
+          "rpm": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "count": [
+            30144,
+            30144,
+            30144,
+            30144
+          ]
+        },
+        "TERRAIN_REPORT": {
+          "mavpackettype": "TERRAIN_REPORT",
+          "lat": -353632622,
+          "lon": 1491652375,
+          "spacing": 0,
+          "terrain_height": 0.0,
+          "current_height": 584.0800170898438,
+          "pending": 504,
+          "loaded": 0
+        }
+      },
+      "simulator_stop": {
+        "pid": 49221,
+        "signal": "SIGTERM",
+        "wait_result": null,
+        "still_running": false
+      },
+      "cleanup": {
+        "session": "d492f3bb74aff8a2",
+        "owned_remaining": [],
+        "lsof_exit": 1,
+        "lsof_stdout": ""
+      },
+      "ekf_flags_decoded": [
+        "EKF_ATTITUDE",
+        "EKF_VELOCITY_HORIZ",
+        "EKF_VELOCITY_VERT",
+        "EKF_POS_HORIZ_REL",
+        "EKF_POS_HORIZ_ABS",
+        "EKF_POS_VERT_ABS",
+        "EKF_PRED_POS_HORIZ_REL",
+        "EKF_PRED_POS_HORIZ_ABS"
+      ],
+      "heartbeat_source_counts": {
+        "255:230": 82,
+        "1:1": 83
+      },
+      "vehicle_source": "1:1"
+    }
+  ]
+}

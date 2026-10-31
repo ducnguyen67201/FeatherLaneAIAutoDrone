@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M01 Get a working baseline and understand it · Track: core · Dependencies: [L01](l01-source-and-orientation.md)
+**DRAFT phase card. Status: complete.** M01 Get a working baseline and understand it · Track: core · Dependencies: [L01](l01-source-and-orientation.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -45,7 +45,7 @@ Retain:
 - Mac/toolchain version tuple, source pin, start/stop commands and startup log.
 - Any native-Mac limitation and a bounded fallback decision.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** 2026-10-31: unchanged Copter-4.7.2 built on macOS 15.7.7 arm64 / Apple Clang 17 / Python 3.12.12. Two sequential fresh stock quad SITL launches reported disarmed STABILIZE, simulated GPS and EKF3 GPS use; owned processes stopped and sockets cleared after each. [Execution/runbook](../../evidence/l02-basic-sitl-setup/README.md), [environment/source tuple](../../evidence/l02-basic-sitl-setup/environment.json) and [actual run results](../../evidence/l02-basic-sitl-setup/run-results.json). Startup dependency failure, four MAVProxy parsing errors per run and terrain limitations retained. Learning checkpoint completed in this chat on 2026-10-31: learner explained compilation, SITL and the ground console; follow-up clarified SITL as the simulation setup and successful launch versus successful flight. No arming/flight or custom firmware. L03 remains planned; P01 remains in_progress.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

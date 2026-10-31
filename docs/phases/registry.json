@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "FeatherLane AI Auto Drone",
   "recorded_date": "2026-10-31",
-  "scope": "ArduPilot source acquisition and learning documentation; separate from FeatherLaneFlight and the SkyDive prototype",
+  "scope": "ArduPilot source acquisition, native macOS disarmed SITL qualification and learning documentation; separate from FeatherLaneFlight and the SkyDive prototype",
   "autopilot": "ArduPilot",
   "development_os": "macOS",
   "active_implementation_phase": "P01",
@@ -95,7 +95,7 @@
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
   "active_learning_phase": null,
-  "next_proposed_learning_phase": "L02",
+  "next_proposed_learning_phase": "L03",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -234,7 +234,7 @@
       "slug": "basic-sitl-setup",
       "title": "Build and launch basic SITL",
       "group": "M01",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L01"
       ],
@@ -262,7 +262,7 @@
       ],
       "rollback": "Stop owned simulator processes and return to the recorded baseline; document installed dependencies and preserve user configuration.",
       "teach_back": "Which process runs ArduPilot, and where do its sensor measurements come from?",
-      "record": null
+      "record": "2026-10-31: unchanged Copter-4.7.2 built on macOS 15.7.7 arm64 / Apple Clang 17 / Python 3.12.12. Two sequential fresh stock quad SITL launches reported disarmed STABILIZE, simulated GPS and EKF3 GPS use; owned processes stopped and sockets cleared after each. [Execution/runbook](../../evidence/l02-basic-sitl-setup/README.md), [environment/source tuple](../../evidence/l02-basic-sitl-setup/environment.json) and [actual run results](../../evidence/l02-basic-sitl-setup/run-results.json). Startup dependency failure, four MAVProxy parsing errors per run and terrain limitations retained. Learning checkpoint completed in this chat on 2026-10-31: learner explained compilation, SITL and the ground console; follow-up clarified SITL as the simulation setup and successful launch versus successful flight. No arming/flight or custom firmware. L03 remains planned; P01 remains in_progress."
     },
     {
       "id": "L03",
@@ -1232,7 +1232,7 @@
     "origin": "https://github.com/ArduPilot/ardupilot.git",
     "tag": "Copter-4.7.2",
     "commit": "fb773567896014da007bca58358704d4a0d8516f",
-    "status": "source_only_unqualified",
+    "status": "native_macos_disarmed_sitl_qualified_flight_unqualified",
     "submodule_count": 21,
     "record": "../evidence/l01-source-and-orientation/README.md",
     "revision_manifest": "../evidence/l01-source-and-orientation/source-baseline.json",
@@ -1240,9 +1240,10 @@
     "development_branch": "featherlane/dev",
     "relocation_record": "../evidence/l01-source-and-orientation/checkout-relocation.json",
     "development_origin": "https://github.com/ducnguyen67201/FeatherLaneArduPilot.git",
-    "upstream_origin": "https://github.com/ArduPilot/ardupilot.git"
+    "upstream_origin": "https://github.com/ArduPilot/ardupilot.git",
+    "sitl_qualification_record": "../evidence/l02-basic-sitl-setup/README.md"
   },
-  "execution_summary": "L01 source acquisition/orientation is complete; the unchanged source baseline is recorded in [the L01 evidence](evidence/l01-source-and-orientation/README.md). P01 is in progress. No build, simulator or flight has been qualified; L02 remains planned.",
+  "execution_summary": "L01 source acquisition/orientation and L02 unchanged native macOS disarmed SITL qualification are complete. [L02 evidence](evidence/l02-basic-sitl-setup/README.md) records the successful build, two fresh disarmed launches, actual state, dependency/startup limitations and clean process/socket shutdown. No arming or flight was performed. P01 remains in progress; L03 stock flight is next and remains planned. Learner explanation checkpoint completed through the follow-up discussion on 2026-10-31.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",

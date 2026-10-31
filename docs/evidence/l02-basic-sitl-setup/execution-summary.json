@@ -1,0 +1,47 @@
+{
+  "date": "2026-10-31",
+  "learning_phase": "L02",
+  "result": "complete_disarmed_setup_only",
+  "checks": {
+    "configure_exit": 0,
+    "build_exit": 0,
+    "git_diff_check": "pass",
+    "firmware_worktree": "clean",
+    "firmware_revision": "fb773567896014da007bca58358704d4a0d8516f",
+    "new_automated_tests_created": false,
+    "existing_checks": "Waf configure/build, generated documentation, git diff --check, source/pin inspection; manual simulator exercise",
+    "diagram_finalize": "all four gates pass",
+    "diagram_visual_review": "HTML dark desktop and final static SVG inspected",
+    "diagram_receipts": ".archify/l02-learning-progress/",
+    "ui_approved": false,
+    "architecture_approved": false
+  },
+  "run_summary": [
+    {
+      "run": 1,
+      "vehicle_heartbeat_count": 65,
+      "armed_heartbeat_count": 0,
+      "remaining_session_processes": 0,
+      "remaining_sitl_sockets": false
+    },
+    {
+      "run": 2,
+      "vehicle_heartbeat_count": 83,
+      "armed_heartbeat_count": 0,
+      "remaining_session_processes": 0,
+      "remaining_sitl_sockets": false
+    }
+  ],
+  "source_environment": "environment.json",
+  "results": "run-results.json",
+  "dependency_lock": "requirements.lock.txt",
+  "learning_checkpoint": "completed in this chat on 2026-10-31 through learner recap and guided clarification of SITL, MAVProxy, and software launch versus flight",
+  "next_phase": "L03 planned; not started",
+  "p01": "in_progress; flight gate unmet",
+  "publication_scope": {
+    "authorization_date": "2026-10-31",
+    "branch": "codex/l02-sitl-setup",
+    "scope": "Project documents, learning diagrams and selected L02 evidence; firmware pin unchanged; no merge or firmware push",
+    "dependency_audit": "pip-audit against frozen requirement versions: no known vulnerabilities found; raw result retained locally"
+  }
+}

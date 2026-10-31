@@ -2,9 +2,9 @@
 
 [Project home](../README.md) · [Capability roadmap](ROADMAP.md) · [Phase registry](phases/registry.json) · [First-seven-phase diagram](assets/learning/learning-workflow.svg)
 
-**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01 source acquisition/orientation is complete; the unchanged source baseline is recorded in [the L01 evidence](evidence/l01-source-and-orientation/README.md). P01 is in progress. No build, simulator or flight has been qualified; L02 remains planned.
+**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01 source acquisition/orientation and L02 unchanged native macOS disarmed SITL qualification are complete. [L02 evidence](evidence/l02-basic-sitl-setup/README.md) records the successful build, two fresh disarmed launches, actual state, dependency/startup limitations and clean process/socket shutdown. No arming or flight was performed. P01 remains in progress; L03 stock flight is next and remains planned. Learner explanation checkpoint completed through the follow-up discussion on 2026-10-31.
 
-**Next small phase: L02.** No implementation learning phase is active.
+**Next small phase: L03.** No implementation learning phase is active.
 
 This is the execution entry point. `L01`, `L02`, and so on are small learning phases. Existing `P01`–`P09` references remain capability milestones in the roadmap and architecture; their numbers do not dictate the learning order. Master groups organize related results without turning a group into one large implementation task. A phase passing does not automatically complete its parent capability milestone.
 

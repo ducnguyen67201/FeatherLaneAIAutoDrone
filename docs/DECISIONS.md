@@ -29,9 +29,13 @@ Recorded 2026-10-31 from the user's project-planning request. Only choices expli
 
 The earlier documentation request did not approve the rendered layouts, full detailed architecture or UI. D18 authorizes only the subsequent L01 source/orientation work; the approval flags remain unchanged. See the [architecture approval record](architecture/README.md#direction-and-diagram-approval-record).
 
+## L02 local setup authorization and observed result
+
+On 2026-10-31 the user requested L02 with step-by-step explanations. This authorizes scoped local dependencies, the unchanged native Mac Copter build and disarmed simulator startup/observation/shutdown/repeat. [The L02 record](evidence/l02-basic-sitl-setup/README.md) retains the actual successful build, two fresh disarmed launches, cleanup and limitations. No flight, custom firmware, new tests, remote changes or UI integration was performed. Detailed architecture/UI approval flags remain false. The next proposed learning phase is L03; P01 remains in progress.
+
 ## Repository publication
 
-On 2026-10-31 the user requested publication on their GitHub profile, selected **public**, and then selected **Full project + linked firmware fork**. The project repository is [FeatherLaneAIAutoDrone](https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone); its `ardupilot/` submodule pins the [FeatherLaneArduPilot](https://github.com/ducnguyen67201/FeatherLaneArduPilot) firmware fork. The development branch remains `featherlane/dev` at the unchanged L01 baseline. This authorizes repository creation and source publication, without changing L02 status or firmware/UI/architecture qualification. See the [repository guide](REPOSITORIES.md).
+On 2026-10-31 the user requested publication on their GitHub profile, selected **public**, and then selected **Full project + linked firmware fork**. The project repository is [FeatherLaneAIAutoDrone](https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone); its `ardupilot/` submodule pins the [FeatherLaneArduPilot](https://github.com/ducnguyen67201/FeatherLaneArduPilot) firmware fork. The development branch remains `featherlane/dev` at the unchanged L01 baseline. This authorizes repository creation and source publication, without itself qualifying a build/flight or approving UI/architecture. The subsequent L02 qualification is recorded separately above. See the [repository guide](REPOSITORIES.md).
 
 ## Questions to resolve during the relevant phase
 

@@ -57,17 +57,17 @@
       "id": "L02",
       "lane": "setup",
       "col": 1,
-      "type": "security",
+      "type": "backend",
       "label": "02 Launch SITL",
-      "sublabel": "Next proposed · planned"
+      "sublabel": "complete · Stock build / disarmed"
     },
     {
       "id": "L03",
       "lane": "setup",
       "col": 2,
-      "type": "backend",
+      "type": "security",
       "label": "03 First flight",
-      "sublabel": "planned · Takeoff, hold, land"
+      "sublabel": "Next proposed · planned"
     },
     {
       "id": "L04",
@@ -145,7 +145,7 @@
       "dot": "rose",
       "title": "One phase, one observable result",
       "items": [
-        "Next proposed learning phase: L02. Statuses and actual evidence are recorded in the registry.",
+        "Next proposed learning phase: L03. Statuses and actual evidence are recorded in the registry.",
         "Before a change, explain the behavior and predict the result. Afterward, retain evidence and explain the difference.",
         "L01–L04 add no custom flight behavior. L05–L07 reuse stock behavior; early learning needs no detector or application UI."
       ]

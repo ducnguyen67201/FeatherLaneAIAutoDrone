@@ -2,7 +2,7 @@
 
 [Master learning plan](../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../ROADMAP.md) · [Registry](registry.json)
 
-Use the master plan for the execution order and open one small phase card at a time. Begin with [L01 source acquisition and orientation](learning/l01-source-and-orientation.md), then [L02 basic SITL setup](learning/l02-basic-sitl-setup.md) and [L03 first stock flight](learning/l03-first-stock-flight.md). L01 is complete with a [source/orientation execution record](../evidence/l01-source-and-orientation/README.md). L02 is next and remains planned; no build or flight has been qualified.
+Use the master plan for the execution order and open one small phase card at a time. Begin with [L01 source acquisition and orientation](learning/l01-source-and-orientation.md), then [L02 basic SITL setup](learning/l02-basic-sitl-setup.md) and [L03 first stock flight](learning/l03-first-stock-flight.md). L01 is complete with a [source/orientation execution record](../evidence/l01-source-and-orientation/README.md). [L02 build/disarmed SITL qualification](../evidence/l02-basic-sitl-setup/README.md) is also complete. L03 is next and remains planned; no arming or flight has been qualified.
 
 `registry.json` is the canonical state/specification. Existing `phases` entries retain the P00–P09 capability milestones and evidence boundaries. `learning_groups` and `learning_phases` describe the small work units and dependencies. Read `active_learning_phase` and `next_proposed_learning_phase` for the current selection. Passing a small phase does not automatically satisfy all acceptance criteria of a capability milestone.
 

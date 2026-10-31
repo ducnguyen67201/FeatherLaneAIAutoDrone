@@ -2,7 +2,7 @@
 
 An incremental autonomous-drone project: select a destination, start a mission from a local control UI, and have the drone approach it using feedback. Later milestones add obstacle avoidance, GPS-denied navigation and operation after losing the ground connection.
 
-**Direction recorded: 2026-10-31. Autopilot: ArduPilot. Development computer: macOS. Status: L01 source acquisition and orientation complete; P01 qualification remains in progress.**
+**Direction recorded: 2026-10-31. Autopilot: ArduPilot. Development computer: macOS. Status: L01 source/orientation and L02 native disarmed SITL complete; P01 flight qualification remains in progress.**
 
 **ArduPilot is the core flight foundation, and our in-flight mission logic will live inside it.** We will maintain an ArduPilot-derived codebase with our own bounded C++ mission behavior, reusing upstream control, estimation, navigation, mission facilities and failsafes. External tooling handles the console, simulator sessions, evidence and separately qualified perception. P01 qualifies an upstream baseline before custom flight behavior; upstream updates are reviewed and requalified before adoption. See the [native mission design](docs/architecture/README.md) and [reuse/build responsibilities](docs/architecture/README.md#module-ownership). The separate SkyDive demonstration uses screen/input control; it is not powered by ArduPilot.
 
@@ -49,7 +49,7 @@ There are **eight software/simulation capability milestones and one optional har
 
 A separate SkyDive prototype exists at `/Users/ducng/Desktop/workspace/skydive-control-dogfood`. One saved run was visually reviewed as a continuous close approach. It does not establish reliable autonomous arrival, measured distance, collision avoidance, landing or repeatability. The current tracker follows a selected image region; it is not a verified helicopter detector.
 
-This folder contains the project plan and the visible ArduPilot development checkout at [`ardupilot/`](ardupilot/) on local branch `featherlane/dev`. [L01 acquired and recorded](docs/evidence/l01-source-and-orientation/README.md) the unchanged `Copter-4.7.2` source at `fb773567896014da007bca58358704d4a0d8516f`, including all 21 recursive submodule pins. There is no built flight executable or qualified simulator here yet. The SkyDive prototype and `FeatherLaneFlight` remain separate and untouched. **The next small phase is L02, basic SITL setup; it has not started. P01 is not complete.**
+This folder contains the project plan and the visible ArduPilot development checkout at [`ardupilot/`](ardupilot/) on local branch `featherlane/dev`. [L01 acquired and recorded](docs/evidence/l01-source-and-orientation/README.md) the unchanged `Copter-4.7.2` source at `fb773567896014da007bca58358704d4a0d8516f`, including all 21 recursive submodule pins. [L02 built that unchanged source and qualified two fresh disarmed native SITL launches](docs/evidence/l02-basic-sitl-setup/README.md) on macOS 15.7.7 arm64. Both reported simulated GPS/EKF3 state and stopped with no owned processes or sockets remaining. The SkyDive prototype and `FeatherLaneFlight` remain separate and untouched. **L03, one stock simulated flight, is next and remains planned. P01 is not complete.**
 
 ## Working rules
 
