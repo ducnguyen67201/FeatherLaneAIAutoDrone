@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M02 Learn movement with one change at a time · Track: core · Dependencies: [L05](l05-one-coordinate.md)
+**DRAFT phase card. Status: complete.** M02 Learn movement with one change at a time · Track: core · Dependencies: [L05](l05-one-coordinate.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -44,7 +44,7 @@ Retain:
 
 - Before/after values, comparable run logs and a short explanation.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [Same-route speed comparison](../../evidence/l06-one-speed-change/README.md): only intentional setting WP_SPD10->1m/s, restored10 after landing/disarm. Peak measured speed3.120->0.990m/s and first identical low-speed near-goal sample3.258->5.782s. Same coordinate/frame/height; stock hover-learning/statistics updates retained and explained. Flight/cleanup and guided checkpoint complete on 2026-10-31. Learner identified acceleration, slowing and WP_SPD as a horizontal speed target. Follow-up clarified braking at the destination while holding height versus later landing/descent; guided understanding, not independent examination. One pair only; no controller tuning, firmware edits or new tests.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

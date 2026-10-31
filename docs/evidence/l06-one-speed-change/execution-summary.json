@@ -1,0 +1,117 @@
+{
+  "date": "2026-10-31",
+  "phase": "L06",
+  "status": "complete",
+  "branch": "codex/l06-one-speed-change",
+  "based_on_published_l05": "9dd52dc050401887de4b4d352d26b368c2a54251",
+  "result": "one_speed_comparison_restoration_and_guided_learner_checkpoint_complete",
+  "firmware_revision": "fb773567896014da007bca58358704d4a0d8516f",
+  "checks": {
+    "single_intentional_change": "1370 before/during cached values compared; only WP_SPD10->1",
+    "speed_restoration": "PARAM_VALUE readback and saved cached list show WP_SPD10 before shutdown",
+    "automatic_updates": "MOT_THST_HOVER plus four STAT counters differ after landing; pinned source explains stock learning/statistics saves; preserved",
+    "same_route": "identical requested lat/lon/height/frame confirmed in both runs and onboard commands",
+    "terminal_behavior": "five-second bounded hold then stock LAND, on-ground, automatic disarm",
+    "source_references": "8 exact pinned symbols/lines/full-file hashes",
+    "raw_hashes": "all retained raw files match manifest",
+    "firmware_worktree": "clean; all21 recursive submodule pins unchanged",
+    "generator": "run; repeat output byte-identical",
+    "git_diff_check": "pass",
+    "new_evidence_text": "clean LF and trailing-whitespace checks",
+    "maintained_links": "local targets checked",
+    "diagram_finalize": {
+      "validate": "pass",
+      "deliver": "pass",
+      "check": "pass",
+      "browser-check": "pass"
+    },
+    "diagram_receipts": ".archify/l06-learning-progress/review-2/",
+    "static_svg": "offline canonical extraction with retained bundled export CSS; XML checked",
+    "diagram_visual_review": "not requested",
+    "comparison_chart": "offline Python/Matplotlib; final image inspected"
+  },
+  "observations": {
+    "baseline_peak_speed_m_s": 3.1200160255998686,
+    "changed_peak_speed_m_s": 0.9900505037623081,
+    "baseline_first_bounded_sample_after_ack_s": 3.2577121257781982,
+    "changed_first_bounded_sample_after_ack_s": 5.7822651863098145,
+    "position_samples": 612,
+    "startup_invalid_samples_retained": 131,
+    "vehicle_heartbeats": 166,
+    "armed_heartbeats": 57,
+    "accepted_command_acks": 13,
+    "hold": {
+      "start_seconds": 103.94786286354065,
+      "end_seconds": 108.94786286354065,
+      "start_after_destination_ack_s": 13.554064989089966,
+      "samples": 20,
+      "sample_span_s": 4.751708269119263,
+      "horizontal_error_range_m": [
+        0.024043565581707785,
+        0.028728533988270553
+      ],
+      "altitude_above_home_range_m": [
+        2.997,
+        3.0
+      ],
+      "max_horizontal_speed_m_s": 0.022360679774997897,
+      "max_abs_vertical_speed_m_s": 0.0,
+      "all_recorded_samples_within_predeclared_bounds": true
+    },
+    "remaining_owned_processes": 0,
+    "remaining_sitl_sockets": false
+  },
+  "learning_checkpoint": {
+    "status": "complete",
+    "date": "2026-10-31",
+    "source": "Learner reply to L06 checkpoint in this chat",
+    "learner_identified": [
+      "WP_SPD is a horizontal speed target",
+      "Measured speed varies while accelerating and slowing; graph shows it"
+    ],
+    "guided_clarification": "Horizontal braking near the coordinate occurs while holding about3m above home; vertical landing/descent happens later.",
+    "assessment": "guided understanding with correction; not an independent examination"
+  },
+  "parameter_comparison": "parameter-comparison.json",
+  "comparison": "comparison.json",
+  "run_results": "run-results.json",
+  "raw_manifest": "raw-artifacts.json",
+  "source_manifest": "source-manifest.json",
+  "new_tests_snapshots_scaffolding": false,
+  "firmware_source_or_controller_tuning": false,
+  "only_intentional_speed_change_restored": true,
+  "new_dependencies_in_l06": false,
+  "physical_operation": false,
+  "ui_approved": false,
+  "architecture_approved": false,
+  "p01": "in_progress; remaining failure-handling evidence open",
+  "p03": "in_progress; early stock coordinate/speed slices only, broader gate unmet",
+  "l07": "planned; not started",
+  "limitations": [
+    "One baseline and one repeat; not a statistical or general performance guarantee.",
+    "Time aligned at DO_REPOSITION acceptance, not launch or operator hold-window selection.",
+    "Near-goal timing is first recorded sample satisfying identical L05 bounds; not an exact continuous arrival instant.",
+    "Same nominal simulator start and identical goal; small differences in estimated home/position remain recorded.",
+    "Stock hover learning and flight counters updated automatically; only intentional configuration change was WP_SPD10->1->10.",
+    "No restart was used to independently verify EEPROM persistence after restore; fetched value and saved cached list confirm live restoration.",
+    "One simulated run, not repeatability/hardware qualification.",
+    "Four MAVProxy startup parsing errors; cause uninvestigated.",
+    "No terrain loaded or terrain-relative capability qualified.",
+    "Stock FS_GCS_ENABLE=0; no lost-link handling qualified.",
+    "CSV latest mode/state are sampled with their ages; no continuous-state claim.",
+    "Unknown HOME_POSITION quaternion components are null in curated JSON; raw NaN observations remain locally.",
+    "Startup invalid/placeholder positions retained in CSV with validity flags; excluded from derived distance and plot.",
+    "Only intentional setting change WP_SPD10->1->10; no controller or acceleration tuning, perception or new automated tests.",
+    "Capture stopped intentionally via Ctrl-C, exit 130; console reconnect followed deliberate simulator termination."
+  ],
+  "publication": {
+    "date": "2026-10-31",
+    "authorization": "User requested pushing completed L06 and continuing to next phase",
+    "branch": "codex/l06-one-speed-change",
+    "scope": "Completed L06 records, selected evidence and learning-progress diagram/source",
+    "main_merge_or_update": false,
+    "l07_publication_included": false,
+    "audit_receipt": ".local/l06/precommit-dependency-audit.json",
+    "publication_receipt": ".local/l06/publication.json"
+  }
+}

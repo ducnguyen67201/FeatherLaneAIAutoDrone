@@ -1,0 +1,40 @@
+{
+  "declared_utc": "2026-10-31T22:25:01.080991+00:00",
+  "scope": "L06 repeat same single destination; only firmware parameter WP_SPD changed10 to1m/s, then restored10",
+  "prediction": "Lower peak horizontal speed around1m/s and longer request-to-settling time than L05; acceleration/braking remain unchanged",
+  "latitude_deg": -35.3632172,
+  "longitude_deg": 149.1652374,
+  "latitude_e7": -353632172,
+  "longitude_e7": 1491652374,
+  "altitude_m": 3,
+  "mavlink_frame": 3,
+  "frame_name": "MAV_FRAME_GLOBAL_RELATIVE_ALT",
+  "height_reference": "above recorded home, not above sea level or terrain",
+  "nominal_start_latitude_deg": -35.3632621,
+  "nominal_start_longitude_deg": 149.1652374,
+  "manual_observation": {
+    "horizontal_error_max_m": 1,
+    "altitude_band_m": [
+      2.8,
+      3.2
+    ],
+    "horizontal_speed_max_m_s": 0.3,
+    "abs_vertical_speed_max_m_s": 0.2,
+    "observation_window_s": 5,
+    "positioning_wait_limit_s": 30,
+    "mode": "GUIDED",
+    "armed": true,
+    "landed_state": "IN_AIR"
+  },
+  "bounded_response": "If rejected or not settled in 30s, retain failure and use qualified LAND path without bypass; wait for on-ground and disarmed before cleanup",
+  "comparison": {
+    "baseline": "docs/evidence/l05-one-coordinate/trajectory.csv",
+    "original_WP_SPD_m_s": 10,
+    "changed_WP_SPD_m_s": 1,
+    "baseline_peak_horizontal_speed_m_s": 3.1200160255998686,
+    "baseline_first_bounded_sample_after_ack_s": 3.2577121257781982,
+    "unchanged": "same global destination, height reference, scene, stock aircraft/source/controller tuning, acceleration and stopping parameters",
+    "restore_original_after": "confirmed landing and automatic disarm",
+    "parameter_persistence": "Saved firmware parameter in this owned run EEPROM; restore before shutdown; fresh-run directory has independent parameter state"
+  }
+}

@@ -1,0 +1,176 @@
+{
+  "baseline": {
+    "WP_SPD_m_s": 10,
+    "peak_measured_horizontal_speed_m_s": 3.1200160255998686,
+    "first_sample_within_same_position_height_speed_bounds_after_ack_s": 3.2577121257781982,
+    "hold": {
+      "start_seconds": 100.17152905464172,
+      "end_seconds": 105.17152905464172,
+      "start_after_destination_ack_s": 16.85224723815918,
+      "samples": 20,
+      "sample_span_s": 4.748636960983276,
+      "horizontal_error_range_m": [
+        0.024043565581707785,
+        0.024043565581707785
+      ],
+      "altitude_above_home_range_m": [
+        2.997,
+        3.0
+      ],
+      "max_horizontal_speed_m_s": 0.01414213562373095,
+      "max_abs_vertical_speed_m_s": 0.0,
+      "all_recorded_samples_within_predeclared_bounds": true
+    },
+    "observed_home": {
+      "mavpackettype": "HOME_POSITION",
+      "latitude": -353632621,
+      "longitude": 1491652375,
+      "altitude": 584080,
+      "x": 0.0,
+      "y": 0.009078040719032288,
+      "z": 0.009999999776482582,
+      "q": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "approach_x": 0.0,
+      "approach_y": 0.0,
+      "approach_z": 0.0,
+      "time_usec": 136237150
+    },
+    "goal_offset_from_recorded_home_m": {
+      "north": 4.998245136495994,
+      "east": -0.009078093489824572
+    }
+  },
+  "changed": {
+    "WP_SPD_m_s": 1,
+    "peak_measured_horizontal_speed_m_s": 0.9900505037623081,
+    "first_sample_within_same_position_height_speed_bounds_after_ack_s": 5.7822651863098145,
+    "hold": {
+      "start_seconds": 103.94786286354065,
+      "end_seconds": 108.94786286354065,
+      "start_after_destination_ack_s": 13.554064989089966,
+      "samples": 20,
+      "sample_span_s": 4.751708269119263,
+      "horizontal_error_range_m": [
+        0.024043565581707785,
+        0.028728533988270553
+      ],
+      "altitude_above_home_range_m": [
+        2.997,
+        3.0
+      ],
+      "max_horizontal_speed_m_s": 0.022360679774997897,
+      "max_abs_vertical_speed_m_s": 0.0,
+      "all_recorded_samples_within_predeclared_bounds": true
+    },
+    "observed_home": {
+      "mavpackettype": "HOME_POSITION",
+      "latitude": -353632622,
+      "longitude": 1491652375,
+      "altitude": 584080,
+      "x": -0.011131884530186653,
+      "y": 0.009078040719032288,
+      "z": 0.009999999776482582,
+      "q": [
+        null,
+        null,
+        null,
+        null
+      ],
+      "approach_x": 0.0,
+      "approach_y": 0.0,
+      "approach_z": 0.0,
+      "time_usec": 128862601
+    },
+    "goal_offset_from_recorded_home_m": {
+      "north": 5.00937708570541,
+      "east": -0.009078093478579923
+    }
+  },
+  "same_requested_latitude_longitude_altitude_frame": true,
+  "parameter_comparison": {
+    "before_count": 1370,
+    "during_count": 1370,
+    "intentional_changes": {
+      "WP_SPD": {
+        "before": 10.0,
+        "during": 1.0
+      }
+    },
+    "restored": true,
+    "restored_count": 1370,
+    "restored_WP_SPD_m_s": 10,
+    "automatic_postflight_updates": {
+      "MOT_THST_HOVER": {
+        "before": 0.39,
+        "restored": 0.366839
+      },
+      "STAT_FLTTIME": {
+        "before": 0.0,
+        "restored": 50.0
+      },
+      "STAT_FLTCNT": {
+        "before": 0.0,
+        "restored": 1.0
+      },
+      "STAT_RUNTIME": {
+        "before": 30.0,
+        "restored": 117.0
+      },
+      "STAT_DISTFLWN": {
+        "before": 0.0,
+        "restored": 9.493561
+      }
+    },
+    "other_configuration_differences": {},
+    "note": "Only intentional change WP_SPD10->1->10. Stock hover learning and flight-stat counters saved themselves; preserved, not manually reset."
+  },
+  "prediction": "Lower peak speed and longer request-to-low-speed-near-goal time",
+  "observed": "Matches prediction in this pair; no claim of exact constant speed or10-fold travel-time change",
+  "onboard_hover_learning_records": {
+    "l05": [
+      {
+        "mavpackettype": "PARM",
+        "TimeUS": 59879372,
+        "Name": "MOT_THST_HOVER",
+        "Value": 0.38999998569488525,
+        "Default": 0.38999998569488525
+      },
+      {
+        "mavpackettype": "PARM",
+        "TimeUS": 117160617,
+        "Name": "MOT_THST_HOVER",
+        "Value": 0.3660610616207123,
+        "Default": null
+      }
+    ],
+    "l06": [
+      {
+        "mavpackettype": "PARM",
+        "TimeUS": 62006854,
+        "Name": "MOT_THST_HOVER",
+        "Value": 0.38999998569488525,
+        "Default": 0.38999998569488525
+      },
+      {
+        "mavpackettype": "PARM",
+        "TimeUS": 117630429,
+        "Name": "MOT_THST_HOVER",
+        "Value": 0.36683914065361023,
+        "Default": null
+      }
+    ]
+  },
+  "interpretation_limits": [
+    "One baseline and one repeat; not a statistical or general performance guarantee.",
+    "Time aligned at DO_REPOSITION acceptance, not launch or operator hold-window selection.",
+    "Near-goal timing is first recorded sample satisfying identical L05 bounds; not an exact continuous arrival instant.",
+    "Same nominal simulator start and identical goal; small differences in estimated home/position remain recorded.",
+    "Stock hover learning and flight counters updated automatically; only intentional configuration change was WP_SPD10->1->10.",
+    "No restart was used to independently verify EEPROM persistence after restore; fetched value and saved cached list confirm live restoration."
+  ]
+}

@@ -662,27 +662,27 @@ rect.c-bg-rect { fill: var(--bg); }
           <text data-detail="context" x="902.8000000000001" y="255" class="t-muted" font-size="8" text-anchor="middle">complete · Stock navigation</text>
         </g>
 
-        <g id="node-L06" data-node-id="L06" data-node-label="06 One speed" tabindex="0" role="button" aria-label="Focus 06 One speed, Next proposed · planned, Make one small change" aria-pressed="false" data-node-kind="security" data-node-sublabel="Next proposed · planned" data-node-context="Make one small change">
-          <title>06 One speed · Next proposed · planned · Make one small change</title>
-          <rect x="842.8000000000001" y="341" width="120" height="52" rx="8" class="c-mask"/>
-          <rect x="842.8000000000001" y="341" width="120" height="52" rx="8" class="c-security" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(848.8000000000001 347) scale(0.6875)">
+        <g id="node-L06" data-node-id="L06" data-node-label="06 One speed" tabindex="0" role="button" aria-label="Focus 06 One speed, complete · Predict and compare, Make one small change" aria-pressed="false" data-node-kind="backend" data-node-sublabel="complete · Predict and compare" data-node-context="Make one small change">
+          <title>06 One speed · complete · Predict and compare · Make one small change</title>
+          <rect x="826.8000000000001" y="341" width="152" height="52" rx="8" class="c-mask"/>
+          <rect x="826.8000000000001" y="341" width="152" height="52" rx="8" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(832.8000000000001 347) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">06 One speed</text>
+          <text data-detail="context" x="902.8000000000001" y="379" class="t-muted" font-size="8" text-anchor="middle">complete · Predict and compare</text>
+        </g>
+
+        <g id="node-L07" data-node-id="L07" data-node-label="07 Observe stop" tabindex="0" role="button" aria-label="Focus 07 Observe stop, Next proposed · planned, Explain measured stopping" aria-pressed="false" data-node-kind="security" data-node-sublabel="Next proposed · planned" data-node-context="Explain measured stopping">
+          <title>07 Observe stop · Next proposed · planned · Explain measured stopping</title>
+          <rect x="842.8000000000001" y="465" width="120" height="52" rx="8" class="c-mask"/>
+          <rect x="842.8000000000001" y="465" width="120" height="52" rx="8" class="c-security" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(848.8000000000001 471) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">06 One speed</text>
-          <text data-detail="context" x="902.8000000000001" y="379" class="t-muted" font-size="8" text-anchor="middle">Next proposed · planned</text>
-        </g>
-
-        <g id="node-L07" data-node-id="L07" data-node-label="07 Observe stop" tabindex="0" role="button" aria-label="Focus 07 Observe stop, planned · Position, speed, dwell, Explain measured stopping" aria-pressed="false" data-node-kind="backend" data-node-sublabel="planned · Position, speed, dwell" data-node-context="Explain measured stopping">
-          <title>07 Observe stop · planned · Position, speed, dwell · Explain measured stopping</title>
-          <rect x="820.8000000000001" y="465" width="164" height="52" rx="8" class="c-mask"/>
-          <rect x="820.8000000000001" y="465" width="164" height="52" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(826.8000000000001 471) scale(0.6875)">
-            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="486" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">07 Observe stop</text>
-          <text data-detail="context" x="902.8000000000001" y="503" class="t-muted" font-size="8" text-anchor="middle">planned · Position, speed, dwell</text>
+          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="497.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">07 Observe stop</text>
+          <text data-detail="context" x="902.8000000000001" y="512.1" class="t-muted" font-size="8" text-anchor="middle">Next proposed · planned</text>
         </g>
 
         <!-- Edge labels -->

@@ -1,0 +1,37 @@
+{
+  "before_count": 1370,
+  "during_count": 1370,
+  "intentional_changes": {
+    "WP_SPD": {
+      "before": 10.0,
+      "during": 1.0
+    }
+  },
+  "restored": true,
+  "restored_count": 1370,
+  "restored_WP_SPD_m_s": 10,
+  "automatic_postflight_updates": {
+    "MOT_THST_HOVER": {
+      "before": 0.39,
+      "restored": 0.366839
+    },
+    "STAT_FLTTIME": {
+      "before": 0.0,
+      "restored": 50.0
+    },
+    "STAT_FLTCNT": {
+      "before": 0.0,
+      "restored": 1.0
+    },
+    "STAT_RUNTIME": {
+      "before": 30.0,
+      "restored": 117.0
+    },
+    "STAT_DISTFLWN": {
+      "before": 0.0,
+      "restored": 9.493561
+    }
+  },
+  "other_configuration_differences": {},
+  "note": "Only intentional change WP_SPD10->1->10. Stock hover learning and flight-stat counters saved themselves; preserved, not manually reset."
+}

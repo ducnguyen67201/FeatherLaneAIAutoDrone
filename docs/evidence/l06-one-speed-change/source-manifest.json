@@ -1,0 +1,62 @@
+{
+  "firmware_commit": "fb773567896014da007bca58358704d4a0d8516f",
+  "scope": "Selected speed units/consumption, saved parameter handling and automatic postflight updates",
+  "sources": [
+    {
+      "path": "ardupilot/libraries/AC_WPNav/AC_WPNav.cpp",
+      "symbol": "AP_GROUPINFO(\"SPD\",",
+      "line": 56,
+      "sha256": "867983f60d1917e6f51763d09e6e2f79f8fa72823fca514069bd987e555d532e",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_WPNav/AC_WPNav.cpp#L56"
+    },
+    {
+      "path": "ardupilot/libraries/AC_WPNav/AC_WPNav.h",
+      "symbol": "float get_default_speed_NE_ms() const",
+      "line": 102,
+      "sha256": "cb770551808f100b8aa70ef01be8076d290ba6a223c5cf9db0b6f12618c32449",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_WPNav/AC_WPNav.h#L102"
+    },
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "symbol": "void ModeGuided::pva_control_start()",
+      "line": 252,
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L252"
+    },
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "symbol": "void ModeGuided::pos_control_start()",
+      "line": 274,
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L274"
+    },
+    {
+      "path": "ardupilot/libraries/GCS_MAVLink/GCS_Param.cpp",
+      "symbol": "void GCS_MAVLINK::handle_param_set(",
+      "line": 265,
+      "sha256": "668b245bf81cb9b3545b3751a08106a9086172cb7f0b477ae892b1e1ce3a1b83",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/GCS_MAVLink/GCS_Param.cpp#L265"
+    },
+    {
+      "path": "ardupilot/ArduCopter/Attitude.cpp",
+      "symbol": "void Copter::update_throttle_hover()",
+      "line": 32,
+      "sha256": "a7fa0f50e7448a6c77a7ccdcb67bf77b014b8e4fc1e2b66ba1b260bc02fc4f82",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/Attitude.cpp#L32"
+    },
+    {
+      "path": "ardupilot/libraries/AP_Motors/AP_MotorsMulticopter.cpp",
+      "symbol": "void AP_MotorsMulticopter::save_params_on_disarm()",
+      "line": 943,
+      "sha256": "4f837941b6f00ea5b42c6f8efbb57ef8011c69a5a9a1ebb2720ca0aea5c4a342",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AP_Motors/AP_MotorsMulticopter.cpp#L943"
+    },
+    {
+      "path": "ardupilot/libraries/AP_Stats/AP_Stats.cpp",
+      "symbol": "void AP_Stats::flush()",
+      "line": 88,
+      "sha256": "77f8ed3d2758a1225a1cc6e712ba53f7a2a586a443d212f091c4f8fb9a138410",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AP_Stats/AP_Stats.cpp#L88"
+    }
+  ]
+}
