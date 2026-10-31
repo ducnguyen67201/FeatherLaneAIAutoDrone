@@ -2,9 +2,9 @@
 
 [Project home](../README.md) · [Capability roadmap](ROADMAP.md) · [Phase registry](phases/registry.json) · [First-seven-phase diagram](assets/learning/learning-workflow.svg)
 
-**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01 and L02 are complete. [L03](evidence/l03-first-stock-flight/README.md) observed one unchanged stock simulated takeoff to 3 m, a declared 5-second hold, landing and automatic disarm, followed by clean shutdown. L03 is complete; the guided learner checkpoint was completed in this chat on 2026-10-31 using observed height and vertical-speed telemetry, with flight-state/disarm clarification. The early unready check and startup parsing errors are retained. P01 remains in progress; L04 is proposed next and has not started.
+**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L03 are complete, including L03’s guided learner checkpoint. L03 was published on codex/l03-first-stock-flight at fd6ae48fec7530164ada79f2f255f272a0e5a325 with remote SHA verified and main unchanged. [L04](evidence/l04-trace-one-command/README.md) has traced the observed GUIDED takeoff through the unchanged pinned source and is complete, including the guided learner checkpoint on estimator/state reads versus motor mixing. Estimation and control were clarified as internal ArduPilot responsibilities. No new flight or firmware changes were performed. P01 remains in progress; L05 is proposed next and has not started.
 
-**Next small phase: L04.** No implementation learning phase is active.
+**Next small phase: L05.** No implementation learning phase is active.
 
 This is the execution entry point. `L01`, `L02`, and so on are small learning phases. Existing `P01`–`P09` references remain capability milestones in the roadmap and architecture; their numbers do not dictate the learning order. Master groups organize related results without turning a group into one large implementation task. A phase passing does not automatically complete its parent capability milestone.
 

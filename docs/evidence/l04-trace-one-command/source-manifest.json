@@ -1,0 +1,223 @@
+{
+  "date": "2026-10-31",
+  "firmware_commit": "fb773567896014da007bca58358704d4a0d8516f",
+  "evidence_type": "static source inspection correlated with existing L03 telemetry and onboard command log; no debugger trace or new flight",
+  "sources": [
+    {
+      "id": "receive",
+      "path": "ardupilot/libraries/GCS_MAVLink/GCS_Common.cpp",
+      "line": 5391,
+      "symbol": "handle_command_long",
+      "sha256": "b660c5f53a99c89b58fa400c96321aa9ceb6906ae89ccde70e6fb2cc0b91ad8c",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/GCS_MAVLink/GCS_Common.cpp#L5391"
+    },
+    {
+      "id": "convert",
+      "path": "ardupilot/libraries/GCS_MAVLink/GCS_Common.cpp",
+      "line": 5340,
+      "symbol": "try_command_long_as_command_int",
+      "sha256": "b660c5f53a99c89b58fa400c96321aa9ceb6906ae89ccde70e6fb2cc0b91ad8c",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/GCS_MAVLink/GCS_Common.cpp#L5340"
+    },
+    {
+      "id": "takeoff_handler",
+      "path": "ardupilot/ArduCopter/GCS_MAVLink_Copter.cpp",
+      "line": 611,
+      "symbol": "handle_MAV_CMD_NAV_TAKEOFF",
+      "sha256": "7a523c1a6aa68def1774e69b6043f052aae78dc71bd9c559ac78791cc91fc73d",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/GCS_MAVLink_Copter.cpp#L611"
+    },
+    {
+      "id": "mode_gate",
+      "path": "ardupilot/ArduCopter/takeoff.cpp",
+      "line": 18,
+      "symbol": "do_user_takeoff_U_m",
+      "sha256": "4f3800eeab2f4ed414162c6aad4a08f133ea24a69173709ac701de1fa14553d7",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/takeoff.cpp#L18"
+    },
+    {
+      "id": "guided_target",
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "line": 160,
+      "symbol": "do_user_takeoff_start_m",
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L160"
+    },
+    {
+      "id": "guided_run",
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "line": 64,
+      "symbol": "ModeGuided::run",
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L64"
+    },
+    {
+      "id": "takeoff_run",
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "line": 718,
+      "symbol": "ModeGuided::takeoff_run",
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L718"
+    },
+    {
+      "id": "takeoff_controller",
+      "path": "ardupilot/ArduCopter/takeoff.cpp",
+      "line": 115,
+      "symbol": "_AutoTakeoff::run",
+      "sha256": "4f3800eeab2f4ed414162c6aad4a08f133ea24a69173709ac701de1fa14553d7",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/takeoff.cpp#L115"
+    },
+    {
+      "id": "vertical_controller",
+      "path": "ardupilot/libraries/AC_AttitudeControl/AC_PosControl.cpp",
+      "line": 1072,
+      "symbol": "D_update_controller",
+      "sha256": "b73a89f857e5d820e4a79d5c371737e8872f363df71b1e84e1d4ecbd82e81802",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_AttitudeControl/AC_PosControl.cpp#L1072"
+    },
+    {
+      "id": "estimate_copy",
+      "path": "ardupilot/libraries/AC_AttitudeControl/AC_PosControl.cpp",
+      "line": 1439,
+      "symbol": "update_estimates",
+      "sha256": "b73a89f857e5d820e4a79d5c371737e8872f363df71b1e84e1d4ecbd82e81802",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_AttitudeControl/AC_PosControl.cpp#L1439"
+    },
+    {
+      "id": "estimate_refresh",
+      "path": "ardupilot/ArduCopter/inertia.cpp",
+      "line": 4,
+      "symbol": "read_inertia",
+      "sha256": "686ac476ccfa9497ce9fcf8209cd9a795286b8bd2975ec009cb8b5983281a6d4",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/inertia.cpp#L4"
+    },
+    {
+      "id": "ahrs_refresh",
+      "path": "ardupilot/ArduCopter/Copter.cpp",
+      "line": 883,
+      "symbol": "read_AHRS",
+      "sha256": "ad70b97c197955d0303d1af9925930d93843d713077b7f8edc62b6172fb89bd4",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/Copter.cpp#L883"
+    },
+    {
+      "id": "attitude_target",
+      "path": "ardupilot/libraries/AC_AttitudeControl/AC_AttitudeControl.cpp",
+      "line": 932,
+      "symbol": "input_thrust_vector_heading",
+      "sha256": "7eb50332f0fceec323ba0d2088c7a3271e7675a52ebd406c0f99e3051690e674",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_AttitudeControl/AC_AttitudeControl.cpp#L932"
+    },
+    {
+      "id": "throttle",
+      "path": "ardupilot/libraries/AC_AttitudeControl/AC_AttitudeControl_Multi.cpp",
+      "line": 349,
+      "symbol": "set_throttle_out",
+      "sha256": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_AttitudeControl/AC_AttitudeControl_Multi.cpp#L349"
+    },
+    {
+      "id": "rate_control",
+      "path": "ardupilot/libraries/AC_AttitudeControl/AC_AttitudeControl_Multi.cpp",
+      "line": 441,
+      "symbol": "rate_controller_run_dt",
+      "sha256": "30ffe7ca72f5d27ef10830764eaf30bd7b8f251b2a0a5327fb30d64a1f68cb68",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_AttitudeControl/AC_AttitudeControl_Multi.cpp#L441"
+    },
+    {
+      "id": "rate_entry",
+      "path": "ardupilot/ArduCopter/Attitude.cpp",
+      "line": 10,
+      "symbol": "run_rate_controller_main",
+      "sha256": "a7fa0f50e7448a6c77a7ccdcb67bf77b014b8e4fc1e2b66ba1b260bc02fc4f82",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/Attitude.cpp#L10"
+    },
+    {
+      "id": "scheduler",
+      "path": "ardupilot/ArduCopter/Copter.cpp",
+      "line": 113,
+      "symbol": "Copter::scheduler_tasks",
+      "sha256": "ad70b97c197955d0303d1af9925930d93843d713077b7f8edc62b6172fb89bd4",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/Copter.cpp#L113"
+    },
+    {
+      "id": "mode_scheduler",
+      "path": "ardupilot/ArduCopter/mode.cpp",
+      "line": 497,
+      "symbol": "update_flight_mode",
+      "sha256": "7f2dfc0318692fdb3c0989a91acac95cc521c0bdcd06f3270600cc181904b345",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode.cpp#L497"
+    },
+    {
+      "id": "motor_entry",
+      "path": "ardupilot/ArduCopter/motors.cpp",
+      "line": 62,
+      "symbol": "Copter::motors_output",
+      "sha256": "27f34af5209612ea923192febb03fb7b38e8f7f9b14dd0c2a518f05e917ac1d4",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/motors.cpp#L62"
+    },
+    {
+      "id": "motor_library",
+      "path": "ardupilot/libraries/AP_Motors/AP_MotorsMulticopter.cpp",
+      "line": 269,
+      "symbol": "AP_MotorsMulticopter::output",
+      "sha256": "4f837941b6f00ea5b42c6f8efbb57ef8011c69a5a9a1ebb2720ca0aea5c4a342",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AP_Motors/AP_MotorsMulticopter.cpp#L269"
+    },
+    {
+      "id": "motor_mix",
+      "path": "ardupilot/libraries/AP_Motors/AP_MotorsMatrix.cpp",
+      "line": 213,
+      "symbol": "output_armed_stabilizing",
+      "sha256": "54118f5782b699b890da825ac5bfe44bf11aa0d2db8a279fdd8786dbaf6f92b2",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AP_Motors/AP_MotorsMatrix.cpp#L213"
+    },
+    {
+      "id": "motor_pwm",
+      "path": "ardupilot/libraries/AP_Motors/AP_MotorsMatrix.cpp",
+      "line": 143,
+      "symbol": "output_to_motors",
+      "sha256": "54118f5782b699b890da825ac5bfe44bf11aa0d2db8a279fdd8786dbaf6f92b2",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AP_Motors/AP_MotorsMatrix.cpp#L143"
+    },
+    {
+      "id": "motor_route",
+      "path": "ardupilot/libraries/AP_Motors/AP_Motors_Class.cpp",
+      "line": 96,
+      "symbol": "AP_Motors::rc_write",
+      "sha256": "c285bcf4ca29a46b50ceaaf87c80d466e71ef120b6fba2c291c1d90dc0ded64a",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AP_Motors/AP_Motors_Class.cpp#L96"
+    },
+    {
+      "id": "servo_route",
+      "path": "ardupilot/libraries/SRV_Channel/SRV_Channel_aux.cpp",
+      "line": 352,
+      "symbol": "SRV_Channels::set_output_pwm",
+      "sha256": "e5231f902d7567adad76800e3bc2941ad5e864fed92c2c01cdf4b91fc870627f",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/SRV_Channel/SRV_Channel_aux.cpp#L352"
+    },
+    {
+      "id": "sitl_output",
+      "path": "ardupilot/libraries/AP_HAL_SITL/RCOutput.cpp",
+      "line": 50,
+      "symbol": "RCOutput::write",
+      "sha256": "7040a1311dde0c1bf72d42611a1b9421063f18bc59c93bff6fa8c83f6196ff26",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AP_HAL_SITL/RCOutput.cpp#L50"
+    },
+    {
+      "id": "physics_input",
+      "path": "ardupilot/libraries/AP_HAL_SITL/SITL_State.cpp",
+      "line": 207,
+      "symbol": "SITL_State::_fdm_input_local",
+      "sha256": "9ddebef1b8ed99f4e1b349ddeddb784246dd0fb2466e03615c1e8b5ce2b90d43",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AP_HAL_SITL/SITL_State.cpp#L207"
+    },
+    {
+      "id": "physics",
+      "path": "ardupilot/libraries/SITL/SIM_Multicopter.cpp",
+      "line": 59,
+      "symbol": "MultiCopter::update",
+      "sha256": "8ea4ec6cd483365430ce2d351a3d6a31f2a2bafc775f33988f9f95ed727f40a1",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/SITL/SIM_Multicopter.cpp#L59"
+    }
+  ]
+}

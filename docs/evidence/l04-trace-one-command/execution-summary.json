@@ -1,0 +1,72 @@
+{
+  "date": "2026-10-31",
+  "phase": "L04",
+  "status": "complete",
+  "branch": "codex/l04-trace-one-command",
+  "parent_l03_commit": "fd6ae48fec7530164ada79f2f255f272a0e5a325",
+  "selected_command": "GUIDED MAV_CMD_NAV_TAKEOFF, 3m above home",
+  "work": "Read-only source walkthrough and annotations correlated with retained L03 flight evidence",
+  "source_manifest": "source-manifest.json",
+  "source_symbol_count": 27,
+  "firmware_revision": "fb773567896014da007bca58358704d4a0d8516f",
+  "checks": {
+    "source_files_symbols_lines_hashes": "verified against unchanged pinned checkout",
+    "firmware_worktree": "clean",
+    "recursive_submodules": "21; recorded pins unchanged",
+    "documentation_generator": "run; repeat output checked for idempotence",
+    "git_diff_check": "pass",
+    "maintained_links": "local targets checked",
+    "diagram_finalize": {
+      "validate": "pass",
+      "deliver": "pass",
+      "check": "pass",
+      "browser-check": "pass"
+    },
+    "diagram_receipts": ".archify/l04-learning-progress/review-2/",
+    "static_svg": "offline canonical SVG extraction with prior bundled export CSS; XML checked",
+    "diagram_visual_review": "not requested",
+    "source_workflow_change": "existing learning progress only; core architecture unchanged"
+  },
+  "learning_checkpoint": {
+    "status": "complete",
+    "date": "2026-10-31",
+    "source": "Learner explanations in this chat and guided correction",
+    "learner_identified": [
+      "read_inertia obtains estimated location/altitude through AHRS",
+      "AP_MotorsMulticopter output invokes AP_MotorsMatrix mixing for individual motor demands"
+    ],
+    "clarifications": [
+      "MAVProxy sends requests; it does not estimate height or run flight controllers.",
+      "AHRS is an internal estimator interface, not an outside sensor.",
+      "read_inertia/update_estimates read estimated state; D_update_controller uses it for feedback control.",
+      "Both estimator and controller/motor paths execute within native ArduPilot C++; simulated or physical sensor observations are inputs."
+    ],
+    "assessment": "guided understanding checkpoint with correction; not an independent examination"
+  },
+  "new_flight": false,
+  "rebuild": false,
+  "debugger_or_runtime_instrumentation": false,
+  "new_tests_snapshots_or_scaffolding": false,
+  "firmware_or_parameters_changed": false,
+  "ui_approved": false,
+  "architecture_approved": false,
+  "p01": "in_progress",
+  "l05": "planned; not started",
+  "limitations": [
+    "Static source inspection is not an instruction-level runtime trace.",
+    "Configured loop rate is not a measured scheduling/latency guarantee.",
+    "No new independent flight or physical-hardware verification.",
+    "Full estimator/sensor implementation, waypoint routing and LAND internals are outside this one-command slice."
+  ],
+  "rollback": "No firmware/debug changes to remove; published L03 baseline retained. Publication scope is recorded separately.",
+  "publication": {
+    "date": "2026-10-31",
+    "authorization": "User: push this to the branch and start LO5",
+    "branch": "codex/l04-trace-one-command",
+    "scope": "Completed L04 walkthrough, source manifest and maintained learning documents/diagram",
+    "main_update_or_merge": false,
+    "l05_publication_included": false,
+    "audit_receipt": ".local/l04/precommit-dependency-audit.json",
+    "publication_receipt": ".local/l04/publication.json"
+  }
+}

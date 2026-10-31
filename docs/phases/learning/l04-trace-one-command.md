@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M01 Get a working baseline and understand it · Track: core · Dependencies: [L03](l03-first-stock-flight.md)
+**DRAFT phase card. Status: complete.** M01 Get a working baseline and understand it · Track: core · Dependencies: [L03](l03-first-stock-flight.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -45,7 +45,7 @@ Retain:
 - A short source-linked walkthrough for one command.
 - A note about any gaps or timing effect of observation tools.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [Pinned-source GUIDED takeoff walkthrough](../../evidence/l04-trace-one-command/README.md): request admission, target, estimator feedback, position/attitude control, motor mixer and simulated outputs traced against the L03 evidence. Guided learner checkpoint completed in this chat on 2026-10-31: learner located read_inertia/AHRS state reads and AP_MotorsMatrix mixing. Follow-up clarified that the estimator supplies current state, controllers consume it, and both estimation and control run inside ArduPilot rather than MAVProxy. This is guided understanding, not an independent examination. No new flight, firmware changes or runtime instrumentation.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

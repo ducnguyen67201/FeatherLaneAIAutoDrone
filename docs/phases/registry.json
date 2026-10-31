@@ -95,7 +95,7 @@
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
   "active_learning_phase": null,
-  "next_proposed_learning_phase": "L04",
+  "next_proposed_learning_phase": "L05",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -304,7 +304,7 @@
       "slug": "trace-one-command",
       "title": "Trace one flight command through the code",
       "group": "M01",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L03"
       ],
@@ -332,7 +332,7 @@
       ],
       "rollback": "Remove only optional task-owned debug instrumentation; keep the unchanged baseline available.",
       "teach_back": "Where is the destination selected, and where are individual motor outputs calculated?",
-      "record": null
+      "record": "[Pinned-source GUIDED takeoff walkthrough](../../evidence/l04-trace-one-command/README.md): request admission, target, estimator feedback, position/attitude control, motor mixer and simulated outputs traced against the L03 evidence. Guided learner checkpoint completed in this chat on 2026-10-31: learner located read_inertia/AHRS state reads and AP_MotorsMatrix mixing. Follow-up clarified that the estimator supplies current state, controllers consume it, and both estimation and control run inside ArduPilot rather than MAVProxy. This is guided understanding, not an independent examination. No new flight, firmware changes or runtime instrumentation."
     },
     {
       "id": "L05",
@@ -1244,7 +1244,7 @@
     "sitl_qualification_record": "../evidence/l02-basic-sitl-setup/README.md",
     "stock_flight_record": "../evidence/l03-first-stock-flight/README.md"
   },
-  "execution_summary": "L01 and L02 are complete. [L03](evidence/l03-first-stock-flight/README.md) observed one unchanged stock simulated takeoff to 3 m, a declared 5-second hold, landing and automatic disarm, followed by clean shutdown. L03 is complete; the guided learner checkpoint was completed in this chat on 2026-10-31 using observed height and vertical-speed telemetry, with flight-state/disarm clarification. The early unready check and startup parsing errors are retained. P01 remains in progress; L04 is proposed next and has not started.",
+  "execution_summary": "L01–L03 are complete, including L03’s guided learner checkpoint. L03 was published on codex/l03-first-stock-flight at fd6ae48fec7530164ada79f2f255f272a0e5a325 with remote SHA verified and main unchanged. [L04](evidence/l04-trace-one-command/README.md) has traced the observed GUIDED takeoff through the unchanged pinned source and is complete, including the guided learner checkpoint on estimator/state reads versus motor mixing. Estimation and control were clarified as internal ArduPilot responsibilities. No new flight or firmware changes were performed. P01 remains in progress; L05 is proposed next and has not started.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
