@@ -1,0 +1,30 @@
+{
+  "declared_utc": "2026-10-31T22:11:10.718378+00:00",
+  "scope": "One fixed global coordinate after stock GUIDED takeoff; stock speed; no custom flight code",
+  "prediction": "Approximately 5m north at unchanged 3m above-home height, then low-speed hold",
+  "latitude_deg": -35.3632172,
+  "longitude_deg": 149.1652374,
+  "latitude_e7": -353632172,
+  "longitude_e7": 1491652374,
+  "altitude_m": 3,
+  "mavlink_frame": 3,
+  "frame_name": "MAV_FRAME_GLOBAL_RELATIVE_ALT",
+  "height_reference": "above recorded home, not above sea level or terrain",
+  "nominal_start_latitude_deg": -35.3632621,
+  "nominal_start_longitude_deg": 149.1652374,
+  "manual_observation": {
+    "horizontal_error_max_m": 1,
+    "altitude_band_m": [
+      2.8,
+      3.2
+    ],
+    "horizontal_speed_max_m_s": 0.3,
+    "abs_vertical_speed_max_m_s": 0.2,
+    "observation_window_s": 5,
+    "positioning_wait_limit_s": 30,
+    "mode": "GUIDED",
+    "armed": true,
+    "landed_state": "IN_AIR"
+  },
+  "bounded_response": "If rejected or not settled in 30s, retain failure and use qualified LAND path without bypass; wait for on-ground and disarmed before cleanup"
+}

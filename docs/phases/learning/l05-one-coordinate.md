@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M02 Learn movement with one change at a time · Track: core · Dependencies: [L04](l04-trace-one-command.md)
+**DRAFT phase card. Status: complete.** M02 Learn movement with one change at a time · Track: core · Dependencies: [L04](l04-trace-one-command.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -45,7 +45,7 @@ Retain:
 - Goal/frame, parameters and measured trajectory.
 - Source-linked explanation of destination acceptance.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [One stock coordinate flight](../../evidence/l05-one-coordinate/README.md): GUIDED DO_REPOSITION to latitude -35.3632172°, longitude 149.1652374°, 3 m above home; about 5 m north. Accepted request, measured movement, five-second low-speed goal hold, LAND/automatic disarm and clean shutdown observed. Guided height-reference checkpoint complete on 2026-10-31. Startup invalid positions and four parsing errors retained; no speed tuning or firmware edits. One run only; P03 broader gate and P01 failure-handling remain open.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

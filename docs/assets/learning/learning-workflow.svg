@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 1205 652" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" xmlns="http://www.w3.org/2000/svg" width="1205" height="652" style="width:1205px;height:652px;min-width:0px;"><style>
+<svg viewBox="0 0 1217 652" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" xmlns="http://www.w3.org/2000/svg" width="1217" height="652" style="width:1217px;height:652px;min-width:0px;"><style>
 /*
 JetBrains Mono variable WOFF2 subsets from Google Fonts service revision v24.
 These fixed bytes are shared by the viewer and its SVG/raster exports.
@@ -580,16 +580,16 @@ rect.c-bg-rect { fill: var(--bg); }
         <rect width="100%" height="100%" fill="url(#grid)" />
 
         <!-- Swimlanes -->
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1149" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-0" x="40" y="52" width="1161" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="74" class="t-muted" font-size="10" font-weight="600">01 / Get an unchanged simulation working</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="176" width="1149" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-1" x="40" y="176" width="1161" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="198" class="t-muted" font-size="10" font-weight="600">02 / Connect the code to one movement</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="300" width="1149" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-2" x="40" y="300" width="1161" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="322" class="t-muted" font-size="10" font-weight="600">03 / Make one small change</text>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-3" x="40" y="424" width="1149" height="104" rx="10" class="c-lane" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="lane" data-composition-frame-id="lane-3" x="40" y="424" width="1161" height="104" rx="10" class="c-lane" stroke-width="1"/>
         <text x="54" y="446" class="t-muted" font-size="10" font-weight="600">04 / Explain measured stopping</text>
 
         <!-- Phase headers -->
@@ -603,8 +603,8 @@ rect.c-bg-rect { fill: var(--bg); }
         <path data-edge-from="L02" data-edge-to="L03" data-edge-label="Evidence retained" data-edge-key="1" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="475.6,119;575.2,119" d="M 475.6 119 L 575.2 119" class="a-default" data-animate="edge" style="--step:1" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <path data-edge-from="L03" data-edge-to="L04" data-edge-label="Evidence retained" data-edge-key="2" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="651.2,145;651.2,217" d="M 651.2 145 L 651.2 217" class="a-default" data-animate="edge" style="--step:2" stroke-width="1.4" marker-end="url(#arrowhead)"/>
         <path data-edge-from="L04" data-edge-to="L05" data-edge-label="Evidence retained" data-edge-key="3" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="733.2,243;832.8000000000001,243" d="M 733.2 243 L 832.8000000000001 243" class="a-default" data-animate="edge" style="--step:3" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="L05" data-edge-to="L06" data-edge-label="Evidence retained" data-edge-key="4" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="890.8000000000001,269;890.8000000000001,341" d="M 890.8000000000001 269 L 890.8000000000001 341" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
-        <path data-edge-from="L06" data-edge-to="L07" data-edge-label="Evidence retained" data-edge-key="5" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="890.8000000000001,393;890.8000000000001,465" d="M 890.8000000000001 393 L 890.8000000000001 465" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="L05" data-edge-to="L06" data-edge-label="Evidence retained" data-edge-key="4" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="902.8000000000001,269;902.8000000000001,341" d="M 902.8000000000001 269 L 902.8000000000001 341" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.4" marker-end="url(#arrowhead)"/>
+        <path data-edge-from="L06" data-edge-to="L07" data-edge-label="Evidence retained" data-edge-key="5" data-composition-routing="workflow-v2-auto" data-edge-role="main" data-composition-points="902.8000000000001,393;902.8000000000001,465" d="M 902.8000000000001 393 L 902.8000000000001 465" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.4" marker-end="url(#arrowhead)"/>
 
         <!-- Nodes -->
         <g id="node-L01" data-node-id="L01" data-node-label="01 Get source" tabindex="0" role="button" aria-label="Focus 01 Get source, complete · Source folders / pin, Get an unchanged simulation working" aria-pressed="false" data-node-kind="backend" data-node-sublabel="complete · Source folders / pin" data-node-context="Get an unchanged simulation working">
@@ -651,38 +651,38 @@ rect.c-bg-rect { fill: var(--bg); }
           <text data-detail="context" x="651.2" y="255" class="t-muted" font-size="8" text-anchor="middle">complete · Read one command path</text>
         </g>
 
-        <g id="node-L05" data-node-id="L05" data-node-label="05 One goal" tabindex="0" role="button" aria-label="Focus 05 One goal, Next proposed · planned, Connect the code to one movement" aria-pressed="false" data-node-kind="security" data-node-sublabel="Next proposed · planned" data-node-context="Connect the code to one movement">
-          <title>05 One goal · Next proposed · planned · Connect the code to one movement</title>
-          <rect x="832.8000000000001" y="217" width="116" height="52" rx="8" class="c-mask"/>
-          <rect x="832.8000000000001" y="217" width="116" height="52" rx="8" class="c-security" data-animate="node" style="--step:4" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(838.8000000000001 223) scale(0.6875)">
+        <g id="node-L05" data-node-id="L05" data-node-label="05 One goal" tabindex="0" role="button" aria-label="Focus 05 One goal, complete · Stock navigation, Connect the code to one movement" aria-pressed="false" data-node-kind="backend" data-node-sublabel="complete · Stock navigation" data-node-context="Connect the code to one movement">
+          <title>05 One goal · complete · Stock navigation · Connect the code to one movement</title>
+          <rect x="832.8000000000001" y="217" width="140" height="52" rx="8" class="c-mask"/>
+          <rect x="832.8000000000001" y="217" width="140" height="52" rx="8" class="c-backend" data-animate="node" style="--step:4" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(838.8000000000001 223) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
+          </g>
+          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="238" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">05 One goal</text>
+          <text data-detail="context" x="902.8000000000001" y="255" class="t-muted" font-size="8" text-anchor="middle">complete · Stock navigation</text>
+        </g>
+
+        <g id="node-L06" data-node-id="L06" data-node-label="06 One speed" tabindex="0" role="button" aria-label="Focus 06 One speed, Next proposed · planned, Make one small change" aria-pressed="false" data-node-kind="security" data-node-sublabel="Next proposed · planned" data-node-context="Make one small change">
+          <title>06 One speed · Next proposed · planned · Make one small change</title>
+          <rect x="842.8000000000001" y="341" width="120" height="52" rx="8" class="c-mask"/>
+          <rect x="842.8000000000001" y="341" width="120" height="52" rx="8" class="c-security" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(848.8000000000001 347) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="890.8000000000001" y="238" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">05 One goal</text>
-          <text data-detail="context" x="890.8000000000001" y="255" class="t-muted" font-size="7.8" text-anchor="middle">Next proposed · planned</text>
-        </g>
-
-        <g id="node-L06" data-node-id="L06" data-node-label="06 One speed" tabindex="0" role="button" aria-label="Focus 06 One speed, planned · Predict and compare, Make one small change" aria-pressed="false" data-node-kind="backend" data-node-sublabel="planned · Predict and compare" data-node-context="Make one small change">
-          <title>06 One speed · planned · Predict and compare · Make one small change</title>
-          <rect x="816.8000000000001" y="341" width="148" height="52" rx="8" class="c-mask"/>
-          <rect x="816.8000000000001" y="341" width="148" height="52" rx="8" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(822.8000000000001 347) scale(0.6875)">
-            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
-          </g>
-          <text data-node-label="" data-detail-anchor="" x="890.8000000000001" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">06 One speed</text>
-          <text data-detail="context" x="890.8000000000001" y="379" class="t-muted" font-size="8" text-anchor="middle">planned · Predict and compare</text>
+          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="362" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">06 One speed</text>
+          <text data-detail="context" x="902.8000000000001" y="379" class="t-muted" font-size="8" text-anchor="middle">Next proposed · planned</text>
         </g>
 
         <g id="node-L07" data-node-id="L07" data-node-label="07 Observe stop" tabindex="0" role="button" aria-label="Focus 07 Observe stop, planned · Position, speed, dwell, Explain measured stopping" aria-pressed="false" data-node-kind="backend" data-node-sublabel="planned · Position, speed, dwell" data-node-context="Explain measured stopping">
           <title>07 Observe stop · planned · Position, speed, dwell · Explain measured stopping</title>
-          <rect x="808.8000000000001" y="465" width="164" height="52" rx="8" class="c-mask"/>
-          <rect x="808.8000000000001" y="465" width="164" height="52" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(814.8000000000001 471) scale(0.6875)">
+          <rect x="820.8000000000001" y="465" width="164" height="52" rx="8" class="c-mask"/>
+          <rect x="820.8000000000001" y="465" width="164" height="52" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(826.8000000000001 471) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="890.8000000000001" y="486" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">07 Observe stop</text>
-          <text data-detail="context" x="890.8000000000001" y="503" class="t-muted" font-size="8" text-anchor="middle">planned · Position, speed, dwell</text>
+          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="486" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">07 Observe stop</text>
+          <text data-detail="context" x="902.8000000000001" y="503" class="t-muted" font-size="8" text-anchor="middle">planned · Position, speed, dwell</text>
         </g>
 
         <!-- Edge labels -->
@@ -703,12 +703,12 @@ rect.c-bg-rect { fill: var(--bg); }
           <text x="783" y="233" class="t-muted" font-size="8" text-anchor="middle">Evidence retained</text>
         </g>
         <g data-detail="context" data-edge-from="L05" data-edge-to="L06" data-edge-label="Evidence retained" data-edge-key="4">
-          <rect x="845.0000000000001" y="295" width="91.6" height="14" rx="3" class="c-mask"/>
-          <text x="890.8000000000001" y="305" class="t-muted" font-size="8" text-anchor="middle">Evidence retained</text>
+          <rect x="857.0000000000001" y="295" width="91.6" height="14" rx="3" class="c-mask"/>
+          <text x="902.8000000000001" y="305" class="t-muted" font-size="8" text-anchor="middle">Evidence retained</text>
         </g>
         <g data-detail="context" data-edge-from="L06" data-edge-to="L07" data-edge-label="Evidence retained" data-edge-key="5">
-          <rect x="845.0000000000001" y="419" width="91.6" height="14" rx="3" class="c-mask"/>
-          <text x="890.8000000000001" y="429" class="t-muted" font-size="8" text-anchor="middle">Evidence retained</text>
+          <rect x="857.0000000000001" y="419" width="91.6" height="14" rx="3" class="c-mask"/>
+          <text x="902.8000000000001" y="429" class="t-muted" font-size="8" text-anchor="middle">Evidence retained</text>
         </g>
 
         <!-- Legend -->

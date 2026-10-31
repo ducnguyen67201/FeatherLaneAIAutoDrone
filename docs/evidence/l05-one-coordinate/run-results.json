@@ -1,0 +1,161 @@
+{
+  "date": "2026-10-31",
+  "phase": "L05",
+  "result": "one_stock_guided_coordinate_reached_held_landed_and_disarmed",
+  "time_origin_utc": "2026-10-31T22:11:12.319+00:00",
+  "goal": {
+    "declared_utc": "2026-10-31T22:11:10.718378+00:00",
+    "scope": "One fixed global coordinate after stock GUIDED takeoff; stock speed; no custom flight code",
+    "prediction": "Approximately 5m north at unchanged 3m above-home height, then low-speed hold",
+    "latitude_deg": -35.3632172,
+    "longitude_deg": 149.1652374,
+    "latitude_e7": -353632172,
+    "longitude_e7": 1491652374,
+    "altitude_m": 3,
+    "mavlink_frame": 3,
+    "frame_name": "MAV_FRAME_GLOBAL_RELATIVE_ALT",
+    "height_reference": "above recorded home, not above sea level or terrain",
+    "nominal_start_latitude_deg": -35.3632621,
+    "nominal_start_longitude_deg": 149.1652374,
+    "manual_observation": {
+      "horizontal_error_max_m": 1,
+      "altitude_band_m": [
+        2.8,
+        3.2
+      ],
+      "horizontal_speed_max_m_s": 0.3,
+      "abs_vertical_speed_max_m_s": 0.2,
+      "observation_window_s": 5,
+      "positioning_wait_limit_s": 30,
+      "mode": "GUIDED",
+      "armed": true,
+      "landed_state": "IN_AIR"
+    },
+    "bounded_response": "If rejected or not settled in 30s, retain failure and use qualified LAND path without bypass; wait for on-ground and disarmed before cleanup"
+  },
+  "observed_home": {
+    "mavpackettype": "HOME_POSITION",
+    "latitude": -353632621,
+    "longitude": 1491652375,
+    "altitude": 584080,
+    "x": 0.0,
+    "y": 0.009078040719032288,
+    "z": 0.009999999776482582,
+    "q": [
+      null,
+      null,
+      null,
+      null
+    ],
+    "approach_x": 0.0,
+    "approach_y": 0.0,
+    "approach_z": 0.0,
+    "time_usec": 136237150
+  },
+  "observed_estimator_origin": {
+    "mavpackettype": "GPS_GLOBAL_ORIGIN",
+    "latitude": -353632621,
+    "longitude": 1491652374,
+    "altitude": 584090,
+    "time_usec": 136237150
+  },
+  "goal_offset_from_recorded_home_m": {
+    "north": 4.998245136495994,
+    "east": -0.009078093489824572
+  },
+  "destination_ack_seconds": 83.31928181648254,
+  "first_sample_within_declared_position_height_speed_bounds_after_ack_s": 3.2577121257781982,
+  "first_sample_note": "Offline sample comparison, not a reusable arrival detector or continuous-state guarantee",
+  "hold": {
+    "start_seconds": 100.17152905464172,
+    "end_seconds": 105.17152905464172,
+    "start_after_destination_ack_s": 16.85224723815918,
+    "samples": 20,
+    "sample_span_s": 4.748636960983276,
+    "horizontal_error_range_m": [
+      0.024043565581707785,
+      0.024043565581707785
+    ],
+    "altitude_above_home_range_m": [
+      2.997,
+      3.0
+    ],
+    "max_horizontal_speed_m_s": 0.01414213562373095,
+    "max_abs_vertical_speed_m_s": 0.0,
+    "all_recorded_samples_within_predeclared_bounds": true
+  },
+  "startup_invalid_global_position_samples": 140,
+  "position_validity_rule": "GPS fix>=3, EKF horizontal absolute-position flag16 and non-placeholder lat/lon; latest message state used. Derived north/east/error left blank for invalid rows. Raw coordinates retained.",
+  "position_samples": 522,
+  "vehicle_heartbeats": 141,
+  "armed_vehicle_heartbeats": 59,
+  "command_ack_count": 16,
+  "all_command_ack_results_accepted": true,
+  "max_horizontal_speed_after_destination_m_s": 3.1200160255998686,
+  "final_position": {
+    "seconds_since_first_vehicle_message": 137.084,
+    "utc": "2026-10-31T22:13:29.403+00:00",
+    "time_boot_ms": 137262,
+    "latitude_deg": -35.363217,
+    "longitude_deg": 149.1652374,
+    "global_position_valid": true,
+    "gps_fix_type": 6,
+    "ekf_flags": 831,
+    "north_from_recorded_home_m": 5.020509034914826,
+    "east_from_recorded_home_m": -0.009078093489824572,
+    "altitude_above_home_m": 0.008,
+    "altitude_amsl_m": 584.08,
+    "horizontal_goal_error_m": 0.022263898418832796,
+    "horizontal_speed_m_s": 0.01414213562373095,
+    "vertical_velocity_down_m_s": 0.0,
+    "mode": 9,
+    "armed": false,
+    "landed_state": 1,
+    "heartbeat_age_s": 0.22565412521362305,
+    "landed_state_age_s": 0.2504751682281494,
+    "wall_time": 1793484809.4032881
+  },
+  "final_heartbeat": {
+    "wall_time": 1793484809.177634,
+    "source_system": 1,
+    "source_component": 1,
+    "message": {
+      "mavpackettype": "HEARTBEAT",
+      "type": 2,
+      "autopilot": 3,
+      "base_mode": 89,
+      "custom_mode": 9,
+      "system_status": 3,
+      "mavlink_version": 3
+    }
+  },
+  "final_landed_state": {
+    "wall_time": 1793484809.152813,
+    "source_system": 1,
+    "source_component": 1,
+    "message": {
+      "mavpackettype": "EXTENDED_SYS_STATE",
+      "vtol_state": 3,
+      "landed_state": 1
+    }
+  },
+  "cleanup": {
+    "wall_time": 1793484837.611488,
+    "remaining_session_processes": [],
+    "remaining_sitl_sockets": false,
+    "socket_check": "lsof no matches, exit 1; TCP5760/5762/5763 and UDP5501/14550",
+    "capture_stop": "intentional Ctrl-C exit 130; JSONL flushed after each message"
+  },
+  "metric_method": "Small-distance north/east projection from GLOBAL_POSITION_INT latitude/longitude; R=6378137m, east scaled by cos(reference latitude). Derived estimator error, not independent position accuracy.",
+  "limitations": [
+    "One simulated run, not repeatability/hardware qualification.",
+    "Four MAVProxy startup parsing errors; cause uninvestigated.",
+    "No terrain loaded or terrain-relative capability qualified.",
+    "Stock FS_GCS_ENABLE=0; no lost-link handling qualified.",
+    "CSV latest mode/state are sampled with their ages; no continuous-state claim.",
+    "Unknown HOME_POSITION quaternion components are null in curated JSON; raw NaN observations remain locally.",
+    "Startup invalid/placeholder positions retained in CSV with validity flags; excluded from derived distance and plot.",
+    "No source modifications, speed tuning, perception or new automated tests.",
+    "Capture stopped intentionally via Ctrl-C, exit 130; console reconnect followed deliberate simulator termination."
+  ]
+}

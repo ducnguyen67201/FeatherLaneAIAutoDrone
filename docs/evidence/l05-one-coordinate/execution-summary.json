@@ -1,0 +1,100 @@
+{
+  "date": "2026-10-31",
+  "phase": "L05",
+  "status": "complete",
+  "branch": "codex/l05-one-coordinate",
+  "based_on_published_l04": "c0f6254470fea3c4c22d4de43cfae0df21cef07d",
+  "result": "one_stock_guided_coordinate_reached_held_landed_disarmed_and_guided_checkpoint_complete",
+  "firmware_revision": "fb773567896014da007bca58358704d4a0d8516f",
+  "checks": {
+    "manual_flight": "normal stock takeoff, one accepted DO_REPOSITION, measured goal hold, LAND/on-ground/automatic disarm",
+    "command_ingress": "onboard MAVC confirms command192, frame3, integer coordinate and 3m target; accepted",
+    "source_references": "7 selected destination/start-location symbols, lines and full-file hashes checked",
+    "raw_artifact_hashes": "all match retained files",
+    "generator": "run; repeat output byte-identical",
+    "git_diff_check": "pass",
+    "new_file_text_checks": "LF CSV line endings; new text files checked for trailing whitespace",
+    "maintained_links": "local links checked",
+    "firmware_worktree": "clean; 21 recursive submodule pins unchanged",
+    "diagram_finalize": {
+      "validate": "pass",
+      "deliver": "pass",
+      "check": "pass",
+      "browser-check": "pass"
+    },
+    "diagram_receipts": ".archify/l05-learning-progress/review-1/",
+    "static_svg": "offline canonical extraction retaining bundled export CSS; XML checked",
+    "diagram_visual_review": "not requested",
+    "trajectory_chart": "Python/Matplotlib; initial invalid-startup-position plot corrected via validity filter; final image inspected"
+  },
+  "observations": {
+    "position_samples": 522,
+    "startup_invalid_position_samples_retained": 140,
+    "vehicle_heartbeats": 141,
+    "armed_vehicle_heartbeats": 59,
+    "accepted_command_acks": 16,
+    "hold": {
+      "start_seconds": 100.17152905464172,
+      "end_seconds": 105.17152905464172,
+      "start_after_destination_ack_s": 16.85224723815918,
+      "samples": 20,
+      "sample_span_s": 4.748636960983276,
+      "horizontal_error_range_m": [
+        0.024043565581707785,
+        0.024043565581707785
+      ],
+      "altitude_above_home_range_m": [
+        2.997,
+        3.0
+      ],
+      "max_horizontal_speed_m_s": 0.01414213562373095,
+      "max_abs_vertical_speed_m_s": 0.0,
+      "all_recorded_samples_within_predeclared_bounds": true
+    },
+    "final_armed": false,
+    "final_landed_state": "ON_GROUND",
+    "remaining_session_processes": 0,
+    "remaining_sitl_sockets": false
+  },
+  "learning_checkpoint": {
+    "status": "complete",
+    "date": "2026-10-31",
+    "source": "Learner response in this chat",
+    "learner_identified": "3 metres above home",
+    "guided_clarification": "Same number with sea-level reference changes the requested height; home584.08mAMSL implies airborne target about587.08mAMSL.",
+    "assessment": "guided understanding, not an independent examination"
+  },
+  "run_results": "run-results.json",
+  "source_manifest": "source-manifest.json",
+  "raw_manifest": "raw-artifacts.json",
+  "new_tests_snapshots_scaffolding": false,
+  "firmware_parameter_or_speed_changes": false,
+  "new_dependencies": false,
+  "custom_mission_runtime": false,
+  "ui_approved": false,
+  "architecture_approved": false,
+  "physical_operation": false,
+  "p01": "in_progress; remaining failed/rejected-connection handling not qualified",
+  "p03": "in_progress; only initial stock-coordinate slice, broader gate unmet",
+  "l06": "planned; not started",
+  "limitations": [
+    "One simulated run, not repeatability/hardware qualification.",
+    "Four MAVProxy startup parsing errors; cause uninvestigated.",
+    "No terrain loaded or terrain-relative capability qualified.",
+    "Stock FS_GCS_ENABLE=0; no lost-link handling qualified.",
+    "CSV latest mode/state are sampled with their ages; no continuous-state claim.",
+    "Unknown HOME_POSITION quaternion components are null in curated JSON; raw NaN observations remain locally.",
+    "Startup invalid/placeholder positions retained in CSV with validity flags; excluded from derived distance and plot.",
+    "No source modifications, speed tuning, perception or new automated tests.",
+    "Capture stopped intentionally via Ctrl-C, exit 130; console reconnect followed deliberate simulator termination."
+  ],
+  "publication": {
+    "authorization_date": "2026-10-31",
+    "branch": "codex/l05-one-coordinate",
+    "scope": "Completed L05 documents, progress diagram/source and selected evidence",
+    "main_merge_or_update": false,
+    "l06_publication_included": false,
+    "audit_receipt": ".local/l05/precommit-dependency-audit.json",
+    "publication_receipt": ".local/l05/publication.json"
+  }
+}

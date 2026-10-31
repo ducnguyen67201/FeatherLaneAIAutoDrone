@@ -1,0 +1,55 @@
+{
+  "firmware_commit": "fb773567896014da007bca58358704d4a0d8516f",
+  "scope": "Inspected destination admission and coordinate conversion; actual command is separately retained in onboard MAVC log",
+  "sources": [
+    {
+      "path": "ardupilot/ArduCopter/GCS_MAVLink_Copter.cpp",
+      "line": 457,
+      "symbol": "MAV_RESULT GCS_MAVLINK_Copter::handle_command_int_do_reposition(",
+      "sha256": "7a523c1a6aa68def1774e69b6043f052aae78dc71bd9c559ac78791cc91fc73d",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/GCS_MAVLink_Copter.cpp#L457"
+    },
+    {
+      "path": "ardupilot/libraries/GCS_MAVLink/GCS_Common.cpp",
+      "line": 5269,
+      "symbol": "bool GCS_MAVLINK::location_from_command_t(",
+      "sha256": "b660c5f53a99c89b58fa400c96321aa9ceb6906ae89ccde70e6fb2cc0b91ad8c",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/GCS_MAVLink/GCS_Common.cpp#L5269"
+    },
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "line": 466,
+      "symbol": "bool ModeGuided::set_destination(const Location&",
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L466"
+    },
+    {
+      "path": "ardupilot/libraries/AC_WPNav/AC_WPNav.cpp",
+      "line": 981,
+      "symbol": "bool AC_WPNav::get_vector_NED_m(",
+      "sha256": "867983f60d1917e6f51763d09e6e2f79f8fa72823fca514069bd987e555d532e",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_WPNav/AC_WPNav.cpp#L981"
+    },
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "line": 735,
+      "symbol": "void ModeGuided::pos_control_run()",
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L735"
+    },
+    {
+      "path": "ardupilot/libraries/SITL/SITL.cpp",
+      "line": 457,
+      "symbol": "AP_GROUPINFO(\"OPOS_LAT\"",
+      "sha256": "b697a4b2524bb837c515f85e132c37e0d91c7fee91dfe09a7bc4ba06874de692",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/SITL/SITL.cpp#L457"
+    },
+    {
+      "path": "ardupilot/libraries/SITL/SIM_Aircraft.cpp",
+      "line": 680,
+      "symbol": "void Aircraft::update_home()",
+      "sha256": "02a147c1f03dfdf9a347e700dfee0531ede02d9d71296033ed5cdda7ad53c060",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/SITL/SIM_Aircraft.cpp#L680"
+    }
+  ]
+}

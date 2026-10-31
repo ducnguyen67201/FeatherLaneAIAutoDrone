@@ -2,11 +2,11 @@
   "schema_version": 1,
   "project": "FeatherLane AI Auto Drone",
   "recorded_date": "2026-10-31",
-  "scope": "ArduPilot source acquisition, native macOS SITL build and one stock simulated takeoff/hold/land; separate from FeatherLaneFlight and the SkyDive prototype",
+  "scope": "ArduPilot pinned-source baseline, native macOS SITL, stock takeoff/landing and one known-coordinate flight with guided learning; separate from FeatherLaneFlight and SkyDive",
   "autopilot": "ArduPilot",
   "development_os": "macOS",
-  "active_implementation_phase": "P01",
-  "next_proposed_phase": "P01",
+  "active_implementation_phase": "P03",
+  "next_proposed_phase": "P03",
   "implementation_started": true,
   "ui_approved": false,
   "architecture_approved": false,
@@ -33,7 +33,7 @@
     {
       "id": "P03",
       "title": "Instrumented ArduPilot missions",
-      "status": "planned",
+      "status": "in_progress",
       "optional": false
     },
     {
@@ -95,7 +95,7 @@
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
   "active_learning_phase": null,
-  "next_proposed_learning_phase": "L05",
+  "next_proposed_learning_phase": "L06",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -339,7 +339,7 @@
       "slug": "one-coordinate",
       "title": "Fly to one known coordinate",
       "group": "M02",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L04"
       ],
@@ -367,7 +367,7 @@
       ],
       "rollback": "Restore the known mission/parameters and use the qualified terminal procedure.",
       "teach_back": "What would change if the same numeric coordinate used a different origin or altitude frame?",
-      "record": null
+      "record": "[One stock coordinate flight](../../evidence/l05-one-coordinate/README.md): GUIDED DO_REPOSITION to latitude -35.3632172°, longitude 149.1652374°, 3 m above home; about 5 m north. Accepted request, measured movement, five-second low-speed goal hold, LAND/automatic disarm and clean shutdown observed. Guided height-reference checkpoint complete on 2026-10-31. Startup invalid positions and four parsing errors retained; no speed tuning or firmware edits. One run only; P03 broader gate and P01 failure-handling remain open."
     },
     {
       "id": "L06",
@@ -1232,7 +1232,7 @@
     "origin": "https://github.com/ArduPilot/ardupilot.git",
     "tag": "Copter-4.7.2",
     "commit": "fb773567896014da007bca58358704d4a0d8516f",
-    "status": "native_macos_sitl_one_stock_flight_observed",
+    "status": "native_macos_sitl_stock_flight_and_one_coordinate_observed",
     "submodule_count": 21,
     "record": "../evidence/l01-source-and-orientation/README.md",
     "revision_manifest": "../evidence/l01-source-and-orientation/source-baseline.json",
@@ -1242,9 +1242,10 @@
     "development_origin": "https://github.com/ducnguyen67201/FeatherLaneArduPilot.git",
     "upstream_origin": "https://github.com/ArduPilot/ardupilot.git",
     "sitl_qualification_record": "../evidence/l02-basic-sitl-setup/README.md",
-    "stock_flight_record": "../evidence/l03-first-stock-flight/README.md"
+    "stock_flight_record": "../evidence/l03-first-stock-flight/README.md",
+    "coordinate_flight_record": "../evidence/l05-one-coordinate/README.md"
   },
-  "execution_summary": "L01–L03 are complete, including L03’s guided learner checkpoint. L03 was published on codex/l03-first-stock-flight at fd6ae48fec7530164ada79f2f255f272a0e5a325 with remote SHA verified and main unchanged. [L04](evidence/l04-trace-one-command/README.md) has traced the observed GUIDED takeoff through the unchanged pinned source and is complete, including the guided learner checkpoint on estimator/state reads versus motor mixing. Estimation and control were clarified as internal ArduPilot responsibilities. No new flight or firmware changes were performed. P01 remains in progress; L05 is proposed next and has not started.",
+  "execution_summary": "L01–L05 and their guided checkpoints are complete. L04 was published and remote-SHA verified at c0f6254470fea3c4c22d4de43cfae0df21cef07d; main stayed unchanged. [L05](evidence/l05-one-coordinate/README.md) observed one stock GUIDED coordinate flight about 5 m north at 3 m above home, a five-second goal hold, landing/automatic disarm and clean shutdown. Invalid startup positions and four startup parsing errors are retained. The user subsequently authorized publishing the completed L05 branch before starting L06. P01 still lacks remaining failure-handling evidence; P03 has only this initial stock-coordinate slice and its broader gate is incomplete. L06 is next and has not started.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",

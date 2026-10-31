@@ -2,7 +2,7 @@
 
 [Project home](../README.md) · [Direction](PROJECT-DIRECTION.md) · [Phase registry](phases/registry.json)
 
-These are capability milestones recorded on 2026-10-31, refined by the user's learning-first request. Use the [master learning plan](MASTER-LEARNING-PLAN.md) and its small `Lxx` phase cards for execution order. Existing `Pxx` IDs stay stable for architecture references; they are not single work sessions. P00 documents the direction, P01–P08 cover software/simulation capabilities, and P09 remains optional hardware. L01 source acquisition/orientation and L02 native disarmed SITL qualification are complete; L03 stock simulated takeoff/hold/land/disarm and its guided learner checkpoint are complete. L04’s source walkthrough and guided learner checkpoint are complete; P01 remains in progress. See the [L01 evidence](evidence/l01-source-and-orientation/README.md), [L02 build/run evidence](evidence/l02-basic-sitl-setup/README.md), and [L03 flight evidence](evidence/l03-first-stock-flight/README.md).
+These are capability milestones recorded on 2026-10-31, refined by the user's learning-first request. Use the [master learning plan](MASTER-LEARNING-PLAN.md) and its small `Lxx` phase cards for execution order. Existing `Pxx` IDs stay stable for architecture references; they are not single work sessions. P00 documents the direction, P01–P08 cover software/simulation capabilities, and P09 remains optional hardware. L01 source acquisition/orientation and L02 native disarmed SITL qualification are complete; L03 stock simulated takeoff/hold/land/disarm and its guided learner checkpoint are complete. L04’s source walkthrough and guided learner checkpoint are complete. L05’s single stock coordinate flight and guided checkpoint are complete; P01 and P03 remain in progress. See the [L01 evidence](evidence/l01-source-and-orientation/README.md), [L02 build/run evidence](evidence/l02-basic-sitl-setup/README.md), and [L03 flight evidence](evidence/l03-first-stock-flight/README.md).
 
 The first sequence is L01 source → L02 basic SITL setup → L03 stock flight → L04 source walkthrough → L05 one coordinate → L06 one speed change → L07 measured arrival. Use the stock console before building an application UI. Gazebo is introduced at L12 after the simpler flight baseline. The SkyDive demonstration is a separate deferred branch and does not block SITL learning.
 
@@ -51,6 +51,8 @@ Deliver:
 ## P03 — Instrumented ArduPilot missions and trajectory view
 
 **Target:** use real autopilot commands to approach a known spatial destination and stop there in simulation.
+
+**Observed partial progress:** [L05](evidence/l05-one-coordinate/README.md) flew one stock GUIDED GPS-coordinate goal approximately 5 m north at 3 m above home, held at low speed, landed and automatically disarmed. No speed changes, native mission code, Gazebo, UI or failure campaign were included. This one slice does not complete P03’s broader gate or P01’s remaining failed/rejected-connection handling.
 
 Deliver:
 
