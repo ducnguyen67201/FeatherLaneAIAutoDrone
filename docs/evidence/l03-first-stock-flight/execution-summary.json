@@ -1,0 +1,77 @@
+{
+  "date": "2026-10-31",
+  "learning_phase": "L03",
+  "status": "complete",
+  "result": "one_stock_simulated_flight_and_guided_learner_checkpoint_complete",
+  "branch": "codex/l03-first-stock-flight",
+  "based_on": "7a2c6652dbd8088b66d8d9c2cb123c0bc52a78ee",
+  "checks": {
+    "manual_stock_flight": "takeoff to 3m, declared 5s hold, LAND, on-ground detection, automatic disarm observed",
+    "onboard_log": "parsed successfully; accepted commands and automatic disarm corroborated; no ERR records parsed",
+    "git_diff_check": "pass",
+    "generated_documents": "generator run; repeat output byte-identical",
+    "maintained_markdown_links": "local targets checked",
+    "raw_artifact_hashes": "all manifest SHA-256 values match retained files",
+    "firmware_worktree": "clean",
+    "firmware_revision": "fb773567896014da007bca58358704d4a0d8516f",
+    "recursive_submodules": "21; all at recorded pins",
+    "new_automated_tests_created": false,
+    "firmware_or_parameter_edits": false,
+    "architecture_or_ui_changes": false,
+    "ui_approved": false,
+    "architecture_approved": false,
+    "diagram_finalize": "validation, delivery, strict artifact and automated browser gates passed",
+    "diagram_receipts": ".archify/l03-learning-progress/review-2/",
+    "diagram_static_export": "offline canonical SVG extraction with prior bundled export style; XML and status content checked",
+    "diagram_perceptual_review": "not requested; optional computer-use file preview blocked by URL policy, no workaround attempted",
+    "flight_chart": "generated from actual telemetry with matplotlib; image inspected"
+  },
+  "run_summary": {
+    "runs": 1,
+    "vehicle_heartbeats": 120,
+    "armed_vehicle_heartbeats": 45,
+    "command_acknowledgments": 9,
+    "global_position_samples": 404,
+    "maximum_height_m": 3.069,
+    "hold_height_range_m": [
+      2.999,
+      2.999
+    ],
+    "remaining_owned_processes": 0,
+    "remaining_sitl_sockets": false
+  },
+  "run_results": "run-results.json",
+  "commands_and_states": "command-state-events.json",
+  "trajectory": "trajectory.csv",
+  "raw_artifact_manifest": "raw-artifacts.json",
+  "onboard_log_summary": "onboard-log-summary.json",
+  "learning_checkpoint": {
+    "status": "complete",
+    "date": "2026-10-31",
+    "source": "Learner reply to the L03 checkpoint in this chat",
+    "learner_summary": "Identified observed telemetry, height near 3 metres and vertical speed as evidence of takeoff/hold/landing.",
+    "follow_up": "Clarified climb, hold, IN_AIR, descent, ON_GROUND and automatic disarming.",
+    "assessment": "guided understanding checkpoint; not an independent examination or independent verification"
+  },
+  "p01": "in_progress; remaining source-walkthrough and failed/rejected-connection handling scope not qualified",
+  "l04": "planned; not started",
+  "independent_verification": false,
+  "limitations": [
+    "One simulated run only; no reliability/hardware qualification.",
+    "Early Gyros inconsistent readiness warning; waited without bypass.",
+    "Four known MAVProxy startup parsing errors, cause uninvestigated.",
+    "No loaded terrain; terrain capability not qualified.",
+    "Stock FS_GCS_ENABLE=0; no link-loss qualification.",
+    "Intentional observer Ctrl-C exit 130 and console reconnect after simulator stop are preserved."
+  ],
+  "flight_exercise_remote_changes": false,
+  "publication": {
+    "authorization_date": "2026-10-31",
+    "source": "User asked to push L03 files before moving to the next phase",
+    "branch": "codex/l03-first-stock-flight",
+    "scope": "Maintained L03 documents, static learning workflow/source and selected evidence; unchanged firmware gitlink",
+    "main_update_or_merge_included": false,
+    "dependency_audit": "29 frozen dependencies checked; no known vulnerabilities found; requirement-hash warnings retained locally",
+    "actual_sha_verification_receipt": ".local/l03/publication.json"
+  }
+}

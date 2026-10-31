@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M01 Get a working baseline and understand it · Track: core · Dependencies: [L02](l02-basic-sitl-setup.md)
+**DRAFT phase card. Status: complete.** M01 Get a working baseline and understand it · Track: core · Dependencies: [L02](l02-basic-sitl-setup.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -45,7 +45,7 @@ Retain:
 - Command/state timeline and the retained simulator/flight log.
 - Observed limitations and one sentence explaining the result.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [Observed stock flight](../../evidence/l03-first-stock-flight/README.md): takeoff to 3 m, declared 5-second hold, LAND and automatic disarm; clean shutdown. Guided learner checkpoint completed in this chat on 2026-10-31: learner identified observed telemetry, height near 3 m and vertical speed as evidence of takeoff/hold/landing; follow-up clarified flight state and automatic disarm. This is a guided checkpoint, not independent verification.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

@@ -1,0 +1,190 @@
+SIM_VEHICLE: Start
+SIM_VEHICLE: Killing tasks
+SIM_VEHICLE: Starting up at SITL location
+SIM_VEHICLE: Using defaults from (../../../ardupilot/Tools/autotest/default_params/copter.parm)
+SIM_VEHICLE: Run ArduCopter
+SIM_VEHICLE: "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/ardupilot/Tools/autotest/run_in_terminal_window.sh" "ArduCopter" "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/ardupilot/build/sitl/bin/arducopter" "--model" "+" "--speedup" "1" "--slave" "0" "--defaults" "../../../ardupilot/Tools/autotest/default_params/copter.parm" "--sim-address=127.0.0.1" "-I0"
+SIM_VEHICLE: Run MavProxy
+SIM_VEHICLE: "mavproxy.py" "--retries" "5" "--master" "tcp:127.0.0.1:5760" "--sitl" "127.0.0.1:5501" "--default-modules" "log,param,mode,arm,rc,cmdlong,output" "--out" "127.0.0.1:14550"
+RiTW: Starting ArduCopter : /Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/ardupilot/build/sitl/bin/arducopter --model + --speedup 1 --slave 0 --defaults ../../../ardupilot/Tools/autotest/default_params/copter.parm --sim-address=127.0.0.1 -I0
+Setting SIM_SPEEDUP=1.000000
+Suggested EK3_DRAG_BCOEF_* = 17.209, EK3_DRAG_MCOEF = 0.209
+Starting sketch 'ArduCopter'
+Starting SITL input
+Using Irlock at port : 9005
+bind port 5760 for SERIAL0
+SERIAL0 on TCP port 5760
+Waiting for connection ....
+Connect tcp:127.0.0.1:5760 source_system=255
+Connection on serial port 5760
+Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
+Home: -35.363262 149.165237 alt=584.000000m hdg=353.000000
+Smoothing reset at 0.001
+bind port 5762 for SERIAL1
+SERIAL1 on TCP port 5762
+bind port 5763 for SERIAL2
+SERIAL2 on TCP port 5763
+Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
+validate_structures:538: Validating structures
+Waiting for internal clock bits to be set (current=0x00)
+Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
+Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
+Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
+Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
+Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
+Loaded defaults from ../../../ardupilot/Tools/autotest/default_params/copter.parm
+Log Directory:
+Telemetry log: mav.tlog
+Waiting for heartbeat from tcp:127.0.0.1:5760
+MAV> AP: RCInput: decoding UDP (Pulses)
+AP: Calibrating barometer
+Detected vehicle 1:1 on link 0
+online system 1
+STABILIZE> Mode STABILIZE
+AP: Barometer 1 calibration complete
+AP: Barometer 2 calibration complete
+Init Gyro**AP: ArduCopter V4.7.2 (fb773567)
+AP: Ducs-MacBook-Pro-2.local
+AP: Frame: QUAD/PLUS
+
+AP: ArduPilot Ready
+AP: AHRS: DCM active
+AP: RC7: SaveWaypoint LOW
+Received 1370 parameters
+Saved 1370 parameters to mav.parm
+AP: EKF3 IMU0 initialised
+AP: EKF3 IMU1 initialised
+AP: AHRS: EKF3 active
+AP: EKF3 IMU0 tilt alignment complete
+AP: EKF3 IMU1 tilt alignment complete
+AP: EKF3 IMU0 MAG0 initial yaw alignment complete
+AP: EKF3 IMU1 MAG0 initial yaw alignment complete
+long SET_MESSAGE_INTERVAL 245 500000
+STABILIZE> status GPS_RAW_INT
+STABILIZE> status EKF_STATUS_REPORT
+STABILIZE> status SYS_STATUS
+STABILIZE> status HEARTBEAT
+STABILIZE> arm list
+STABILIZE> 8: HEARTBEAT {type : 2, autopilot : 3, base_mode : 81, custom_mode : 0, system_status : 3, mavlink_version : 3}
+all
+baro
+compass
+gps
+ins
+params
+rc
+voltage
+battery
+airspeed
+logging
+switch
+gps_config
+system
+mission
+rangefinder
+unknown16
+unknown17
+unknown18
+unknown19
+unknown20
+unknown21
+unknown22
+unknown23
+unknown24
+Got COMMAND_ACK: SET_MESSAGE_INTERVAL: ACCEPTED
+AP: GPS 1: probing for u-blox at 230400 baud
+AP: GPS 1: detected u-blox
+set streamrate 4
+STABILIZE> long SET_MESSAGE_INTERVAL 33 250000
+STABILIZE> long SET_MESSAGE_INTERVAL 32 250000
+STABILIZE> status
+STABILIZE> Counters: MasterIn:[1765] MasterOut:17 FGearIn:0 FGearOut:0 Slave:0
+MAV Errors: 4
+None
+11: AHRS {omegaIx : -5.2761268307222053e-05, omegaIy : -0.00011120668204966933, omegaIz : 0.02309035323560238, accel_weight : 0.0, renorm_val : 0.0, error_rp : 0.00018543569603934884, error_yaw : 0.0008410858572460711}
+11: AHRS2 {roll : 0.00025615273625589907, pitch : 5.4276868468150496e-05, yaw : -0.12177268415689468, altitude : 0.0, lat : -353632621, lng : 1491652374}
+11: ATTITUDE {time_boot_ms : 17854, roll : 0.0003942972980439663, pitch : 0.00021015883248765022, yaw : -0.05686872452497482, rollspeed : 0.00016696380043867975, pitchspeed : 0.00013566894631367177, yawspeed : 0.02330654300749302}
+11: BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [12600, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+11: BATTERY_STATUS {id : 0, battery_function : 0, type : 0, temperature : 32767, voltages : [12600, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535, 65535], current_battery : 0, current_consumed : 0, energy_consumed : 0, battery_remaining : 100, time_remaining : 0, charge_state : 1, voltages_ext : [0, 0, 0, 0], mode : 0, fault_bitmask : 0}
+1: COMMAND_ACK {command : 511, result : 0, progress : 0, result_param2 : 0, target_system : 255, target_component : 230}
+11: EKF_STATUS_REPORT {flags : 167, velocity_variance : 0.0, pos_horiz_variance : 0.0009782073320820928, pos_vert_variance : 0.001267029670998454, compass_variance : 0.04119031876325607, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+11: ESC_TELEMETRY_1_TO_4 {temperature : [32, 32, 32, 32], voltage : [1679, 1679, 1679, 1679], current : [80, 80, 80, 80], totalcurrent : [1, 1, 1, 1], rpm : [0, 0, 0, 0], count : [4742, 4742, 4742, 4742]}
+21: EXTENDED_SYS_STATE {vtol_state : 3, landed_state : 1}
+11: GLOBAL_POSITION_INT {time_boot_ms : 17854, lat : -353632621, lon : 1491652374, alt : 584090, relative_alt : 0, vx : 0, vy : 0, vz : 0, hdg : 35675}
+11: GPS_RAW_INT {time_usec : 17763000, fix_type : 6, lat : -353632621, lon : 1491652374, alt : 584090, eph : 121, epv : 200, vel : 0, cog : 0, satellites_visible : 10, alt_ellipsoid : 584090, h_acc : 300, v_acc : 300, vel_acc : 0, hdg_acc : 0, yaw : 0}
+19: HEARTBEAT {type : 2, autopilot : 3, base_mode : 81, custom_mode : 0, system_status : 3, mavlink_version : 3}
+11: MEMINFO {brkval : 0, freemem : 65535, freemem32 : 524288}
+11: MISSION_CURRENT {seq : 0, total : 0, mission_state : 1, mission_mode : 0}
+11: NAV_CONTROLLER_OUTPUT {nav_roll : -0.00016796044656075537, nav_pitch : 9.647379192756489e-05, nav_bearing : -3, target_bearing : 0, wp_dist : 0, alt_error : 0.0, aspd_error : 0.0, xtrack_error : 0.0}
+1404: PARAM_VALUE {param_id : EK3_SRC1_POSXY, param_value : 3.0, param_type : 2, param_count : 1370, param_index : 65535}
+11: POWER_STATUS {Vcc : 5000, Vservo : 0, flags : 0}
+11: RAW_IMU {time_usec : 17854522, xacc : 0, yacc : 0, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 224, ymag : 80, zmag : -528, id : 0, temperature : 2603}
+11: RAW_IMU {time_usec : 17854522, xacc : 0, yacc : 0, zacc : -1001, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 224, ymag : 80, zmag : -528, id : 0, temperature : 2603}
+11: RC_CHANNELS {time_boot_ms : 17854, chancount : 8, chan1_raw : 1500, chan2_raw : 1500, chan3_raw : 1000, chan4_raw : 1500, chan5_raw : 1800, chan6_raw : 1000, chan7_raw : 1000, chan8_raw : 1800, chan9_raw : 0, chan10_raw : 0, chan11_raw : 0, chan12_raw : 0, chan13_raw : 0, chan14_raw : 0, chan15_raw : 0, chan16_raw : 0, chan17_raw : 0, chan18_raw : 0, rssi : 255}
+11: SCALED_IMU2 {time_boot_ms : 17854, xacc : 0, yacc : 0, zacc : -1000, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 224, ymag : 80, zmag : -528, temperature : 2603}
+11: SCALED_IMU3 {time_boot_ms : 17854, xacc : 0, yacc : 0, zacc : 0, xgyro : 0, ygyro : 0, zgyro : 0, xmag : 224, ymag : 80, zmag : -528, temperature : 0}
+11: SCALED_PRESSURE {time_boot_ms : 17854, press_abs : 945.0282592773438, press_diff : 0.0, temperature : 2777, temperature_press_diff : 0}
+11: SCALED_PRESSURE2 {time_boot_ms : 17854, press_abs : 945.0078125, press_diff : 0.0, temperature : 2777, temperature_press_diff : 0}
+11: SERVO_OUTPUT_RAW {time_usec : 17854522, port : 0, servo1_raw : 1000, servo2_raw : 1000, servo3_raw : 1000, servo4_raw : 1000, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+11: SERVO_OUTPUT_RAW {time_usec : 17854522, port : 0, servo1_raw : 1000, servo2_raw : 1000, servo3_raw : 1000, servo4_raw : 1000, servo5_raw : 0, servo6_raw : 0, servo7_raw : 0, servo8_raw : 0, servo9_raw : 0, servo10_raw : 0, servo11_raw : 0, servo12_raw : 0, servo13_raw : 0, servo14_raw : 0, servo15_raw : 0, servo16_raw : 0}
+11: SIMSTATE {roll : 0.0, pitch : 0.0, yaw : -0.12217313796281815, xacc : 0.0, yacc : 0.0, zacc : -9.806650161743164, xgyro : 0.0, ygyro : 0.0, zgyro : -1.089731860304255e-08, lat : -353632621, lng : 1491652374}
+19: STATUSTEXT {severity : 6, text : GPS 1: detected u-blox, id : 0, chunk_seq : 0}
+11: SYSTEM_TIME {time_unix_usec : 1793482036691453, time_boot_ms : 17854}
+11: SYS_STATUS {onboard_control_sensors_present : 1399979055, onboard_control_sensors_enabled : 1380031535, onboard_control_sensors_health : 1196530735, load : 0, voltage_battery : 12600, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0, onboard_control_sensors_present_extended : 0, onboard_control_sensors_enabled_extended : 0, onboard_control_sensors_health_extended : 0}
+11: TERRAIN_REPORT {lat : -353632621, lon : 1491652374, spacing : 0, terrain_height : 0.0, current_height : 584.0899658203125, pending : 504, loaded : 0}
+2: TERRAIN_REQUEST {lat : -353747690, lon : 1491548424, grid_spacing : 100, mask : 72057594037927935}
+1: TIMESYNC {tc1 : 0, ts1 : 10001831001}
+11: VFR_HUD {airspeed : 0.0, groundspeed : 0.006439934018999338, heading : 356, throttle : 0, alt : 584.0899658203125, climb : 0.005681896116584539}
+11: VIBRATION {time_usec : 17854522, vibration_x : 0.0029030758887529373, vibration_y : 0.002733679721131921, vibration_z : 0.002835514023900032, clipping_0 : 0, clipping_1 : 0, clipping_2 : 0}
+Got COMMAND_ACK: SET_MESSAGE_INTERVAL: ACCEPTED
+Got COMMAND_ACK: SET_MESSAGE_INTERVAL: ACCEPTED
+AP: EKF3 IMU0 origin set
+AP: Field Elevation Set: 584m
+AP: EKF3 IMU1 origin set
+arm prearms
+STABILIZE> Got COMMAND_ACK: RUN_PREARM_CHECKS: ACCEPTED
+AP: PreArm: Gyros inconsistent
+AP: EKF3 IMU0 is using GPS
+AP: EKF3 IMU1 is using GPS
+arm prearms
+STABILIZE> status SYS_STATUS
+STABILIZE> status EKF_STATUS_REPORT
+STABILIZE> status GLOBAL_POSITION_INT
+STABILIZE> status EXTENDED_SYS_STATE
+STABILIZE> 128: SYS_STATUS {onboard_control_sensors_present : 1399979055, onboard_control_sensors_enabled : 1382128687, onboard_control_sensors_health : 1467063343, load : 0, voltage_battery : 12600, current_battery : 0, battery_remaining : 100, drop_rate_comm : 0, errors_comm : 0, errors_count1 : 0, errors_count2 : 0, errors_count3 : 0, errors_count4 : 0, onboard_control_sensors_present_extended : 0, onboard_control_sensors_enabled_extended : 0, onboard_control_sensors_health_extended : 0}
+128: EKF_STATUS_REPORT {flags : 831, velocity_variance : 0.008447227999567986, pos_horiz_variance : 0.004512738436460495, pos_vert_variance : 2.4109056084853364e-06, compass_variance : 0.026354197412729263, terrain_alt_variance : 0.0, airspeed_variance : 0.0}
+128: GLOBAL_POSITION_INT {time_boot_ms : 47104, lat : -353632621, lon : 1491652375, alt : 584080, relative_alt : -1, vx : -1, vy : 1, vz : 0, hdg : 35513}
+80: EXTENDED_SYS_STATE {vtol_state : 3, landed_state : 1}
+Got COMMAND_ACK: RUN_PREARM_CHECKS: ACCEPTED
+mode guided
+STABILIZE> Got COMMAND_ACK: DO_SET_MODE: ACCEPTED
+GUIDED> Mode GUIDED
+arm throttle
+GUIDED> Got COMMAND_ACK: COMPONENT_ARM_DISARM: ACCEPTED
+AP: Arming motors
+ARMED
+takeoff 3
+GUIDED> Taking off to 3.0 meters
+Got COMMAND_ACK: NAV_TAKEOFF: ACCEPTED
+AP: EKF3 IMU0 MAG0 in-flight yaw alignment complete
+AP: EKF3 IMU1 MAG0 in-flight yaw alignment complete
+mode land
+GUIDED> Got COMMAND_ACK: DO_SET_MODE: ACCEPTED
+LAND> Mode LAND
+AP: SIM Hit ground at 0.496654 m/s
+AP: Disarming motors
+DISARMED
+status HEARTBEAT
+LAND> status GLOBAL_POSITION_INT
+LAND> status EXTENDED_SYS_STATE
+LAND> status COMMAND_ACK
+LAND> 119: HEARTBEAT {type : 2, autopilot : 3, base_mode : 89, custom_mode : 9, system_status : 3, mavlink_version : 3}
+399: GLOBAL_POSITION_INT {time_boot_ms : 114854, lat : -353632620, lon : 1491652373, alt : 584080, relative_alt : 7, vx : -1, vy : 2, vz : 0, hdg : 35201}
+216: EXTENDED_SYS_STATE {vtol_state : 3, landed_state : 1}
+9: COMMAND_ACK {command : 176, result : 0, progress : 0, result_param2 : 0, target_system : 255, target_component : 230}
+Exitting
+EOF on TCP socket
+Attempting reconnect
+[Errno 61] Connection refused sleeping
+SIM_VEHICLE: Keyboard Interrupt received ...
+SIM_VEHICLE: Killing tasks

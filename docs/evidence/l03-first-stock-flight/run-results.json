@@ -1,0 +1,101 @@
+{
+  "date": "2026-10-31",
+  "phase": "L03",
+  "result": "one_stock_simulated_takeoff_hold_land_and_automatic_disarm_observed",
+  "time_origin": "2026-10-31T21:26:59.618+00:00",
+  "target_relative_altitude_m": 3,
+  "hold": {
+    "declared_window": {
+      "start_wall_time": 1793482104.672858,
+      "duration_seconds": 5,
+      "declared_altitude_band_m": [
+        2.8,
+        3.2
+      ],
+      "declared_max_abs_vertical_speed_m_s": 0.2,
+      "declared_max_horizontal_speed_m_s": 0.3,
+      "mode": "GUIDED",
+      "must_be_armed": true,
+      "landed_state": "IN_AIR",
+      "start_utc": "2026-10-31T21:28:24.672+00:00",
+      "end_utc": "2026-10-31T21:28:29.672+00:00"
+    },
+    "samples": 20,
+    "observed_sample_span_s": 4.747,
+    "altitude_range_m": [
+      2.999,
+      2.999
+    ],
+    "max_abs_vertical_speed_m_s": 0.0,
+    "max_horizontal_speed_m_s": 0.01414213562373095,
+    "heartbeat_samples": 5,
+    "all_heartbeat_samples_armed_guided": true,
+    "landed_samples": 10,
+    "all_landed_samples_in_air": true
+  },
+  "max_relative_altitude_m": 3.069,
+  "vehicle_heartbeat_count": 120,
+  "armed_heartbeat_count": 45,
+  "command_ack_count": 9,
+  "command_acks_all_result_accepted": true,
+  "global_position_samples": 404,
+  "final_heartbeat": {
+    "wall_time": 1793482135.4697862,
+    "source_system": 1,
+    "source_component": 1,
+    "message": {
+      "mavpackettype": "HEARTBEAT",
+      "type": 2,
+      "autopilot": 3,
+      "base_mode": 89,
+      "custom_mode": 9,
+      "system_status": 3,
+      "mavlink_version": 3
+    }
+  },
+  "final_global_position": {
+    "wall_time": 1793482135.5432372,
+    "source_system": 1,
+    "source_component": 1,
+    "message": {
+      "mavpackettype": "GLOBAL_POSITION_INT",
+      "time_boot_ms": 116105,
+      "lat": -353632620,
+      "lon": 1491652373,
+      "alt": 584080,
+      "relative_alt": 7,
+      "vx": -1,
+      "vy": 2,
+      "vz": 0,
+      "hdg": 35204
+    }
+  },
+  "final_landed_state": {
+    "wall_time": 1793482135.475053,
+    "source_system": 1,
+    "source_component": 1,
+    "message": {
+      "mavpackettype": "EXTENDED_SYS_STATE",
+      "vtol_state": 3,
+      "landed_state": 1
+    }
+  },
+  "cleanup": {
+    "wall_time": 1793482143.5979788,
+    "remaining_session_processes": [],
+    "remaining_sitl_sockets": false,
+    "socket_check": "lsof returned no matches, exit 1; TCP 5760/5762/5763 and UDP 5501/14550",
+    "capture_stop": "intentional Ctrl-C; exit 130; JSONL flushed per message"
+  },
+  "limitations": [
+    "One run only; no repeatability or hardware qualification.",
+    "A RUN_PREARM_CHECKS request was accepted while PreArm: Gyros inconsistent was reported; waited without bypass.",
+    "Four MAVProxy startup parsing errors; cause uninvestigated.",
+    "No loaded terrain data; terrain navigation not qualified.",
+    "Ground-station link-loss failsafe is disabled in the stock profile (FS_GCS_ENABLE=0); no failure-handling qualification.",
+    "Declared hold observation lasted 5 seconds; total GUIDED flight/hover also includes manual observation and explanation time.",
+    "State transitions are sampled observations with reception timestamps; ACK is not a movement completion timestamp.",
+    "Estimator telemetry and simulator truth are different; SIM/SIM2/SIMSTATE are privileged simulator data, not autonomy inputs.",
+    "Passive observer deliberately stopped with Ctrl-C (exit 130); not a flight failure."
+  ]
+}

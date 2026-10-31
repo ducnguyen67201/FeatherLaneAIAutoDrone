@@ -2,9 +2,9 @@
 
 [Project home](../README.md) · [Capability roadmap](ROADMAP.md) · [Phase registry](phases/registry.json) · [First-seven-phase diagram](assets/learning/learning-workflow.svg)
 
-**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01 source acquisition/orientation and L02 unchanged native macOS disarmed SITL qualification are complete. [L02 evidence](evidence/l02-basic-sitl-setup/README.md) records the successful build, two fresh disarmed launches, actual state, dependency/startup limitations and clean process/socket shutdown. No arming or flight was performed. P01 remains in progress; L03 stock flight is next and remains planned. Learner explanation checkpoint completed through the follow-up discussion on 2026-10-31.
+**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01 and L02 are complete. [L03](evidence/l03-first-stock-flight/README.md) observed one unchanged stock simulated takeoff to 3 m, a declared 5-second hold, landing and automatic disarm, followed by clean shutdown. L03 is complete; the guided learner checkpoint was completed in this chat on 2026-10-31 using observed height and vertical-speed telemetry, with flight-state/disarm clarification. The early unready check and startup parsing errors are retained. P01 remains in progress; L04 is proposed next and has not started.
 
-**Next small phase: L03.** No implementation learning phase is active.
+**Next small phase: L04.** No implementation learning phase is active.
 
 This is the execution entry point. `L01`, `L02`, and so on are small learning phases. Existing `P01`–`P09` references remain capability milestones in the roadmap and architecture; their numbers do not dictate the learning order. Master groups organize related results without turning a group into one large implementation task. A phase passing does not automatically complete its parent capability milestone.
 

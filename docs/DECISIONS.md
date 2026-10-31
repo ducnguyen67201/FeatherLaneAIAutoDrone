@@ -31,7 +31,7 @@ The earlier documentation request did not approve the rendered layouts, full det
 
 ## L02 local setup authorization and observed result
 
-On 2026-10-31 the user requested L02 with step-by-step explanations. This authorizes scoped local dependencies, the unchanged native Mac Copter build and disarmed simulator startup/observation/shutdown/repeat. [The L02 record](evidence/l02-basic-sitl-setup/README.md) retains the actual successful build, two fresh disarmed launches, cleanup and limitations. No flight, custom firmware, new tests, remote changes or UI integration was performed. Detailed architecture/UI approval flags remain false. The next proposed learning phase is L03; P01 remains in progress.
+On 2026-10-31 the user requested L02 with step-by-step explanations. This authorizes scoped local dependencies, the unchanged native Mac Copter build and disarmed simulator startup/observation/shutdown/repeat. [The L02 record](evidence/l02-basic-sitl-setup/README.md) retains the actual successful build, two fresh disarmed launches, cleanup and limitations. No flight, custom firmware, new tests, remote changes or UI integration was performed. Detailed architecture/UI approval flags remain false. At L02 completion the next proposed learning phase was L03; its subsequent execution is recorded below. P01 remains in progress.
 
 ## Repository publication
 
@@ -39,7 +39,7 @@ On 2026-10-31 the user requested publication on their GitHub profile, selected *
 
 ## Questions to resolve during the relevant phase
 
-- **P01:** exact Mac architecture/OS; native SITL compatibility; qualified MAVLink command set and simulator fallback if required.
+- **P01:** L02 records the actual Mac/toolchain and native SITL baseline; L03 records one supported stock flight sequence. Remaining source walkthrough and rejected/failed-connection handling still need their own evidence.
 - **P02:** precise SkyDive spawn/settings, input mapping, repeatability limits and whether a terminal controlled stop is achievable through the available interface.
 - **P03:** compatible simulator/autopilot versions, coordinate conventions and arrival thresholds; whether an isolated Linux runtime is necessary.
 - **P04:** supported target definitions/models (helicopter as the initial example), representative imagery, camera calibration and depth/range source. “YOLO ready” does not prove this model supports the target.
@@ -53,3 +53,9 @@ These questions do not block creation of the plan. Resolve them before the imple
 ## Change policy
 
 Update direction, roadmap, registry and diagrams together when a decision changes. Record approval source/date/scope for approved designs; do not treat approval of a diagram as implementation evidence. Keep future app implementation, external publication and physical operations scoped to their own authorization.
+
+## L03 local stock-flight authorization and observed result
+
+On 2026-10-31 the user requested saving/publishing L02 and starting “CO3 in new track”; the delegated new-chat handoff identifies this as L03. This authorized one bounded local stock SITL flight, with explanation before actions. On local branch `codex/l03-first-stock-flight`, unchanged Copter-4.7.2 took off to 3 m in GUIDED, held for a declared five-second observation, then landed in LAND and automatically disarmed. [L03 evidence](evidence/l03-first-stock-flight/README.md) retains command acceptance separately from achieved movement, the early unready prearm result, four startup parsing errors, raw-log manifest and clean owned-session shutdown. The flight exercise and guided learner explanation checkpoint are complete. On 2026-10-31 the learner identified observed telemetry, including height near 3 m and vertical speed, as evidence; follow-up clarified in-air/on-ground state and automatic disarming. This records guided understanding, not independent verification. P01 remains in progress and L04 has not started. No firmware/parameter changes, new tests, product UI, remote changes or physical operation were performed. UI/architecture approval flags remain false.
+
+On 2026-10-31, after confirming understanding of the launcher/MAVProxy/telemetry flow, the user asked to push the L03 files and move to the next phase. This authorizes committing and pushing the curated L03 record on `codex/l03-first-stock-flight`, followed by the scoped L04 read-only source walkthrough. It does not authorize merging/updating `main`, publishing L04 changes, another flight or firmware changes.

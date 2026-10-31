@@ -1,0 +1,74 @@
+[
+  {
+    "path": ".local/l03/run1/console.log",
+    "bytes": 13258,
+    "sha256": "1bb3f6cdfc65062216d159a9a8010c24306368492173cf6cd5d43dee64c07d3f",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/mav.tlog",
+    "bytes": 542211,
+    "sha256": "8f1edb693f11d165780cc2d3bb34de451fa8d4727279ec466ed26f9268550fe1",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/mav.tlog.raw",
+    "bytes": 434263,
+    "sha256": "acb1184f34c02dfe2b60d671b2be2a099d9c91778fdee07d888c4573383c1d94",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/observations.jsonl",
+    "bytes": 3734772,
+    "sha256": "ece1eab27b026aa2b78cc4cb5c7ea5eab0dc1e2112a549438643ad29a41c7e1f",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "18896bc278a02ef5ef7be9e0912a562dca489b944ca5c811d6a0880e3b6e286b",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/logs/00000001.BIN",
+    "bytes": 4227072,
+    "sha256": "a7123c82d6488be0e3c556946fa27e1a92b9bc15a612c3d0034332df66c06456",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/hold-window.json",
+    "bytes": 285,
+    "sha256": "6092056e44bd04eeb414ed78b0ba53ecfc7946026b2c56d975ac570c5ecd6eea",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/processes.json",
+    "bytes": 537,
+    "sha256": "127b4b3fd18a2f0dcc0d96dd0b8dade2f27389e47f92bff548852b46c32cdf42",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/endpoints.txt",
+    "bytes": 704,
+    "sha256": "b7f87ab1886dd41074ed8bbf3e23ac38b2006903244f4f445e9bb8fca7cfe3d7",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/simulator-stop.json",
+    "bytes": 278,
+    "sha256": "05a664d12b63c271eb74bf7420eb354a0ded953d360e80e8dbe5348caab14f42",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l03/run1/cleanup.json",
+    "bytes": 280,
+    "sha256": "d889ae325b22b599db8449d017bccb0e3faee4ba968b726b4eef7d4c1f90fdd7",
+    "retention": "ignored local raw evidence; not committed"
+  }
+]
