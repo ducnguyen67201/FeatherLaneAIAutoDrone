@@ -1,0 +1,104 @@
+[
+  {
+    "path": ".local/l07/run1/console.log",
+    "bytes": 13841,
+    "sha256": "b7b713a6c931de256a307d6873d9e8340a4320251b696e48fd5cf5a9f465192f",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/mav.tlog",
+    "bytes": 839090,
+    "sha256": "dcc7830fdcbe719bc2bdcd6f21995e0258f63645696d8c3aae040f1054b4a754",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/mav.tlog.raw",
+    "bytes": 677089,
+    "sha256": "84b4ac7972a0f5618f36ae1ce8a35639812a68efc6ce0980e6e1b031314407f6",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/observations.jsonl",
+    "bytes": 5849095,
+    "sha256": "fc872b2e82bb985ba3dd6a5f7199220549680c7ccf6b4f658927a1f3482fb3a7",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "467721a16e051d61d22e88f5543e37b39a449339ac0c11e71f04ae0caf62f8e7",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/logs/00000001.BIN",
+    "bytes": 4879150,
+    "sha256": "cc8a5e11bcf4c2f676a1bdd144626d33e5e9d3f874bb2b25655e33c6ecd5019d",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/goal-declaration.json",
+    "bytes": 1221,
+    "sha256": "99d0781c46de92ad11215b08fcd103d3c2f11abb80b24ad6ce7baa180d2d1171",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/destination-request.json",
+    "bytes": 251,
+    "sha256": "03822765403baa45f93fbc5cf0481c921d8b404f86a258c03a3890a6826558a6",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/goal-hold-window.json",
+    "bytes": 162,
+    "sha256": "2036dde1d2a80091b2e52754c7dc0c69f856b660e999f08f4a1c469f86718cef",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/processes.json",
+    "bytes": 537,
+    "sha256": "eee7fece159037efa7511de07ad35d1e66146f4e561aaccee36812d224ed9001",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/endpoints.txt",
+    "bytes": 704,
+    "sha256": "0a1fe8db7f95ef77ed7543d4e9171b64fd749f652ed409dee74793975fa7f358",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/simulator-stop.json",
+    "bytes": 319,
+    "sha256": "d559888e5b54f24892e55f4a9bad6c0220d0cd06a6018ca7e724317765dd1e57",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/cleanup.json",
+    "bytes": 262,
+    "sha256": "bf0882b30c37abd45a5100456e24a283b80845919c907b64bef570d3103f7152",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/arrival-contract.json",
+    "bytes": 1452,
+    "sha256": "03bca472f9eb6a042eca5411a9e2fb57ee597ee9a7df3eeb75a6deb7ac721792",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/arrival-analysis.json",
+    "bytes": 5467,
+    "sha256": "412729cfd3bd0d7d6d65fc12932df6d1c4d4167b92e507a4e0a77070ee3feb89",
+    "retention": "ignored local raw evidence; not committed"
+  },
+  {
+    "path": ".local/l07/run1/arrival-timeline.csv",
+    "bytes": 22130,
+    "sha256": "4115582c2232cdbde596c10e30c03f27010cf5380ad44a8b2674f3214f27e32a",
+    "retention": "ignored local raw evidence; not committed"
+  }
+]

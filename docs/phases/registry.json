@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "FeatherLane AI Auto Drone",
   "recorded_date": "2026-10-31",
-  "scope": "Pinned ArduPilot/macOS stock SITL baseline, coordinate flight and one speed-setting comparison with guided learning; separate from FeatherLaneFlight and SkyDive",
+  "scope": "Pinned ArduPilot/macOS stock flight learning plus one local SITL-only native C++ status observer; separate from FeatherLaneFlight and SkyDive",
   "autopilot": "ArduPilot",
   "development_os": "macOS",
   "active_implementation_phase": "P03",
@@ -85,7 +85,7 @@
     "source": "User: inside the autopilot; maintain our own logic and integrate upstream updates; this is plan and rule",
     "scope": "Native mission placement and maintained ArduPilot-derived code. Detailed module/mode names, message contracts and diagram layouts remain proposed."
   },
-  "custom_firmware_implemented": false,
+  "custom_firmware_implemented": true,
   "mission_capability_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User clarification: detector is optional; missions may go to GPS point A or acquire an object and approach it",
@@ -95,7 +95,7 @@
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
   "active_learning_phase": null,
-  "next_proposed_learning_phase": "L07",
+  "next_proposed_learning_phase": "L09",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -408,7 +408,7 @@
       "slug": "measure-arrival",
       "title": "Measure stopping and arrival",
       "group": "M02",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L06"
       ],
@@ -435,14 +435,14 @@
       ],
       "rollback": "Return to the L05 configuration; retain the failed run and reason if arrival is not achieved.",
       "teach_back": "What evidence distinguishes a pass-through from a controlled stop?",
-      "record": null
+      "record": "[Measured entry, stopping and arrival](../../evidence/l07-measure-arrival/README.md): fixed1m/.3m/s/2s dwell plus height/state/freshness/gap conditions before stock L05-config run. First region entry2.418s at2.190m/s; first all-bounds sample3.164s; nine samples completed dwell at5.165s; further17.254s of qualifying sampled hold before LAND. About0.100m overshoot; no waypoint-reached message observed in selected GUIDED position path. Flight, landing/disarm, cleanup and guided checkpoint complete on 2026-10-31. Learner identified that first entry was too fast and one later low-speed sample was insufficient; continued held conditions were needed. Guided clarification fixed the timing, speed<=0.3m/s rather than exact zero, and two-second dwell terminology. Guided understanding, not independent examination. No parameter/controller changes or new tests."
     },
     {
       "id": "L08",
       "slug": "native-status-slice",
       "title": "Add a small native status slice",
       "group": "M03",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L07"
       ],
@@ -469,7 +469,7 @@
       ],
       "rollback": "Revert the isolated custom slice or select the retained upstream build.",
       "teach_back": "Which part is our addition, and which stock behavior still owns movement?",
-      "record": null
+      "record": "[L08 evidence](../../evidence/l08-native-status-slice/README.md): isolated custom build passed; 13 native mode/arming status reports matched stock heartbeat while disarmed. Stock rollback observed for 78.04s without custom status; exact original hash preserved and owned sessions cleaned. Five-file diff/source pin, build output and scheduler-clock limitations retained. Guided learner checkpoint completed: learner identified the component as an observer whose removal loses only the added reports; clarification distinguished native C++ observation from GCS transport and retained stock mode/controller/mixer authority. This is guided understanding, not independent examination; user subsequently authorized feature-branch publication before L09; custom firmware commit 3f467d90be284654c5721ac3d94c26863f771275."
     },
     {
       "id": "L09",
@@ -1232,7 +1232,7 @@
     "origin": "https://github.com/ArduPilot/ardupilot.git",
     "tag": "Copter-4.7.2",
     "commit": "fb773567896014da007bca58358704d4a0d8516f",
-    "status": "native_macos_sitl_stock_coordinate_and_one_speed_comparison_observed",
+    "status": "native_macos_sitl_stock_baseline_plus_local_status_only_custom_diff_observed",
     "submodule_count": 21,
     "record": "../evidence/l01-source-and-orientation/README.md",
     "revision_manifest": "../evidence/l01-source-and-orientation/source-baseline.json",
@@ -1244,9 +1244,14 @@
     "sitl_qualification_record": "../evidence/l02-basic-sitl-setup/README.md",
     "stock_flight_record": "../evidence/l03-first-stock-flight/README.md",
     "coordinate_flight_record": "../evidence/l05-one-coordinate/README.md",
-    "speed_comparison_record": "../evidence/l06-one-speed-change/README.md"
+    "speed_comparison_record": "../evidence/l06-one-speed-change/README.md",
+    "arrival_record": "../evidence/l07-measure-arrival/README.md",
+    "native_status_record": "../evidence/l08-native-status-slice/README.md",
+    "custom_working_branch": "codex/l08-native-status-slice",
+    "native_status_scope": "SITL-only observer; no native task execution or custom mode. Custom commit is a five-file addition against the preserved stock base.",
+    "custom_firmware_commit": "3f467d90be284654c5721ac3d94c26863f771275"
   },
-  "execution_summary": "L01–L06 and their guided checkpoints are complete. L05 was published and remote-SHA verified at 9dd52dc050401887de4b4d352d26b368c2a54251 with main unchanged. [L06](evidence/l06-one-speed-change/README.md) repeated the same coordinate/3m-above-home route with only intentional WP_SPD10->1m/s; measured peak speed fell and time to the same low-speed near-goal sample increased. Landing/disarm, speed restoration and clean shutdown were observed; stock hover/statistics updates are retained. L06’s guided checkpoint is complete, including acceleration/braking versus landing clarification; The user subsequently authorized publishing completed L06 before L07. P01/P03 broader gates remain incomplete; L07 has not started.",
+  "execution_summary": "L01–L08 and guided checkpoints are complete; L06 was published at c26ffa094744a8c4122af60ab91ca13534b3d9f9. The user subsequently authorized L07/L08 feature-branch publication before L09. [L08](evidence/l08-native-status-slice/README.md) built and manually observed a SITL-only native C++ status observer, matched 13 reports against stock heartbeat mode/arming, and returned to the exact retained stock executable for a disarmed 78.04s observation without custom status. Custom flight logic/task admission remains unimplemented. L08’s guided checkpoint is complete; L09 is next proposed and has not started; L07/L08 publication is being prepared on codex/l08-native-status-slice, main unchanged, and P01/P03 broader gates remain incomplete.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",

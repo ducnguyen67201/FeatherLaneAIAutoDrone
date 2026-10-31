@@ -4,7 +4,13 @@
 
 This is the single maintained architecture for FeatherLane. It shows the native mission stack we intend to build inside our maintained ArduPilot-derived codebase and the upstream flight capabilities we reuse. The external console and optional perception supply requests and observations. Native C++ owns in-flight task progression and policy.
 
-**Status:** ArduPilot/macOS, native mission ownership, upstream maintenance and mission-selected optional perception are confirmed directions. Module names, ingress contracts, resource budgets and detailed integration remain proposed. Read the [phase registry](../phases/registry.json) for current acquisition/build progress; source acquisition is separate from a qualified executable, custom firmware or a successful simulation. Consolidating this page does not change implementation or UI/architecture approval flags.
+**Status:** ArduPilot/macOS, native mission ownership, upstream maintenance and mission-selected optional perception are confirmed directions. L08’s local SITL-only status observer is implemented and manually observed; native task execution, custom flight modes, ingress contracts and resource budgets remain proposed. Read the [phase registry](../phases/registry.json) for current acquisition/build progress; source acquisition is separate from a qualified executable, custom firmware or a successful simulation. Consolidating this page does not change implementation or UI/architecture approval flags.
+
+## L08 current implementation slice
+
+The user explicitly selected the small native status component on 2026-10-31. The L08 row was shown before implementation. `FL_Status` is a SITL-only observer: Copter supplies actual stock mode/arming state at a nominal 1 Hz; a first/every-five-update report goes through stock `GCS_SEND_TEXT`/MAVLink to MAVProxy. The callback has no target, controller or motor-write interface. The custom mission coordinator and mode below it remain future proposals, rather than implemented neighbors of this observer.
+
+The [L08 record](../evidence/l08-native-status-slice/README.md) carries build, manual observation, resource notes and stock-binary rollback evidence. Phase authorization is not an approval of the entire detailed architecture. No new hosting, process or deployment placement is introduced; this component is compiled into the existing local SITL executable.
 
 ## Module ownership
 
@@ -12,6 +18,7 @@ The diagram is a selected module/responsibility view, not an exhaustive call gra
 
 | Ownership | Component | Responsibility |
 | --- | --- | --- |
+| BUILD L08 | `libraries/FL_Status/` plus Copter scheduling/status glue | SITL-only state observer; stock flight authority retained. See L08 evidence for actual execution status. |
 | BUILD native | Candidate `FL_Mission`, proposed `libraries/FL_Mission/` | Bounded task state, required-input validity, motion limits, completion and abort/continue policy. |
 | BUILD native | Candidate `ModeFeatherLane`, proposed `ArduCopter/mode_featherlane.cpp` | Mode entry/exit and vehicle glue that uses qualified navigation/controllers. |
 | BUILD integration | Scoped ingress and status/logging | Validate/version requests and observations; report actual native state, rejection and transition reasons. Exact message mapping is undecided. |
@@ -60,7 +67,7 @@ Existing arming restrictions, configured failsafes and manual override retain au
 
 ## Local deployment
 
-The initial flight runtime is our selected ArduPilot-derived SITL executable. It contains the proposed native mission behavior alongside the reused flight stack. External local tooling supplies the console/API, owned-process lifecycle, optional perception and evidence. The browser is not required to keep the native control loop running.
+The initial flight runtime is our selected ArduPilot-derived SITL executable. The current L08 custom build contains only a status observer alongside the reused flight stack. Native mission behavior remains proposed. External local tooling supplies the console/API, owned-process lifecycle, optional perception and evidence. The browser is not required to keep the native control loop running.
 
 | Placement | Intended role | Qualification status |
 | --- | --- | --- |

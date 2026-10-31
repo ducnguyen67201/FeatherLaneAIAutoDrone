@@ -1,0 +1,9 @@
+{
+  "owned_sitl_processes_remaining": [],
+  "selected_socket_inventory": "",
+  "lsof_exit_code": 1,
+  "stock_original_sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec",
+  "main_commit": "c45c9e19ae279011d5779fa2669df3fac0f21a29",
+  "automated_tests_created_or_run": false,
+  "new_commits_or_pushes": false
+}

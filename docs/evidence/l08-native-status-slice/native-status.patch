@@ -1,0 +1,129 @@
+diff --git a/ArduCopter/Copter.cpp b/ArduCopter/Copter.cpp
+index 3b8f3903cf..8b40486b83 100644
+--- a/ArduCopter/Copter.cpp
++++ b/ArduCopter/Copter.cpp
+@@ -258,6 +258,9 @@ const AP_Scheduler::Task Copter::scheduler_tasks[] = {
+ #if HAL_BUTTON_ENABLED
+     SCHED_TASK_CLASS(AP_Button,            &copter.button,              update,           5, 100, 168),
+ #endif
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++    SCHED_TASK(update_featherlane_status,  1,    100, 171),
++#endif
+ #if AP_INERTIALSENSOR_FAST_SAMPLE_WINDOW_ENABLED
+     // don't delete this, there is an equivalent (virtual) in AP_Vehicle for the non-rate loop case
+     SCHED_TASK(update_dynamic_notch_at_specified_rate_main,                       LOOP_RATE, 200, 215),
+@@ -943,6 +946,17 @@ bool Copter::get_rate_ef_targets(Vector3f& rate_ef_targets_rads) const
+     return true;
+ }
+ 
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++void Copter::update_featherlane_status()
++{
++    if (featherlane_status.update(uint8_t(flightmode->mode_number()), motors->armed())) {
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L08 tick=%lu mode=%u armed=%u",
++                      (unsigned long)featherlane_status.update_count(),
++                      unsigned(featherlane_status.mode()), unsigned(featherlane_status.armed()));
++    }
++}
++#endif // CONFIG_HAL_BOARD == HAL_BOARD_SITL
++
+ /*
+   constructor for main Copter class
+  */
+diff --git a/ArduCopter/Copter.h b/ArduCopter/Copter.h
+index 90bee852df..6cad1a95a8 100644
+--- a/ArduCopter/Copter.h
++++ b/ArduCopter/Copter.h
+@@ -27,6 +27,10 @@
+ 
+ #include <AP_HAL/AP_HAL.h>
+ 
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++#include <FL_Status/FL_Status.h>
++#endif
++
+ // Common dependencies
+ #include <AP_Common/AP_Common.h>            // Common definitions and utility routines for the ArduPilot libraries
+ #include <AP_Common/Location.h>             // Library having the implementation of location class         
+@@ -584,6 +588,10 @@ private:
+     bool standby_active;
+ 
+     static const AP_Scheduler::Task scheduler_tasks[];
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++    FL_Status featherlane_status;
++    void update_featherlane_status();
++#endif
+     static const AP_Param::Info var_info[];
+     static const struct LogStructure log_structure[];
+ 
+diff --git a/ArduCopter/wscript b/ArduCopter/wscript
+index 63cf310edd..92aef37e7d 100644
+--- a/ArduCopter/wscript
++++ b/ArduCopter/wscript
+@@ -5,7 +5,9 @@ def build(bld):
+     bld.ap_stlib(
+         name=vehicle + '_libs',
+         ap_vehicle=vehicle,
+-        ap_libraries=bld.ap_common_vehicle_libraries() + [
++        ap_libraries=bld.ap_common_vehicle_libraries() + (
++            ['FL_Status'] if bld.env.BOARD == 'sitl' else []
++        ) + [
+             'AC_AttitudeControl',
+             'AC_InputManager',
+             'AC_PrecLand',
+diff --git a/libraries/FL_Status/FL_Status.h b/libraries/FL_Status/FL_Status.h
+new file mode 100644
+index 0000000000..a675a93cdf
+--- /dev/null
++++ b/libraries/FL_Status/FL_Status.h
+@@ -0,0 +1,25 @@
++/* SPDX-License-Identifier: GPL-3.0-or-later */
++#pragma once
++
++#include <AP_HAL/AP_HAL_Boards.h>
++
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++#include <stdint.h>
++
++// L08 observer only: no command, controller or motor interfaces.
++class FL_Status {
++public:
++    // Called at a nominal 1 Hz; true requests the first/every fifth report.
++    bool update(uint8_t mode, bool armed);
++
++    uint32_t update_count() const { return _update_count; }
++    uint8_t mode() const { return _mode; }
++    bool armed() const { return _armed; }
++
++private:
++    uint32_t _update_count = 0;
++    uint8_t _mode = 0;
++    bool _armed = false;
++    uint8_t _report_countdown = 0;
++};
++#endif // CONFIG_HAL_BOARD == HAL_BOARD_SITL
+diff --git a/libraries/FL_Status/FL_Status.cpp b/libraries/FL_Status/FL_Status.cpp
+new file mode 100644
+index 0000000000..d0df006d2d
+--- /dev/null
++++ b/libraries/FL_Status/FL_Status.cpp
+@@ -0,0 +1,19 @@
++/* SPDX-License-Identifier: GPL-3.0-or-later */
++#include "FL_Status.h"
++
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++bool FL_Status::update(uint8_t mode, bool armed)
++{
++    _mode = mode;
++    _armed = armed;
++    ++_update_count;
++
++    if (_report_countdown > 0) {
++        --_report_countdown;
++        return false;
++    }
++
++    _report_countdown = 4;
++    return true;
++}
++#endif // CONFIG_HAL_BOARD == HAL_BOARD_SITL

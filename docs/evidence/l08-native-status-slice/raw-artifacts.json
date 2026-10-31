@@ -1,0 +1,117 @@
+[
+  {
+    "path": ".local/l08/custom-run/console.log",
+    "bytes": 4974,
+    "sha256": "932fd6291dd0cd30d4951ec2f71e2af39856c438ad7dbd69afbf41612575a5f3"
+  },
+  {
+    "path": ".local/l08/custom-run/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "df6f921b23eb4b44ae1202275deea8e2e28a0c2008eeee30f3749a6fa9c65ffb"
+  },
+  {
+    "path": ".local/l08/custom-run/launch.zsh",
+    "bytes": 681,
+    "sha256": "98639ae4f6310dacf3f7341ad35ebb8a7ced6c91c54110eedaf8d833285878a0"
+  },
+  {
+    "path": ".local/l08/custom-run/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd"
+  },
+  {
+    "path": ".local/l08/custom-run/mav.tlog",
+    "bytes": 313393,
+    "sha256": "112a1075cc1402cc0213695d16a3dbc70c510dcfd4c6a0e98a95ca8edbb9bbfe"
+  },
+  {
+    "path": ".local/l08/custom-run/mav.tlog.raw",
+    "bytes": 253411,
+    "sha256": "5f2b3fc64e1b82883c6dd2c47df9cd6677b82714a276462c1547a98feded3348"
+  },
+  {
+    "path": ".local/l08/custom-run/observations.jsonl",
+    "bytes": 2073809,
+    "sha256": "30eacec52cf4a9784332bd8c388f5a74e8419ecd0d594e159e0033396cb52799"
+  },
+  {
+    "path": ".local/l08/custom-run/owned-process.json",
+    "bytes": 1958,
+    "sha256": "6f511b61a194c637b0fb807c05cdf04bff1b1690ba293900f0347937856648bf"
+  },
+  {
+    "path": ".local/l08/custom-run/ritw-20261031193420",
+    "bytes": 233,
+    "sha256": "6cffe1d8ccc656ad74088ceb1afa975e8e8fdca298317b27bd13c6663a658698"
+  },
+  {
+    "path": ".local/l08/custom-run/shutdown.json",
+    "bytes": 711,
+    "sha256": "882158b73fd6768626c674efe9a4d94fd9b7b45588ae6c5696933d1f0843cbe0"
+  },
+  {
+    "path": ".local/l08/custom-run/tasks-end.txt",
+    "bytes": 7490,
+    "sha256": "0290e2de20d211ecc515736c59d937753ca8eb749a4ef3fbb1d8f16fdefca66c"
+  },
+  {
+    "path": ".local/l08/custom-run/tasks-start.txt",
+    "bytes": 8,
+    "sha256": "05f9892023109a8001708c9237be7bee8dfcfe866285b61230be11975261c000"
+  },
+  {
+    "path": ".local/l08/custom-run/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".local/l08/stock-run/console.log",
+    "bytes": 3732,
+    "sha256": "ebe3308bea5dc34c41c4dc7c86e4e282b14331f110519a55e30aa4a0302f49ad"
+  },
+  {
+    "path": ".local/l08/stock-run/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "df6f921b23eb4b44ae1202275deea8e2e28a0c2008eeee30f3749a6fa9c65ffb"
+  },
+  {
+    "path": ".local/l08/stock-run/launch.zsh",
+    "bytes": 671,
+    "sha256": "27347e0540527f0c9d65ab63cb4e469d77351bdf7c7eb2acfa72226123274c47"
+  },
+  {
+    "path": ".local/l08/stock-run/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd"
+  },
+  {
+    "path": ".local/l08/stock-run/mav.tlog",
+    "bytes": 362681,
+    "sha256": "f472879f9c10516a811cc145e43ddaf83d000606bb125d4835759bc48b9cad01"
+  },
+  {
+    "path": ".local/l08/stock-run/mav.tlog.raw",
+    "bytes": 291428,
+    "sha256": "d90180fb53c0346dd5a1cebf5f418c2e9c86f3583d60aa813ac41538309a6240"
+  },
+  {
+    "path": ".local/l08/stock-run/observations.jsonl",
+    "bytes": 2437634,
+    "sha256": "63c858ff8b04c2f7b15018d27a8bf05d56ed4b806de4088ef451abac1e7fe3fc"
+  },
+  {
+    "path": ".local/l08/stock-run/ritw-20261031193533",
+    "bytes": 224,
+    "sha256": "f599f3c93a134cf6b4eb5f380ada28b03a2f5f75ed300b11cae96f70c07a35c5"
+  },
+  {
+    "path": ".local/l08/stock-run/shutdown.json",
+    "bytes": 1023,
+    "sha256": "1c8e338a74b5bf799ed47ebc29264e8749c4f649cffcd5d68d59df4fca63d27d"
+  },
+  {
+    "path": ".local/l08/stock-run/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

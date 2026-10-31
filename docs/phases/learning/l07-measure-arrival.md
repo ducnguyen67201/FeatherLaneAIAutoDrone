@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M02 Learn movement with one change at a time · Track: core · Dependencies: [L06](l06-one-speed-change.md)
+**DRAFT phase card. Status: complete.** M02 Learn movement with one change at a time · Track: core · Dependencies: [L06](l06-one-speed-change.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -44,7 +44,7 @@ Retain:
 
 - Position/speed/dwell timeline and the chosen scenario thresholds.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [Measured entry, stopping and arrival](../../evidence/l07-measure-arrival/README.md): fixed1m/.3m/s/2s dwell plus height/state/freshness/gap conditions before stock L05-config run. First region entry2.418s at2.190m/s; first all-bounds sample3.164s; nine samples completed dwell at5.165s; further17.254s of qualifying sampled hold before LAND. About0.100m overshoot; no waypoint-reached message observed in selected GUIDED position path. Flight, landing/disarm, cleanup and guided checkpoint complete on 2026-10-31. Learner identified that first entry was too fast and one later low-speed sample was insufficient; continued held conditions were needed. Guided clarification fixed the timing, speed<=0.3m/s rather than exact zero, and two-second dwell terminology. Guided understanding, not independent examination. No parameter/controller changes or new tests.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

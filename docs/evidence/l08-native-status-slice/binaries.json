@@ -1,0 +1,12 @@
+{
+  "source": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/ardupilot/build/sitl/bin/arducopter",
+  "retained_copy": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+  "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec",
+  "bytes": 4817736,
+  "custom": {
+    "path": ".local/l08/build/sitl/bin/arducopter",
+    "bytes": 4818072,
+    "sha256": "ea55cdbf286ea8b09395faed2e27f968fb2fcb095872526d1023facfcd143dfe"
+  },
+  "stock_original_unchanged": true
+}

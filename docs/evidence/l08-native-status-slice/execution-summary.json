@@ -1,0 +1,303 @@
+{
+  "custom-run": {
+    "heartbeat_samples": 71,
+    "heartbeat_span_s": 66.04245615005493,
+    "heartbeat_modes": [
+      0,
+      4
+    ],
+    "armed_heartbeat_samples": 0,
+    "landed_states_observed": [
+      1
+    ],
+    "custom_status_count": 13,
+    "custom_statuses": [
+      {
+        "wall_time": 1793489665.318733,
+        "text": "FL L08 tick=1 mode=0 armed=0",
+        "tick": 1,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.4033200740814209,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489670.3212569,
+        "text": "FL L08 tick=6 mode=0 armed=0",
+        "tick": 6,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.40473175048828125,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489675.320582,
+        "text": "FL L08 tick=11 mode=0 armed=0",
+        "tick": 11,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.405026912689209,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489680.324096,
+        "text": "FL L08 tick=16 mode=0 armed=0",
+        "tick": 16,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.40848684310913086,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489685.3264651,
+        "text": "FL L08 tick=21 mode=0 armed=0",
+        "tick": 21,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.40648818016052246,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489690.323097,
+        "text": "FL L08 tick=26 mode=0 armed=0",
+        "tick": 26,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.4045579433441162,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489695.3246999,
+        "text": "FL L08 tick=31 mode=0 armed=0",
+        "tick": 31,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.4064638614654541,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489700.324498,
+        "text": "FL L08 tick=36 mode=0 armed=0",
+        "tick": 36,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.4035060405731201,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489705.328521,
+        "text": "FL L08 tick=41 mode=0 armed=0",
+        "tick": 41,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.40708208084106445,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489710.331797,
+        "text": "FL L08 tick=46 mode=4 armed=0",
+        "tick": 46,
+        "mode": 4,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.4086019992828369,
+        "heartbeat_mode": 4,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489715.327882,
+        "text": "FL L08 tick=51 mode=4 armed=0",
+        "tick": 51,
+        "mode": 4,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.4018518924713135,
+        "heartbeat_mode": 4,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489720.332986,
+        "text": "FL L08 tick=56 mode=4 armed=0",
+        "tick": 56,
+        "mode": 4,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.4046289920806885,
+        "heartbeat_mode": 4,
+        "heartbeat_armed": false
+      },
+      {
+        "wall_time": 1793489725.328777,
+        "text": "FL L08 tick=61 mode=0 armed=0",
+        "tick": 61,
+        "mode": 0,
+        "armed": 0,
+        "nearest_heartbeat_age_abs_s": 0.40151500701904297,
+        "heartbeat_mode": 0,
+        "heartbeat_armed": false
+      }
+    ],
+    "status_interval_s_min": 4.995790958404541,
+    "status_interval_s_max": 5.005104064941406,
+    "status_tick_steps": [
+      5
+    ],
+    "acks": [
+      {
+        "wall_time": 1793489680.890922,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 511,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793489707.196775,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 176,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793489721.515606,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 176,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      }
+    ],
+    "shutdown": {
+      "time": 1793489729.646699,
+      "pid": 36920,
+      "action": "SIGTERM owned disarmed/on-ground SITL",
+      "last_state": {
+        "HEARTBEAT": {
+          "wall_time": 1793489728.929971,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793489729.372633,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    }
+  },
+  "stock-run": {
+    "heartbeat_samples": 81,
+    "heartbeat_span_s": 78.04327440261841,
+    "heartbeat_modes": [
+      0
+    ],
+    "armed_heartbeat_samples": 0,
+    "landed_states_observed": [
+      1
+    ],
+    "custom_status_count": 0,
+    "custom_statuses": [],
+    "status_interval_s_min": null,
+    "status_interval_s_max": null,
+    "status_tick_steps": [],
+    "acks": [
+      {
+        "wall_time": 1793489752.867327,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 511,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      }
+    ],
+    "shutdown": {
+      "time": 1793489815.8377101,
+      "pid": 37610,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+        "--model",
+        "+",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../ardupilot/Tools/autotest/default_params/copter.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM owned disarmed/on-ground SITL",
+      "last_state": {
+        "HEARTBEAT": {
+          "wall_time": 1793489815.7482722,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793489815.375084,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    }
+  }
+}

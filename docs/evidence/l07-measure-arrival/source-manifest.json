@@ -1,0 +1,55 @@
+{
+  "firmware_commit": "fb773567896014da007bca58358704d4a0d8516f",
+  "scope": "Selected GUIDED position/waypoint paths and reached-notification semantics; no firmware modifications",
+  "sources": [
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "symbol": "void ModeGuided::run()",
+      "line": 64,
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L64"
+    },
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "symbol": "gcs().send_mission_item_reached_message(0);",
+      "line": 85,
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L85"
+    },
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "symbol": "bool ModeGuided::use_wpnav_for_position_control()",
+      "line": 670,
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L670"
+    },
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "symbol": "bool ModeGuided::set_destination(const Location&",
+      "line": 466,
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L466"
+    },
+    {
+      "path": "ardupilot/ArduCopter/mode_guided.cpp",
+      "symbol": "void ModeGuided::pos_control_run()",
+      "line": 735,
+      "sha256": "954836c2a3bb1418ed81fd0178abf5521e140a45fc27543896b3ea6d06df0a08",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode_guided.cpp#L735"
+    },
+    {
+      "path": "ardupilot/libraries/AC_WPNav/AC_WPNav.cpp",
+      "symbol": "bool AC_WPNav::advance_wp_target_along_track(",
+      "line": 527,
+      "sha256": "867983f60d1917e6f51763d09e6e2f79f8fa72823fca514069bd987e555d532e",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_WPNav/AC_WPNav.cpp#L527"
+    },
+    {
+      "path": "ardupilot/libraries/AC_WPNav/AC_WPNav.h",
+      "symbol": "virtual bool reached_wp_destination() const",
+      "line": 233,
+      "sha256": "cb770551808f100b8aa70ef01be8076d290ba6a223c5cf9db0b6f12618c32449",
+      "upstream_permalink": "https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/libraries/AC_WPNav/AC_WPNav.h#L233"
+    }
+  ]
+}

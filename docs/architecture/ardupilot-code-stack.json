@@ -57,9 +57,9 @@
       "id": "client",
       "type": "backend",
       "label": "MAVLink client",
-      "sublabel": "Configure / start / stop · telemetry",
+      "sublabel": "MAVProxy now · console/API later",
       "pos": [
-        430,
+        40,
         240
       ],
       "size": [
@@ -75,7 +75,7 @@
       "sublabel": "libraries/GCS_MAVLink/ + Copter handler",
       "pos": [
         40,
-        470
+        720
       ],
       "size": [
         300,
@@ -90,7 +90,7 @@
       "sublabel": "libraries/AP_Mission/",
       "pos": [
         850,
-        470
+        720
       ],
       "size": [
         300,
@@ -105,7 +105,7 @@
       "sublabel": "ArduCopter/mode_*.cpp",
       "pos": [
         430,
-        720
+        970
       ],
       "size": [
         300,
@@ -120,7 +120,7 @@
       "sublabel": "libraries/AC_WPNav/",
       "pos": [
         40,
-        970
+        1220
       ],
       "size": [
         300,
@@ -135,7 +135,7 @@
       "sublabel": "libraries/AC_AttitudeControl/",
       "pos": [
         430,
-        970
+        1220
       ],
       "size": [
         300,
@@ -150,7 +150,7 @@
       "sublabel": "libraries/AC_AttitudeControl/",
       "pos": [
         850,
-        970
+        1220
       ],
       "size": [
         300,
@@ -165,7 +165,7 @@
       "sublabel": "IMU · GPS · barometer · external nav",
       "pos": [
         40,
-        1220
+        1470
       ],
       "size": [
         300,
@@ -180,7 +180,7 @@
       "sublabel": "libraries/AP_AHRS/ · AP_NavEKF3/",
       "pos": [
         850,
-        720
+        970
       ],
       "size": [
         300,
@@ -195,7 +195,7 @@
       "sublabel": "Upstream vehicle checks and configured failsafes retain authority",
       "pos": [
         40,
-        1470
+        1720
       ],
       "size": [
         1110,
@@ -210,7 +210,7 @@
       "sublabel": "libraries/AP_Motors/",
       "pos": [
         430,
-        1220
+        1470
       ],
       "size": [
         300,
@@ -225,7 +225,7 @@
       "sublabel": "libraries/AP_HAL/ + platform backend",
       "pos": [
         850,
-        1220
+        1470
       ],
       "size": [
         300,
@@ -240,7 +240,7 @@
       "sublabel": "PROPOSED C++ · state, freshness, policy",
       "pos": [
         430,
-        470
+        720
       ],
       "size": [
         300,
@@ -254,7 +254,35 @@
       "sublabel": "PROPOSED ArduCopter mode adapter",
       "pos": [
         40,
-        720
+        970
+      ],
+      "size": [
+        300,
+        90
+      ]
+    },
+    {
+      "id": "status-scheduler",
+      "type": "backend",
+      "label": "Stock AP_Scheduler + Copter glue",
+      "sublabel": "L08 hook · reads mode and armed state",
+      "pos": [
+        850,
+        470
+      ],
+      "size": [
+        300,
+        90
+      ]
+    },
+    {
+      "id": "native-status",
+      "type": "security",
+      "label": "L08 · FL_Status observer",
+      "sublabel": "OBSERVED L08 commit · SITL status only",
+      "pos": [
+        430,
+        470
       ],
       "size": [
         300,
@@ -290,7 +318,9 @@
         "motors",
         "hal",
         "native-mission",
-        "native-mode"
+        "native-mode",
+        "status-scheduler",
+        "native-status"
       ],
       "pad": 35
     },
@@ -339,6 +369,15 @@
       "label": "CROSS-CUTTING · Reused arming and failsafe behavior",
       "wraps": [
         "safety"
+      ],
+      "pad": 15
+    },
+    {
+      "kind": "region",
+      "label": "CURRENT L08 SCOPE · status only; stock modes keep flight authority",
+      "wraps": [
+        "status-scheduler",
+        "native-status"
       ],
       "pad": 15
     }
@@ -421,9 +460,31 @@
       "from": "mission",
       "to": "modes",
       "label": "AUTO callbacks"
+    },
+    {
+      "id": "schedule-status",
+      "from": "status-scheduler",
+      "to": "native-status",
+      "label": "1 Hz"
+    },
+    {
+      "id": "status-telemetry",
+      "from": "native-status",
+      "to": "gcs",
+      "label": "STATUSTEXT · every 5 ticks"
     }
   ],
   "cards": [
+    {
+      "dot": "amber",
+      "title": "L08 observed local implementation",
+      "items": [
+        "FL_Status is a bounded observer, not a task coordinator or flight mode. The Copter hook copies actual mode/arming; stock GCS sends status.",
+        "Custom SITL built and reported 13 status lines in a disarmed session. Stock modes retain authority; no target or motor writes were added.",
+        "The preserved stock executable was then observed for 78 seconds of heartbeat telemetry with no FL L08 message. Both sessions were stopped disarmed/on-ground.",
+        "Only the observer/build/hook is implemented in firmware commit 3f467d90be284654c5721ac3d94c26863f771275 against Copter-4.7.2 fb773567896014da007bca58358704d4a0d8516f. Mission/mode/API boxes remain proposed; see L08 evidence."
+      ]
+    },
     {
       "dot": "rose",
       "title": "BUILD inside the autopilot",

@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg viewBox="0 0 1217 652" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" xmlns="http://www.w3.org/2000/svg" width="1217" height="652" style="width:1217px;height:652px;min-width:0px;"><style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1217 652" data-layout-contract="readable-v2" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui=""><style>
 /*
 JetBrains Mono variable WOFF2 subsets from Google Fonts service revision v24.
 These fixed bytes are shared by the viewer and its SVG/raster exports.
@@ -673,16 +672,15 @@ rect.c-bg-rect { fill: var(--bg); }
           <text data-detail="context" x="902.8000000000001" y="379" class="t-muted" font-size="8" text-anchor="middle">complete · Predict and compare</text>
         </g>
 
-        <g id="node-L07" data-node-id="L07" data-node-label="07 Observe stop" tabindex="0" role="button" aria-label="Focus 07 Observe stop, Next proposed · planned, Explain measured stopping" aria-pressed="false" data-node-kind="security" data-node-sublabel="Next proposed · planned" data-node-context="Explain measured stopping">
-          <title>07 Observe stop · Next proposed · planned · Explain measured stopping</title>
-          <rect x="842.8000000000001" y="465" width="120" height="52" rx="8" class="c-mask"/>
-          <rect x="842.8000000000001" y="465" width="120" height="52" rx="8" class="c-security" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(848.8000000000001 471) scale(0.6875)">
-            <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
-            <path d="m5.8 8 1.5 1.5 3-3"/>
+        <g id="node-L07" data-node-id="L07" data-node-label="07 Observe stop" tabindex="0" role="button" aria-label="Focus 07 Observe stop, complete · Position, speed, dwell, Explain measured stopping" aria-pressed="false" data-node-kind="backend" data-node-sublabel="complete · Position, speed, dwell" data-node-context="Explain measured stopping">
+          <title>07 Observe stop · complete · Position, speed, dwell · Explain measured stopping</title>
+          <rect x="818.8000000000001" y="465" width="168" height="52" rx="8" class="c-mask"/>
+          <rect x="818.8000000000001" y="465" width="168" height="52" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(824.8000000000001 471) scale(0.6875)">
+            <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="497.2" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">07 Observe stop</text>
-          <text data-detail="context" x="902.8000000000001" y="512.1" class="t-muted" font-size="8" text-anchor="middle">Next proposed · planned</text>
+          <text data-node-label="" data-detail-anchor="" x="902.8000000000001" y="486" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">07 Observe stop</text>
+          <text data-detail="context" x="902.8000000000001" y="503" class="t-muted" font-size="8" text-anchor="middle">complete · Position, speed, dwell</text>
         </g>
 
         <!-- Edge labels -->
@@ -717,10 +715,6 @@ rect.c-bg-rect { fill: var(--bg); }
           <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Learning phase; see status" data-legend-x="20" data-legend-baseline="572" data-legend-width="164">
             <rect x="20" y="564" width="14" height="9" rx="2" class="c-backend" stroke-width="1"/>
             <text x="42" y="572" class="t-muted" font-size="7.5" font-weight="500">Learning phase; see status</text>
-          </g>
-          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="Next proposed phase" data-legend-x="191" data-legend-baseline="572" data-legend-width="132">
-            <rect x="191" y="564" width="14" height="9" rx="2" class="c-security" stroke-width="1"/>
-            <text x="213" y="572" class="t-muted" font-size="7.5" font-weight="500">Next proposed phase</text>
           </g>
         </g>
       </svg>

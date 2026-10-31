@@ -1,0 +1,30 @@
+{
+  "declared_utc": "2026-10-31T22:37:34.883868+00:00",
+  "scope": "L07 one stock run at L05 WP_SPD10; measure entry, deceleration and sampled position/speed/dwell contract; no flight parameter writes",
+  "prediction": "First entry within1m occurs while horizontal speed still above0.3m/s; qualified arrival comes later after slow hold of2s.",
+  "latitude_deg": -35.3632172,
+  "longitude_deg": 149.1652374,
+  "latitude_e7": -353632172,
+  "longitude_e7": 1491652374,
+  "altitude_m": 3,
+  "mavlink_frame": 3,
+  "frame_name": "MAV_FRAME_GLOBAL_RELATIVE_ALT",
+  "height_reference": "above recorded home, not above sea level or terrain",
+  "nominal_start_latitude_deg": -35.3632621,
+  "nominal_start_longitude_deg": 149.1652374,
+  "manual_observation": {
+    "horizontal_error_max_m": 1,
+    "altitude_band_m": [
+      2.8,
+      3.2
+    ],
+    "horizontal_speed_max_m_s": 0.3,
+    "abs_vertical_speed_max_m_s": 0.2,
+    "observation_window_s": 5,
+    "positioning_wait_limit_s": 30,
+    "mode": "GUIDED",
+    "armed": true,
+    "landed_state": "IN_AIR"
+  },
+  "bounded_response": "If rejected or not settled in 30s, retain failure and use qualified LAND path without bypass; wait for on-ground and disarmed before cleanup"
+}
