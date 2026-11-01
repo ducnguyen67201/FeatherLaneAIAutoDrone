@@ -18,4 +18,15 @@ Read `README.md`, `docs/PROJECT-DIRECTION.md`, `docs/ROADMAP.md`, `docs/MASTER-L
 - Preserve the existing SkyDive prototype, FeatherLaneFlight checkout and unrelated private files. Do not copy weights or credentials without scoped need.
 - Network reads are allowed for research. Publishing, pushing, purchases, remote resource changes and physical operations require their own authorization. Do not initialize/publish a repository merely because documentation exists.
 
+## Match the repository's code style
+
+Read neighboring code and the repository's formatter/compiler settings before editing. Follow the surrounding author's conventions for the touched code; keep unrelated upstream code as it is.
+
+- Use descriptive parameter and local names, such as `request` and `context`, rather than unexplained single letters outside established mathematical or loop conventions.
+- Give protocol versions and operating limits clear names. Follow nearby constant conventions; use unit suffixes such as `_M` and `_MPS` for physical limits and retain exact values and boundary semantics during readability refactors.
+- Use the repository's indentation, brace style and supported language version. Keep multiline lists one entry per line, and separate logical validation/result groups with blank lines.
+- Add short comments where they explain purpose, units, bounds, protocol requirements or state/authority decisions. Keep comments beside the relevant check and consistent with the code; avoid narrating obvious syntax.
+- Prefer explicit, readable field mapping and focused guard clauses. Keep conditional build-library selection easy to read without changing which targets include a feature.
+- Review the scoped diff and run the relevant existing checks/build. Distinguish readability-only edits from behavior changes and preserve earlier execution evidence when source/build identities change. Do not add automated tests without the user's explicit request.
+
 Update the roadmap, decisions, phase status and diagrams consistently. Approval of a design does not mean it has been implemented or deployed.

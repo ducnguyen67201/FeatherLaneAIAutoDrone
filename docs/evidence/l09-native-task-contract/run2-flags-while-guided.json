@@ -1,0 +1,46 @@
+{
+  "source_system": 255,
+  "source_component": 190,
+  "transport": "TCP5762 COMMAND_INT",
+  "command": 31010,
+  "target": [
+    1,
+    1
+  ],
+  "frame": 6,
+  "current": 1,
+  "autocontinue": 0,
+  "parameters": [
+    1,
+    2,
+    1,
+    1,
+    -353632172,
+    1491652374,
+    3
+  ],
+  "responses": [
+    {
+      "wall_time": 1793491147.197458,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31010,
+        "result": 1,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 190
+      }
+    },
+    {
+      "wall_time": 1793491147.197494,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L09 vehicle kept=1",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    }
+  ]
+}

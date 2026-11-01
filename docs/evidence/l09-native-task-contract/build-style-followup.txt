@@ -1,0 +1,26 @@
+Waf: Entering directory `/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l09/build/sitl'
+Embedding file locations.txt:Tools/autotest/locations.txt
+Embedding file models/Callisto.json:Tools/autotest/models/Callisto.json
+Embedding file models/freestyle.json:Tools/autotest/models/freestyle.json
+Embedding file models/plane-3d.parm:Tools/autotest/models/plane-3d.parm
+Embedding file models/plane.parm:Tools/autotest/models/plane.parm
+Embedding file models/skywalker_2013.json:Tools/autotest/models/skywalker_2013.json
+Embedding file models/xplane_heli.json:Tools/autotest/models/xplane_heli.json
+Embedding file models/xplane_plane.json:Tools/autotest/models/xplane_plane.json
+Generating compile_commands.json
+Build commands will be stored in ../.local/l09/build/sitl/compile_commands.json
+Generating compile_commands.json
+Build commands will be stored in ../.local/l09/build/sitl/compile_commands.json
+[1384/1416] Compiling ArduCopter/GCS_MAVLink_Copter.cpp
+[1415/1416] Linking ../.local/l09/build/sitl/bin/arducopter
+ld: warning: -ld_classic is deprecated and will be removed in a future release
+
+[1416/1416] checking symbols ../.local/l09/build/sitl/bin/arducopter
+Waf: Leaving directory `/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l09/build/sitl'
+
+BUILD SUMMARY
+Build directory: /Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l09/build/sitl
+Target          Text (B)  Data (B)  BSS (B)  Total Flash Used (B)  Free Flash (B)  External Flash Used (B)
+----------------------------------------------------------------------------------------------------------
+bin/arducopter   3211264    262144        0               3473408  Not Applicable  Not Applicable
+'copter' finished successfully (1.731s)

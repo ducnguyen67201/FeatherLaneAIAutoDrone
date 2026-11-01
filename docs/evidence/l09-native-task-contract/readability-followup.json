@@ -1,0 +1,22 @@
+{
+  "scope": "User-requested request/context parameter names and clear named limits; file-scope static constexpr with upper-case names follows neighboring ArduPilot C++ conventions. Units use M and MPS suffixes.",
+  "bounds": {
+    "SUPPORTED_TASK_VERSION": "1.0f",
+    "MIN_TASK_ID": "1",
+    "MAX_TASK_ID": "65535",
+    "MIN_HEIGHT_M": "0.01f",
+    "MAX_HEIGHT_M": "10.0f",
+    "MAX_SPEED_MPS": "2.0f",
+    "MIN_ARRIVAL_RADIUS_M": "0.5f",
+    "MAX_ARRIVAL_RADIUS_M": "2.0f",
+    "MAX_HOME_DISTANCE_M": "20.0f"
+  },
+  "source_review": "After restoring old names/numeric bounds and the mathematically equivalent finite exact-version guard, executable source matches before. No policy, comparison inclusivity or retention changes.",
+  "build": "waf copter passed (1.468s); remaining warning is existing macOS -ld_classic linker deprecation. Initial named-constant float-equality build failure retained locally; exact-version guard uses lower/upper comparisons to satisfy -Wfloat-equal without tolerance.",
+  "build_log": ".local/l09/readability-followup/build.log",
+  "initial_build_failure": ".local/l09/readability-followup/build-float-equality-failure.log",
+  "current_patch_sha256": "cc626403fa28d245851447f82752b2377dc1f540b6c85d9d57abf8001a62aac5",
+  "current_binary_sha256": "72c75a4269fd52e6b8df2eaacae3fb835a81cdf5e27543533f4373b397bd9694",
+  "manual_sitl_rerun": false,
+  "publication": "none; L09 remains local"
+}

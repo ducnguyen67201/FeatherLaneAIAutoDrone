@@ -1,0 +1,267 @@
+[
+  {
+    "path": ".local/l09/run1/binaries.json",
+    "bytes": 531,
+    "sha256": "54c24af1862c436598363cb1bbd140b621638b6f6599245f128e902db2d8f339"
+  },
+  {
+    "path": ".local/l09/run1/console.log",
+    "bytes": 7482,
+    "sha256": "835137aea548febeaa383725683d78f1f937fcce3fe9ad2cb15b93ee4a086c26"
+  },
+  {
+    "path": ".local/l09/run1/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "944894b13f832b40818fefc38e51770cfd844c649a4bebde2c52395aee333331"
+  },
+  {
+    "path": ".local/l09/run1/invalid-flags.json",
+    "bytes": 1257,
+    "sha256": "75e7aa03a699092b3652b8ba6262745e12f9a381a774d35a1baf1d50c624b2a6"
+  },
+  {
+    "path": ".local/l09/run1/launch.zsh",
+    "bytes": 675,
+    "sha256": "5cebb58eb82515c5191a4dc5c9e9eef89bcac143c770dc0be8d5fc8eb89ea4f1"
+  },
+  {
+    "path": ".local/l09/run1/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd"
+  },
+  {
+    "path": ".local/l09/run1/mav.tlog",
+    "bytes": 786089,
+    "sha256": "34fc592571f6b93049abdf6fe6092ba944b02925bbcf37338b439cb46775a5e2"
+  },
+  {
+    "path": ".local/l09/run1/mav.tlog.raw",
+    "bytes": 633735,
+    "sha256": "4a909347d707f217e74d43240ef05a3ae4631178906ff138bc97aae65face9ab"
+  },
+  {
+    "path": ".local/l09/run1/observations.jsonl",
+    "bytes": 5434043,
+    "sha256": "64c13941750bb875b9849a1eb2817cce38d7df520dd679647c0b70e77985e5c5"
+  },
+  {
+    "path": ".local/l09/run1/ritw-20261031195452",
+    "bytes": 233,
+    "sha256": "e6d032b6e9203a826093dc039694e4c09ab9ec042bc18ce6c836ee24b79d2e4f"
+  },
+  {
+    "path": ".local/l09/run1/shutdown.json",
+    "bytes": 711,
+    "sha256": "d96f17c548b4a794f440703932947c5456de472d876ef32d015c1895ba6ae9e2"
+  },
+  {
+    "path": ".local/l09/run1/source.patch",
+    "bytes": 9677,
+    "sha256": "c582535fe09253f04a88653785d9c4cecc55b6cfa9b43224e70050381d45ee15"
+  },
+  {
+    "path": ".local/l09/run1/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".local/l09/run1/wrong-source.json",
+    "bytes": 973,
+    "sha256": "763ff3fb1d957f5ec700f3297ba5f6585a6783195198a6bd9c1119f38897db33"
+  },
+  {
+    "path": ".local/l09/run2/binaries.json",
+    "bytes": 717,
+    "sha256": "8d4d346980be804b019938d55888cafa625efeb7dbf031535dbe74133375fd71"
+  },
+  {
+    "path": ".local/l09/run2/console.log",
+    "bytes": 7257,
+    "sha256": "23861d8cc06ddaf14b415382640026fe9d738062c0937390bd0817a77c8c354a"
+  },
+  {
+    "path": ".local/l09/run2/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "4bf377a9a7927d2c64ccb8a3bce71c8d83aa9769c4868c18ca1b3b44642a2916"
+  },
+  {
+    "path": ".local/l09/run2/flags-while-guided.json",
+    "bytes": 804,
+    "sha256": "d1ad7e62c09d1120f19677d5500b32e8dd1586e6eb5995d62c15b4eed070636d"
+  },
+  {
+    "path": ".local/l09/run2/invalid-flags.json",
+    "bytes": 1712,
+    "sha256": "e18a82fe751723ddfd68350b478f58b4f3707c683205ba49b0b25dd618756739"
+  },
+  {
+    "path": ".local/l09/run2/launch.zsh",
+    "bytes": 675,
+    "sha256": "3d11c287b5fb7811536c002e6030eb688e6055cccbc19afd715c1d5316f7d5a2"
+  },
+  {
+    "path": ".local/l09/run2/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd"
+  },
+  {
+    "path": ".local/l09/run2/mav.tlog",
+    "bytes": 493167,
+    "sha256": "4965cf18ea35e0c976e594b420c6ed277ad5ae8185d9d5728fab9a2b537bbde9"
+  },
+  {
+    "path": ".local/l09/run2/mav.tlog.raw",
+    "bytes": 396751,
+    "sha256": "246efefba1d619747b8bd8f78664105127945e0a0f57aa4651d8a9c377bc03ae"
+  },
+  {
+    "path": ".local/l09/run2/observations.jsonl",
+    "bytes": 3375814,
+    "sha256": "412e25f0fa41c420e54ac9c858b3014c8657e37f59afe0656ea14f0895280b18"
+  },
+  {
+    "path": ".local/l09/run2/ritw-20261031195751",
+    "bytes": 233,
+    "sha256": "e6d032b6e9203a826093dc039694e4c09ab9ec042bc18ce6c836ee24b79d2e4f"
+  },
+  {
+    "path": ".local/l09/run2/shutdown.json",
+    "bytes": 1030,
+    "sha256": "adcc1fcaf7d99139040a3df448aaf22f0a1ad779a2164f60ecb40dcc65208f7e"
+  },
+  {
+    "path": ".local/l09/run2/source.patch",
+    "bytes": 9671,
+    "sha256": "e9741e8ca5865cb5306f80805e522b4a1a8d0962c5473f6e663af008d56a06a6"
+  },
+  {
+    "path": ".local/l09/run2/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".local/l09/run2/wrong-source.json",
+    "bytes": 1030,
+    "sha256": "ad0235195b0a2ec8b7fd4dc7b203c1d639453627e053734d73766a5b78bcc7c3"
+  },
+  {
+    "path": ".local/l09/run3/binaries.json",
+    "bytes": 913,
+    "sha256": "0835f9c1ef08eb1a4581743726e59ff2f24cb046b51f2412e6b1e234ac00f750"
+  },
+  {
+    "path": ".local/l09/run3/console.log",
+    "bytes": 7201,
+    "sha256": "2f877371d5ea13d466a04c1c0db24a61d572df81d92c216001344ca87079e03a"
+  },
+  {
+    "path": ".local/l09/run3/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "df6f921b23eb4b44ae1202275deea8e2e28a0c2008eeee30f3749a6fa9c65ffb"
+  },
+  {
+    "path": ".local/l09/run3/invalid-flags.json",
+    "bytes": 803,
+    "sha256": "6576d94b903ae4b0f079f9f79d2acb7796f3600229bbbf94a4d3b46710431c56"
+  },
+  {
+    "path": ".local/l09/run3/launch.zsh",
+    "bytes": 675,
+    "sha256": "09fed4dfd586b0d7b6d2de8f8aa94cf56b981724f21c4b3f33b946777f45b138"
+  },
+  {
+    "path": ".local/l09/run3/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd"
+  },
+  {
+    "path": ".local/l09/run3/mav.tlog",
+    "bytes": 415754,
+    "sha256": "440de1a00d5ca025b04ade3628af2fdee4fcf8364b812bb086ee538d120aae30"
+  },
+  {
+    "path": ".local/l09/run3/mav.tlog.raw",
+    "bytes": 333800,
+    "sha256": "933a9f77ff44a00827b4e82af4593afa5e4cd973f5743a2eb7978cb8d81df3ed"
+  },
+  {
+    "path": ".local/l09/run3/observations.jsonl",
+    "bytes": 2805281,
+    "sha256": "cda5d8e8eb743ac2dc213aaa8b1d3da1b1c09d8b7cce3a4e81863d1446d2f9b3"
+  },
+  {
+    "path": ".local/l09/run3/ritw-20261031200154",
+    "bytes": 233,
+    "sha256": "e6d032b6e9203a826093dc039694e4c09ab9ec042bc18ce6c836ee24b79d2e4f"
+  },
+  {
+    "path": ".local/l09/run3/shutdown.json",
+    "bytes": 1030,
+    "sha256": "9ea94e43ea1391490f917e4367c4e8ef0bc052e1a94c3b2869f8fd3bda4dc36c"
+  },
+  {
+    "path": ".local/l09/run3/source.patch",
+    "bytes": 9662,
+    "sha256": "1ef1968930d8a9de8a2ab0d496fa49b3709c6c6c5b55e1a3d0e4b5ebf70bbf58"
+  },
+  {
+    "path": ".local/l09/run3/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".local/l09/run3/wrong-source.json",
+    "bytes": 1032,
+    "sha256": "935fa112a8b620c6dc681324ed27fb921229ee37dcafb7006c76106d20519895"
+  },
+  {
+    "path": ".local/l09/rollback/console.log",
+    "bytes": 4009,
+    "sha256": "4aa6856a802c00e117b53843cc533da04e960f57bfe272f245a1336c34b011c4"
+  },
+  {
+    "path": ".local/l09/rollback/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "29959fe9e3363cbbd664ba0a95ea83ebda0145093679d1dc9cbd77cdf8bd1ea8"
+  },
+  {
+    "path": ".local/l09/rollback/launch.zsh",
+    "bytes": 668,
+    "sha256": "7f64eac551fbde14fa75cd3193f1df0a1051453e94acc326d2d191f8b6503345"
+  },
+  {
+    "path": ".local/l09/rollback/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd"
+  },
+  {
+    "path": ".local/l09/rollback/mav.tlog",
+    "bytes": 167270,
+    "sha256": "edde7a9fe211e3beaa0a9cc06179e624ef0ee29c0c5d3a32a0f9f045184c2848"
+  },
+  {
+    "path": ".local/l09/rollback/mav.tlog.raw",
+    "bytes": 133158,
+    "sha256": "8a330177a91294ae3d6f3fc94147ef8b200bdb1ca45cf7fefbe0343b33aa1838"
+  },
+  {
+    "path": ".local/l09/rollback/observations.jsonl",
+    "bytes": 1060168,
+    "sha256": "1c633e8f7e5bdba3014d428cb9f697a55736feaef611983f2bfff11c5c8364b8"
+  },
+  {
+    "path": ".local/l09/rollback/ritw-20261031195946",
+    "bytes": 222,
+    "sha256": "ea697161ec0d5adf118b4929f57dcd9a2dfbe421839a522d5d5889dbc2593d85"
+  },
+  {
+    "path": ".local/l09/rollback/shutdown.json",
+    "bytes": 1021,
+    "sha256": "0115bc86a3e5fe8d027f1a70ca0d7cd9c84546e6f1a7de7faeb0032306a3793d"
+  },
+  {
+    "path": ".local/l09/rollback/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  }
+]

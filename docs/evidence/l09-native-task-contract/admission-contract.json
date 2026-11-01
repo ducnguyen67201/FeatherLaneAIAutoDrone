@@ -1,0 +1,30 @@
+{
+  "version": 1,
+  "transport": "COMMAND_INT only; MAV_CMD_USER_1 (31010), experimental project-local SITL contract; not a new dialect or stock mission command",
+  "target_system": 1,
+  "target_component": 1,
+  "frame": {
+    "name": "MAV_FRAME_GLOBAL_RELATIVE_ALT_INT",
+    "value": 6
+  },
+  "current": 0,
+  "autocontinue": 0,
+  "param1": "version: exactly 1",
+  "param2": "task ID: integral float from 1 through 65535",
+  "param3": "speed_mps: finite, positive according to upstream is_positive (>FLT_EPSILON), and <=2; retained limit only, not applied",
+  "param4": "radius_m: finite, from 0.5 through 2; retained condition only, not evaluated",
+  "x": "WGS84 latitude in signed degrees times 1e7, inclusive [-90,90] degrees",
+  "y": "WGS84 longitude in signed degrees times 1e7, inclusive [-180,180] degrees",
+  "z": "finite height above home in metres, from 0.01 through 10 inclusive; stored rounded to nearest cm",
+  "horizontal_limit_m": 20,
+  "range_origin": "current estimated home at admission; its latitude/longitude/altitude copied with accepted task",
+  "source_gate": "gcs().sysid_is_gcs(msg.sysid), configured GCS system-ID range; not cryptographic identity/authentication",
+  "vehicle_gate": "disarmed, land_complete, active stock STABILIZE",
+  "navigation_gate": "home_is_set and stock absolute EKF position eligibility with no EKF failsafe; includes stock predicted absolute position while disarmed",
+  "memory": "one RAM slot, reset at process restart, no persistence or execution API",
+  "duplicates": "same ID and same cm-resolution goal with upstream floating-point comparison tolerance for speed/radius is acknowledged duplicate without replacing state; changed same ID rejected; other valid ID rejected busy",
+  "rejection": "preserve existing task/home; report short STATUSTEXT reason and standard COMMAND_ACK",
+  "execution_authority": "none: cannot arm, change mode, set a navigation target or drive a motor",
+  "reset_limit": "captured home is evidence of admission reference, not a permanent authorization; L10 must revalidate home/origin/navigation resets and current limits before execution",
+  "valid_command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 1 1 1 -353632172 1491652374 3"
+}

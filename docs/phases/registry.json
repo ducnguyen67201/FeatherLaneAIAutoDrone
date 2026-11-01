@@ -95,7 +95,7 @@
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
   "active_learning_phase": null,
-  "next_proposed_learning_phase": "L09",
+  "next_proposed_learning_phase": "L10",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -476,7 +476,7 @@
       "slug": "native-task-contract",
       "title": "Admit one typed coordinate task",
       "group": "M03",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L08"
       ],
@@ -503,7 +503,7 @@
       ],
       "rollback": "Disable/remove the scoped ingress change and retain the L08 status baseline.",
       "teach_back": "Why can a syntactically valid coordinate still be an invalid mission?",
-      "record": null
+      "record": "[L09 evidence](../../evidence/l09-native-task-contract/README.md): versioned USER_1 COMMAND_INT contract, bounded native admission and exact retained-home/task state. Final source manually produced22 status reports (one accepted, two duplicates,19 rejected); all later reports preserved task1. Includes fractional-version and sub-centimetre corrections with separate earlier evidence. All93 final-run heartbeats stayed disarmed/on-ground; original L08 rollback returned UNSUPPORTED and retained its hash. Scoped six-file diff, schema, commands, telemetry, source/binary identities and cleanup retained. Guided learner checkpoint complete: learner identified request validation/rejection and the receive/return flow without movement. Clarification distinguished task ID from coordinates, payload validity from home/navigation/vehicle readiness, and the already-wired/observed RAM admission from an unused function. Accepted data is stored; the switch maps its result to a MAVLink acknowledgment. This records guided understanding, not independent examination; User subsequently authorized L09 feature-branch publication before L10; firmware commit 39cf614d1aae2ee4acb93f9294ebf66178967acb. User-requested repository-style cleanup subsequently replaced positional Request/Context initialization with named field assignments; same bindings/policy, incremental build and diff check passed. Pre-cleanup manual evidence and current-source hashes are distinguished; no manual scenario rerun for this style-only change."
     },
     {
       "id": "L10",
@@ -1247,11 +1247,13 @@
     "speed_comparison_record": "../evidence/l06-one-speed-change/README.md",
     "arrival_record": "../evidence/l07-measure-arrival/README.md",
     "native_status_record": "../evidence/l08-native-status-slice/README.md",
-    "custom_working_branch": "codex/l08-native-status-slice",
+    "custom_working_branch": "codex/l09-native-task-contract",
     "native_status_scope": "SITL-only observer; no native task execution or custom mode. Custom commit is a five-file addition against the preserved stock base.",
-    "custom_firmware_commit": "3f467d90be284654c5721ac3d94c26863f771275"
+    "custom_firmware_commit": "39cf614d1aae2ee4acb93f9294ebf66178967acb",
+    "native_task_admission_record": "../evidence/l09-native-task-contract/README.md",
+    "native_task_admission_scope": "Six-file admission-only custom commit 39cf614d1aae2ee4acb93f9294ebf66178967acb against published L08; no task execution."
   },
-  "execution_summary": "L01–L08 and guided checkpoints are complete; L06 was published at c26ffa094744a8c4122af60ab91ca13534b3d9f9. The user subsequently authorized L07/L08 feature-branch publication before L09. [L08](evidence/l08-native-status-slice/README.md) built and manually observed a SITL-only native C++ status observer, matched 13 reports against stock heartbeat mode/arming, and returned to the exact retained stock executable for a disarmed 78.04s observation without custom status. Custom flight logic/task admission remains unimplemented. L08’s guided checkpoint is complete; L09 is next proposed and has not started; L07/L08 publication is being prepared on codex/l08-native-status-slice, main unchanged, and P01/P03 broader gates remain incomplete.",
+  "execution_summary": "L01–L08 and guided checkpoints are complete. L07/L08 publication was remote-SHA verified: project09c3229e3ed4cb7d9a8998b1f85ec16def0448a8 and firmware3f467d90be284654c5721ac3d94c26863f771275, main unchanged. [L09](evidence/l09-native-task-contract/README.md) locally implements admission-only typed coordinate tasks: final source observed22 explicit outcomes with stored-task preservation and no arming/movement, plus retained-L08 rollback. L09’s guided learner checkpoint is complete, including clarification of stored admission versus movement. The user authorized L09 publication before L10; firmware 39cf614d1aae2ee4acb93f9294ebf66178967acb was pushed and its remote branch verified. Project publication is being prepared; L10 has not started, and P01/P03 broader gates remain incomplete.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
@@ -1264,5 +1266,14 @@
       "date": "2026-10-31",
       "source": "User requested public repositories on their profile and selected Full project + linked firmware fork."
     }
+  },
+  "publication_l07_l08": {
+    "project_branch": "codex/l08-native-status-slice",
+    "project_commit": "09c3229e3ed4cb7d9a8998b1f85ec16def0448a8",
+    "firmware_branch": "codex/l08-native-status-slice",
+    "firmware_commit": "3f467d90be284654c5721ac3d94c26863f771275",
+    "remote_sha_verified": true,
+    "main_unchanged": "c45c9e19ae279011d5779fa2669df3fac0f21a29",
+    "authorization": "User explicitly selected Yes—push L07/L08, then start L09."
   }
 }

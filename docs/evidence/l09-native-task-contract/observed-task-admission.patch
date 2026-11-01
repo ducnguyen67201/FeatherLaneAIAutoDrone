@@ -1,0 +1,272 @@
+diff --git a/ArduCopter/Copter.h b/ArduCopter/Copter.h
+index 6cad1a95a8..a4c127a04a 100644
+--- a/ArduCopter/Copter.h
++++ b/ArduCopter/Copter.h
+@@ -29,6 +29,7 @@
+ 
+ #if CONFIG_HAL_BOARD == HAL_BOARD_SITL
+ #include <FL_Status/FL_Status.h>
++#include <FL_TaskAdmission/FL_TaskAdmission.h>
+ #endif
+ 
+ // Common dependencies
+@@ -590,6 +591,7 @@ private:
+     static const AP_Scheduler::Task scheduler_tasks[];
+ #if CONFIG_HAL_BOARD == HAL_BOARD_SITL
+     FL_Status featherlane_status;
++    FL_TaskAdmission featherlane_task;
+     void update_featherlane_status();
+ #endif
+     static const AP_Param::Info var_info[];
+diff --git a/ArduCopter/GCS_MAVLink_Copter.cpp b/ArduCopter/GCS_MAVLink_Copter.cpp
+index edf8b2054b..f86db93128 100644
+--- a/ArduCopter/GCS_MAVLink_Copter.cpp
++++ b/ArduCopter/GCS_MAVLink_Copter.cpp
+@@ -498,10 +498,59 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_command_int_do_reposition(const mavlink_co
+ #endif
+ }
+ 
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++MAV_RESULT GCS_MAVLINK_Copter::handle_featherlane_admission(const mavlink_command_int_t &packet,
++                                                         const mavlink_message_t &msg)
++{
++    if (msg.msgid != MAVLINK_MSG_ID_COMMAND_INT) {
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L09 command_int_only kept=%u", unsigned(copter.featherlane_task.retained_id()));
++        return MAV_RESULT_COMMAND_INT_ONLY;
++    }
++
++    const FL_TaskAdmission::Request request {
++        packet.param1, packet.param2, packet.param3, packet.param4,
++        packet.x, packet.y, packet.z, packet.frame, packet.current, packet.autocontinue
++    };
++    const FL_TaskAdmission::Context context {
++        gcs().sysid_is_gcs(msg.sysid),
++        !copter.motors->armed() && copter.ap.land_complete &&
++            copter.flightmode->mode_number() == Mode::Number::STABILIZE,
++        copter.ahrs.home_is_set(),
++        copter.ekf_has_absolute_position() && !copter.failsafe.ekf,
++        copter.ahrs.get_home()
++    };
++    const auto result = copter.featherlane_task.admit(request, context);
++    GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L09 %s kept=%u", FL_TaskAdmission::reason(result),
++                  unsigned(copter.featherlane_task.retained_id()));
++    using Result = FL_TaskAdmission::Result;
++    switch (result) {
++    case Result::ACCEPTED:
++    case Result::DUPLICATE:
++        return MAV_RESULT_ACCEPTED;
++    case Result::VERSION:
++    case Result::FRAME:
++    case Result::FLAGS:
++        return MAV_RESULT_UNSUPPORTED;
++    case Result::VEHICLE:
++    case Result::HOME:
++    case Result::NAVIGATION:
++    case Result::BUSY:
++        return MAV_RESULT_TEMPORARILY_REJECTED;
++    default:
++        return MAV_RESULT_DENIED;
++    }
++}
++#endif // CONFIG_HAL_BOARD == HAL_BOARD_SITL
++
+ MAV_RESULT GCS_MAVLINK_Copter::handle_command_int_packet(const mavlink_command_int_t &packet, const mavlink_message_t &msg)
+ {
+     switch(packet.command) {
+ 
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++    case MAV_CMD_USER_1:
++        return handle_featherlane_admission(packet, msg);
++#endif
++
+     case MAV_CMD_CONDITION_YAW:
+         return handle_MAV_CMD_CONDITION_YAW(packet);
+ 
+diff --git a/ArduCopter/GCS_MAVLink_Copter.h b/ArduCopter/GCS_MAVLink_Copter.h
+index 9d03f9258a..511337b377 100644
+--- a/ArduCopter/GCS_MAVLink_Copter.h
++++ b/ArduCopter/GCS_MAVLink_Copter.h
+@@ -35,6 +35,9 @@ protected:
+ #endif
+     MAV_RESULT handle_command_int_packet(const mavlink_command_int_t &packet, const mavlink_message_t &msg) override;
+     MAV_RESULT handle_command_int_do_reposition(const mavlink_command_int_t &packet);
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++    MAV_RESULT handle_featherlane_admission(const mavlink_command_int_t &packet, const mavlink_message_t &msg);
++#endif
+     MAV_RESULT handle_command_pause_continue(const mavlink_command_int_t &packet);
+ 
+     void handle_message_set_attitude_target(const mavlink_message_t &msg);
+diff --git a/ArduCopter/wscript b/ArduCopter/wscript
+index 92aef37e7d..7292dea9e3 100644
+--- a/ArduCopter/wscript
++++ b/ArduCopter/wscript
+@@ -6,7 +6,7 @@ def build(bld):
+         name=vehicle + '_libs',
+         ap_vehicle=vehicle,
+         ap_libraries=bld.ap_common_vehicle_libraries() + (
+-            ['FL_Status'] if bld.env.BOARD == 'sitl' else []
++            ['FL_Status', 'FL_TaskAdmission'] if bld.env.BOARD == 'sitl' else []
+         ) + [
+             'AC_AttitudeControl',
+             'AC_InputManager',
+diff --git a/libraries/FL_TaskAdmission/FL_TaskAdmission.h b/libraries/FL_TaskAdmission/FL_TaskAdmission.h
+new file mode 100644
+index 0000000000..1729e103de
+--- /dev/null
++++ b/libraries/FL_TaskAdmission/FL_TaskAdmission.h
+@@ -0,0 +1,58 @@
++/* SPDX-License-Identifier: GPL-3.0-or-later */
++#pragma once
++
++#include <AP_HAL/AP_HAL_Boards.h>
++
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++#include <AP_Common/Location.h>
++#include <GCS_MAVLink/GCS_MAVLink.h>
++
++// Admission only. There is deliberately no execution/controller interface.
++class FL_TaskAdmission {
++public:
++    struct Request {
++        // COMMAND_INT carries these fields as floats; validate before conversion.
++        float version;
++        float task_id;
++        float speed_mps;
++        float radius_m;
++        int32_t latitude_e7;
++        int32_t longitude_e7;
++        float height_m;
++        uint8_t frame;
++        uint8_t current;
++        uint8_t autocontinue;
++    };
++
++    struct Context {
++        bool source_allowed;
++        bool vehicle_allowed;
++        bool home_valid;
++        bool navigation_valid;
++        Location home;
++    };
++
++    struct Task {
++        uint16_t id;
++        Location goal;
++        float speed_mps;
++        float radius_m;
++        Location admitted_home;
++    };
++
++    enum class Result : uint8_t {
++        ACCEPTED, DUPLICATE, SOURCE, VEHICLE, VERSION, ID, FRAME, FLAGS,
++        COORDINATE, HEIGHT, SPEED, RADIUS, HOME, NAVIGATION, RANGE,
++        ID_CONFLICT, BUSY
++    };
++
++    Result admit(const Request &request, const Context &context);
++    static const char *reason(Result result);
++    uint16_t retained_id() const { return _has_task ? _task.id : 0; }
++    const Task *task() const { return _has_task ? &_task : nullptr; }
++
++private:
++    Task _task {};
++    bool _has_task = false;
++};
++#endif // CONFIG_HAL_BOARD == HAL_BOARD_SITL
+diff --git a/libraries/FL_TaskAdmission/FL_TaskAdmission.cpp b/libraries/FL_TaskAdmission/FL_TaskAdmission.cpp
+new file mode 100644
+index 0000000000..a43d7199da
+--- /dev/null
++++ b/libraries/FL_TaskAdmission/FL_TaskAdmission.cpp
+@@ -0,0 +1,91 @@
++/* SPDX-License-Identifier: GPL-3.0-or-later */
++#include "FL_TaskAdmission.h"
++
++#if CONFIG_HAL_BOARD == HAL_BOARD_SITL
++FL_TaskAdmission::Result FL_TaskAdmission::admit(const Request &r, const Context &c)
++{
++    if (!c.source_allowed) {
++        return Result::SOURCE;
++    }
++    if (!c.vehicle_allowed) {
++        return Result::VEHICLE;
++    }
++    if (!isfinite(r.version) || r.version != 1.0f) {
++        return Result::VERSION;
++    }
++    if (!isfinite(r.task_id) || r.task_id < 1 || r.task_id > 65535 ||
++        !is_equal(r.task_id, floorf(r.task_id))) {
++        return Result::ID;
++    }
++    if (r.frame != MAV_FRAME_GLOBAL_RELATIVE_ALT_INT) {
++        return Result::FRAME;
++    }
++    if (r.current != 0 || r.autocontinue != 0) {
++        return Result::FLAGS;
++    }
++    if (!check_latlng(r.latitude_e7, r.longitude_e7)) {
++        return Result::COORDINATE;
++    }
++    if (!isfinite(r.height_m) || r.height_m < 0.01f || r.height_m > 10) {
++        return Result::HEIGHT;
++    }
++    if (!isfinite(r.speed_mps) || !is_positive(r.speed_mps) || r.speed_mps > 2) {
++        return Result::SPEED;
++    }
++    if (!isfinite(r.radius_m) || r.radius_m < 0.5f || r.radius_m > 2) {
++        return Result::RADIUS;
++    }
++    if (!c.home_valid) {
++        return Result::HOME;
++    }
++    if (!c.navigation_valid) {
++        return Result::NAVIGATION;
++    }
++
++    // Store a centimetre-resolution above-home goal, without setting a target.
++    const Location goal(r.latitude_e7, r.longitude_e7, int32_t(lroundf(r.height_m * 100)),
++                        Location::AltFrame::ABOVE_HOME);
++    if (goal.get_distance(c.home) > 20) {
++        return Result::RANGE;
++    }
++    const uint16_t id = uint16_t(r.task_id);
++    if (_has_task) {
++        if (id != _task.id) {
++            return Result::BUSY;
++        }
++        if (goal.lat == _task.goal.lat && goal.lng == _task.goal.lng && goal.alt == _task.goal.alt &&
++            is_equal(r.speed_mps, _task.speed_mps) && is_equal(r.radius_m, _task.radius_m)) {
++            return Result::DUPLICATE;
++        }
++        return Result::ID_CONFLICT;
++    }
++
++    _task = {id, goal, r.speed_mps, r.radius_m, c.home};
++    _has_task = true;
++    return Result::ACCEPTED;
++}
++
++const char *FL_TaskAdmission::reason(Result result)
++{
++    switch (result) {
++    case Result::ACCEPTED: return "accepted";
++    case Result::DUPLICATE: return "duplicate";
++    case Result::SOURCE: return "source";
++    case Result::VEHICLE: return "vehicle";
++    case Result::VERSION: return "version";
++    case Result::ID: return "id";
++    case Result::FRAME: return "frame";
++    case Result::FLAGS: return "flags";
++    case Result::COORDINATE: return "coordinate";
++    case Result::HEIGHT: return "height";
++    case Result::SPEED: return "speed";
++    case Result::RADIUS: return "radius";
++    case Result::HOME: return "home";
++    case Result::NAVIGATION: return "navigation";
++    case Result::RANGE: return "range";
++    case Result::ID_CONFLICT: return "id_conflict";
++    case Result::BUSY: return "busy";
++    }
++    return "unknown";
++}
++#endif // CONFIG_HAL_BOARD == HAL_BOARD_SITL

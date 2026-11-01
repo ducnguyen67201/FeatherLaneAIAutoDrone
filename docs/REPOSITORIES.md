@@ -56,3 +56,9 @@ L08 starts on local `codex/l08-native-status-slice` branches in both repositorie
 
 
 The user subsequently authorized L07/L08 publication before L09. Firmware commit `3f467d90be284654c5721ac3d94c26863f771275` on `codex/l08-native-status-slice` contains only the observed five-file SITL status observer against the preserved stock base. The parent publication records that exact commit and the completed L07/L08 evidence. Main and `featherlane/dev` remain unchanged; L09 publication requires separate authorization.
+
+
+L07/L08 publication was remote-SHA verified at project `09c3229e3ed4cb7d9a8998b1f85ec16def0448a8` and firmware `3f467d90be284654c5721ac3d94c26863f771275`. The parent gitlink points to that published firmware commit. Copied transcript whitespace was normalized in follow-up documentation commits; raw logs and applicable patch context were preserved. Main and the stock firmware branch did not change. L09 starts locally on `codex/l09-native-task-contract` in both repositories, with the published L08 source/executable as rollback.
+
+
+The user subsequently authorized publishing completed L09 before L10. Firmware commit `39cf614d1aae2ee4acb93f9294ebf66178967acb` on `codex/l09-native-task-contract` contains the six-file admission-only slice and the requested naming/comments/build-list refinements. Its remote SHA was verified before preparing the parent pointer. The project publication includes the durable AGENTS.md coding convention and maintained evidence. Main and the stock firmware branch remain unchanged; L10 publication is outside this authorization.

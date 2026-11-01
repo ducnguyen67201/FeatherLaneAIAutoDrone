@@ -1,0 +1,56 @@
+{
+  "source_system": 42,
+  "source_component": 190,
+  "transport": "TCP5762 COMMAND_INT",
+  "command": 31010,
+  "target": [
+    1,
+    1
+  ],
+  "frame": 6,
+  "current": 0,
+  "autocontinue": 0,
+  "parameters": [
+    1,
+    2,
+    1,
+    1,
+    -353632172,
+    1491652374,
+    3
+  ],
+  "responses": [
+    {
+      "wall_time": 1793491144.259223,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31010,
+        "result": 2,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 42,
+        "target_component": 190
+      }
+    },
+    {
+      "wall_time": 1793491144.259253,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L09 source kept=1",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793491146.101332,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L08 tick=71 mode=4 armed=0",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    }
+  ]
+}

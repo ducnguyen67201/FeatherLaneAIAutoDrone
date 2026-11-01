@@ -1,0 +1,1573 @@
+{
+  "run1": {
+    "source_scope": "initial >0 height source",
+    "heartbeat_samples": 170,
+    "heartbeat_span_s": 165.07079911231995,
+    "modes": [
+      0,
+      4
+    ],
+    "armed_heartbeat_samples": 0,
+    "landed_states": [
+      1
+    ],
+    "valid_estimated_positions": 606,
+    "startup_invalid_positions_excluded": 0,
+    "max_horizontal_displacement_from_first_valid_estimate_m": 0.01434819042445873,
+    "max_horizontal_reported_speed_mps": 0.0282842712474619,
+    "relative_altitude_range_m": [
+      -0.002,
+      0.006
+    ],
+    "admission_status_count": 20,
+    "admission_reasons": {
+      "home": 1,
+      "source": 1,
+      "accepted": 1,
+      "duplicate": 2,
+      "version": 1,
+      "id": 1,
+      "frame": 1,
+      "coordinate": 1,
+      "height": 1,
+      "speed": 3,
+      "radius": 1,
+      "range": 1,
+      "id_conflict": 1,
+      "busy": 1,
+      "vehicle": 1,
+      "command_int_only": 1,
+      "flags": 1
+    },
+    "reports_after_acceptance_all_keep_task1": true,
+    "main_link_ack_results": {
+      "1": 3,
+      "0": 3,
+      "3": 2,
+      "2": 9,
+      "8": 1
+    },
+    "l08_status_reports": 33,
+    "admission_acks": [
+      {
+        "wall_time": 1793490895.99987,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490951.339516,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490957.454535,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490957.4546392,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 3,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490957.455138,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490957.460321,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 3,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490963.005346,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490963.0054212,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490963.005568,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490963.005754,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490968.454742,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490968.454954,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490968.459521,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490968.459578,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490975.724572,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490978.8812082,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793490992.813837,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 8,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491033.8729222,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      }
+    ],
+    "shutdown": {
+      "time": 1793491059.818893,
+      "pid": 53497,
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793491059.185933,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793491059.538462,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "direct_submissions": {
+      "invalid-flags.json": {
+        "manual_submission": "One COMMAND_INT USER_1 on TCP5762 from system255/component190 with current=1",
+        "target": [
+          1,
+          1
+        ],
+        "frame": 6,
+        "current": 1,
+        "autocontinue": 0,
+        "parameters": [
+          1,
+          2,
+          1,
+          1,
+          -353632172,
+          1491652374,
+          3
+        ],
+        "responses": [
+          {
+            "wall_time": 1793491007.0352142,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L08 tick=106 mode=0 armed=0",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793491007.035228,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L08 tick=111 mode=0 armed=0",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793491007.042347,
+            "message": {
+              "mavpackettype": "COMMAND_ACK",
+              "command": 31010,
+              "result": 3,
+              "progress": 0,
+              "result_param2": 0,
+              "target_system": 255,
+              "target_component": 190
+            }
+          },
+          {
+            "wall_time": 1793491007.042359,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 flags kept=1",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          }
+        ]
+      },
+      "wrong-source.json": {
+        "manual_submission": "One COMMAND_INT USER_1 on TCP5762 from system42/component190",
+        "target": [
+          1,
+          1
+        ],
+        "frame": 6,
+        "parameters": [
+          1,
+          2,
+          1,
+          1,
+          -353632172,
+          1491652374,
+          3
+        ],
+        "responses": [
+          {
+            "wall_time": 1793490943.848059,
+            "message": {
+              "mavpackettype": "COMMAND_ACK",
+              "command": 31010,
+              "result": 2,
+              "progress": 0,
+              "result_param2": 0,
+              "target_system": 42,
+              "target_component": 190
+            }
+          },
+          {
+            "wall_time": 1793490943.848084,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 source kept=0",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793490946.5625632,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L08 tick=51 mode=0 armed=0",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "run2": {
+    "source_scope": ">=0.01m height source before exact-version correction",
+    "heartbeat_samples": 110,
+    "heartbeat_span_s": 105.04237985610962,
+    "modes": [
+      0,
+      4
+    ],
+    "armed_heartbeat_samples": 0,
+    "landed_states": [
+      1
+    ],
+    "valid_estimated_positions": 364,
+    "startup_invalid_positions_excluded": 0,
+    "max_horizontal_displacement_from_first_valid_estimate_m": 0.01434819042445873,
+    "max_horizontal_reported_speed_mps": 0.0282842712474619,
+    "relative_altitude_range_m": [
+      -0.002,
+      0.006
+    ],
+    "admission_status_count": 22,
+    "admission_reasons": {
+      "height": 3,
+      "home": 1,
+      "accepted": 1,
+      "duplicate": 2,
+      "version": 1,
+      "id": 1,
+      "frame": 1,
+      "coordinate": 1,
+      "speed": 2,
+      "radius": 1,
+      "range": 1,
+      "id_conflict": 1,
+      "busy": 1,
+      "source": 1,
+      "vehicle": 2,
+      "command_int_only": 1,
+      "flags": 1
+    },
+    "reports_after_acceptance_all_keep_task1": true,
+    "main_link_ack_results": {
+      "2": 10,
+      "1": 3,
+      "0": 3,
+      "3": 2,
+      "8": 1
+    },
+    "l08_status_reports": 21,
+    "admission_acks": [
+      {
+        "wall_time": 1793491088.555873,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491088.55603,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491128.356205,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491136.3316338,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491136.331722,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 3,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491136.331846,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491136.3319,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 3,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491137.44057,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491137.440632,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491137.4407191,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491137.4408488,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491138.543097,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491138.543189,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491138.543387,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491138.543547,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491154.7461061,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491155.8582132,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 8,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491155.858342,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491177.8551161,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      }
+    ],
+    "shutdown": {
+      "time": 1793491179.050899,
+      "pid": 54778,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l09/build/sitl/bin/arducopter",
+        "--model",
+        "+",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../ardupilot/Tools/autotest/default_params/copter.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793491178.698127,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793491178.572005,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "direct_submissions": {
+      "invalid-flags.json": {
+        "source_system": 255,
+        "source_component": 190,
+        "transport": "TCP5762 COMMAND_INT",
+        "command": 31010,
+        "target": [
+          1,
+          1
+        ],
+        "frame": 6,
+        "current": 1,
+        "autocontinue": 0,
+        "parameters": [
+          1,
+          2,
+          1,
+          1,
+          -353632172,
+          1491652374,
+          3
+        ],
+        "responses": [
+          {
+            "wall_time": 1793491161.100926,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 command_int_only kept=1",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793491161.1009421,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 height kept=1",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793491161.100954,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L08 tick=81 mode=0 armed=0",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793491161.104747,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L08 tick=86 mode=0 armed=0",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793491161.104832,
+            "message": {
+              "mavpackettype": "COMMAND_ACK",
+              "command": 31010,
+              "result": 3,
+              "progress": 0,
+              "result_param2": 0,
+              "target_system": 255,
+              "target_component": 190
+            }
+          },
+          {
+            "wall_time": 1793491161.1048572,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 flags kept=1",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          }
+        ]
+      },
+      "flags-while-guided.json": {
+        "source_system": 255,
+        "source_component": 190,
+        "transport": "TCP5762 COMMAND_INT",
+        "command": 31010,
+        "target": [
+          1,
+          1
+        ],
+        "frame": 6,
+        "current": 1,
+        "autocontinue": 0,
+        "parameters": [
+          1,
+          2,
+          1,
+          1,
+          -353632172,
+          1491652374,
+          3
+        ],
+        "responses": [
+          {
+            "wall_time": 1793491147.197458,
+            "message": {
+              "mavpackettype": "COMMAND_ACK",
+              "command": 31010,
+              "result": 1,
+              "progress": 0,
+              "result_param2": 0,
+              "target_system": 255,
+              "target_component": 190
+            }
+          },
+          {
+            "wall_time": 1793491147.197494,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 vehicle kept=1",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          }
+        ]
+      },
+      "wrong-source.json": {
+        "source_system": 42,
+        "source_component": 190,
+        "transport": "TCP5762 COMMAND_INT",
+        "command": 31010,
+        "target": [
+          1,
+          1
+        ],
+        "frame": 6,
+        "current": 0,
+        "autocontinue": 0,
+        "parameters": [
+          1,
+          2,
+          1,
+          1,
+          -353632172,
+          1491652374,
+          3
+        ],
+        "responses": [
+          {
+            "wall_time": 1793491144.259223,
+            "message": {
+              "mavpackettype": "COMMAND_ACK",
+              "command": 31010,
+              "result": 2,
+              "progress": 0,
+              "result_param2": 0,
+              "target_system": 42,
+              "target_component": 190
+            }
+          },
+          {
+            "wall_time": 1793491144.259253,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 source kept=1",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793491146.101332,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L08 tick=71 mode=4 armed=0",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "run3": {
+    "source_scope": "final source: >=0.01m height and exact version1",
+    "heartbeat_samples": 93,
+    "heartbeat_span_s": 88.04323816299438,
+    "modes": [
+      0,
+      4
+    ],
+    "armed_heartbeat_samples": 0,
+    "landed_states": [
+      1
+    ],
+    "valid_estimated_positions": 297,
+    "startup_invalid_positions_excluded": 0,
+    "max_horizontal_displacement_from_first_valid_estimate_m": 0.01434819042445873,
+    "max_horizontal_reported_speed_mps": 0.0282842712474619,
+    "relative_altitude_range_m": [
+      -0.002,
+      0.006
+    ],
+    "admission_status_count": 22,
+    "admission_reasons": {
+      "version": 2,
+      "height": 3,
+      "navigation": 1,
+      "accepted": 1,
+      "duplicate": 2,
+      "id": 1,
+      "frame": 1,
+      "coordinate": 1,
+      "speed": 2,
+      "radius": 1,
+      "range": 1,
+      "id_conflict": 1,
+      "busy": 1,
+      "source": 1,
+      "flags": 1,
+      "vehicle": 1,
+      "command_int_only": 1
+    },
+    "reports_after_acceptance_all_keep_task1": true,
+    "main_link_ack_results": {
+      "3": 3,
+      "2": 10,
+      "1": 3,
+      "0": 3,
+      "8": 1
+    },
+    "l08_status_reports": 18,
+    "admission_acks": [
+      {
+        "wall_time": 1793491337.9088461,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 3,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491337.908895,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491337.908923,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491379.3716822,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491379.3718421,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491379.371882,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 3,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491379.372014,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491379.372226,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 3,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491380.484236,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491380.4843671,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491380.484431,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491380.484677,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491381.58566,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491381.5857542,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491381.58594,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491381.5862458,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491397.45173,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 1,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491398.544935,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 8,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491398.5451462,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 2,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      },
+      {
+        "wall_time": 1793491398.545423,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 0,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      }
+    ],
+    "shutdown": {
+      "time": 1793491405.661557,
+      "pid": 57479,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l09/build/sitl/bin/arducopter",
+        "--model",
+        "+",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../ardupilot/Tools/autotest/default_params/copter.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793491404.885036,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793491405.425859,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "direct_submissions": {
+      "invalid-flags.json": {
+        "source_system": 255,
+        "source_component": 190,
+        "transport": "TCP5762 COMMAND_INT",
+        "command": 31010,
+        "target": [
+          1,
+          1
+        ],
+        "frame": 6,
+        "current": 1,
+        "autocontinue": 0,
+        "parameters": [
+          1,
+          2,
+          1,
+          1,
+          -353632172,
+          1491652374,
+          3
+        ],
+        "responses": [
+          {
+            "wall_time": 1793491385.3502889,
+            "message": {
+              "mavpackettype": "COMMAND_ACK",
+              "command": 31010,
+              "result": 3,
+              "progress": 0,
+              "result_param2": 0,
+              "target_system": 255,
+              "target_component": 190
+            }
+          },
+          {
+            "wall_time": 1793491385.350312,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 flags kept=1",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          }
+        ]
+      },
+      "wrong-source.json": {
+        "source_system": 42,
+        "source_component": 190,
+        "transport": "TCP5762 COMMAND_INT",
+        "command": 31010,
+        "target": [
+          1,
+          1
+        ],
+        "frame": 6,
+        "current": 0,
+        "autocontinue": 0,
+        "parameters": [
+          1,
+          2,
+          1,
+          1,
+          -353632172,
+          1491652374,
+          3
+        ],
+        "responses": [
+          {
+            "wall_time": 1793491382.8025339,
+            "message": {
+              "mavpackettype": "COMMAND_ACK",
+              "command": 31010,
+              "result": 2,
+              "progress": 0,
+              "result_param2": 0,
+              "target_system": 42,
+              "target_component": 190
+            }
+          },
+          {
+            "wall_time": 1793491382.8025541,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L09 source kept=1",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          },
+          {
+            "wall_time": 1793491384.288843,
+            "message": {
+              "mavpackettype": "STATUSTEXT",
+              "severity": 6,
+              "text": "FL L08 tick=66 mode=0 armed=0",
+              "id": 0,
+              "chunk_seq": 0
+            }
+          }
+        ]
+      }
+    }
+  },
+  "rollback": {
+    "source_scope": "preserved L08 executable",
+    "heartbeat_samples": 40,
+    "heartbeat_span_s": 37.038772106170654,
+    "modes": [
+      0
+    ],
+    "armed_heartbeat_samples": 0,
+    "landed_states": [
+      1
+    ],
+    "valid_estimated_positions": 92,
+    "startup_invalid_positions_excluded": 0,
+    "max_horizontal_displacement_from_first_valid_estimate_m": 0.0,
+    "max_horizontal_reported_speed_mps": 0.0282842712474619,
+    "relative_altitude_range_m": [
+      -0.001,
+      0.006
+    ],
+    "admission_status_count": 0,
+    "admission_reasons": {},
+    "reports_after_acceptance_all_keep_task1": null,
+    "main_link_ack_results": {
+      "3": 1
+    },
+    "l08_status_reports": 7,
+    "admission_acks": [
+      {
+        "wall_time": 1793491216.626542,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "COMMAND_ACK",
+          "command": 31010,
+          "result": 3,
+          "progress": 0,
+          "result_param2": 0,
+          "target_system": 255,
+          "target_component": 230
+        }
+      }
+    ],
+    "shutdown": {
+      "time": 1793491225.6560462,
+      "pid": 56349,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l09/l08-arducopter",
+        "--model",
+        "+",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../ardupilot/Tools/autotest/default_params/copter.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793491225.2715101,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793491225.128868,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "direct_submissions": {}
+  }
+}

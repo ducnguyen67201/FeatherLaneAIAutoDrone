@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M03 Add our native mission behavior in small slices · Track: core · Dependencies: [L08](l08-native-status-slice.md)
+**DRAFT phase card. Status: complete.** M03 Add our native mission behavior in small slices · Track: core · Dependencies: [L08](l08-native-status-slice.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -44,7 +44,7 @@ Retain:
 
 - Exact schema/message mapping, submitted examples and native responses.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [L09 evidence](../../evidence/l09-native-task-contract/README.md): versioned USER_1 COMMAND_INT contract, bounded native admission and exact retained-home/task state. Final source manually produced22 status reports (one accepted, two duplicates,19 rejected); all later reports preserved task1. Includes fractional-version and sub-centimetre corrections with separate earlier evidence. All93 final-run heartbeats stayed disarmed/on-ground; original L08 rollback returned UNSUPPORTED and retained its hash. Scoped six-file diff, schema, commands, telemetry, source/binary identities and cleanup retained. Guided learner checkpoint complete: learner identified request validation/rejection and the receive/return flow without movement. Clarification distinguished task ID from coordinates, payload validity from home/navigation/vehicle readiness, and the already-wired/observed RAM admission from an unused function. Accepted data is stored; the switch maps its result to a MAVLink acknowledgment. This records guided understanding, not independent examination; User subsequently authorized L09 feature-branch publication before L10; firmware commit 39cf614d1aae2ee4acb93f9294ebf66178967acb. User-requested repository-style cleanup subsequently replaced positional Request/Context initialization with named field assignments; same bindings/policy, incremental build and diff check passed. Pre-cleanup manual evidence and current-source hashes are distinguished; no manual scenario rerun for this style-only change.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

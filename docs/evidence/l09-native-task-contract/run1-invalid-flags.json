@@ -1,0 +1,63 @@
+{
+  "manual_submission": "One COMMAND_INT USER_1 on TCP5762 from system255/component190 with current=1",
+  "target": [
+    1,
+    1
+  ],
+  "frame": 6,
+  "current": 1,
+  "autocontinue": 0,
+  "parameters": [
+    1,
+    2,
+    1,
+    1,
+    -353632172,
+    1491652374,
+    3
+  ],
+  "responses": [
+    {
+      "wall_time": 1793491007.0352142,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L08 tick=106 mode=0 armed=0",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793491007.035228,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L08 tick=111 mode=0 armed=0",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793491007.042347,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31010,
+        "result": 3,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 190
+      }
+    },
+    {
+      "wall_time": 1793491007.042359,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L09 flags kept=1",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    }
+  ]
+}

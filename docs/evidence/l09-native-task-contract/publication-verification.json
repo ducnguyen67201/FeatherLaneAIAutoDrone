@@ -1,0 +1,11 @@
+{
+  "project": {
+    "refs/heads/codex/l08-native-status-slice": "09c3229e3ed4cb7d9a8998b1f85ec16def0448a8",
+    "refs/heads/main": "c45c9e19ae279011d5779fa2669df3fac0f21a29"
+  },
+  "firmware": {
+    "refs/heads/codex/l08-native-status-slice": "3f467d90be284654c5721ac3d94c26863f771275",
+    "refs/heads/featherlane/dev": "fb773567896014da007bca58358704d4a0d8516f"
+  },
+  "l09_remote_publication": "none; feature branches remain at the completed L07/L08 revisions"
+}

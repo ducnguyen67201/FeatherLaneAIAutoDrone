@@ -94,3 +94,16 @@ On 2026-10-31, the user asked to start the next phase and explicitly selected �
 ## L07/L08 publication and L09 authorization
 
 After completing the L08 checkpoint, the user explicitly selected “Yes—push L07/L08, then start L09.” This authorizes the completed L07/L08 feature-branch publication in the project and firmware repositories, including the exact firmware gitlink, followed by local L09 task-admission work. It does not authorize merging/updating main, publishing L09, physical operation or adopting new upstream source. Firmware is published before the parent gitlink; exact branch SHAs are checked after each push.
+
+
+L07/L08 publication completed with remote SHA verification: project `09c3229e3ed4cb7d9a8998b1f85ec16def0448a8` and firmware `3f467d90be284654c5721ac3d94c26863f771275` on their `codex/l08-native-status-slice` branches. Main remained `c45c9e19ae279011d5779fa2669df3fac0f21a29`; the firmware stock branch remained at the pinned upstream base. L09 is isolated on local `codex/l09-native-task-contract` branches. Its authorized slice is versioned coordinate-task admission, with no arm/mode/target/motor actions or L09 publication. The proposed ingress/state scope was shown in the maintained core diagram before implementation.
+
+
+## L09 observed task admission
+
+[L09 evidence](evidence/l09-native-task-contract/README.md) retains the project-local version1 COMMAND_INT/USER_1 mapping and six-file native admission slice. The final source produced22 explicit admission reports with one acceptance/two duplicates and19 rejections; every report after acceptance preserved task1. Invalid/unsupported fields, unavailable navigation, wrong configured source/mode/transport and conflicting/busy state were manually observed without arming or issuing a navigation target. Review corrected sub-centimetre rounding and epsilon version acceptance; all earlier sources/outcomes remain separate evidence. The final session retained93 disarmed heartbeats and on-ground extended state, with about1.4cm maximum estimated horizontal variation. The exact L08 executable returned USER_1 UNSUPPORTED while reporting L08 status; all owned sessions were stopped with cleanup inventory retained. L09’s guided checkpoint is complete, L09 remains local/uncommitted and unpublished, and L10 has not started. P01/P03 broader gates and UI/architecture approval flags are unchanged.
+
+
+## L09 publication, coding convention and L10 authorization
+
+On 2026-10-31, after the guided L09 checkpoint and code-style revisions, the user requested that AGENTS.md require matching the surrounding author/repository conventions, then explicitly requested pushing the code and continuing with L10. This authorizes the completed L09 feature branches and exact firmware gitlink publication, followed by the scoped native known-goal execution slice in local SITL. It does not authorize updating/merging main, publishing L10, physical operation, unrelated flight capabilities or an upstream update. The durable coding rule covers descriptive names, named limits with units, useful nearby comments, spacing/list conventions, scoped diffs and actual verification.

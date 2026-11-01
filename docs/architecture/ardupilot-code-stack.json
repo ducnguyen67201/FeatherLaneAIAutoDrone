@@ -78,7 +78,7 @@
         720
       ],
       "size": [
-        300,
+        260,
         90
       ],
       "tag": ""
@@ -104,7 +104,7 @@
       "label": "Stock AUTO / GUIDED / other modes",
       "sublabel": "ArduCopter/mode_*.cpp",
       "pos": [
-        430,
+        40,
         970
       ],
       "size": [
@@ -236,8 +236,8 @@
     {
       "id": "native-mission",
       "type": "security",
-      "label": "BUILD · FL_Mission (candidate)",
-      "sublabel": "PROPOSED C++ · state, freshness, policy",
+      "label": "L09 · FL_TaskAdmission",
+      "sublabel": "OBSERVED v1 · validate and retain only",
       "pos": [
         430,
         720
@@ -253,7 +253,7 @@
       "label": "BUILD · ModeFeatherLane (candidate)",
       "sublabel": "PROPOSED ArduCopter mode adapter",
       "pos": [
-        40,
+        430,
         970
       ],
       "size": [
@@ -441,13 +441,13 @@
       "id": "native-api",
       "from": "gcs",
       "to": "native-mission",
-      "label": "New API"
+      "label": "L09 admit only"
     },
     {
       "id": "native-adapter",
       "from": "native-mission",
       "to": "native-mode",
-      "label": "Bounded mission tick"
+      "label": "L10+ proposed"
     },
     {
       "id": "native-nav",
@@ -475,6 +475,16 @@
     }
   ],
   "cards": [
+    {
+      "dot": "amber",
+      "title": "Current L09 observed scope · admission only",
+      "items": [
+        "MAVProxy sends COMMAND_INT / USER_1 (31010) into a SITL-only Copter receiver and FL_TaskAdmission. Our version1 contract validates frame, source, vehicle/navigation prerequisites and bounded task fields.",
+        "Final-source manual run: one acceptance, two duplicates and19 rejections; every later report preserved task1. All93 heartbeat samples remained disarmed, with on-ground telemetry.",
+        "Version1 is exact; minimum height1cm avoids rounding a positive request to zero. Earlier source and observations remain separate evidence. One RAM slot holds the admitted goal, limits and home reference.",
+        "No execution/arm/mode/target/motor interface was added in L09. The preserved L08 binary returned UNSUPPORTED for USER_1 and retained L08 status. L09 firmware commit 39cf614d1aae2ee4acb93f9294ebf66178967acb is published; future mission/mode execution remains proposed."
+      ]
+    },
     {
       "dot": "amber",
       "title": "L08 observed local implementation",

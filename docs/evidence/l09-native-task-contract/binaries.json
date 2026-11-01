@@ -1,0 +1,33 @@
+{
+  "l08_preserved": {
+    "path": ".local/l09/l08-arducopter",
+    "sha256": "ea55cdbf286ea8b09395faed2e27f968fb2fcb095872526d1023facfcd143dfe",
+    "bytes": 4818072
+  },
+  "l08_original": {
+    "path": ".local/l08/build/sitl/bin/arducopter",
+    "sha256": "ea55cdbf286ea8b09395faed2e27f968fb2fcb095872526d1023facfcd143dfe",
+    "bytes": 4818072
+  },
+  "l09_custom": {
+    "path": ".local/l09/build/sitl/bin/arducopter",
+    "sha256": "72c75a4269fd52e6b8df2eaacae3fb835a81cdf5e27543533f4373b397bd9694",
+    "bytes": 4818568
+  },
+  "initial_run_binary": {
+    "path": ".local/l09/build/sitl/bin/arducopter",
+    "sha256": "adf5b44709e15caa663939272009074fe46bcc6667911ebaeadba1df275c686d",
+    "bytes": 4818568
+  },
+  "height_correction_run_binary": {
+    "path": ".local/l09/build/sitl/bin/arducopter",
+    "sha256": "011152d82002288daa193634939a1a4f167e8b708ad6f850bd046293df618171",
+    "bytes": 4818568
+  },
+  "observed_run3_binary": {
+    "path": ".local/l09/build/sitl/bin/arducopter",
+    "sha256": "cb6fb03f904f28c3bb93d513196ce802c76a9f51170a744ceeb650f405f44ab9",
+    "bytes": 4818568,
+    "retained_copy": ".local/l09/style-followup/observed-arducopter"
+  }
+}

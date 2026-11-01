@@ -1,0 +1,9 @@
+{
+  "owned_sitl_processes_remaining": [],
+  "selected_sockets": "",
+  "lsof_exit_code": 1,
+  "l08_original_sha256": "ea55cdbf286ea8b09395faed2e27f968fb2fcb095872526d1023facfcd143dfe",
+  "l08_retained_sha256": "ea55cdbf286ea8b09395faed2e27f968fb2fcb095872526d1023facfcd143dfe",
+  "new_tests": false,
+  "l09_commits_or_pushes": false
+}

@@ -1,0 +1,114 @@
+[
+  {
+    "case": "early_home",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 1 1 1 -353632172 1491652374 3",
+    "predicted_reason": "home",
+    "predicted_ack": 1,
+    "predicted_retained_id": 0
+  },
+  {
+    "case": "valid",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 1 1 1 -353632172 1491652374 3",
+    "predicted_reason": "accepted",
+    "predicted_ack": 0,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "duplicate",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 1 1 1 -353632172 1491652374 3",
+    "predicted_reason": "duplicate",
+    "predicted_ack": 0,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "version",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 2 2 1 1 -353632172 1491652374 3",
+    "predicted_reason": "version",
+    "predicted_ack": 3,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "fractional_id",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 1.5 1 1 -353632172 1491652374 3",
+    "predicted_reason": "id",
+    "predicted_ack": 2,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "frame",
+    "command": "command_int GLOBAL_INT USER_1 0 0 1 2 1 1 -353632172 1491652374 3",
+    "predicted_reason": "frame",
+    "predicted_ack": 3,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "coordinate",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 2 1 1 1000000000 1491652374 3",
+    "predicted_reason": "coordinate",
+    "predicted_ack": 2,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "height",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 2 1 1 -353632172 1491652374 11",
+    "predicted_reason": "height",
+    "predicted_ack": 2,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "speed",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 2 3 1 -353632172 1491652374 3",
+    "predicted_reason": "speed",
+    "predicted_ack": 2,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "nonfinite",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 2 nan 1 -353632172 1491652374 3",
+    "predicted_reason": "speed",
+    "predicted_ack": 2,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "radius",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 2 1 0.1 -353632172 1491652374 3",
+    "predicted_reason": "radius",
+    "predicted_ack": 2,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "range",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 2 1 1 -353629620 1491652374 3",
+    "predicted_reason": "range",
+    "predicted_ack": 2,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "id_conflict",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 1 1 1 -353632172 1491652374 4",
+    "predicted_reason": "id_conflict",
+    "predicted_ack": 2,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "busy",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 2 1 1 -353632172 1491652374 3",
+    "predicted_reason": "busy",
+    "predicted_ack": 1,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "wrong_mode",
+    "command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 2 1 1 -353632172 1491652374 3",
+    "predicted_reason": "vehicle",
+    "predicted_ack": 1,
+    "predicted_retained_id": 1
+  },
+  {
+    "case": "command_long",
+    "command": "long USER_1 1 2 1 1 -353632172 1491652374 3",
+    "predicted_reason": "command_int_only",
+    "predicted_ack": 8,
+    "predicted_retained_id": 1
+  }
+]
