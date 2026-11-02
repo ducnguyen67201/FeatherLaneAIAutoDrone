@@ -5,7 +5,8 @@ PHASE=${2:-l12}
 case "$PHASE" in
     l12) WORLD=l12-baseline ;;
     l13) WORLD=l13-observation ;;
-    *) echo "Supported scenes: l12, l13" >&2; exit 2 ;;
+    l14) WORLD=l14-stock-stop ;;
+    *) echo "Supported scenes: l12, l13, l14" >&2; exit 2 ;;
 esac
 RUN_DIR=${1:-"$PROJECT_ROOT/.local/$PHASE/session"}
 GZ_PREFIX="$PROJECT_ROOT/.local/l12/gazebo-env"

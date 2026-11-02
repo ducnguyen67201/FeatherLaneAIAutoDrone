@@ -1,0 +1,128 @@
+<?xml version='1.0' encoding='utf-8'?>
+<sdf version="1.9">
+  <world name="l14_stock_stop">
+    <physics name="fixed_step" type="ignore">
+      <max_step_size>0.001</max_step_size>
+      <real_time_factor>1.0</real_time_factor>
+    </physics>
+    <plugin filename="gz-sim-physics-system" name="gz::sim::systems::Physics" />
+    <plugin filename="gz-sim-imu-system" name="gz::sim::systems::Imu" />
+    <plugin filename="gz-sim-user-commands-system" name="gz::sim::systems::UserCommands" />
+    <plugin filename="gz-sim-scene-broadcaster-system" name="gz::sim::systems::SceneBroadcaster" />
+    <gravity>0 0 -9.80665</gravity>
+    <spherical_coordinates>
+      <surface_model>EARTH_WGS84</surface_model>
+      <latitude_deg>-35.363262</latitude_deg>
+      <longitude_deg>149.165237</longitude_deg>
+      <elevation>584</elevation>
+      <heading_deg>0</heading_deg>
+    </spherical_coordinates>
+    <light name="sun" type="directional">
+      <pose>0 0 10 0 0 0</pose>
+      <diffuse>0.8 0.8 0.8 1</diffuse>
+      <specular>0.2 0.2 0.2 1</specular>
+      <direction>-0.5 0.1 -0.9</direction>
+    </light>
+    <model name="ground">
+      <static>true</static>
+      <link name="ground_link">
+        <collision name="ground_collision">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+        </collision>
+        <visual name="ground_visual">
+          <geometry>
+            <plane>
+              <normal>0 0 1</normal>
+              <size>100 100</size>
+            </plane>
+          </geometry>
+          <material>
+            <ambient>0.6 0.6 0.6 1</ambient>
+            <diffuse>0.6 0.6 0.6 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+    <plugin filename="gz-sim-sensors-system" name="gz::sim::systems::Sensors">
+      <render_engine>ogre2</render_engine>
+      <render_engine_api_backend>metal</render_engine_api_backend>
+    </plugin>
+    <model name="iris_l14">
+      <pose degrees="true">0 0 0.195 0 0 90</pose>
+      <include merge="true">
+        <uri>model://iris_with_ardupilot</uri>
+      </include>
+      <link name="front_lidar_link">
+        <pose relative_to="iris_with_standoffs::base_link">0.3 0 0.15 0 0 0</pose>
+        <inertial>
+          <mass>0.01</mass>
+          <inertia>
+            <ixx>0.00001</ixx>
+            <iyy>0.00001</iyy>
+            <izz>0.00001</izz>
+          </inertia>
+        </inertial>
+        <sensor name="front_range" type="gpu_lidar">
+          <topic>/l14/front_scan</topic>
+          <update_rate>10</update_rate>
+          <always_on>true</always_on>
+          <visualize>true</visualize>
+          <lidar>
+            <scan>
+              <horizontal>
+                <samples>21</samples>
+                <resolution>1</resolution>
+                <min_angle>-0.0872664626</min_angle>
+                <max_angle>0.0872664626</max_angle>
+              </horizontal>
+              <vertical>
+                <samples>1</samples>
+                <resolution>1</resolution>
+                <min_angle>0</min_angle>
+                <max_angle>0</max_angle>
+              </vertical>
+            </scan>
+            <range>
+              <min>0.2</min>
+              <max>8</max>
+              <resolution>0.01</resolution>
+            </range>
+          </lidar>
+        </sensor>
+      </link>
+      <joint name="front_lidar_mount" type="fixed">
+        <parent>iris_with_standoffs::base_link</parent>
+        <child>front_lidar_link</child>
+      </joint>
+    </model>
+    <model name="obstacle">
+      <static>true</static>
+      <pose>0 6.55 2 0 0 0</pose>
+      <link name="box">
+        <collision name="obstacle_collision">
+          <geometry>
+            <box>
+              <size>2 0.5 4</size>
+            </box>
+          </geometry>
+        </collision>
+        <visual name="obstacle_visual">
+          <geometry>
+            <box>
+              <size>2 0.5 4</size>
+            </box>
+          </geometry>
+          <material>
+            <ambient>0.8 0.2 0.1 1</ambient>
+            <diffuse>0.8 0.2 0.1 1</diffuse>
+          </material>
+        </visual>
+      </link>
+    </model>
+  </world>
+</sdf>

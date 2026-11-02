@@ -24,7 +24,7 @@ EXPECTED_FRAME = 'iris_l13::front_lidar_link::front_range'
 TOPIC = '/l13/front_scan'
 
 
-def decode_scan(message, previous_stamp_s):
+def decode_scan(message, previous_stamp_s, expected_frame=EXPECTED_FRAME):
     """Validate the declared sensor geometry and classify its actual range returns."""
     stamp = message['header']['stamp']
     seconds = float(stamp.get('sec', 0))
@@ -34,7 +34,7 @@ def decode_scan(message, previous_stamp_s):
     stamp_s = seconds + nanoseconds / 1e9
     if not math.isfinite(stamp_s) or stamp_s < 0 or stamp_s <= previous_stamp_s:
         raise ValueError('source_clock')
-    if message['frame'] != EXPECTED_FRAME:
+    if message['frame'] != expected_frame:
         raise ValueError('frame')
     if message['count'] != EXPECTED_RAYS or message['verticalCount'] != 1:
         raise ValueError('coverage')
@@ -59,13 +59,17 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--record', type=Path, required=True)
     parser.add_argument('--endpoint', default='tcp:127.0.0.1:5762')
+    parser.add_argument('--phase', choices=['l13', 'l14'], default='l13',
+                        help='L13 is disarmed-only; L14 permits the scoped simulator flight')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
-    environment = dict(os.environ, GZ_PARTITION='featherlane_l13', GZ_IP='127.0.0.1',
+    topic = f'/{args.phase}/front_scan'
+    expected_frame = f'iris_{args.phase}::front_lidar_link::front_range'
+    environment = dict(os.environ, GZ_PARTITION=f'featherlane_{args.phase}', GZ_IP='127.0.0.1',
                        MAMBA_ROOT_PREFIX=str(root / '.local/l12/mamba-root'))
     command = [str(root / '.local/l12/micromamba/bin/micromamba'), '--no-rc', 'run',
                '-p', str(root / '.local/l12/gazebo-env'), 'gz', 'topic', '-e',
-               '-t', TOPIC, '--json-output']
+               '-t', topic, '--json-output']
     args.record.parent.mkdir(parents=True, exist_ok=True)
     connection = mavutil.mavlink_connection(args.endpoint, source_system=255, source_component=191)
     scan_process = None
@@ -86,7 +90,7 @@ def main():
             last_heartbeat = None
             armed = False
             last_status = None
-            record(event='started', endpoint=args.endpoint, topic=TOPIC,
+            record(event='started', endpoint=args.endpoint, topic=topic, phase=args.phase,
                    max_receive_gap_s=MAX_RECEIVE_GAP_S, commands='DISTANCE_SENSOR only')
             while True:
                 now = time.monotonic()
@@ -98,7 +102,7 @@ def main():
                             and message.get_srcComponent() == 1):
                         last_heartbeat = now
                         armed = bool(message.base_mode & mavutil.mavlink.MAV_MODE_FLAG_SAFETY_ARMED)
-                if armed:
+                if armed and args.phase == 'l13':
                     raise RuntimeError('L13 observation qualification requires a disarmed vehicle')
                 heartbeat_fresh = last_heartbeat is not None and now - last_heartbeat <= MAX_HEARTBEAT_AGE_S
                 for key, _ in selector.select(timeout=0.05):
@@ -118,7 +122,7 @@ def main():
                             continue
                         try:
                             scan = json.loads(line)
-                            stamp_s, status, distance_m, distance_cm = decode_scan(scan, previous_stamp_s)
+                            stamp_s, status, distance_m, distance_cm = decode_scan(scan, previous_stamp_s, expected_frame)
                         except (ValueError, TypeError, KeyError, OverflowError) as error:
                             last_source_received = None
                             record(event='invalid', reason=str(error))

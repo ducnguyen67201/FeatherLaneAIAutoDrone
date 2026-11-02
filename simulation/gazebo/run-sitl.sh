@@ -5,7 +5,8 @@ PHASE=${2:-l12}
 case "$PHASE" in
     l12) PROFILE=l12-baseline ;;
     l13) PROFILE=l13-observation ;;
-    *) echo "Supported profiles: l12, l13" >&2; exit 2 ;;
+    l14) PROFILE=l14-stock-stop ;;
+    *) echo "Supported profiles: l12, l13, l14" >&2; exit 2 ;;
 esac
 RUN_DIR=${1:-"$PROJECT_ROOT/.local/$PHASE/session"}
 SITL_DIR="$RUN_DIR/sitl"
