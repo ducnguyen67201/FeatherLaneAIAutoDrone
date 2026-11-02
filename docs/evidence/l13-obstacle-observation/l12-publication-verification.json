@@ -1,0 +1,10 @@
+{
+  "date": "2026-11-02",
+  "project_branch": "codex/l12-instrumented-scene",
+  "project_remote_sha": "7b1dc4a07bb335c960c2e72f855b0e3bf07d6885",
+  "firmware_branch": "codex/l12-instrumented-scene",
+  "firmware_remote_sha": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
+  "method": "git ls-remote exact feature refs verified after authorized push; firmware unchanged from L11",
+  "screenshot": "not included; supplied macOS TemporaryItems path denied",
+  "L13_publication": "not performed"
+}

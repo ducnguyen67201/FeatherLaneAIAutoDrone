@@ -75,3 +75,6 @@ L11 firmware publication is remote-SHA verified at `a00f32be2a91639c8dee1c41c09e
 
 
 L11 parent publication is verified at `56b32a2c6d10bc58a85ae4ebab4ff98520da3acc`, linking firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547`. L12 uses local branches `codex/l12-instrumented-scene` with no firmware working diff. New scene/build/launch/lock files live in `simulation/gazebo/`; simulator/plugin builds, pinned third-party checkout and raw logs stay ignored under `.local/l12/`. [L12 evidence](evidence/l12-instrumented-scene/README.md) qualifies one stock external-physics flight plus fresh connection/rollback with explicit limits. No L12 publication or main/stock update occurred.
+
+
+L12 publication is remote-SHA verified at project `7b1dc4a07bb335c960c2e72f855b0e3bf07d6885` on `codex/l12-instrumented-scene`, linking unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547` on the matching branch. The screenshot remains pending a readable attachment. Both current local branches are `codex/l13-obstacle-observation`; firmware has no working diff. [L13 evidence](evidence/l13-obstacle-observation/README.md) records disarmed sensor observations/timeout/rollback only. L13 is uncommitted/unpublished; main and stock pins remain unchanged.

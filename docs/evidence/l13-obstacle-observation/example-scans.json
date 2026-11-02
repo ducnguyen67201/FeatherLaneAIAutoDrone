@@ -1,0 +1,188 @@
+{
+  "return": {
+    "wall_time": 1793649315.1086452,
+    "monotonic_s": 716400.89765725,
+    "event": "sample",
+    "source_stamp_s": 238.762,
+    "observation_status": "return",
+    "distance_m": 3.0001838207244873,
+    "sent": true,
+    "wire_distance_cm": 300,
+    "scan": {
+      "header": {
+        "stamp": {
+          "sec": "238",
+          "nsec": 762000000
+        },
+        "data": [
+          {
+            "key": "frame_id",
+            "value": [
+              "iris_l13::front_lidar_link::front_range"
+            ]
+          },
+          {
+            "key": "seq",
+            "value": [
+              "973"
+            ]
+          }
+        ]
+      },
+      "frame": "iris_l13::front_lidar_link::front_range",
+      "worldPose": {
+        "position": {},
+        "orientation": {
+          "w": 1
+        }
+      },
+      "angleMin": -0.0872664626,
+      "angleMax": 0.0872664626,
+      "angleStep": 0.00872664626,
+      "rangeMin": 0.2,
+      "rangeMax": 8,
+      "count": 21,
+      "verticalAngleStep": "NaN",
+      "verticalCount": 1,
+      "ranges": [
+        3.0111494064331055,
+        3.0111494064331055,
+        3.0074987411499023,
+        3.00457501411438,
+        3.00457501411438,
+        3.00238037109375,
+        3.00238037109375,
+        3.0009162425994873,
+        3.0009162425994873,
+        3.0001838207244873,
+        3.0001838207244873,
+        3.0001838207244873,
+        3.0009162425994873,
+        3.0009162425994873,
+        3.00238037109375,
+        3.00238037109375,
+        3.00457501411438,
+        3.00457501411438,
+        3.0074987411499023,
+        3.0111494064331055,
+        3.0111494064331055
+      ],
+      "intensities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  },
+  "no_return": {
+    "wall_time": 1793649551.032306,
+    "monotonic_s": 716636.823192291,
+    "event": "sample",
+    "source_stamp_s": 473.1,
+    "observation_status": "no_return",
+    "distance_m": null,
+    "sent": true,
+    "wire_distance_cm": 801,
+    "scan": {
+      "header": {
+        "stamp": {
+          "sec": "473",
+          "nsec": 100000000
+        },
+        "data": [
+          {
+            "key": "frame_id",
+            "value": [
+              "iris_l13::front_lidar_link::front_range"
+            ]
+          },
+          {
+            "key": "seq",
+            "value": [
+              "3317"
+            ]
+          }
+        ]
+      },
+      "frame": "iris_l13::front_lidar_link::front_range",
+      "worldPose": {
+        "position": {},
+        "orientation": {
+          "w": 1
+        }
+      },
+      "angleMin": -0.0872664626,
+      "angleMax": 0.0872664626,
+      "angleStep": 0.00872664626,
+      "rangeMin": 0.2,
+      "rangeMax": 8,
+      "count": 21,
+      "verticalAngleStep": "NaN",
+      "verticalCount": 1,
+      "ranges": [
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity",
+        "Infinity"
+      ],
+      "intensities": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0
+      ]
+    }
+  }
+}

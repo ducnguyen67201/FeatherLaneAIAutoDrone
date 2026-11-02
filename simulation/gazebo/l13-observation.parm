@@ -1,0 +1,16 @@
+# Retain the qualified Iris profile; add one forward MAVLink rangefinder.
+PLND_ENABLED 0
+RNGFND1_TYPE 10
+RNGFND1_ORIENT 0
+RNGFND1_MIN 0.2
+RNGFND1_MAX 8
+RNGFND1_POS_X 0.3
+RNGFND1_POS_Y 0
+RNGFND1_POS_Z -0.15
+
+# Observe only. No proximity/avoidance path or flight commands are enabled.
+PRX1_TYPE 0
+AVOID_ENABLE 0
+OA_TYPE 0
+LOG_DISARMED 1
+WP_SPD 1

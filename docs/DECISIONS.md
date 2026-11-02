@@ -154,3 +154,22 @@ The learner subsequently identified Gazebo as the movement/measurement simulator
 ## L12 publication / L13 authorization
 
 On2026-11-02 the user requested pushing completed L12 and continuing the next phase, including the attached screenshot. This authorizes L12 feature-branch publication and the matching unchanged firmware reference, followed by local L13 one-obstacle sensor/observation work without dodge/control behavior. The screenshot attachment is unreadable through the supplied macOS TemporaryItems path (Operation not permitted), so image inclusion remains pending a readable attachment; no access-control bypass is attempted. Main merge, L13 publication and physical operation remain outside scope.
+
+
+## L12 publication and L13 observed obstacle-sensor slice
+
+On2026-11-02 L12 publication was verified at project `7b1dc4a07bb335c960c2e72f855b0e3bf07d6885`, linking unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547`. The denied screenshot is not included; a readable attachment remains needed.
+
+The authorized local L13 scope was shown before implementation in the core and phase process diagrams. One Gazebo21-ray front lidar observes a static box; an external Python adapter performs bounded observation validation/formatting and sends only DISTANCE_SENSOR into the existing stock MAVLink rangefinder. It owns no flight state machine. The official JSON plugin's range latch lacks observation-age transport; the selected existing MAVLink backend provides a500ms receive timeout. No firmware change was needed.
+
+Actual stable3m/5m returns, off-axis/beyond/under-range/above-plane no-return and stock Good→NoData→Good across a reader pause were retained. Under-range no-return disproves treating infinity as guaranteed free space. Receive freshness is not synchronized capture-age qualification. Sensor-disabled baseline and all-owned-process cleanup passed; no flight, obstacle control, contact, AI, hardware or automated tests were introduced. L13 remains local/unpublished with guided checkpoint pending; L14 is not started.
+
+
+## L13 guided checkpoint complete —2026-11-02
+
+The learner correctly answered that a box could still be0.1m ahead because it is inside the sensor’s0.2m minimum range. This completes the guided checkpoint after clarification: no-return does not establish nearby or whole-path clearance. L13 is complete locally and remains unpublished; L14 has not started. No publication or next-phase authorization is inferred from this answer.
+
+
+## L13 publication / L14 authorization —2026-11-02
+
+After the completed guided checkpoint and clarification of real sensors versus simulated observations, the user requested pushing L13 and continuing the next phase. This authorizes L13 feature-branch publication with the unchanged firmware reference, followed by local L14 one documented stock avoidance configuration and clear/blocked static-scene comparison. It does not authorize main merge, L14 publication, custom/native avoidance or hardware operation. The unreadable screenshot remains pending.

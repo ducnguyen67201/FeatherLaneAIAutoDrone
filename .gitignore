@@ -29,3 +29,4 @@ docs/phases/*.browser-check.json
 
 # Phase-scoped simulator deployment viewer; retain JSON and exported SVG.
 docs/phases/l12-simulator-deployment.html
+docs/phases/l13-obstacle-observation.html

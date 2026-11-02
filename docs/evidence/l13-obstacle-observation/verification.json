@@ -1,0 +1,128 @@
+{
+  "observed_at_utc": "2026-11-02T20:08:31.954723+00:00",
+  "firmware_HEAD": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
+  "firmware_worktree_diff": "",
+  "recursive_submodule_count": 21,
+  "recursive_pins_equal_L01": true,
+  "main_parameters": {
+    "RNGFND1_TYPE": 10.0,
+    "RNGFND1_ORIENT": 0.0,
+    "RNGFND1_MIN": 0.2,
+    "RNGFND1_MAX": 8.0,
+    "PRX1_TYPE": 0.0,
+    "AVOID_ENABLE": 0.0,
+    "OA_TYPE": 0.0,
+    "LOG_DISARMED": 1.0
+  },
+  "rollback": {
+    "heartbeat_count": 85,
+    "heartbeat_span_s": 83.72908902168274,
+    "all_disarmed": true,
+    "RNGFND1_TYPE": 0.0,
+    "no_front_scan_topic": true,
+    "shutdown": {
+      "time": 1793649714.7720268,
+      "pid": 50940,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+        "--model",
+        "JSON",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l12-baseline.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793649713.845369,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793649714.2889862,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    }
+  },
+  "main_session_shutdown": {
+    "time": 1793649613.9663382,
+    "pid": 44288,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+      "--model",
+      "JSON",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l13-observation.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793649613.6494389,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 81,
+          "custom_mode": 0,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793649613.5221848,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  },
+  "remaining_owned_processes": [],
+  "selected_sockets": [],
+  "link_errors": [],
+  "checks": {
+    "Python_AST": "pass",
+    "shell_syntax": "pass",
+    "JSON_XML_SVG_parse": "pass",
+    "diff_check": "pass",
+    "new_automated_tests": "none",
+    "unchanged_flight_firmware_build": "not rebuilt; exact preserved executable observed",
+    "archify_core": "pass",
+    "archify_phase": "pass",
+    "dependency_audit": "Existing29-package pip-audit record reports no known vulnerabilities; no dependencies changed in L13."
+  },
+  "socket_inventory_scope": "Unprivileged lsof selected-port inventory for current user; global psutil inventory encountered an unrelated protected process and was not escalated.",
+  "learning_checkpoint": "Complete after learner identified the0.1m box inside the0.2m minimum range;2026-11-02."
+}

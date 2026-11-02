@@ -503,12 +503,22 @@
   "cards": [
     {
       "dot": "amber",
+      "title": "L13 observed scope · front sensor, no control",
+      "items": [
+        "One front Gazebo GPU lidar/static box is locally observed:21 rays,10Hz,0.2–8m,±5deg horizontal in one vertical plane. No flight or dodge commands.",
+        "A bounded Python observation adapter maps new valid LaserScan data into DISTANCE_SENSOR on existing TCP5762. Existing AP_RangeFinder_MAVLink consumes it; no firmware changes or external flight FSM.",
+        "Stable3m/5m returns match declared box geometry. Off-axis, above-plane, beyond range and below minimum all produced no-return; this is not clearance. Geometry is separate evaluation truth.",
+        "Reader pause triggered stale receive state after0.356s; onboard RFND recorded Good→NoData→Good with the existing500ms backend timeout. Capture latency is unmeasured. Sensor-disabled rollback/cleanup passed; local/unpublished, guided checkpoint complete after clarification."
+      ]
+    },
+    {
+      "dot": "amber",
       "title": "L12 observed integration · headless Gazebo baseline",
       "items": [
         "Unchanged stock Copter4.7.2 calculates flight control through its JSON simulator backend. A separate native Mac Gazebo8.10.0 server loads pinned official ArduPilotPlugin and one plain Iris X-frame scene. Published L11 native behavior is preserved, not transferred by assumption.",
         "The existing JSON backend sends actuator/PWM packets to the plugin at local UDP9002; Gazebo applies them to physics and returns simulated state/IMU. MAVProxy TCP5760 and passive UDP14550 recording remain external tools, not a flight mission FSM.",
         "One stock flight reached about5m north at3m above home: sampled arrival at7.80s,31.83s later hold, then operator LAND/disarm. Fresh disarmed connection and basic-SITL rollback passed. Peak speed1.05m/s is recorded against a1m/s target.",
-        "DART did not create the official mesh body collision. Primitive contact/flat-ground landing, headless data exchange and one flight do not qualify obstacle/body collision, GUI/camera, native transfer, sensor-only autonomy or failures. L12 local/unpublished; guided checkpoint complete.",
+        "DART did not create the official mesh body collision. Primitive contact/flat-ground landing, headless data exchange and one flight do not qualify obstacle/body collision, GUI/camera, native transfer, sensor-only autonomy or failures. L12 published; guided checkpoint complete. Static3D visibility human-confirmed separately; no GUI-observed flight.",
         "This selected module overview links to the phase-scoped local simulator deployment view. The native environment, plugin source/build and raw logs remain project-local; reviewed world, launch, build wrapper and exact package lock are maintained."
       ]
     },

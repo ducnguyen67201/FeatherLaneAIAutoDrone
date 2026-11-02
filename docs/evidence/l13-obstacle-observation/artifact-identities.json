@@ -1,0 +1,142 @@
+[
+  {
+    "path": "simulation/gazebo/worlds/l13-observation.sdf",
+    "bytes": 4213,
+    "sha256": "eda12468cb8dfa49365ccb6b5c2656849a67ecd87b02170d53f81353079075b9"
+  },
+  {
+    "path": "simulation/gazebo/l13-observation.parm",
+    "bytes": 344,
+    "sha256": "a6e03b90a9e4a375a016e68512c9d8068c8567bf2f714c40ffa83870d6b125b4"
+  },
+  {
+    "path": "simulation/gazebo/range_observer.py",
+    "bytes": 8583,
+    "sha256": "6e420bdf80371b23f0b744edaf96b56f5e228bb0c2dca3517b4e7be5c5ea7674"
+  },
+  {
+    "path": "simulation/gazebo/analyze_range_observations.py",
+    "bytes": 8501,
+    "sha256": "e77e41e9f1e09fa1ca6f701b4b0649ce9dbe8271f5c8109ace1ebeadd875ac2b"
+  },
+  {
+    "path": "simulation/gazebo/run-gazebo.sh",
+    "bytes": 1053,
+    "sha256": "1425c63fab2eba60350151201fcd6764a14401703316ce9d06771d2df6a8dd41"
+  },
+  {
+    "path": "simulation/gazebo/run-sitl.sh",
+    "bytes": 1182,
+    "sha256": "6e586975c01def1e8c6da56867271f6fd1d895bc004fd613adca10c30af805e9"
+  },
+  {
+    "path": ".local/l13/run-gazebo.sh",
+    "bytes": 898,
+    "sha256": "f00bccfe8988ccea5d88c3fae27f4f994e4dc23709d9eb90ee6957b26c43ec9e"
+  },
+  {
+    "path": ".local/l13/run-sitl.sh",
+    "bytes": 1024,
+    "sha256": "013f89e22a41673da671cede364b4a887aa8608b531e80789612895b1d02b45c"
+  },
+  {
+    "path": ".local/l13/capture.py",
+    "bytes": 703,
+    "sha256": "4cb0b1ca6c59b507bef7c98baddee2d5f2eff6ad91bb8be5f6f9214e655c96dd"
+  },
+  {
+    "path": ".local/l13/mark-case.py",
+    "bytes": 570,
+    "sha256": "a2ad24e10e0a81e1a673a2e987845c8fbfceb9b45639c300add18cd3c30322eb"
+  },
+  {
+    "path": ".local/l13/session/observer1-source.py",
+    "bytes": 7928,
+    "sha256": "ad7129d93629b231e5f8337294e74d768b80331e469ff08999cf93668764a3ec"
+  },
+  {
+    "path": ".local/l13/session/observer1.jsonl",
+    "bytes": 1143458,
+    "sha256": "70efb1d353c06e3228b7f66c18ca448f2d244efb2dd883ff02aa8b08848a173b"
+  },
+  {
+    "path": ".local/l13/session/observer2.jsonl",
+    "bytes": 3422629,
+    "sha256": "1c7b4a0de0ae283d3455504811236efb079537dde5c194c53db8009949a09491"
+  },
+  {
+    "path": ".local/l13/session/sitl/observations.jsonl",
+    "bytes": 17744130,
+    "sha256": "8ea8bf7e04d14f144dcaae3caa9bb11041256ea5958af1346333afcd97e1d8ca"
+  },
+  {
+    "path": ".local/l13/session/sitl/logs/00000001.BIN",
+    "bytes": 21041152,
+    "sha256": "66a29dc8f607af777a85d415d494bed993553ec8a91af275c9bc755545d1986d"
+  },
+  {
+    "path": ".local/l13/session/sitl/mav.tlog",
+    "bytes": 2355232,
+    "sha256": "c5c1f3eb6063b0d369600c69d05ff1bcef3c0603c0717bbcaed7951351dd6d63"
+  },
+  {
+    "path": ".local/l13/session/cases.jsonl",
+    "bytes": 854,
+    "sha256": "02b36f77e6bd4b6e4f561721e66f818b5b03a8cca4e628458a20fc30680f801e"
+  },
+  {
+    "path": ".local/l13/session/process-events.jsonl",
+    "bytes": 330,
+    "sha256": "ab3bfc2ac9872bb409ef92dde2886be046f11d0098b65cdf2d045f5295d4d2da"
+  },
+  {
+    "path": ".local/l13/session/gazebo-metal.log",
+    "bytes": 17441,
+    "sha256": "323102f09117db08eab12360c93874a68a1a028374ef6c32237fc4c713a100ba"
+  },
+  {
+    "path": ".local/l13/rollback/sitl/observations.jsonl",
+    "bytes": 2875183,
+    "sha256": "81717fa62d7c0dc624e8f260b67bad9c44ba3b1e411b77fad1f22d4bda399dd9"
+  },
+  {
+    "path": ".local/l13/rollback/topics.txt",
+    "bytes": 878,
+    "sha256": "4e2b054fdb3bbbdbfce47fb5532d84c703eb2e042d455b128f0bc1d9bd1ff4ae"
+  },
+  {
+    "path": ".local/l13/rollback-gazebo.log",
+    "bytes": 15007,
+    "sha256": "3cdf11ed5a33476e33cd57396401a818424a1903c4f13266d770a031bcfd2975"
+  },
+  {
+    "path": ".local/l13/session/parameters-after-fresh.parm",
+    "bytes": 36528,
+    "sha256": "32c2694b29432e111d52588e5b227c7dcbdc3145b52be8552769951be2193aa1"
+  },
+  {
+    "path": ".local/l13/rollback/parameters-fresh.parm",
+    "bytes": 36341,
+    "sha256": "39d6bf9da342803c908c4bf542e3b5eae72eb3adffd2e99f9b2a05478af89e60"
+  },
+  {
+    "path": ".local/l08/stock-arducopter",
+    "bytes": 4817736,
+    "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec"
+  },
+  {
+    "path": "ardupilot/build/sitl/bin/arducopter",
+    "bytes": 4817736,
+    "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec"
+  },
+  {
+    "path": ".local/l12/plugin-build/libArduPilotPlugin.dylib",
+    "bytes": 675496,
+    "sha256": "093f82526a767f56febe3ae072d665a0fd03df7af82125a199ec900fa6b855b5"
+  },
+  {
+    "path": ".local/l13/session/sitl/params-before.parm",
+    "bytes": 36528,
+    "sha256": "7ff9de6f731d1b334804c854f6e7d57289222aace33be4365de212d34641004d"
+  }
+]

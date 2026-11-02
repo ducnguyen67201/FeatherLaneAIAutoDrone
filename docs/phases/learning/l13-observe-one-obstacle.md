@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M04 Observe one obstacle then avoid it · Track: core · Dependencies: [L12](l12-instrumented-scene.md)
+**DRAFT phase card. Status: complete.** M04 Observe one obstacle then avoid it · Track: core · Dependencies: [L12](l12-instrumented-scene.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -44,7 +44,7 @@ Retain:
 
 - Sensor configuration, observation samples and comparison notes.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [L13 evidence](../../evidence/l13-obstacle-observation/README.md): one front 21-ray planar lidar, static box, bounded Python observation adapter and existing MAVLink rangefinder. Stable3m/5m returns, off-axis/beyond/under-range/above-plane no-return, reader dropout NoData/recovery and sensor-disabled baseline observed disarmed. No-return is not clearance; no flight/avoidance or firmware changes. Local/unpublished; guided checkpoint complete after the under-range clarification. Screenshot publication pending readable attachment.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

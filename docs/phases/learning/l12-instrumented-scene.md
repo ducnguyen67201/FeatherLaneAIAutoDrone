@@ -44,7 +44,7 @@ Retain:
 
 - Pinned simulator/plugin versions, launch files/commands and one baseline log.
 
-**Actual execution record:** [L12 evidence](../../evidence/l12-instrumented-scene/README.md): native Mac headless Gazebo8.10.0/official plugin with unchanged stock JSON/X-frame flight, fresh disarmed connection and basic-SITL rollback. Arrival dwell completed7.80s, then31.83s sampled hold; peak speed1.05m/s against1m/s target. Mesh-body collision limit retained. Guided checkpoint complete; local/unpublished; L13 not started.
+**Actual execution record:** [L12 evidence](../../evidence/l12-instrumented-scene/README.md): native Mac headless Gazebo8.10.0/official plugin with unchanged stock JSON/X-frame flight, fresh disarmed connection and basic-SITL rollback. Arrival dwell completed7.80s, then31.83s sampled hold; peak speed1.05m/s against1m/s target. Mesh-body collision limit retained. Guided checkpoint complete; published at project7b1dc4a07bb335c960c2e72f855b0e3bf07d6885; L13 observed locally.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

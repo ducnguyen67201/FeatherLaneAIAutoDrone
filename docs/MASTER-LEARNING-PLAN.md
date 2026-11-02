@@ -2,9 +2,9 @@
 
 [Project home](../README.md) · [Capability roadmap](ROADMAP.md) · [Phase registry](phases/registry.json) · [First-seven-phase diagram](assets/learning/learning-workflow.svg)
 
-**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L12 and guided checkpoints complete; L11 published at project56b32a2c6d10bc58a85ae4ebab4ff98520da3acc and firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L12 native headless Gazebo8.10.0/official-plugin/stock-SITL flight, fresh disarmed connection and basic-SITL rollback observed. Sampled arrival completed7.80s after goal, followed by31.83s qualifying hold; peak speed1.05m/s against1m/s target. Guided L12 checkpoint complete. DART mesh body collision and GUI/native-transfer/fault qualification remain open; L12 unpublished, L13 not started, firmware/main/21pins unchanged.
+**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L12 and guided checkpoints complete; L12 published at project7b1dc4a07bb335c960c2e72f855b0e3bf07d6885 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L13 locally observed one front lidar/static box, 3m/5m returns, no-return coverage/blind spot and stock rangefinder NoData/recovery, disarmed with avoidance disabled; baseline rollback and cleanup complete. L13 complete locally with guided checkpoint complete after the under-range clarification; unpublished. Screenshot inclusion pending readable attachment; L14 not started; broader P01/P03 gates incomplete.
 
-**Next small phase: L13.** Active learning phase: L12.
+**Next small phase: L14.** Active learning phase: L13.
 
 This is the execution entry point. `L01`, `L02`, and so on are small learning phases. Existing `P01`–`P09` references remain capability milestones in the roadmap and architecture; their numbers do not dictate the learning order. Master groups organize related results without turning a group into one large implementation task. A phase passing does not automatically complete its parent capability milestone.
 

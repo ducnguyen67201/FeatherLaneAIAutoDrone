@@ -1,6 +1,6 @@
 # L12 — connect one instrumented simulator scene
 
-Status: native Mac headless Gazebo/official-plugin/stock-SITL flight, fresh disarmed connection and basic-SITL rollback observed; guided checkpoint complete. Guided checkpoint complete. L12 remains local/unpublished. AI-assisted build/world/launch configuration and evidence analysis; no automated tests or firmware edits added.
+Status: native Mac headless Gazebo/official-plugin/stock-SITL flight, fresh disarmed connection and basic-SITL rollback observed; guided checkpoint complete. L12 was subsequently published; see the publication update below. AI-assisted build/world/launch configuration and evidence analysis; no automated tests or firmware edits added.
 
 ## What changed and what was predicted
 
@@ -76,3 +76,8 @@ The user asked to see the3D interface after the headless qualification. A fresh 
 
 
 The user subsequently answered the visibility question: “A window with the3D drone/scene.” Static3D GUI visibility is therefore human-confirmed despite the renderer error logs. The probe had already been stopped when that answer arrived. No flight was started in the GUI probe; the earlier headless flight, static GUI visibility and unavailable agent screenshot validation remain distinct evidence.
+
+
+## Publication update —2026-11-02
+
+The user authorized L12 publication and local L13. Published project `7b1dc4a07bb335c960c2e72f855b0e3bf07d6885` and matching firmware branch `a00f32be2a91639c8dee1c41c09e1c5e5635d547` were remote-SHA verified. The firmware is unchanged from L11. Earlier local/unpublished statements above describe the original execution handoff. Current L13 sensor work is recorded separately. Screenshot publication remains pending because the supplied TemporaryItems image was denied by macOS; static3D visibility remains human-confirmed without an agent-inspected image.

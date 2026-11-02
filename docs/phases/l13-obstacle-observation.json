@@ -1,0 +1,159 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "L13 observed obstacle sensor — local processes and validity",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "docs/phases/l13-obstacle-observation.html"
+  },
+  "components": [
+    {
+      "id": "obstacle",
+      "type": "external",
+      "label": "One static box obstacle",
+      "sublabel": "Known placement only for evaluation",
+      "pos": [
+        40,
+        80
+      ],
+      "size": [
+        300,
+        95
+      ]
+    },
+    {
+      "id": "lidar",
+      "type": "backend",
+      "label": "Front Gazebo GPU lidar",
+      "sublabel": "Observed LaserScan ·10Hz ·0.2–8m",
+      "pos": [
+        450,
+        80
+      ],
+      "size": [
+        330,
+        95
+      ]
+    },
+    {
+      "id": "bridge",
+      "type": "backend",
+      "label": "Bounded observation adapter",
+      "sublabel": "Observed Python · freshness / units",
+      "pos": [
+        880,
+        390
+      ],
+      "size": [
+        300,
+        95
+      ]
+    },
+    {
+      "id": "rangefinder",
+      "type": "backend",
+      "label": "Stock MAVLink rangefinder",
+      "sublabel": "Existing backend ·500ms receive timeout",
+      "pos": [
+        450,
+        700
+      ],
+      "size": [
+        300,
+        95
+      ]
+    },
+    {
+      "id": "record",
+      "type": "database",
+      "label": "Observation evidence / scoring",
+      "sublabel": "LaserScan · MAVLink · RFND · validity",
+      "pos": [
+        40,
+        700
+      ],
+      "size": [
+        300,
+        95
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "rays",
+      "from": "obstacle",
+      "to": "lidar",
+      "label": "Rendered range returns"
+    },
+    {
+      "id": "scan",
+      "from": "lidar",
+      "to": "bridge",
+      "label": "LaserScan + simulator timestamp"
+    },
+    {
+      "id": "distance",
+      "from": "bridge",
+      "to": "rangefinder",
+      "label": "DISTANCE_SENSOR · TCP5762"
+    },
+    {
+      "id": "source-evidence",
+      "from": "bridge",
+      "to": "record",
+      "label": "Samples / validity / send times"
+    },
+    {
+      "id": "evaluation",
+      "from": "obstacle",
+      "to": "record",
+      "label": "Separate evaluation geometry"
+    },
+    {
+      "id": "consumer-evidence",
+      "from": "rangefinder",
+      "to": "record",
+      "label": "Telemetry / onboard status"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Gazebo server process · observed sensor scene",
+      "wraps": [
+        "obstacle",
+        "lidar"
+      ],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Local observation process · no flight commands",
+      "wraps": [
+        "bridge"
+      ],
+      "pad": 18
+    },
+    {
+      "kind": "region",
+      "label": "Existing ArduCopter SITL process · remains disarmed",
+      "wraps": [
+        "rangefinder"
+      ],
+      "pad": 18
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Observed scope and limits",
+      "items": [
+        "Local L13 integration observed disarmed. Adapter sends DISTANCE_SENSOR only; no arming, targets, mode commands, dodge or obstacle control. No firmware change; L12 published, L13 local/unpublished.",
+        "Observed nearest3.00018m and5.00031m. The21-ray10deg fan covers one plane over0.2–8m. Off-axis, above-plane, beyond8m and below0.2m produced no-return: no proof of free space or swept-body clearance.",
+        "Reader pause produced stale receive state after0.356s and stock RFND Good→NoData→Good. NoData distance0 is invalid, and max+1cm is a no-return sentinel. Receive freshness is not synchronized capture-age qualification.",
+        "Known box geometry is scoring truth only. Sensor-disabled baseline and cleanup observed. Renderer/mesh limits retained; malformed guards source-reviewed, not injected. Guided checkpoint complete after clarification; screenshot attachment pending."
+      ]
+    }
+  ]
+}

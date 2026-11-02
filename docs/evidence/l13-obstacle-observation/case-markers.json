@@ -1,0 +1,72 @@
+[
+  {
+    "wall_time": 1793649394.808992,
+    "name": "front_3m",
+    "obstacle_center_ENU_m": [
+      0,
+      3.55,
+      1
+    ],
+    "expected_distance_m": 3
+  },
+  {
+    "wall_time": 1793649395.564241,
+    "name": "front_5m",
+    "obstacle_center_ENU_m": [
+      0,
+      5.55,
+      1
+    ],
+    "expected_distance_m": 5
+  },
+  {
+    "wall_time": 1793649551.026755,
+    "name": "off_axis",
+    "obstacle_center_ENU_m": [
+      3,
+      3.55,
+      1
+    ],
+    "expected_distance_m": null
+  },
+  {
+    "wall_time": 1793649556.890157,
+    "name": "beyond_range",
+    "obstacle_center_ENU_m": [
+      0,
+      10.55,
+      1
+    ],
+    "expected_distance_m": null
+  },
+  {
+    "wall_time": 1793649562.8092968,
+    "name": "near_minimum",
+    "obstacle_center_ENU_m": [
+      0,
+      0.65,
+      1
+    ],
+    "expected_distance_m": null
+  },
+  {
+    "wall_time": 1793649568.470633,
+    "name": "above_plane",
+    "obstacle_center_ENU_m": [
+      0,
+      3.55,
+      3
+    ],
+    "expected_distance_m": null
+  },
+  {
+    "wall_time": 1793649576.619877,
+    "name": "restored_3m",
+    "obstacle_center_ENU_m": [
+      0,
+      3.55,
+      1
+    ],
+    "expected_distance_m": 3
+  }
+]

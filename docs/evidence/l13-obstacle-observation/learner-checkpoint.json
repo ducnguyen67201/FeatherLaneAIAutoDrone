@@ -1,0 +1,12 @@
+{
+  "phase": "L13",
+  "status": "complete",
+  "question": "If this front sensor reports no return, can we conclude the whole path is clear? Why or why not?",
+  "answer": "Learner correctly rejected whole-path clearance but suggested3–5m could be assumed clear and no-return probably meant beyond8m.",
+  "correction": "No-return cannot guarantee even nearby clearance: the0.1m box below the0.2m minimum produced the same no-return as beyond8m. Narrow planar coverage and blind spots remain.",
+  "follow_up": "Could a box still be0.1m ahead when reading is no-return?",
+  "follow_up_answer": "Yes—the box could be inside the sensor’s 0.2 m minimum range.",
+  "L14_started": false,
+  "completed_date": "2026-11-02",
+  "completion_basis": "Learner correctly identified the under-range blind spot after clarification. No-return cannot establish clearance."
+}

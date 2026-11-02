@@ -50,3 +50,18 @@ After fresh on-ground/disarmed evidence, stop the owned SITL and launcher, passi
 ## Qualification boundary
 
 DART did not instantiate the official Iris mesh `base_collision`; primitive leg/rotor collisions are present and a level ground landing was observed. Body/obstacle collision behavior is unqualified. GUI, rendering, cameras, sensor-only autonomy, native L11 transfer, fault/reliability campaigns and hardware were not exercised. Gazebo model poses are privileged simulation evaluation data. A package install or successful build alone is not this qualification.
+
+## L13 front-observation scene
+
+The separate [L13 record](../../docs/evidence/l13-obstacle-observation/README.md) adds one front GPU lidar/static box and an observation-only adapter. It remains disarmed, with avoidance disabled; it adds no flight firmware. Use a fresh directory and pass `l13` as the second launcher argument in each terminal:
+
+```sh
+simulation/gazebo/run-gazebo.sh "$PWD/.local/l13/new-session" l13
+simulation/gazebo/run-sitl.sh "$PWD/.local/l13/new-session" l13
+.local/l02/venv/bin/python simulation/gazebo/range_observer.py \
+  --record .local/l13/new-session/observer.jsonl
+```
+
+The adapter connects to existing TCP5762 and sends only DISTANCE_SENSOR. It reads real LaserScan samples, never model poses. The world/profile retain the L12 plant/JSON setup and explicitly add21 front rays across10deg in one plane over0.2–8m. Samples/no-return/stale state are written to a new exclusive JSONL file. Source and receive clocks are separate; capture latency is unqualified.
+
+No-return is not clearance: a box below the0.2m minimum produced the same all-infinity output as one beyond8m. The801cm MAVLink value is an out-of-range sentinel, not a measured obstacle. Read the coverage/consumer limitations before any later control integration. Stop the observer after inspection; after fresh disarmed/on-ground evidence stop the owned SITL/recorder/server. Rollback is the default L12 world/profile in another fresh directory, without the observer or `l13` argument. The actual rollback confirmed RNGFND1_TYPE0 and no front_scan topic. L14 avoidance is not implemented by these launchers.

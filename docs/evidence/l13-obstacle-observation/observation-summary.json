@@ -1,0 +1,311 @@
+{
+  "phase": "L13",
+  "case_results": [
+    {
+      "wall_time": 1793649394.808992,
+      "name": "front_3m",
+      "obstacle_center_ENU_m": [
+        0,
+        3.55,
+        1
+      ],
+      "expected_distance_m": 3,
+      "analysis_settling_window_s": 0.35,
+      "samples": 3,
+      "statuses": {
+        "return": 3
+      },
+      "all_sent": true,
+      "distance_min_m": 3.0001838207244873,
+      "distance_max_m": 5.000307083129883,
+      "maximum_error_m": 2.000307083129883
+    },
+    {
+      "wall_time": 1793649395.564241,
+      "name": "front_5m",
+      "obstacle_center_ENU_m": [
+        0,
+        5.55,
+        1
+      ],
+      "expected_distance_m": 5,
+      "analysis_settling_window_s": 0.35,
+      "samples": 1540,
+      "statuses": {
+        "return": 1540
+      },
+      "all_sent": true,
+      "distance_min_m": 5.000307083129883,
+      "distance_max_m": 5.000307083129883,
+      "maximum_error_m": 0.0003070831298828125
+    },
+    {
+      "wall_time": 1793649551.026755,
+      "name": "off_axis",
+      "obstacle_center_ENU_m": [
+        3,
+        3.55,
+        1
+      ],
+      "expected_distance_m": null,
+      "analysis_settling_window_s": 0.35,
+      "samples": 54,
+      "statuses": {
+        "no_return": 54
+      },
+      "all_sent": true,
+      "distance_min_m": null,
+      "distance_max_m": null,
+      "maximum_error_m": null
+    },
+    {
+      "wall_time": 1793649556.890157,
+      "name": "beyond_range",
+      "obstacle_center_ENU_m": [
+        0,
+        10.55,
+        1
+      ],
+      "expected_distance_m": null,
+      "analysis_settling_window_s": 0.35,
+      "samples": 55,
+      "statuses": {
+        "no_return": 55
+      },
+      "all_sent": true,
+      "distance_min_m": null,
+      "distance_max_m": null,
+      "maximum_error_m": null
+    },
+    {
+      "wall_time": 1793649562.8092968,
+      "name": "near_minimum",
+      "obstacle_center_ENU_m": [
+        0,
+        0.65,
+        1
+      ],
+      "expected_distance_m": null,
+      "analysis_settling_window_s": 0.35,
+      "samples": 52,
+      "statuses": {
+        "no_return": 52
+      },
+      "all_sent": true,
+      "distance_min_m": null,
+      "distance_max_m": null,
+      "maximum_error_m": null
+    },
+    {
+      "wall_time": 1793649568.470633,
+      "name": "above_plane",
+      "obstacle_center_ENU_m": [
+        0,
+        3.55,
+        3
+      ],
+      "expected_distance_m": null,
+      "analysis_settling_window_s": 0.35,
+      "samples": 77,
+      "statuses": {
+        "no_return": 77
+      },
+      "all_sent": true,
+      "distance_min_m": null,
+      "distance_max_m": null,
+      "maximum_error_m": null
+    },
+    {
+      "wall_time": 1793649576.619877,
+      "name": "restored_3m",
+      "obstacle_center_ENU_m": [
+        0,
+        3.55,
+        1
+      ],
+      "expected_distance_m": 3,
+      "analysis_settling_window_s": 0.35,
+      "samples": 351,
+      "statuses": {
+        "return": 351
+      },
+      "all_sent": true,
+      "distance_min_m": 3.0001838207244873,
+      "distance_max_m": 3.0001838207244873,
+      "maximum_error_m": 0.0001838207244873047
+    }
+  ],
+  "source_samples": 2950,
+  "source_simulator_span_s": 294.93800000000005,
+  "sample_receive_span_s": 297.26164293289185,
+  "source_stamp_increasing": true,
+  "observer_events": {
+    "started": 1,
+    "stale": 2,
+    "sample": 2950,
+    "discarded_queue": 1,
+    "stopped": 1
+  },
+  "dropout": {
+    "process_events": [
+      {
+        "wall_time": 1793649592.334176,
+        "event": "reader_SIGSTOP",
+        "pid": 46355,
+        "command": [
+          "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/gazebo-env/libexec/gz/transport13/gz-transport-topic",
+          "-e",
+          "-t",
+          "/l13/front_scan",
+          "--json-output"
+        ]
+      },
+      {
+        "wall_time": 1793649603.626959,
+        "event": "reader_SIGCONT",
+        "pid": 46355
+      }
+    ],
+    "last_sample_before_pause": 1793649592.269521,
+    "stale_event": {
+      "wall_time": 1793649592.6252532,
+      "monotonic_s": 716678.416469333,
+      "event": "stale",
+      "action": "stop forwarding; stock receive timeout owns NoData"
+    },
+    "stale_after_last_sample_s": 0.3557322025299072,
+    "first_sample_after_resume": {
+      "wall_time": 1793649603.627529,
+      "source_stamp_s": 513.8,
+      "distance_m": 3.0001838207244873,
+      "sent": true
+    },
+    "clock_limit": "Receive freshness only. Simulator/host/AP clocks are not synchronized; no end-to-end capture-age or latency bound."
+  },
+  "consumer": {
+    "RFND_samples": 9530,
+    "status_counts": {
+      "1": 1888,
+      "4": 7140,
+      "3": 502
+    },
+    "status_legend": {
+      "1": "NoData",
+      "3": "OutOfRangeHigh",
+      "4": "Good"
+    },
+    "status_transitions": [
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 58711000,
+        "Instance": 0,
+        "Dist": 0.0,
+        "Stat": 1,
+        "Orient": 0,
+        "Quality": -1
+      },
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 119311409,
+        "Instance": 0,
+        "Dist": 3.0,
+        "Stat": 4,
+        "Orient": 0,
+        "Quality": -1
+      },
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 216811570,
+        "Instance": 0,
+        "Dist": 0.0,
+        "Stat": 1,
+        "Orient": 0,
+        "Quality": -1
+      },
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 238761881,
+        "Instance": 0,
+        "Dist": 3.0,
+        "Stat": 4,
+        "Orient": 0,
+        "Quality": -1
+      },
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 473061701,
+        "Instance": 0,
+        "Dist": 8.010000228881836,
+        "Stat": 3,
+        "Orient": 0,
+        "Quality": -1
+      },
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 498161701,
+        "Instance": 0,
+        "Dist": 3.0,
+        "Stat": 4,
+        "Orient": 0,
+        "Quality": -1
+      },
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 514161701,
+        "Instance": 0,
+        "Dist": 0.0,
+        "Stat": 1,
+        "Orient": 0,
+        "Quality": -1
+      },
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 524961701,
+        "Instance": 0,
+        "Dist": 3.0,
+        "Stat": 4,
+        "Orient": 0,
+        "Quality": -1
+      },
+      {
+        "mavpackettype": "RFND",
+        "TimeUS": 534161701,
+        "Instance": 0,
+        "Dist": 0.0,
+        "Stat": 1,
+        "Orient": 0,
+        "Quality": -1
+      }
+    ],
+    "MAVLink_distance_packets": 1575,
+    "telemetry_distances_cm": [
+      300,
+      500,
+      801
+    ],
+    "metadata_limit": "AP output omits original FOV/quality metadata; id changes to backend instance0. Backend accepts by orientation, not sensor id."
+  },
+  "vehicle": {
+    "heartbeat_samples": 480,
+    "all_disarmed": true,
+    "modes": [
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 58666000,
+        "Mode": 0,
+        "ModeNum": 0,
+        "Rsn": 26
+      }
+    ],
+    "maximum_absolute_relative_alt_m": 0.0
+  },
+  "limits": [
+    "Initial front_3m marker overlapped the subsequent manual move before its completion marker: mixed3m/5m samples retained, not used as a stable3m qualification. Use restored_3m instead.",
+    "One static/disarmed simulation; no flight or obstacle control.",
+    "All-infinity includes under-range blind spot: no_return is not proof of free space.",
+    "10deg horizontal, one vertical plane; no rear/side/up/down or swept-body clearance.",
+    "Malformed-input checks source-reviewed, not injected; no automated tests added.",
+    "Initial source/observer1 differs from final observer2; both retained locally with separate hashes.",
+    "Renderer warnings and missing DART mesh collision retained; no collision/hardware or reliability claim."
+  ]
+}

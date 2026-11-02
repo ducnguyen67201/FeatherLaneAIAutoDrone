@@ -94,8 +94,8 @@
   "execution_unit": "learning_phase",
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
-  "active_learning_phase": "L12",
-  "next_proposed_learning_phase": "L13",
+  "active_learning_phase": "L13",
+  "next_proposed_learning_phase": "L14",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -605,14 +605,14 @@
       ],
       "rollback": "Stop owned scene processes and return to basic SITL with the previous profile.",
       "teach_back": "Which program calculates flight control, and which simulates the world?",
-      "record": "[L12 evidence](../../evidence/l12-instrumented-scene/README.md): native Mac headless Gazebo8.10.0/official plugin with unchanged stock JSON/X-frame flight, fresh disarmed connection and basic-SITL rollback. Arrival dwell completed7.80s, then31.83s sampled hold; peak speed1.05m/s against1m/s target. Mesh-body collision limit retained. Guided checkpoint complete; local/unpublished; L13 not started."
+      "record": "[L12 evidence](../../evidence/l12-instrumented-scene/README.md): native Mac headless Gazebo8.10.0/official plugin with unchanged stock JSON/X-frame flight, fresh disarmed connection and basic-SITL rollback. Arrival dwell completed7.80s, then31.83s sampled hold; peak speed1.05m/s against1m/s target. Mesh-body collision limit retained. Guided checkpoint complete; published at project7b1dc4a07bb335c960c2e72f855b0e3bf07d6885; L13 observed locally."
     },
     {
       "id": "L13",
       "slug": "observe-one-obstacle",
       "title": "Observe one obstacle sensor",
       "group": "M04",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L12"
       ],
@@ -639,7 +639,7 @@
       ],
       "rollback": "Disable the new sensor/integration and retain the baseline scene.",
       "teach_back": "Can a target bounding box establish the distance or clearance measured by this sensor?",
-      "record": null
+      "record": "[L13 evidence](../../evidence/l13-obstacle-observation/README.md): one front 21-ray planar lidar, static box, bounded Python observation adapter and existing MAVLink rangefinder. Stable3m/5m returns, off-axis/beyond/under-range/above-plane no-return, reader dropout NoData/recovery and sensor-disabled baseline observed disarmed. No-return is not clearance; no flight/avoidance or firmware changes. Local/unpublished; guided checkpoint complete after the under-range clarification. Screenshot publication pending readable attachment."
     },
     {
       "id": "L14",
@@ -1247,7 +1247,7 @@
     "speed_comparison_record": "../evidence/l06-one-speed-change/README.md",
     "arrival_record": "../evidence/l07-measure-arrival/README.md",
     "native_status_record": "../evidence/l08-native-status-slice/README.md",
-    "custom_working_branch": "codex/l12-instrumented-scene",
+    "custom_working_branch": "codex/l13-obstacle-observation",
     "native_status_scope": "SITL-only observer; no native task execution or custom mode. Custom commit is a five-file addition against the preserved stock base.",
     "custom_firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
     "native_task_admission_record": "../evidence/l09-native-task-contract/README.md",
@@ -1257,9 +1257,9 @@
     "native_arrival_abort_record": "../evidence/l11-native-arrival-abort/README.md",
     "native_arrival_abort_scope": "Published four-file L11 commit a00f32be2a91639c8dee1c41c09e1c5e5635d547; arrival/BRAKE-abort/hold/rollback and guided checkpoint complete.",
     "instrumented_scene_record": "../evidence/l12-instrumented-scene/README.md",
-    "instrumented_scene_scope": "Local headless Gazebo8.10.0/physics7.5.0/DART6.19.5 + official plugin f116b035 and exact stock Copter4.7.2 JSON/X-frame flight; no firmware edits, native L11 transfer, GUI or body/obstacle collision qualification."
+    "instrumented_scene_scope": "Published headless Gazebo8.10.0/physics7.5.0/DART6.19.5 + official plugin f116b035 and exact stock Copter4.7.2 JSON/X-frame flight; no firmware edits, native L11 transfer, GUI or body/obstacle collision qualification."
   },
-  "execution_summary": "L01–L12 and guided checkpoints complete; L11 published at project56b32a2c6d10bc58a85ae4ebab4ff98520da3acc and firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L12 native headless Gazebo8.10.0/official-plugin/stock-SITL flight, fresh disarmed connection and basic-SITL rollback observed. Sampled arrival completed7.80s after goal, followed by31.83s qualifying hold; peak speed1.05m/s against1m/s target. Guided L12 checkpoint complete. DART mesh body collision and GUI/native-transfer/fault qualification remain open; L12 unpublished, L13 not started, firmware/main/21pins unchanged.",
+  "execution_summary": "L01–L12 and guided checkpoints complete; L12 published at project7b1dc4a07bb335c960c2e72f855b0e3bf07d6885 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L13 locally observed one front lidar/static box, 3m/5m returns, no-return coverage/blind spot and stock rangefinder NoData/recovery, disarmed with avoidance disabled; baseline rollback and cleanup complete. L13 complete locally with guided checkpoint complete after the under-range clarification; unpublished. Screenshot inclusion pending readable attachment; L14 not started; broader P01/P03 gates incomplete.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
@@ -1332,7 +1332,14 @@
     "firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
     "firmware_remote_sha_verified": true,
     "firmware_changes": "none; matching branch reference to published L11",
-    "project_publication": "authorized; containing project commit to be verified after push",
-    "screenshot": "pending readable attachment"
+    "project_publication": "Published; exact remote SHA and matching unchanged firmware gitlink verified.",
+    "screenshot": "pending readable attachment",
+    "project_commit": "7b1dc4a07bb335c960c2e72f855b0e3bf07d6885",
+    "project_remote_sha_verified": true
+  },
+  "authorization_l13_publication_l14": {
+    "date": "2026-11-02",
+    "source": "User: push this and continue next phase.",
+    "scope": "Publish completed L13 feature branches with unchanged firmware reference, then local L14 one stock avoidance configuration/static-scene comparison. No main merge, L14 publication, custom/native-mode avoidance or physical operation."
   }
 }

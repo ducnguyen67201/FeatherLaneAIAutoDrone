@@ -40,7 +40,15 @@ The [phase deployment diagram](../assets/learning/l12-simulator-deployment.svg) 
 
 [One headless stock baseline flight](../evidence/l12-instrumented-scene/README.md) now qualifies native Mac Gazebo Sim8.10.0/DART with the pinned official actuator/state plugin and existing SITL JSON backend. Stock ArduPilot calculates flight/motor control; Gazebo applies outputs to Iris physics and returns simulated state/IMU. MAVProxy remains the operator console and passive tools record telemetry/poses. L11 native firmware is preserved; transfer of its behavior to the changed X-frame plant was not exercised. No firmware, hosting or remote deployment change is made.
 
-The flight reached the nearby goal, held, landed and disarmed; a fresh disarmed scene connection and basic-SITL rollback followed. The DART engine omitted the model's mesh body collision; flat-ground landing on primitives is narrower evidence. GUI/camera, body/obstacle collision, sensor-only autonomy, native transfer, avoidance and fault qualification remain future work. The269-package environment/source/build/raw logs are isolated under ignored `.local/l12/`; maintained setup/world/launch/lock sources live in `simulation/gazebo/`. L12 is local/unpublished with guided checkpoint complete; L13 has not started.
+The flight reached the nearby goal, held, landed and disarmed; a fresh disarmed scene connection and basic-SITL rollback followed. The DART engine omitted the model's mesh body collision; flat-ground landing on primitives is narrower evidence. GUI/camera, body/obstacle collision, sensor-only autonomy, native transfer, avoidance and fault qualification remain future work. The269-package environment/source/build/raw logs are isolated under ignored `.local/l12/`; maintained setup/world/launch/lock sources live in `simulation/gazebo/`. L12 is published with guided checkpoint complete; static3D GUI visibility is human-confirmed separately from the headless flight. L13 is recorded below.
+
+## L13 observed sensor-only integration slice
+
+The [phase observation diagram](../assets/learning/l13-obstacle-observation.svg) ([editable source](../phases/l13-obstacle-observation.json)) is a child process/data-flow view of this core architecture. The proposed scope was shown before implementation; this records observed implementation, not approval of the broader design.
+
+[Local disarmed evidence](../evidence/l13-obstacle-observation/README.md) connects one front Gazebo GPU lidar through a Python observation adapter to the existing stock MAVLink rangefinder on TCP5762. It forwards sensor messages only. Stable3m/5m returns, no-return outside the narrow fan/range and below minimum range, stock NoData/recovery and a sensor-disabled baseline were observed. No firmware, flight or avoidance logic was added. Simulator box geometry is separate scoring truth, never adapter input.
+
+Coverage is21 rays across10deg in one vertical plane,0.2–8m. A no-return may mean a blind spot; it is not clearance. Receive freshness is bounded separately from the backend's500ms timeout; end-to-end capture age is unmeasured. Downstream range telemetry loses the original FOV metadata. L13 remains local/unpublished with guided checkpoint complete after clarification; L14 has not started.
 
 ## Module ownership
 

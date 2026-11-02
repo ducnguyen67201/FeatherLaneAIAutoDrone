@@ -1,0 +1,75 @@
+{
+  "phase": "L13",
+  "declared_date": "2026-11-02",
+  "prediction": "With drone disarmed and stock avoidance disabled, nearest fresh front lidar distance should be3m then5m for the declared box faces; off-axis/out-of-plane/beyond8m should be explicit no_return, not global clearance. A lost observation stream must timeout in the consumer instead of remaining fresh.",
+  "sensor": {
+    "mount_in_gazebo_FLU_m": [
+      0.3,
+      0,
+      0.15
+    ],
+    "mass_kg": 0.01,
+    "body_forward_world_direction": "north at the initial90deg ENU yaw",
+    "horizontal_samples": 21,
+    "horizontal_fov_deg": 10,
+    "vertical_samples": 1,
+    "vertical_fov_deg": 0,
+    "update_hz": 10,
+    "range_min_m": 0.2,
+    "range_max_m": 8,
+    "topic": "/l13/front_scan",
+    "output": "gz.msgs.LaserScan, simulator timestamp; bridge receive clock separate"
+  },
+  "obstacle": {
+    "size_ENU_m": [
+      2,
+      0.5,
+      2
+    ],
+    "initial_center_ENU_m": [
+      0,
+      3.55,
+      1
+    ],
+    "expected_nearest_face_distance_m": 3,
+    "evaluation_truth": "Known primitive box geometry/poses only for offline scoring; bridge receives no model pose."
+  },
+  "bridge": {
+    "input": "New bounded LaserScan samples only; no flight commands",
+    "consumer": "Stock AP_RangeFinder_MAVLink on existing TCP5762",
+    "MAVLink": "DISTANCE_SENSOR, forward orientation0, centimetres, min20/max800, nearest ray across narrow front fan",
+    "source_age_max_s": 0.35,
+    "source_clock": "strictly increasing simulator timestamps; receive monotonic clock for staleness",
+    "no_return": "all positive-infinite rays maps to max_distance+1cm sentinel; not physical obstacle distance",
+    "invalid": "malformed/NaN/negative/clock reset/geometry mismatch stops forwarding; no fabricated position",
+    "downstream_timeout_ms": 500,
+    "no_avoidance": true
+  },
+  "manual_cases": [
+    "3m face",
+    "5m face",
+    "off-axis",
+    "beyond maximum range",
+    "below minimum range behavior",
+    "out of vertical plane",
+    "stop/restart observation bridge and inspect downstream NoData/Good",
+    "baseline scene rollback with sensor disabled"
+  ],
+  "qualification_bounds": {
+    "distance_tolerance_m": 0.1,
+    "new_sample_age_s": 0.35,
+    "rate_expected_hz": 10,
+    "disarmed_only": true
+  },
+  "scope_limits": [
+    "One narrow planar front sensor does not cover rear/sides/up/down or full vehicle clearance.",
+    "Rendered range sensor is a simulator baseline, not real hardware qualification.",
+    "No flight, dodge behavior, PRX/avoidance control, new firmware logic or automated tests.",
+    "L12 screenshot attachment remains pending readable copy; no L13 publication."
+  ],
+  "post_execution_clarifications": {
+    "source_age_max_s": "Original name denotes receive-gap guard only, not capture-age measurement. Host and simulator clocks unsynchronized.",
+    "near_minimum": "Actual0.1m front face produced all-infinity/no-return; same sentinel as beyond range. Not free space.",
+    "manual_marker_timing": "Markers follow service completion; first short3m window overlaps next move. Retained as mixed; restored3m used for stable comparison."
+  }
+}
