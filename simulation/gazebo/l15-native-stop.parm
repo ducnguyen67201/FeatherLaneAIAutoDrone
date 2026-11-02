@@ -1,0 +1,25 @@
+# Retain the L13 sensor geometry; expose its front range to stock proximity.
+PLND_ENABLED 0
+RNGFND1_TYPE 10
+RNGFND1_ORIENT 0
+RNGFND1_MIN 0.2
+RNGFND1_MAX 8
+RNGFND1_POS_X 0.3
+RNGFND1_POS_Y 0
+RNGFND1_POS_Z -0.15
+PRX1_TYPE 4
+
+# Native L15 uses stock avoidance as a veto and stock BRAKE for stopping.
+AVOID_ENABLE 2
+AVOID_BEHAVE 1
+# Allow additional settling distance after the native BRAKE handoff.
+AVOID_MARGIN 2.25
+AVOID_BACKUP_SPD 0
+AVOID_ALT_MIN 0
+OA_TYPE 0
+LOIT_SPEED_MS 0.5
+# Bound pilot acceleration when a full-stick input is applied.
+LOIT_ANG_MAX 1.5
+WP_SPD 0.5
+WP_ACC 0.25
+LOG_DISARMED 1

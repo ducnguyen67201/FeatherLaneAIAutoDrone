@@ -59,8 +59,8 @@ def main():
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument('--record', type=Path, required=True)
     parser.add_argument('--endpoint', default='tcp:127.0.0.1:5762')
-    parser.add_argument('--phase', choices=['l13', 'l14'], default='l13',
-                        help='L13 is disarmed-only; L14 permits the scoped simulator flight')
+    parser.add_argument('--phase', choices=['l13', 'l14', 'l15'], default='l13',
+                        help='L13 is disarmed-only; L14/L15 permit their scoped simulator flights')
     args = parser.parse_args()
     root = Path(__file__).resolve().parents[2]
     topic = f'/{args.phase}/front_scan'
