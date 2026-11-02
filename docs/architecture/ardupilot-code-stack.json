@@ -221,8 +221,8 @@
     {
       "id": "hal",
       "type": "backend",
-      "label": "AP_HAL + platform backend",
-      "sublabel": "libraries/AP_HAL/ + platform backend",
+      "label": "AP_HAL / SITL simulator interfaces",
+      "sublabel": "Existing backend · L12 JSON model path",
       "pos": [
         850,
         1620
@@ -501,6 +501,17 @@
     }
   ],
   "cards": [
+    {
+      "dot": "amber",
+      "title": "L12 observed integration · headless Gazebo baseline",
+      "items": [
+        "Unchanged stock Copter4.7.2 calculates flight control through its JSON simulator backend. A separate native Mac Gazebo8.10.0 server loads pinned official ArduPilotPlugin and one plain Iris X-frame scene. Published L11 native behavior is preserved, not transferred by assumption.",
+        "The existing JSON backend sends actuator/PWM packets to the plugin at local UDP9002; Gazebo applies them to physics and returns simulated state/IMU. MAVProxy TCP5760 and passive UDP14550 recording remain external tools, not a flight mission FSM.",
+        "One stock flight reached about5m north at3m above home: sampled arrival at7.80s,31.83s later hold, then operator LAND/disarm. Fresh disarmed connection and basic-SITL rollback passed. Peak speed1.05m/s is recorded against a1m/s target.",
+        "DART did not create the official mesh body collision. Primitive contact/flat-ground landing, headless data exchange and one flight do not qualify obstacle/body collision, GUI/camera, native transfer, sensor-only autonomy or failures. L12 local/unpublished; guided checkpoint complete.",
+        "This selected module overview links to the phase-scoped local simulator deployment view. The native environment, plugin source/build and raw logs remain project-local; reviewed world, launch, build wrapper and exact package lock are maintained."
+      ]
+    },
     {
       "dot": "amber",
       "title": "L11 observed slice · task lifecycle inside mode31",

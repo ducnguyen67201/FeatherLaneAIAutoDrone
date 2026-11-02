@@ -1,0 +1,52 @@
+# L12 native macOS Gazebo baseline
+
+[Observed evidence](../../docs/evidence/l12-instrumented-scene/README.md) · [Deployment diagram](../../docs/assets/learning/l12-simulator-deployment.svg) · [Core architecture](../../docs/architecture/README.md)
+
+This is a headless local physics/IMU integration, qualified with one stock GUIDED flight, a fresh disarmed connection and a basic-SITL rollback. It adds no flight firmware, AI, ROS, obstacle sensing/avoidance or product UI. The native L11 executable remains preserved; its behavior on this changed X-frame plant is not inferred from this stock flight.
+
+The qualified tuple is macOS15.7.7 arm64, Gazebo Sim8.10.0, gz-physics7.5.0/DART6.19.5, official ArduPilot plugin commit `f116b03552d05c8d0b0bed5ed67033a1183121d1`, AppleClang17 and the exact retained stock Copter-4.7.2 executable. [Source lock](source-lock.json) and [269-package native lock](conda-osx-arm64.lock.txt) record the actual selection. The complete package/build identities are in the evidence directory.
+
+## Setup and build entry point
+
+The environment lives in ignored `.local/l12/gazebo-env`, with a project-local micromamba2.10.0 executable/cache. No shell startup file is changed. The original Homebrew tap route had no bottle metadata in the examined gz-sim8 formula and required trust; no formula or trust was installed. The temporary tap was removed. Native conda-forge binaries supplied the actual working tuple instead.
+
+For a fresh setup, obtain micromamba as described in its [official manual installation](https://mamba.readthedocs.io/en/latest/installation/micromamba-installation.html), verify the retained binary/archive identity, and place it at `.local/l12/micromamba/bin/micromamba`. From the project root:
+
+```sh
+export MAMBA_ROOT_PREFIX="$PWD/.local/l12/mamba-root"
+.local/l12/micromamba/bin/micromamba --no-rc create \
+  -p "$PWD/.local/l12/gazebo-env" \
+  -f simulation/gazebo/conda-osx-arm64.lock.txt -y
+```
+
+The plugin checkout must be at `.local/l12/src/ardupilot_gazebo`, from the official repository and at the exact pinned revision. `CMakeLists.txt` builds its unmodified `ArduPilotPlugin.cc`, `SocketUDP.cc` and `Util.cc` only. Camera/streaming/parachute targets are outside L12; Gazebo packages still include their own transitive libraries. With that checkout present:
+
+```sh
+.local/l12/micromamba/bin/micromamba --no-rc run \
+  -p "$PWD/.local/l12/gazebo-env" cmake \
+  -S simulation/gazebo -B .local/l12/plugin-build \
+  -DARDUPILOT_GAZEBO_SOURCE="$PWD/.local/l12/src/ardupilot_gazebo" \
+  -DCMAKE_PREFIX_PATH="$PWD/.local/l12/gazebo-env" \
+  -DCMAKE_BUILD_TYPE=RelWithDebInfo -DCMAKE_POLICY_VERSION_MINIMUM=3.5
+.local/l12/micromamba/bin/micromamba --no-rc run \
+  -p "$PWD/.local/l12/gazebo-env" cmake --build .local/l12/plugin-build -j4
+```
+
+## Launch and operate
+
+Use one fresh run directory; do not overwrite retained session evidence. Run these in separate terminals, from the project root:
+
+```sh
+simulation/gazebo/run-gazebo.sh "$PWD/.local/l12/new-session"
+simulation/gazebo/run-sitl.sh "$PWD/.local/l12/new-session"
+```
+
+`run-gazebo.sh` scopes the partition, loopback transport, plugin/resource paths and recording directory to this process. The world uses1ms steps, gravity, a ground plane, the official Iris and IMU system. `run-sitl.sh` selects the existing JSON model and official gazebo-iris defaults with a fresh EEPROM, then starts MAVProxy on TCP5760 and forwards MAVLink to UDP14550. The local profile retains QUAD/X, disables unqualified precision landing/rangefinder and requests WP_SPD1m/s. This differs from the basic QUAD/PLUS profile.
+
+Wait for actual home/navigation validity and healthy disarmed state before normal operator commands. The recorded sequence was GUIDED, arm, takeoff3m, measured hover, `guided -35.3632172 149.1652374 3`, measured arrival/hold, explicit LAND and automatic disarm. These scripts launch processes; they do not issue flight commands or own a flight state machine.
+
+After fresh on-ground/disarmed evidence, stop the owned SITL and launcher, passive recorders and then Gazebo. The last session was cleanly stopped. Rollback uses the exact stock executable with basic `quad`/`+` defaults in a fresh directory, with Gazebo absent; the observed rollback restored FRAME_TYPE0 and WP_SPD10.
+
+## Qualification boundary
+
+DART did not instantiate the official Iris mesh `base_collision`; primitive leg/rotor collisions are present and a level ground landing was observed. Body/obstacle collision behavior is unqualified. GUI, rendering, cameras, sensor-only autonomy, native L11 transfer, fault/reliability campaigns and hardware were not exercised. Gazebo model poses are privileged simulation evaluation data. A package install or successful build alone is not this qualification.

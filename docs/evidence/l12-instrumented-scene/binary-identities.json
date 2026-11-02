@@ -1,0 +1,26 @@
+{
+  ".local/l08/stock-arducopter": {
+    "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec",
+    "bytes": 4817736
+  },
+  "ardupilot/build/sitl/bin/arducopter": {
+    "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec",
+    "bytes": 4817736
+  },
+  ".local/l11/build/sitl/bin/arducopter": {
+    "sha256": "6902e57e625ebf89c4c05e20c2413a2bfcbd90e284126cf71ce107167cbbeb38",
+    "bytes": 4820360
+  },
+  ".local/l12/plugin-build/libArduPilotPlugin.dylib": {
+    "sha256": "093f82526a767f56febe3ae072d665a0fd03df7af82125a199ec900fa6b855b5",
+    "bytes": 675496
+  },
+  ".local/l12/micromamba.tar.bz2": {
+    "sha256": "acef4eaab19ec2174ad5a449e5aad981ca326270db819502ff096a92fc31caa6",
+    "bytes": 7197729
+  },
+  ".local/l12/micromamba/bin/micromamba": {
+    "sha256": "c547639f5caf742236641c362746abb4a3505774753ecd08fe341643670c4c01",
+    "bytes": 15635200
+  }
+}

@@ -135,3 +135,22 @@ COMPLETE is task state, not landing/disarm; ABORTED reports successful handoff, 
 ## L11 guided checkpoint / publication and L12 authorization
 
 On2026-11-02 the learner confirmed understanding after clarification of task-state completion versus GCS reporting, powered hover versus aircraft speed, and explicit next actions. The guided L11 checkpoint is complete. The user then requested pushing this work and continuing the next phase, authorizing L11 feature-branch publication with exact firmware gitlink, then local L12 instrumented simulator/world integration. Main merge, L12 publication, physical operation, AI/ROS/avoidance and unrelated changes remain outside this slice.
+
+
+## L11 publication and L12 observed external simulator baseline
+
+L11 publication is remote-SHA verified at project `56b32a2c6d10bc58a85ae4ebab4ff98520da3acc` and firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547`, with the exact parent gitlink. Both current local branches are `codex/l12-instrumented-scene`; firmware source and all21 recursive pins remain unchanged.
+
+The authorized L12 local integration selected native headless Gazebo Sim8.10.0/physics7.5.0/DART6.19.5 in an isolated269-package conda-forge environment, plus official plugin `f116b03552d05c8d0b0bed5ed67033a1183121d1`. The existing stock Copter4.7.2 executable used its JSON model and official Iris QUAD/X profile; no L12 firmware changes were needed. A scoped CMake wrapper builds only the unchanged official actuator/state plugin; one plain world and manual launch scripts provide the integration. The proposal/core and local deployment diagram were shown before implementation.
+
+[Actual evidence](evidence/l12-instrumented-scene/README.md) records disarmed clock/IMU/actuator exchange, stock takeoff3m, a nearby coordinate about5m north atWP_SPD1, sampled arrival at7.80s with31.83s subsequent hold, LAND/disarm, fresh disarmed scene connection and basic-SITL rollback. Peak speed1.05m/s is recorded against the1m/s target. Separately recorded Gazebo poses show the displacement; this shared simulated plant is privileged baseline input/evaluation, not sensor-only or independent physical validation.
+
+The DART build omitted the official mesh base_collision; primitive leg/rotor collisions and level landing do not qualify body/obstacle contact. GUI/camera, avoidance/AI/ROS, native L11 transfer to the new plant, fault/reliability campaigns, scheduler bounds and hardware remain unqualified. No new automated tests or external authoritative flight FSM were created. The temporary Homebrew tap was removed; no tap trust or Gazebo formula was installed. The environment/source/raw logs remain project-local. L12 is local/unpublished with guided checkpoint pending; L13 has not started.
+
+
+The learner subsequently identified Gazebo as the movement/measurement simulator and ArduCopter SITL as the control/estimation/output runtime. L12’s guided checkpoint is complete on2026-11-02. This does not authorize L12 publication or start L13.
+
+
+## L12 publication / L13 authorization
+
+On2026-11-02 the user requested pushing completed L12 and continuing the next phase, including the attached screenshot. This authorizes L12 feature-branch publication and the matching unchanged firmware reference, followed by local L13 one-obstacle sensor/observation work without dodge/control behavior. The screenshot attachment is unreadable through the supplied macOS TemporaryItems path (Operation not permitted), so image inclusion remains pending a readable attachment; no access-control bypass is attempted. Main merge, L13 publication and physical operation remain outside scope.

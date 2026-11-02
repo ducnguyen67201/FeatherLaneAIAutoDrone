@@ -1,0 +1,53 @@
+{
+  "heartbeat_count": 89,
+  "heartbeat_span_s": 86.03854703903198,
+  "armed_samples": 0,
+  "modes": [
+    0
+  ],
+  "shutdown": {
+    "time": 1793647504.859454,
+    "pid": 20553,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+      "--model",
+      "+",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../ardupilot/Tools/autotest/default_params/copter.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793647504.549812,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 81,
+          "custom_mode": 0,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793647504.445599,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  },
+  "scope": "Return to exact basic-SITL QUAD/PLUS profile; no Gazebo process"
+}

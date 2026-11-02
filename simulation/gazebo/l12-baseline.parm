@@ -1,0 +1,7 @@
+# Official gazebo-iris defaults select QUAD/X; retain that motor/model mapping.
+# This plain scene has no precision-landing target or qualified range sensor.
+PLND_ENABLED 0
+RNGFND1_TYPE 0
+
+# Repeat the retained one-metre-per-second stock coordinate baseline.
+WP_SPD 1

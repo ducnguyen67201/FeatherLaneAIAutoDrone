@@ -1,0 +1,264 @@
+{
+  "goal_ack_wall_time": 1793647214.112371,
+  "land_ack_wall_time": 1793647253.976259,
+  "peak_horizontal_speed_mps": 1.05,
+  "sampled_arrival": {
+    "first": {
+      "wall_time": 1793647219.9017951,
+      "utc": "2026-11-02T19:20:19.901795+00:00",
+      "time_boot_ms": 187107,
+      "seconds_after_goal_ack": 5.789424180984497,
+      "latitude_deg": -35.3632188,
+      "longitude_deg": 149.1652374,
+      "horizontal_goal_error_m": 0.1781111849777447,
+      "horizontal_speed_mps": 0.26,
+      "height_above_home_m": 3.0,
+      "vertical_speed_down_mps": 0.0,
+      "mode": 4,
+      "armed": true,
+      "landed_state": 2,
+      "valid_fresh": true,
+      "within_arrival_bounds": true
+    },
+    "completed": {
+      "wall_time": 1793647221.908403,
+      "utc": "2026-11-02T19:20:21.908403+00:00",
+      "time_boot_ms": 189107,
+      "seconds_after_goal_ack": 7.796031951904297,
+      "latitude_deg": -35.3632176,
+      "longitude_deg": 149.1652374,
+      "horizontal_goal_error_m": 0.04452779604669304,
+      "horizontal_speed_mps": 0.06,
+      "height_above_home_m": 3.0,
+      "vertical_speed_down_mps": 0.0,
+      "mode": 4,
+      "armed": true,
+      "landed_state": 2,
+      "valid_fresh": true,
+      "within_arrival_bounds": true
+    },
+    "dwell_s": 2.0
+  },
+  "sampled_hold_after_arrival": {
+    "samples": 128,
+    "span_s": 31.827309131622314,
+    "all_in_bounds": true,
+    "maximum_horizontal_error_m": 0.04452779604669304
+  },
+  "gazebo_pose_count": 7490,
+  "gazebo_pose_extent": {
+    "east_m": [
+      -0.009123937901145105,
+      9.7116559506863e-08
+    ],
+    "north_m": [
+      -9.846695939978583e-10,
+      5.013377583259912
+    ],
+    "world_z_m": [
+      0.19481576714398854,
+      3.230484543270952
+    ]
+  },
+  "gazebo_hover_snapshot": {
+    "stamp": {
+      "sec": "181",
+      "nsec": 318000000
+    },
+    "pose": {
+      "name": "iris_with_ardupilot",
+      "id": 8,
+      "position": {
+        "x": -0.004140291651034712,
+        "y": 0.005902436145274379,
+        "z": 3.1900133942508577
+      },
+      "orientation": {
+        "x": -0.0020627568788074394,
+        "y": -0.0020712908303366097,
+        "z": 0.7073259580303058,
+        "w": 0.7068814921097184
+      }
+    }
+  },
+  "gazebo_goal_snapshot": {
+    "stamp": {
+      "sec": "221",
+      "nsec": 85000000
+    },
+    "pose": {
+      "name": "iris_with_ardupilot",
+      "id": 8,
+      "position": {
+        "x": -0.008712863050711717,
+        "y": 4.997525154862487,
+        "z": 3.1899232746277555
+      },
+      "orientation": {
+        "x": 0.0008180788629498186,
+        "y": 0.0007376250611500736,
+        "z": 0.7074344191775171,
+        "w": 0.7067781329564831
+      }
+    }
+  },
+  "acks": [
+    {
+      "wall_time": 1793647076.065084,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 511,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793647076.065164,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 511,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793647076.0652428,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 511,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793647182.487957,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 176,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793647182.490931,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 400,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793647186.251085,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 22,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793647214.112371,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 192,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793647253.976259,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 176,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    }
+  ],
+  "shutdown": {
+    "time": 1793647309.157711,
+    "pid": 18179,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+      "--model",
+      "JSON",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l12-baseline.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793647308.954456,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 89,
+          "custom_mode": 9,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793647309.05582,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  },
+  "scope": "One stock GUIDED flight in the external physics scene. Poses are privileged simulation evaluation; no sensor-only autonomy, collision or native L11 transfer qualification."
+}

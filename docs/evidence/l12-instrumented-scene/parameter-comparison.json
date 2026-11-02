@@ -1,0 +1,51 @@
+{
+  "counts": [
+    1370,
+    1370
+  ],
+  "selected": {
+    "FRAME_CLASS": {
+      "before": 1.0,
+      "after": 1.0
+    },
+    "FRAME_TYPE": {
+      "before": 1.0,
+      "after": 1.0
+    },
+    "WP_SPD": {
+      "before": 1.0,
+      "after": 1.0
+    },
+    "PLND_ENABLED": {
+      "before": 0.0,
+      "after": 0.0
+    },
+    "RNGFND1_TYPE": {
+      "before": 0.0,
+      "after": 0.0
+    }
+  },
+  "changes": {
+    "MOT_THST_HOVER": {
+      "before": 0.39,
+      "after": 0.331435
+    },
+    "STAT_DISTFLWN": {
+      "before": 0.0,
+      "after": 10.167667
+    },
+    "STAT_FLTCNT": {
+      "before": 0.0,
+      "after": 1.0
+    },
+    "STAT_FLTTIME": {
+      "before": 0.0,
+      "after": 74.0
+    },
+    "STAT_RUNTIME": {
+      "before": 30.0,
+      "after": 259.0
+    }
+  },
+  "limitation": "Initial cached list versus final fresh fetch; not exact update timing. Scene profile sets WP_SPD1 and disables unqualified precision landing/rangefinder."
+}

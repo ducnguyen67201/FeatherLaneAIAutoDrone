@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M04 Observe one obstacle then avoid it · Track: core · Dependencies: [L11](l11-native-arrival-abort.md)
+**DRAFT phase card. Status: complete.** M04 Observe one obstacle then avoid it · Track: core · Dependencies: [L11](l11-native-arrival-abort.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -44,7 +44,7 @@ Retain:
 
 - Pinned simulator/plugin versions, launch files/commands and one baseline log.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [L12 evidence](../../evidence/l12-instrumented-scene/README.md): native Mac headless Gazebo8.10.0/official plugin with unchanged stock JSON/X-frame flight, fresh disarmed connection and basic-SITL rollback. Arrival dwell completed7.80s, then31.83s sampled hold; peak speed1.05m/s against1m/s target. Mesh-body collision limit retained. Guided checkpoint complete; local/unpublished; L13 not started.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

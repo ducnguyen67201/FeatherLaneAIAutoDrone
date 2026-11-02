@@ -26,3 +26,6 @@ docs/phases/*.receipt.json
 docs/phases/*.finalize.json
 docs/phases/*.finalize-summary.json
 docs/phases/*.browser-check.json
+
+# Phase-scoped simulator deployment viewer; retain JSON and exported SVG.
+docs/phases/l12-simulator-deployment.html

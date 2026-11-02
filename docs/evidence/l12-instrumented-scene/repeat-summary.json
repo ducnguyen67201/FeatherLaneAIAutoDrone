@@ -1,0 +1,53 @@
+{
+  "heartbeat_count": 88,
+  "heartbeat_span_s": 85.59127688407898,
+  "armed_samples": 0,
+  "modes": [
+    0
+  ],
+  "shutdown": {
+    "time": 1793647415.941268,
+    "pid": 19935,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+      "--model",
+      "JSON",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l12-baseline.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793647415.815557,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 81,
+          "custom_mode": 0,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793647415.5550988,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  },
+  "scope": "Fresh external JSON connection"
+}

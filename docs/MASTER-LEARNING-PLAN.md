@@ -2,9 +2,9 @@
 
 [Project home](../README.md) · [Capability roadmap](ROADMAP.md) · [Phase registry](phases/registry.json) · [First-seven-phase diagram](assets/learning/learning-workflow.svg)
 
-**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L10 and guided checkpoints complete; L10 published at project d0f30a8f1c33af2f54740fc2b0675f453e0d5ba2 and firmware11573fb26ffe99022431a32d0b40502d03f9b02a. L11 final-source native build/arrival/BRAKE-abort/hold, operator LAND/disarm, exact-L10 rollback and cleanup observed locally. Native completion followed2000ms dwell at7.79s, then29.76s sampled hold; abort stop dwell completed4.11s after acknowledgment, at least3.08m short of goal. Guided L11 checkpoint complete after clarification; L11 firmware published; parent feature publication authorized, L12 not started, main/stock pins unchanged; P01/P03 broader gates incomplete.
+**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L12 and guided checkpoints complete; L11 published at project56b32a2c6d10bc58a85ae4ebab4ff98520da3acc and firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L12 native headless Gazebo8.10.0/official-plugin/stock-SITL flight, fresh disarmed connection and basic-SITL rollback observed. Sampled arrival completed7.80s after goal, followed by31.83s qualifying hold; peak speed1.05m/s against1m/s target. Guided L12 checkpoint complete. DART mesh body collision and GUI/native-transfer/fault qualification remain open; L12 unpublished, L13 not started, firmware/main/21pins unchanged.
 
-**Next small phase: L12.** Active learning phase: L11.
+**Next small phase: L13.** Active learning phase: L12.
 
 This is the execution entry point. `L01`, `L02`, and so on are small learning phases. Existing `P01`–`P09` references remain capability milestones in the roadmap and architecture; their numbers do not dictate the learning order. Master groups organize related results without turning a group into one large implementation task. A phase passing does not automatically complete its parent capability milestone.
 

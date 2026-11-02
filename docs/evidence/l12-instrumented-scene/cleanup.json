@@ -1,0 +1,11 @@
+{
+  "owned_simulator_or_recorders_remaining": [],
+  "selected_sockets": "",
+  "lsof_exit_code": 1,
+  "gazebo_shutdown": "Owned launch sessions38857 and44508 exited0 on SIGINT, after respective SITL fresh disarmed/on-ground shutdown. Passive recorders exited130 on requested Ctrl-C.",
+  "temporary_homebrew_tap": "Added for metadata research; untapped after unused, no formula or tap trust installed. Homebrew performed its own automatic manager/runtime refresh during tap.",
+  "shell_startup_files_changed": false,
+  "l12_firmware_changes": false,
+  "l12_tests_created": false,
+  "l12_publication": false
+}

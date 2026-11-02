@@ -1,0 +1,50 @@
+{
+  "declared_date": "2026-11-02",
+  "status": "Observed native headless stock flight, fresh disarmed connection and basic-SITL rollback; guided checkpoint complete",
+  "development_os": "macOS15.7.7 arm64",
+  "simulator_candidate": "Gazebo Harmonic gz-sim8=8.10.0, isolated native conda-forge osx-arm64 environment",
+  "plugin_repository": "https://github.com/ArduPilot/ardupilot_gazebo.git",
+  "plugin_commit": "f116b03552d05c8d0b0bed5ed67033a1183121d1",
+  "plugin_scope": "Unmodified ArduPilotPlugin.cc / SocketUDP.cc / Util.cc; local minimal CMake builds this bridge only. Camera/streaming/parachute plugin targets are omitted; Gazebo retains its own transitive package dependencies.",
+  "flight_runtime": "Exact preserved stock ArduCopter Copter-4.7.2 fb773567896014da007bca58358704d4a0d8516f executable; no firmware changes in L12",
+  "preserved_l11_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
+  "world": "simulation/gazebo/worlds/l12-baseline.sdf",
+  "model": "Official iris_with_ardupilot, QUAD/X frame (FRAME_CLASS1 FRAME_TYPE1), initial yaw90deg in ENU world",
+  "world_sha256": "42b34d8e2192c557c2048b96a0e49d55f7ae7791285c73fcae4ba3a2cba07685",
+  "connection": "Loopback UDP9002 actuator packet / JSON simulated state, lockstep official plugin; MAVProxy SERIAL0 TCP5760 and UDP14550 recorder",
+  "prediction": "Disarmed clock/IMU/servo exchange, then stock GUIDED takeoff3m, hover, nearby goal5m north atWP_SPD1m/s, measured hold, explicit LAND/disarm. Gazebo poses should agree with approximate relative displacement.",
+  "bounds": {
+    "goal_radius_m": 1,
+    "horizontal_speed_max_mps": 0.3,
+    "height_error_max_m": 0.3,
+    "vertical_speed_max_mps": 0.3,
+    "sampled_dwell_s": 2,
+    "state_age_max_s": 2.5,
+    "position_gap_max_s": 0.75,
+    "flight_deadline_s": 60
+  },
+  "fallback": "If connection, estimator or motion is invalid, retain failure and select stock LAND while healthy. Stop only owned simulator processes after disarmed/on-ground state; return to pure-stock basic SITL profile. An external-physics failure may stop the simulation clock and requires bounded owned-process cleanup with actual state limitation retained.",
+  "scope_limits": [
+    "Headless physics/IMU baseline; no camera, obstacle/avoidance, AI, ROS or product UI.",
+    "JSON interface uses simulated state/IMU and privileged baseline inputs; no sensor-only autonomy claim.",
+    "No native L11 behavior qualification in the changed plant is inferred from stock GUIDED flight.",
+    "No hardware or publication of L12."
+  ],
+  "parameter_profile": "Official gazebo-iris plus scoped l12-baseline.parm: disable unqualified precision landing/rangefinder and useWP_SPD1m/s",
+  "parameter_profile_sha256": "14ccc4a0bef779705096c7dfdfa5a9bb0c002e4796c4e8a391df2b522dc61c1d",
+  "qualified_tuple": {
+    "gz_sim": "8.10.0",
+    "gz_physics": "7.5.0 DART",
+    "gz_transport": "13.5.0",
+    "plugin": "f116b03552d05c8d0b0bed5ed67033a1183121d1",
+    "os": "macOS15.7.7 arm64",
+    "compiler": "AppleClang17.0.0",
+    "package_environment": "269 pinned conda-forge native packages; full actual versions in environment-packages.json"
+  },
+  "observed_limits": [
+    "Official Iris mesh base_collision was not created by this DART build; primitive leg/rotor collisions exist and flat-ground landing was observed. Body/obstacle collision qualification is not established.",
+    "Qualified headless server/flight. Follow-up GUI scene/drone visibility was confirmed by the user despite logged renderer errors; agent desktop observation was unavailable. GUI-observed flight, camera and native L11 execution on this changed X-frame plant were not exercised.",
+    "JSON sends simulated state/IMU into SITL; privileged baseline, not sensor-only autonomy.",
+    "One flight plus fresh disarmed connection, not a repeatability/reliability or scheduler-load campaign."
+  ]
+}

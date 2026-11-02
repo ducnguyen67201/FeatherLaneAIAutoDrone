@@ -954,15 +954,15 @@ rect.c-bg-rect { fill: var(--bg); }
         <text data-detail="context" x="580" y="1679" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_Motors/</text>
         </g>
 
-        <g id="node-hal" data-node-id="hal" data-node-label="AP_HAL + platform backend" tabindex="0" role="button" aria-label="Focus AP_HAL + platform backend, libraries/AP_HAL/ + platform backend, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output" aria-pressed="false" data-node-kind="backend" data-node-sublabel="libraries/AP_HAL/ + platform backend" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output">
-          <title>AP_HAL + platform backend · libraries/AP_HAL/ + platform backend · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output</title>
+        <g id="node-hal" data-node-id="hal" data-node-label="AP_HAL / SITL simulator interfaces" tabindex="0" role="button" aria-label="Focus AP_HAL / SITL simulator interfaces, Existing backend · L12 JSON model path, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output" aria-pressed="false" data-node-kind="backend" data-node-sublabel="Existing backend · L12 JSON model path" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output">
+          <title>AP_HAL / SITL simulator interfaces · Existing backend · L12 JSON model path · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output</title>
           <rect x="850" y="1620" width="300" height="90" rx="8" class="c-mask"/>
           <rect x="850" y="1620" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:9" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 1626) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1000" y="1663" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_HAL + platform backend</text>
-        <text data-detail="context" x="1000" y="1679" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_HAL/ + platform backend</text>
+          <text data-node-label="" data-detail-anchor="" x="1000" y="1663" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_HAL / SITL simulator interfaces</text>
+        <text data-detail="context" x="1000" y="1679" class="t-muted" font-size="9" text-anchor="middle">Existing backend · L12 JSON model path</text>
         </g>
 
         <g id="node-native-mission" data-node-id="native-mission" data-node-label="L09 · FL_TaskAdmission" tabindex="0" role="button" aria-label="Focus L09 · FL_TaskAdmission, OBSERVED v1 · validate and retain only, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L1 · Message entry, our native mission state and existing mission storage" aria-pressed="false" data-node-kind="security" data-node-sublabel="OBSERVED v1 · validate and retain only" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L1 · Message entry, our native mission state and existing mission storage">

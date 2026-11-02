@@ -1,0 +1,25 @@
+{
+  "date": "2026-11-02",
+  "scope": "Follow-up GUI probe only, no SITL launch or flight commands",
+  "server": "Existing qualified headless scene started in fresh gui-check run directory",
+  "attempts": [
+    {
+      "command": "gz sim -g -v4",
+      "result": "GUI created main window and loaded world, but Ogre2 reported renderer plugin load errors"
+    },
+    {
+      "command": "gz sim -g -v4 --render-engine-gui-api-backend opengl; QSG_RHI_BACKEND=opengl",
+      "result": "Runtime still selected Metal; same renderer load errors"
+    }
+  ],
+  "desktop_observation": "CUA native pipe startup failed; no screenshot or visual success claim",
+  "qualification": "Static3D scene visibility confirmed by the user despite renderer error logs. Earlier headless flight remains separately qualified; GUI-observed flight not yet exercised.",
+  "source_note": "Inspected official gz-gui8 Application.cc: Apple defaults to Metal and current implementation does not implement the OpenGL override branch.",
+  "cleanup": "Both owned GUI/server launch sessions exited0 on SIGINT; no SITL or flight commands were started.",
+  "user_confirmation": {
+    "date": "2026-11-02",
+    "source": "User answered the GUI visibility question",
+    "answer": "A window with the 3D drone/scene",
+    "scope": "Human-observed static3D scene/drone in the GUI. No GUI-observed flight or independent agent screenshot validation."
+  }
+}

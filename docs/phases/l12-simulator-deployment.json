@@ -1,0 +1,178 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "L12 observed local simulator deployment — qualified headless baseline",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "docs/phases/l12-simulator-deployment.html"
+  },
+  "components": [
+    {
+      "id": "operator",
+      "type": "frontend",
+      "label": "MAVProxy console",
+      "sublabel": "Existing operator commands / telemetry",
+      "pos": [
+        40,
+        80
+      ],
+      "size": [
+        300,
+        100
+      ]
+    },
+    {
+      "id": "sitl",
+      "type": "backend",
+      "label": "ArduCopter SITL process",
+      "sublabel": "Observed stock Copter4.7.2 · controller / estimate",
+      "pos": [
+        470,
+        80
+      ],
+      "size": [
+        340,
+        100
+      ]
+    },
+    {
+      "id": "json",
+      "type": "backend",
+      "label": "Existing SITL JSON model",
+      "sublabel": "Selected external-simulator backend",
+      "pos": [
+        940,
+        80
+      ],
+      "size": [
+        340,
+        100
+      ]
+    },
+    {
+      "id": "plugin",
+      "type": "backend",
+      "label": "Official ArduPilotPlugin",
+      "sublabel": "OBSERVED pinned official plugin · UDP9002",
+      "pos": [
+        940,
+        410
+      ],
+      "size": [
+        340,
+        100
+      ]
+    },
+    {
+      "id": "world",
+      "type": "external",
+      "label": "Gazebo world / Iris physics",
+      "sublabel": "OBSERVED Iris physics / IMU / model pose",
+      "pos": [
+        470,
+        410
+      ],
+      "size": [
+        340,
+        100
+      ]
+    },
+    {
+      "id": "record",
+      "type": "database",
+      "label": "Passive run evidence",
+      "sublabel": "MAVLink / simulator logs and poses",
+      "pos": [
+        40,
+        410
+      ],
+      "size": [
+        300,
+        100
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "operator-sitl",
+      "from": "operator",
+      "to": "sitl",
+      "label": "MAVLink · TCP5760"
+    },
+    {
+      "id": "sitl-json",
+      "from": "sitl",
+      "to": "json",
+      "label": "Actuator output / simulated input"
+    },
+    {
+      "id": "json-plugin",
+      "from": "json",
+      "to": "plugin",
+      "label": "PWM packet · UDP9002"
+    },
+    {
+      "id": "plugin-json",
+      "from": "plugin",
+      "to": "json",
+      "label": "JSON simulator state"
+    },
+    {
+      "id": "plugin-world",
+      "from": "plugin",
+      "to": "world",
+      "label": "Motor commands"
+    },
+    {
+      "id": "world-plugin",
+      "from": "world",
+      "to": "plugin",
+      "label": "IMU / simulated state"
+    },
+    {
+      "id": "operator-record",
+      "from": "operator",
+      "to": "record",
+      "label": "Forward MAVLink · UDP14550"
+    },
+    {
+      "id": "world-record",
+      "from": "world",
+      "to": "record",
+      "label": "Evaluation logs / poses"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Existing flight runtime process · local Mac",
+      "wraps": [
+        "sitl",
+        "json"
+      ],
+      "pad": 22
+    },
+    {
+      "kind": "region",
+      "label": "Observed Gazebo server process · local Mac",
+      "wraps": [
+        "plugin",
+        "world"
+      ],
+      "pad": 22
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Observed scope and qualification limits",
+      "items": [
+        "Qualified native Mac headless Gazebo8.10.0/official-plugin/stock-SITL baseline; one flight, fresh disarmed connection and basic-SITL rollback. No new cloud service, physical vehicle or separate authoritative flight FSM.",
+        "Observed stock GUIDED takeoff3m, about5m north atWP_SPD1, sampled hold and operator LAND/disarm. Gazebo poses separately recorded the movement; both channels share the same simulated plant.",
+        "The DART engine omitted the Iris mesh body collision. Primitive contact/level landing does not qualify body/obstacle collision; GUI/camera, sensor-only autonomy, native L11 transfer, avoidance and fault campaigns remain outside observed scope.",
+        "All owned processes are stopped. Sources/locks are maintained, raw runs/build/environment stay ignored locally. L12 unpublished; guided checkpoint complete; L13 not started."
+      ]
+    }
+  ]
+}

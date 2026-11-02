@@ -44,7 +44,7 @@ Retain:
 
 - State transition timeline, nominal/abort logs and measured terminal behavior.
 
-**Actual execution record:** [L11 evidence](../../evidence/l11-native-arrival-abort/README.md): native2000ms dwell/COMPLETE at7.79s, then29.76s sampled hold. Fresh USER_3 abort selected stock BRAKE; two-second sampled stop completed4.11s after acknowledgment, at least3.08m from goal. Duplicates/consumed requests, LAND/disarm, exact-L10 rollback and cleanup observed. Guided checkpoint complete after clarification; feature publication authorized; L12 not started.
+**Actual execution record:** [L11 evidence](../../evidence/l11-native-arrival-abort/README.md): native2000ms dwell/COMPLETE at7.79s, then29.76s sampled hold. Fresh USER_3 abort selected stock BRAKE; two-second sampled stop completed4.11s after acknowledgment, at least3.08m from goal. Duplicates/consumed requests, LAND/disarm, exact-L10 rollback and cleanup observed. Guided checkpoint complete after clarification; published and remote-SHA verified; L12 not started.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 
