@@ -1,0 +1,12 @@
+{
+  "owned_sitl_or_recorders_remaining": [],
+  "selected_sockets": "",
+  "lsof_exit_code": 1,
+  "new_tests": false,
+  "l11_commits_or_pushes": false,
+  "shutdown_records": [
+    ".local/l11/nominal/shutdown.json",
+    ".local/l11/abort/shutdown.json",
+    ".local/l11/rollback/shutdown.json"
+  ]
+}

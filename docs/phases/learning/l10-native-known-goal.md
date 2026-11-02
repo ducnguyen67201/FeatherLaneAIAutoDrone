@@ -44,7 +44,7 @@ Retain:
 
 - Scoped integration diff, build pin, native state events and comparative trajectory.
 
-**Actual execution record:** [L10 evidence](../../evidence/l10-native-known-goal/README.md): final mode31 native goal executed at 0.99 m/s peak; two-second sampled dwell completed at 7.93 s, followed by 50.27 s qualifying hold and operator LAND/disarm. Duplicate/rejected command behavior, exact-stock rollback and cleanup observed. Guided learner checkpoint complete after the 2026-11-02 clarification; L10 feature publication authorized; L11 not started.
+**Actual execution record:** [L10 evidence](../../evidence/l10-native-known-goal/README.md): final mode31 native goal executed at 0.99 m/s peak; two-second sampled dwell completed at 7.93 s, followed by 50.27 s qualifying hold and operator LAND/disarm. Duplicate/rejected command behavior, exact-stock rollback and cleanup observed. Guided learner checkpoint complete after the 2026-11-02 clarification; L10 published and remote-SHA verified; L11 not started.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

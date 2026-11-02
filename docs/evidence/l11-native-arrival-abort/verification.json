@@ -1,0 +1,39 @@
+{
+  "source_matches_both_flights": true,
+  "reverse_patch_check": "pass",
+  "recursive_pins_unchanged": 21,
+  "raw_hashes_checked": 49,
+  "binary_hashes_checked": true,
+  "json_lf_checks": "pass",
+  "local_markdown_links": "pass",
+  "credential_pattern_scan": "pass; not a complete security audit",
+  "graph_visual_inspection": "performed",
+  "new_automated_tests": false,
+  "l11_commit_or_push": "User authorized2026-11-02; firmware published a00f32be2a91639c8dee1c41c09e1c5e5635d547; parent pointer prepared",
+  "guided_checkpoint": "guided_complete_after_clarification_2026-11-02",
+  "limits": "Nominal arrival and one manual abort observed; guard/fallback/gap resets and transport reconnection not fault-injected. No CPU timing bound or hardware qualification.",
+  "diagrams": {
+    "architecture": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "specification_sha256": "0f4a4616a704d0536ffb5ad0c91db825765ca7e7de52397bc99b527542fbf4ec",
+      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l11-core-architecture/review-2/ardupilot-code-stack.finalize.json"
+    },
+    "learning": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "specification_sha256": "c7684275464ee598fdab2633d57a1cdc264a42264a23698c1fc55b5af85530ae",
+      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l11-learning-progress/review-1/learning-workflow.finalize.json"
+    }
+  }
+}

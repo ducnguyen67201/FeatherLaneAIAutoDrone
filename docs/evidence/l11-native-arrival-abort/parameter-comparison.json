@@ -1,0 +1,158 @@
+{
+  "nominal": {
+    "before_count": 1370,
+    "after_count": 1370,
+    "WP_SPD_before": 10.0,
+    "WP_SPD_after": 10.0,
+    "GUID_OPTIONS_before": 0.0,
+    "GUID_OPTIONS_after": 0.0,
+    "changes": {
+      "BARO1_GND_PRESS": {
+        "before": 94502.828125,
+        "after": 101325.0
+      },
+      "BARO2_GND_PRESS": {
+        "before": 94503.484375,
+        "after": 101324.367188
+      },
+      "COMPASS_DEC": {
+        "before": 0.0,
+        "after": 0.223357
+      },
+      "MAV1_ADSB": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA1": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA2": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA3": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXT_STAT": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_POSITION": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RAW_CTRL": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RAW_SENS": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RC_CHAN": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MIS_TOTAL": {
+        "before": 0.0,
+        "after": 1.0
+      },
+      "MOT_THST_HOVER": {
+        "before": 0.39,
+        "after": 0.366121
+      },
+      "STAT_DISTFLWN": {
+        "before": 0.0,
+        "after": 9.646645
+      },
+      "STAT_FLTCNT": {
+        "before": 0.0,
+        "after": 1.0
+      },
+      "STAT_FLTTIME": {
+        "before": 0.0,
+        "after": 54.0
+      },
+      "STAT_RUNTIME": {
+        "before": 0.0,
+        "after": 133.0
+      }
+    },
+    "operator_parameter_set_commands": 0,
+    "limitation": "Before snapshot is initial MAVProxy cache; after follows fresh fetch. Differences do not establish exact update times."
+  },
+  "abort": {
+    "before_count": 1370,
+    "after_count": 1370,
+    "WP_SPD_before": 10.0,
+    "WP_SPD_after": 10.0,
+    "GUID_OPTIONS_before": 0.0,
+    "GUID_OPTIONS_after": 0.0,
+    "changes": {
+      "COMPASS_DEC": {
+        "before": 0.0,
+        "after": 0.223357
+      },
+      "MAV1_ADSB": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA1": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA2": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA3": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXT_STAT": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_POSITION": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RAW_CTRL": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RAW_SENS": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RC_CHAN": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MOT_THST_HOVER": {
+        "before": 0.39,
+        "after": 0.368556
+      },
+      "STAT_DISTFLWN": {
+        "before": 0.0,
+        "after": 5.883814
+      },
+      "STAT_FLTCNT": {
+        "before": 0.0,
+        "after": 1.0
+      },
+      "STAT_FLTTIME": {
+        "before": 0.0,
+        "after": 51.0
+      },
+      "STAT_RUNTIME": {
+        "before": 30.0,
+        "after": 112.0
+      }
+    },
+    "operator_parameter_set_commands": 0,
+    "limitation": "Before snapshot is initial MAVProxy cache; after follows fresh fetch. Differences do not establish exact update times."
+  }
+}

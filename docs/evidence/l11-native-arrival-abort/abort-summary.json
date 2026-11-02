@@ -1,0 +1,461 @@
+{
+  "state_events": [
+    {
+      "wall_time": 1793644376.518303,
+      "task_id": 1,
+      "state": "running",
+      "reason": "start",
+      "native_boot_ms": 84129
+    },
+    {
+      "wall_time": 1793644377.6316621,
+      "task_id": 1,
+      "state": "aborted",
+      "reason": "operator",
+      "native_boot_ms": 85239
+    }
+  ],
+  "acks": [
+    {
+      "wall_time": 1793644342.5224829,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 511,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644342.522568,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 511,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644342.522605,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 511,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644350.624668,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31010,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644350.624776,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 176,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644350.631144,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 400,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644350.632661,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 22,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644376.5181298,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31011,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644377.6311061,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31012,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644388.670861,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31012,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644388.671016,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31011,
+        "result": 2,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644397.217794,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 176,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644426.050389,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31012,
+        "result": 0,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793644426.050482,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31011,
+        "result": 2,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    }
+  ],
+  "custom_texts": [
+    {
+      "wall_time": 1793644376.518303,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L11 t=1 s=running r=start ms=84129",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644376.518411,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L10 goal=-353632172,1491652374 alt_cm=58709",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644376.51864,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L10 speed=1.00m/s task=1",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644376.518901,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L11 reply t=1 s=running",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644377.6316621,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L11 t=1 s=aborted r=operator ms=85239",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644377.631768,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L10 exit task=1",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644377.631841,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L11 reply t=1 s=aborted",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644388.671226,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L11 reply t=1 s=aborted",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644388.671395,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L11 denied used",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644426.050658,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L11 reply t=1 s=aborted",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    },
+    {
+      "wall_time": 1793644426.050782,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "STATUSTEXT",
+        "severity": 6,
+        "text": "FL L11 denied used",
+        "id": 0,
+        "chunk_seq": 0
+      }
+    }
+  ],
+  "heartbeat_count": 141,
+  "heartbeat_span_s": 134.0598680973053,
+  "mode_sequence": [
+    0,
+    4,
+    31,
+    17,
+    9
+  ],
+  "shutdown": {
+    "time": 1793644428.344649,
+    "pid": 89099,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l11/build/sitl/bin/arducopter",
+      "--model",
+      "+",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../ardupilot/Tools/autotest/default_params/copter.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793644427.438467,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 89,
+          "custom_mode": 9,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793644428.043693,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  },
+  "start_ack_wall_time": 1793644376.5181298,
+  "land_ack_wall_time": 1793644397.217794,
+  "peak_horizontal_speed_mps": 0.94,
+  "abort_after_start_ack_s": 1.112976312637329,
+  "last_position_before_abort_ack": {
+    "wall_time": 1793644377.4897358,
+    "utc": "2026-11-02T18:32:57.489736+00:00",
+    "time_boot_ms": 85099,
+    "latitude_deg": -35.3632591,
+    "longitude_deg": 149.1652372,
+    "horizontal_goal_error_m": 4.664322001430771,
+    "horizontal_speed_mps": 0.85,
+    "altitude_above_home_m": 3.001,
+    "absolute_height_error_m": -0.009999999999990905,
+    "vertical_speed_down_mps": 0.0,
+    "mode": 31,
+    "armed": true,
+    "landed_state": 2,
+    "valid_fresh": true
+  },
+  "sampled_stop": {
+    "first": {
+      "wall_time": 1793644379.4918242,
+      "utc": "2026-11-02T18:32:59.491824+00:00",
+      "time_boot_ms": 87099,
+      "latitude_deg": -35.363248,
+      "longitude_deg": 149.1652372,
+      "horizontal_goal_error_m": 3.428688388450388,
+      "horizontal_speed_mps": 0.24020824298928628,
+      "altitude_above_home_m": 3.002,
+      "absolute_height_error_m": -0.009999999999990905,
+      "vertical_speed_down_mps": 0.0,
+      "mode": 17,
+      "armed": true,
+      "landed_state": 2,
+      "valid_fresh": true
+    },
+    "completed": {
+      "wall_time": 1793644381.739191,
+      "utc": "2026-11-02T18:33:01.739191+00:00",
+      "time_boot_ms": 89349,
+      "latitude_deg": -35.3632454,
+      "longitude_deg": 149.1652372,
+      "horizontal_goal_error_m": 3.1392621442953814,
+      "horizontal_speed_mps": 0.03,
+      "altitude_above_home_m": 3.003,
+      "absolute_height_error_m": -0.009999999999990905,
+      "vertical_speed_down_mps": 0.0,
+      "mode": 17,
+      "armed": true,
+      "landed_state": 2,
+      "valid_fresh": true
+    },
+    "elapsed_s": 2.2473669052124023
+  },
+  "sampled_stop_after_abort_ack_s": 4.1080849170684814,
+  "minimum_goal_error_after_abort_m": 3.0836033467561217,
+  "brake_hold_span_s": 19.254374980926514
+}

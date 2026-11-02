@@ -720,7 +720,7 @@ rect.c-bg-rect { fill: var(--bg); }
 
         <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="7" data-composition-frame-label="OBSERVED L08 · status only; stock flight authority retained" x="415" y="446" width="750" height="134" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="8" data-composition-frame-label="OBSERVED L10 · native known-goal execution" x="420" y="1096" width="320" height="134" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="8" data-composition-frame-label="OBSERVED L11 · native arrival / operator abort" x="420" y="1096" width="320" height="134" rx="12" class="c-region" stroke-width="1"/>
 
         <!-- Connection paths (before components for correct z-order) -->
         <g data-graph-role="automatic-crossover" style="--step:0">
@@ -785,7 +785,7 @@ rect.c-bg-rect { fill: var(--bg); }
         </g>
         <g data-graph-role="automatic-crossover" style="--step:15">
           <path data-graph-role="automatic-crossover-underlay" d="M 170 810 L 170 826 Q 170 834 178 834 L 558 834 Q 566 834 566 842 L 566 1120" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="gcs" data-edge-to="native-mode" data-edge-label="USER_2 start" data-edge-key="15" data-edge-id="native-start" data-composition-points="170,810;170,834;566,834;566,1120" data-composition-crossover="halo" data-composition-independent="true" d="M 170 810 L 170 826 Q 170 834 178 834 L 558 834 Q 566 834 566 842 L 566 1120" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-edge-from="gcs" data-edge-to="native-mode" data-edge-label="USER_2 start / USER_3 abort" data-edge-key="15" data-edge-id="native-start" data-composition-points="170,810;170,834;566,834;566,1120" data-composition-crossover="halo" data-composition-independent="true" d="M 170 810 L 170 826 Q 170 834 178 834 L 558 834 Q 566 834 566 842 L 566 1120" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:16">
           <path data-graph-role="automatic-crossover-underlay" d="M 430 1165 L 340 1165" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
@@ -977,16 +977,16 @@ rect.c-bg-rect { fill: var(--bg); }
         <text data-detail="context" x="580" y="779" class="t-muted" font-size="9" text-anchor="middle">OBSERVED v1 · validate and retain only</text>
         </g>
 
-        <g id="node-native-mode" data-node-id="native-mode" data-node-label="L10 · ModeFeatherLane" tabindex="0" role="button" aria-label="Focus L10 · ModeFeatherLane, OBSERVED SITL · known goal · mode31, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L10 · native known-goal execution" aria-pressed="false" data-node-kind="security" data-node-sublabel="OBSERVED SITL · known goal · mode31" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L10 · native known-goal execution">
-          <title>L10 · ModeFeatherLane · OBSERVED SITL · known goal · mode31 · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L10 · native known-goal execution</title>
+        <g id="node-native-mode" data-node-id="native-mode" data-node-label="L10 / L11 · ModeFeatherLane" tabindex="0" role="button" aria-label="Focus L10 / L11 · ModeFeatherLane, OBSERVED SITL · goal / arrival / abort, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L11 · native arrival / operator abort" aria-pressed="false" data-node-kind="security" data-node-sublabel="OBSERVED SITL · goal / arrival / abort" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L11 · native arrival / operator abort">
+          <title>L10 / L11 · ModeFeatherLane · OBSERVED SITL · goal / arrival / abort · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L11 · native arrival / operator abort</title>
           <rect x="430" y="1120" width="300" height="90" rx="8" class="c-mask"/>
           <rect x="430" y="1120" width="300" height="90" rx="8" class="c-security" data-animate="node" style="--step:11" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(436 1126) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="580" y="1163" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">L10 · ModeFeatherLane</text>
-        <text data-detail="context" x="580" y="1179" class="t-muted" font-size="9" text-anchor="middle">OBSERVED SITL · known goal · mode31</text>
+          <text data-node-label="" data-detail-anchor="" x="580" y="1163" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">L10 / L11 · ModeFeatherLane</text>
+        <text data-detail="context" x="580" y="1179" class="t-muted" font-size="9" text-anchor="middle">OBSERVED SITL · goal / arrival / abort</text>
         </g>
 
         <g id="node-status-scheduler" data-node-id="status-scheduler" data-node-label="Stock AP_Scheduler + Copter glue" tabindex="0" role="button" aria-label="Focus Stock AP_Scheduler + Copter glue, L08 hook · reads mode and armed state, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › OBSERVED L08 · status only; stock flight authority retained" aria-pressed="false" data-node-kind="backend" data-node-sublabel="L08 hook · reads mode and armed state" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › OBSERVED L08 · status only; stock flight authority retained">
@@ -1073,9 +1073,9 @@ rect.c-bg-rect { fill: var(--bg); }
           <rect x="243.1" y="495" width="134.8" height="14" rx="3" class="c-mask"/>
           <text x="310.5" y="505" class="t-edge-default" font-size="8" text-anchor="middle">STATUSTEXT · every 5 ticks</text>
         </g>
-        <g data-detail="context" data-edge-from="gcs" data-edge-to="native-mode" data-edge-label="USER_2 start" data-edge-key="15" data-edge-id="native-start">
-          <rect x="334.2" y="814" width="67.6" height="14" rx="3" class="c-mask"/>
-          <text x="368" y="824" class="t-edge-default" font-size="8" text-anchor="middle">USER_2 start</text>
+        <g data-detail="context" data-edge-from="gcs" data-edge-to="native-mode" data-edge-label="USER_2 start / USER_3 abort" data-edge-key="15" data-edge-id="native-start">
+          <rect x="298.2" y="814" width="139.6" height="14" rx="3" class="c-mask"/>
+          <text x="368" y="824" class="t-edge-default" font-size="8" text-anchor="middle">USER_2 start / USER_3 abort</text>
         </g>
         <g data-detail="context" data-edge-from="native-mode" data-edge-to="modes" data-edge-label="reuse" data-edge-key="16" data-edge-id="native-guided-reuse">
           <rect x="368" y="1145" width="34" height="14" rx="3" class="c-mask"/>
@@ -1127,9 +1127,9 @@ rect.c-bg-rect { fill: var(--bg); }
           <text data-boundary-label="" x="423" y="463" class="t-cloud" font-size="9" font-weight="600">OBSERVED L08 · status only; stock flight authority retained</text>
         </g>
 
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="8" data-composition-frame-kind="region" data-composition-frame-label="OBSERVED L10 · native known-goal execution">
-          <rect data-graph-role="structural-frame-label-mask" x="424" y="1100" width="236.79999999999998" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="428" y="1113" class="t-cloud" font-size="9" font-weight="600">OBSERVED L10 · native known-goal execution</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="8" data-composition-frame-kind="region" data-composition-frame-label="OBSERVED L11 · native arrival / operator abort">
+          <rect data-graph-role="structural-frame-label-mask" x="424" y="1100" width="258.4" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="428" y="1113" class="t-cloud" font-size="9" font-weight="600">OBSERVED L11 · native arrival / operator abort</text>
         </g>
 
         <!-- Legend -->

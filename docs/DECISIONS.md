@@ -121,3 +121,17 @@ This is native goal selection and controller reuse, not native arrival/completio
 ## L10 guided checkpoint and publication / L11 authorization
 
 On 2026-11-02 the learner confirmed understanding after the native-mode lifecycle walkthrough and explicitly requested: “push it and continue to L11.” L10’s guided checkpoint is complete after clarification of native goal ownership, inherited controller reuse, stock takeoff and operator LAND. This authorizes L10 feature-branch publication in both repositories with exact gitlink, followed by local L11 arrival/dwell and one explicit operator-abort path. Main merge, L11 publication, hardware and unrelated capabilities remain outside scope.
+
+
+## L10 publication and L11 observed lifecycle
+
+L10 publication was verified at project `d0f30a8f1c33af2f54740fc2b0675f453e0d5ba2` and firmware `11573fb26ffe99022431a32d0b40502d03f9b02a`, with the exact parent gitlink. Main and stock source pins remain unchanged. Both current local branches are `codex/l11-native-arrival-abort`.
+
+On2026-11-02 the authorized L11 slice added four-file native lifecycle integration against published L10. Its proposed scope was shown in the maintained core diagram before code. [Actual evidence](evidence/l11-native-arrival-abort/README.md) records native2000ms dwell/COMPLETE at7.79s after accepted start and29.76s continued sampled hold. A fresh operator USER_3 during movement selected stock BRAKE, reported ABORTED and completed a two-second sampled stop4.11s after acknowledgment, at least3.08m short of the goal. Duplicate/consumed requests did not restart or re-arm; explicit operator LAND/disarm ended both sessions. The exact preserved L10 executable returned USER_3 UNSUPPORTED, and all owned sessions stopped with cleanup retained.
+
+COMPLETE is task state, not landing/disarm; ABORTED reports successful handoff, with stopping evidenced separately. No new controller, external authoritative FSM, automated tests, full failure campaign, hardware or L11 publication is introduced. Native guard/reset/fallback and blocked BRAKE branches are source-inspected, not fault-injected. L11’s guided checkpoint is pending; L12 has not started and broader P01/P03 gates remain incomplete.
+
+
+## L11 guided checkpoint / publication and L12 authorization
+
+On2026-11-02 the learner confirmed understanding after clarification of task-state completion versus GCS reporting, powered hover versus aircraft speed, and explicit next actions. The guided L11 checkpoint is complete. The user then requested pushing this work and continuing the next phase, authorizing L11 feature-branch publication with exact firmware gitlink, then local L12 instrumented simulator/world integration. Main merge, L12 publication, physical operation, AI/ROS/avoidance and unrelated changes remain outside this slice.

@@ -1,0 +1,12 @@
+{
+  "date": "2026-11-02",
+  "status": "guided_complete",
+  "learner_summary": "Internal task state records whether arrival/finishing conditions have been met; COMPLETE can remain airborne.",
+  "clarifications": [
+    "Native C++ decides completion from estimated position/velocity and dwell; GCS reports it rather than commanding completion.",
+    "Horizontal speed is aircraft translation, not propeller RPM; powered hover can have zero horizontal/vertical speed.",
+    "RUNNING/DWELLING continue approach/arrival checks; COMPLETE retains hold; operator LAND remains separate.",
+    "No AI model or automatic next-task dispatch exists in L11."
+  ],
+  "assessment_limit": "Guided explanation, not an independent examination."
+}

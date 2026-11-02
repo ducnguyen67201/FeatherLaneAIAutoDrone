@@ -250,8 +250,8 @@
     {
       "id": "native-mode",
       "type": "security",
-      "label": "L10 · ModeFeatherLane",
-      "sublabel": "OBSERVED SITL · known goal · mode31",
+      "label": "L10 / L11 · ModeFeatherLane",
+      "sublabel": "OBSERVED SITL · goal / arrival / abort",
       "pos": [
         430,
         1120
@@ -383,7 +383,7 @@
     },
     {
       "kind": "region",
-      "label": "OBSERVED L10 · native known-goal execution",
+      "label": "OBSERVED L11 · native arrival / operator abort",
       "wraps": [
         "native-mode"
       ],
@@ -485,7 +485,7 @@
       "id": "native-start",
       "from": "gcs",
       "to": "native-mode",
-      "label": "USER_2 start"
+      "label": "USER_2 start / USER_3 abort"
     },
     {
       "id": "native-guided-reuse",
@@ -503,13 +503,23 @@
   "cards": [
     {
       "dot": "amber",
+      "title": "L11 observed slice · task lifecycle inside mode31",
+      "items": [
+        "Reuse the published L10 goal/mode and stock controllers. Native RUNNING→DWELLING→COMPLETE was observed with2000ms dwell at7.79s, then29.76s qualifying sampled hold. COMPLETE does not land/disarm.",
+        "Native arrival checks retained radius1m, horizontal speed≤0.3m/s, absolute-height error≤0.2m, vertical speed≤0.2m/s and bounded estimator-update gaps. API validity is used; independent per-sensor age and fault campaigns remain unqualified.",
+        "A fresh versioned USER_3 during movement selected stock BRAKE and reported ABORTED. External two-second stop completed4.11s after acknowledgment, at least3.08m short of the goal. Operator LAND/disarm ended each flight.",
+        "Duplicate start/abort requests preserved actual state without reinstalling targets or re-arming. Exact-L10 rollback returned USER_3 UNSUPPORTED. Four-file L11 publication authorized; guided checkpoint complete after clarification. Guard/fallback/interrupted branches are source-inspected, not fault-injected."
+      ]
+    },
+    {
+      "dot": "amber",
       "title": "L10 observed scope · one airborne native goal",
       "items": [
         "Stock GUIDED performs the operator-commanded takeoff. COMMAND_INT / USER_2 explicitly requests execution of the already admitted task ID; direct mode selection has no start authorization.",
         "SITL-only mode31 ModeFeatherLane subclasses upstream ModeGuided. Only the selected native adapter runs; inherited Guided methods set the stored destination and drive existing position/attitude controllers. Standard Guided setpoint ingress is disabled for this mode.",
         "Entry rechecks source/ID, armed airborne GUIDED state, low speed, usable home/absolute navigation, limits and reference consistency. The destination altitude is anchored to the saved admission home, then converted using the current valid estimator reference.",
-        "The adapter cannot arm or take off. Normal mode changes relinquish execution; a reference/navigation guard requests stock LAND. This is a nominal SITL slice: native arrival/typed abort remains L11, and failure/hardware qualification is not claimed.",
-        "Final source: 0.99m/s peak, externally measured two-second dwell at7.93s and50.27s additional qualifying hold, then operator LAND/disarm. Exact-stock rollback observed; L10 publication authorized, guided checkpoint complete after clarification."
+        "The adapter cannot arm or take off. Normal mode changes relinquish execution; a reference/navigation guard requests stock LAND. This is a nominal SITL slice: L11 arrival/abort is recorded separately, and failure/hardware qualification is not claimed.",
+        "Final source: 0.99m/s peak, externally measured two-second dwell at7.93s and50.27s additional qualifying hold, then operator LAND/disarm. Exact-stock rollback observed; L10 published, guided checkpoint complete after clarification."
       ]
     },
     {
@@ -536,7 +546,7 @@
       "dot": "rose",
       "title": "BUILD inside the autopilot",
       "items": [
-        "ModeFeatherLane now implements the narrow local SITL L10 adapter. Broader FL_Mission coordination, native arrival and typed abort remain future slices.",
+        "ModeFeatherLane now implements the narrow local SITL L10 adapter. Broader FL_Mission coordination and failure campaigns remain future slices; L11 arrival/operator abort is recorded above.",
         "Our C++ extension owns in-flight mission state, observation freshness, stop/continue policy and mission events.",
         "The mode adapter reuses navigation/controllers. Existing arming, manual override and failsafe semantics must be qualified and retained.",
         "Mission-selected capabilities: coordinate/route tasks need no target detector; object-dependent steps require qualified perception/localization."

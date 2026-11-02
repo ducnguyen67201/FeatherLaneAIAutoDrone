@@ -94,8 +94,8 @@
   "execution_unit": "learning_phase",
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
-  "active_learning_phase": "L10",
-  "next_proposed_learning_phase": "L11",
+  "active_learning_phase": "L11",
+  "next_proposed_learning_phase": "L12",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -537,14 +537,14 @@
       ],
       "rollback": "Return to the retained stock build/mode and baseline scenario.",
       "teach_back": "Which part of the code changed the destination, and which generated motor demand?",
-      "record": "[L10 evidence](../../evidence/l10-native-known-goal/README.md): final mode31 native goal executed at 0.99 m/s peak; two-second sampled dwell completed at 7.93 s, followed by 50.27 s qualifying hold and operator LAND/disarm. Duplicate/rejected command behavior, exact-stock rollback and cleanup observed. Guided learner checkpoint complete after the 2026-11-02 clarification; L10 feature publication authorized; L11 not started."
+      "record": "[L10 evidence](../../evidence/l10-native-known-goal/README.md): final mode31 native goal executed at 0.99 m/s peak; two-second sampled dwell completed at 7.93 s, followed by 50.27 s qualifying hold and operator LAND/disarm. Duplicate/rejected command behavior, exact-stock rollback and cleanup observed. Guided learner checkpoint complete after the 2026-11-02 clarification; L10 published and remote-SHA verified; L11 not started."
     },
     {
       "id": "L11",
       "slug": "native-arrival-abort",
       "title": "Add native arrival and operator abort",
       "group": "M03",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L10"
       ],
@@ -571,7 +571,7 @@
       ],
       "rollback": "Revert the isolated lifecycle addition and use the last qualified configuration.",
       "teach_back": "Can a task be complete while the aircraft remains airborne, and what policy follows?",
-      "record": null
+      "record": "[L11 evidence](../../evidence/l11-native-arrival-abort/README.md): native2000ms dwell/COMPLETE at7.79s, then29.76s sampled hold. Fresh USER_3 abort selected stock BRAKE; two-second sampled stop completed4.11s after acknowledgment, at least3.08m from goal. Duplicates/consumed requests, LAND/disarm, exact-L10 rollback and cleanup observed. Guided checkpoint complete after clarification; feature publication authorized; L12 not started."
     },
     {
       "id": "L12",
@@ -1247,15 +1247,17 @@
     "speed_comparison_record": "../evidence/l06-one-speed-change/README.md",
     "arrival_record": "../evidence/l07-measure-arrival/README.md",
     "native_status_record": "../evidence/l08-native-status-slice/README.md",
-    "custom_working_branch": "codex/l10-native-known-goal",
+    "custom_working_branch": "codex/l11-native-arrival-abort",
     "native_status_scope": "SITL-only observer; no native task execution or custom mode. Custom commit is a five-file addition against the preserved stock base.",
-    "custom_firmware_commit": "39cf614d1aae2ee4acb93f9294ebf66178967acb",
+    "custom_firmware_commit": "11573fb26ffe99022431a32d0b40502d03f9b02a",
     "native_task_admission_record": "../evidence/l09-native-task-contract/README.md",
     "native_task_admission_scope": "Six-file admission-only custom commit 39cf614d1aae2ee4acb93f9294ebf66178967acb against published L08; no task execution.",
     "native_known_goal_record": "../evidence/l10-native-known-goal/README.md",
-    "native_known_goal_scope": "Seven-file uncommitted SITL adapter against published L09 39cf614d; mode31 final-source movement/hold/LAND observed. Native arrival/typed abort remains L11."
+    "native_known_goal_scope": "Published seven-file L10 commit11573fb2 against L09; final mode31 goal/hold/LAND and exact-stock rollback observed.",
+    "native_arrival_abort_record": "../evidence/l11-native-arrival-abort/README.md",
+    "native_arrival_abort_scope": "Local uncommitted four-file lifecycle addition against published L10; native dwell/complete plus one USER_3 to stock BRAKE operator-abort path observed."
   },
-  "execution_summary": "L01–L09 and guided checkpoints complete; L09 published at project d8afe552351f4f246822857c49a6fa37edbc0bc7 and firmware 39cf614d1aae2ee4acb93f9294ebf66178967acb. L10 native build, known-goal execution/hold, selected rejections, operator LAND/disarm and exact-stock rollback observed locally; guided checkpoint complete after the 2026-11-02 clarification. Final flight peaked at 0.99 m/s; offline two-second dwell completed at 7.93 s with 50.27 s subsequent sampled hold. L10 firmware is published; parent feature publication authorized, L11 not started, main/stock pins unchanged; broader P01/P03 gates remain incomplete.",
+  "execution_summary": "L01–L10 and guided checkpoints complete; L10 published at project d0f30a8f1c33af2f54740fc2b0675f453e0d5ba2 and firmware11573fb26ffe99022431a32d0b40502d03f9b02a. L11 final-source native build/arrival/BRAKE-abort/hold, operator LAND/disarm, exact-L10 rollback and cleanup observed locally. Native completion followed2000ms dwell at7.79s, then29.76s sampled hold; abort stop dwell completed4.11s after acknowledgment, at least3.08m short of goal. Guided L11 checkpoint complete after clarification; L11 firmware published; parent feature publication authorized, L12 not started, main/stock pins unchanged; P01/P03 broader gates incomplete.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
@@ -1296,6 +1298,21 @@
     "project_branch": "codex/l10-native-known-goal",
     "firmware_branch": "codex/l10-native-known-goal",
     "firmware_commit": "11573fb26ffe99022431a32d0b40502d03f9b02a",
+    "firmware_remote_sha_verified": true,
+    "project_publication": "Published; exact remote SHA and parent gitlink verified.",
+    "main_unchanged": "c45c9e19ae279011d5779fa2669df3fac0f21a29",
+    "project_commit": "d0f30a8f1c33af2f54740fc2b0675f453e0d5ba2",
+    "project_remote_sha_verified": true
+  },
+  "authorization_l11_publication_l12": {
+    "date": "2026-11-02",
+    "source": "User: Got it. Push this and continue the next one.",
+    "scope": "Publish completed L11 feature branches and exact parent gitlink, then local L12 instrumented scene qualification. No main merge, L12 publication, physical operation or unrelated capabilities."
+  },
+  "publication_l11": {
+    "project_branch": "codex/l11-native-arrival-abort",
+    "firmware_branch": "codex/l11-native-arrival-abort",
+    "firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
     "firmware_remote_sha_verified": true,
     "project_publication": "authorized; containing project commit and exact gitlink to be verified after push",
     "main_unchanged": "c45c9e19ae279011d5779fa2669df3fac0f21a29"

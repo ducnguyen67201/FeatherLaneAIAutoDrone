@@ -1,0 +1,365 @@
+{
+  "nominal": {
+    "path": ".local/l11/nominal/logs/00000001.BIN",
+    "sha256": "64186f975866b5a0e95a5afbf1eca2d07616698d28cb702db0830c216bc9dce4",
+    "type_counts": {
+      "FMT": 191,
+      "FMTU": 200,
+      "MSG": 38,
+      "D32": 1,
+      "ORGN": 4,
+      "SRTL": 6,
+      "MODE": 4,
+      "MAVC": 6,
+      "EV": 8,
+      "PARM": 1381,
+      "UNIT": 39,
+      "MULT": 15,
+      "VER": 1,
+      "RTC": 2,
+      "CMD": 1,
+      "ESC": 29336,
+      "ESCX": 29336,
+      "SIM2": 29335,
+      "IMU": 3667,
+      "BAT": 734,
+      "MAG": 2202,
+      "SURF": 2934,
+      "BARO": 1468,
+      "CTUN": 734,
+      "ATT": 734,
+      "ANG": 734,
+      "RATE": 734,
+      "PIDR": 734,
+      "PIDP": 734,
+      "PIDY": 734,
+      "PIDA": 734,
+      "PIDN": 734,
+      "PIDE": 734,
+      "XKF4": 1468,
+      "XKF1": 1468,
+      "XKF2": 1468,
+      "XKF3": 1468,
+      "XKF5": 734,
+      "XKFS": 1468,
+      "XKQ": 1468,
+      "AHR2": 734,
+      "POS": 734,
+      "SIM": 734,
+      "MOTB": 734,
+      "RCIN": 734,
+      "RCI2": 734,
+      "RCOU": 734,
+      "RCO2": 734,
+      "PSCN": 734,
+      "PSCE": 734,
+      "PSCD": 734,
+      "VIBE": 1468,
+      "DCM": 733,
+      "FILE": 268,
+      "GPS": 367,
+      "GPA": 367,
+      "XKY0": 1465,
+      "XKY1": 1465,
+      "XKV1": 147,
+      "XKV2": 147,
+      "MAV": 73,
+      "XKTV": 288,
+      "XKT": 30,
+      "DU32": 73,
+      "TERR": 73,
+      "UART": 146,
+      "DSF": 73,
+      "SPOL": 8,
+      "LDET": 82,
+      "PM": 7,
+      "GUIP": 1,
+      "ARM": 1
+    },
+    "selected_events": [
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 75903793,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 75904626,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 88132233,
+        "ID": 59,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=running r=start ms=88132"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 88132233,
+        "ID": 60,
+        "Seq": 0,
+        "Message": "FL L10 goal=-353632172,1491652374 alt_cm=58709"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 88132233,
+        "ID": 61,
+        "Seq": 0,
+        "Message": "FL L10 speed=1.00m/s task=1"
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 88132233,
+        "Mode": 31,
+        "ModeNum": 31,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 88132233,
+        "ID": 62,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=running"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 93917418,
+        "ID": 65,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=dwelling r=bounds ms=93917"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 95917451,
+        "ID": 66,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=complete r=dwell ms=95917"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 118754979,
+        "ID": 72,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=complete"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 118754979,
+        "ID": 73,
+        "Seq": 0,
+        "Message": "FL L11 denied not_running"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 125772171,
+        "ID": 75,
+        "Seq": 0,
+        "Message": "FL L10 exit task=1"
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 125772171,
+        "Mode": 9,
+        "ModeNum": 9,
+        "Rsn": 2
+      }
+    ]
+  },
+  "abort": {
+    "path": ".local/l11/abort/logs/00000001.BIN",
+    "sha256": "0b34b1b04c9741d28354c37fff18383a22d50d59a88409696e3c098317da44ea",
+    "type_counts": {
+      "FMT": 191,
+      "FMTU": 200,
+      "MSG": 41,
+      "D32": 1,
+      "ORGN": 4,
+      "SRTL": 5,
+      "MODE": 5,
+      "MAVC": 7,
+      "EV": 8,
+      "PARM": 1379,
+      "UNIT": 39,
+      "MULT": 15,
+      "VER": 1,
+      "RTC": 1,
+      "CMD": 1,
+      "SIM2": 28022,
+      "ESC": 28020,
+      "ESCX": 28020,
+      "IMU": 3502,
+      "SURF": 2802,
+      "FILE": 268,
+      "DCM": 700,
+      "BAT": 700,
+      "MAG": 2100,
+      "BARO": 1400,
+      "CTUN": 700,
+      "ATT": 700,
+      "ANG": 700,
+      "RATE": 700,
+      "PIDR": 700,
+      "PIDP": 700,
+      "PIDY": 700,
+      "PIDA": 700,
+      "PIDN": 700,
+      "PIDE": 700,
+      "XKF4": 1400,
+      "XKF1": 1400,
+      "XKF2": 1400,
+      "XKF3": 1400,
+      "XKF5": 700,
+      "XKFS": 1400,
+      "XKQ": 1400,
+      "AHR2": 700,
+      "POS": 700,
+      "SIM": 700,
+      "MOTB": 700,
+      "RCIN": 700,
+      "RCI2": 700,
+      "RCOU": 700,
+      "RCO2": 700,
+      "PSCN": 700,
+      "PSCE": 700,
+      "PSCD": 700,
+      "VIBE": 1400,
+      "GPS": 350,
+      "GPA": 350,
+      "DU32": 70,
+      "TERR": 70,
+      "XKY0": 1098,
+      "XKY1": 1098,
+      "UART": 140,
+      "XKTV": 276,
+      "XKV1": 140,
+      "XKV2": 140,
+      "DSF": 70,
+      "MAV": 69,
+      "SPOL": 8,
+      "XKT": 28,
+      "LDET": 81,
+      "PM": 7,
+      "GUIP": 1,
+      "ARM": 1
+    },
+    "selected_events": [
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 58248358,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 58249191,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 84129668,
+        "ID": 55,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=running r=start ms=84129"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 84129668,
+        "ID": 56,
+        "Seq": 0,
+        "Message": "FL L10 goal=-353632172,1491652374 alt_cm=58709"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 84129668,
+        "ID": 57,
+        "Seq": 0,
+        "Message": "FL L10 speed=1.00m/s task=1"
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 84129668,
+        "Mode": 31,
+        "ModeNum": 31,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 84129668,
+        "ID": 58,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=running"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 85239224,
+        "ID": 59,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=aborted r=operator ms=85239"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 85239224,
+        "ID": 60,
+        "Seq": 0,
+        "Message": "FL L10 exit task=1"
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 85239224,
+        "Mode": 17,
+        "ModeNum": 17,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 85239224,
+        "ID": 61,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=aborted"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 96279806,
+        "ID": 64,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=aborted"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 96279806,
+        "ID": 65,
+        "Seq": 0,
+        "Message": "FL L11 denied used"
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 104822221,
+        "Mode": 9,
+        "ModeNum": 9,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 133649852,
+        "ID": 76,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=aborted"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 133649852,
+        "ID": 77,
+        "Seq": 0,
+        "Message": "FL L11 denied used"
+      }
+    ]
+  }
+}

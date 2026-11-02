@@ -1,0 +1,326 @@
+diff --git a/ArduCopter/GCS_MAVLink_Copter.cpp b/ArduCopter/GCS_MAVLink_Copter.cpp
+index a144c36e57..3269d6fa5f 100644
+--- a/ArduCopter/GCS_MAVLink_Copter.cpp
++++ b/ArduCopter/GCS_MAVLink_Copter.cpp
+@@ -558,17 +558,17 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_featherlane_admission(const mavlink_comman
+ #endif // CONFIG_HAL_BOARD == HAL_BOARD_SITL
+ 
+ #if MODE_FEATHERLANE_ENABLED
+-MAV_RESULT GCS_MAVLINK_Copter::handle_featherlane_start(const mavlink_command_int_t &packet,
+-                                                    const mavlink_message_t &msg)
++MAV_RESULT GCS_MAVLINK_Copter::handle_featherlane_task_command(const mavlink_command_int_t &packet,
++                                                           const mavlink_message_t &msg)
+ {
+-    static constexpr float START_VERSION = 1.0f;
++    static constexpr float TASK_COMMAND_VERSION = 1.0f;
+ 
+     if (msg.msgid != MAVLINK_MSG_ID_COMMAND_INT) {
+         return MAV_RESULT_COMMAND_INT_ONLY;
+     }
+ 
+     if (!gcs().sysid_is_gcs(msg.sysid)) {
+-        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied source");
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L11 denied source");
+         return MAV_RESULT_DENIED;
+     }
+ 
+@@ -576,27 +576,35 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_featherlane_start(const mavlink_command_in
+     if (packet.frame != MAV_FRAME_MISSION || packet.current != 0 || packet.autocontinue != 0 ||
+         !is_zero(packet.param3) || !is_zero(packet.param4) ||
+         packet.x != 0 || packet.y != 0 || !is_zero(packet.z)) {
+-        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied fields");
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L11 denied fields");
+         return MAV_RESULT_UNSUPPORTED;
+     }
+ 
+-    if (!isfinite(packet.param1) || packet.param1 < START_VERSION || packet.param1 > START_VERSION) {
+-        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied version");
++    if (!isfinite(packet.param1) || packet.param1 < TASK_COMMAND_VERSION || packet.param1 > TASK_COMMAND_VERSION) {
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L11 denied version");
+         return MAV_RESULT_UNSUPPORTED;
+     }
+ 
+     const auto *task = copter.featherlane_task.task();
+     if (task == nullptr || !isfinite(packet.param2) || packet.param2 < task->id || packet.param2 > task->id) {
+-        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied task");
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L11 denied task");
+         return MAV_RESULT_DENIED;
+     }
+ 
+-    if (!copter.mode_featherlane.start_task(task->id)) {
+-        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied %s", copter.mode_featherlane.start_failure());
+-        return MAV_RESULT_DENIED;
++    if (packet.command == MAV_CMD_USER_3) {
++        if (!copter.mode_featherlane.abort_task(task->id)) {
++            GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L11 denied %s", copter.mode_featherlane.abort_failure());
++            return MAV_RESULT_DENIED;
++        }
++    } else {
++        if (!copter.mode_featherlane.start_task(task->id)) {
++            GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L11 denied %s", copter.mode_featherlane.start_failure());
++            return MAV_RESULT_DENIED;
++        }
+     }
+ 
+-    GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 running task=%u", unsigned(task->id));
++    GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L11 reply t=%u s=%s",
++                  unsigned(task->id), copter.mode_featherlane.task_state_name());
+     return MAV_RESULT_ACCEPTED;
+ }
+ #endif // MODE_FEATHERLANE_ENABLED
+@@ -607,7 +615,8 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_command_int_packet(const mavlink_command_i
+ 
+ #if MODE_FEATHERLANE_ENABLED
+     case MAV_CMD_USER_2:
+-        return handle_featherlane_start(packet, msg);
++    case MAV_CMD_USER_3:
++        return handle_featherlane_task_command(packet, msg);
+ #endif
+ 
+ #if CONFIG_HAL_BOARD == HAL_BOARD_SITL
+diff --git a/ArduCopter/GCS_MAVLink_Copter.h b/ArduCopter/GCS_MAVLink_Copter.h
+index fdf84b3307..748466319b 100644
+--- a/ArduCopter/GCS_MAVLink_Copter.h
++++ b/ArduCopter/GCS_MAVLink_Copter.h
+@@ -40,7 +40,7 @@ protected:
+     MAV_RESULT handle_featherlane_admission(const mavlink_command_int_t &packet, const mavlink_message_t &msg);
+ #endif
+ #if MODE_FEATHERLANE_ENABLED
+-    MAV_RESULT handle_featherlane_start(const mavlink_command_int_t &packet, const mavlink_message_t &msg);
++    MAV_RESULT handle_featherlane_task_command(const mavlink_command_int_t &packet, const mavlink_message_t &msg);
+ #endif
+     MAV_RESULT handle_command_pause_continue(const mavlink_command_int_t &packet);
+ 
+diff --git a/ArduCopter/mode.h b/ArduCopter/mode.h
+index bc26485acd..2ea7f17159 100644
+--- a/ArduCopter/mode.h
++++ b/ArduCopter/mode.h
+@@ -1247,6 +1247,9 @@ public:
+ 
+     bool start_task(uint16_t task_id);
+     const char *start_failure() const { return _start_failure != nullptr ? _start_failure : "none"; }
++    bool abort_task(uint16_t task_id);
++    const char *abort_failure() const { return _abort_failure != nullptr ? _abort_failure : "none"; }
++    const char *task_state_name() const;
+ 
+     bool init(bool ignore_checks) override;
+     void run() override;
+@@ -1270,15 +1273,35 @@ protected:
+     const char *name4() const override { return "FLNE"; }
+ 
+ private:
++    enum class TaskState : uint8_t {
++        IDLE,
++        RUNNING,
++        DWELLING,
++        COMPLETE,
++        ABORTED,
++        INTERRUPTED,
++        FAILED,
++    };
++
+     bool reject_start(const char *reason);
+     bool navigation_valid() const;
+     bool reference_valid();
++    bool update_arrival();
++    void set_task_state(TaskState state, const char *reason);
+ 
+     bool _entry_requested = false;
+     bool _executing = false;
+     bool _consumed = false;
++    bool _abort_requested = false;
++    bool _fallback_requested = false;
+     uint16_t _task_id = 0;
+     const char *_start_failure = nullptr;
++    const char *_abort_failure = nullptr;
++    TaskState _task_state = TaskState::IDLE;
++    Location _destination;
++    float _arrival_radius_m = 0;
++    uint32_t _dwell_start_ms = 0;
++    uint32_t _last_arrival_check_ms = 0;
+     Location _entry_home;
+     Location _entry_origin;
+     uint32_t _position_reset_ms = 0;
+diff --git a/ArduCopter/mode_featherlane.cpp b/ArduCopter/mode_featherlane.cpp
+index 6604b4e93c..c5b9f75ccf 100644
+--- a/ArduCopter/mode_featherlane.cpp
++++ b/ArduCopter/mode_featherlane.cpp
+@@ -8,6 +8,43 @@ static constexpr float MAX_ENTRY_SPEED_MPS = 0.3f;
+ static constexpr float MAX_ENTRY_HEIGHT_ERROR_M = 0.5f;
+ static constexpr float MAX_EXECUTION_DISTANCE_M = 20.0f;
+ static constexpr float CM_TO_METRES = 0.01f;
++static constexpr float MAX_ARRIVAL_SPEED_MPS = 0.3f;
++static constexpr float MAX_ARRIVAL_HEIGHT_ERROR_M = 0.2f;
++static constexpr float MAX_ARRIVAL_VERTICAL_SPEED_MPS = 0.2f;
++static constexpr uint32_t ARRIVAL_DWELL_MS = 2000;
++static constexpr uint32_t MAX_ARRIVAL_UPDATE_GAP_MS = 250;
++
++const char *ModeFeatherLane::task_state_name() const
++{
++    switch (_task_state) {
++    case TaskState::IDLE:
++        return "idle";
++    case TaskState::RUNNING:
++        return "running";
++    case TaskState::DWELLING:
++        return "dwelling";
++    case TaskState::COMPLETE:
++        return "complete";
++    case TaskState::ABORTED:
++        return "aborted";
++    case TaskState::INTERRUPTED:
++        return "interrupted";
++    case TaskState::FAILED:
++        return "failed";
++    }
++    return "unknown";
++}
++
++// report transitions once, using the same boot clock as the native dwell
++void ModeFeatherLane::set_task_state(TaskState state, const char *reason)
++{
++    if (_task_state == state) {
++        return;
++    }
++    _task_state = state;
++    GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L11 t=%u s=%s r=%s ms=%lu",
++                  unsigned(_task_id), task_state_name(), reason, (unsigned long)AP_HAL::millis());
++}
+ 
+ bool ModeFeatherLane::reject_start(const char *reason)
+ {
+@@ -37,6 +74,41 @@ bool ModeFeatherLane::start_task(uint16_t task_id)
+     return started;
+ }
+ 
++// successful stock BRAKE entry calls exit(); only that path records operator abort
++bool ModeFeatherLane::abort_task(uint16_t task_id)
++{
++    _abort_failure = nullptr;
++    if (task_id != _task_id) {
++        _abort_failure = "task";
++        return false;
++    }
++    if (_task_state == TaskState::ABORTED) {
++        return true;
++    }
++    if (!_executing || copter.flightmode != this ||
++        (_task_state != TaskState::RUNNING && _task_state != TaskState::DWELLING)) {
++        _abort_failure = "not_running";
++        return false;
++    }
++    if (!navigation_valid() || !reference_valid()) {
++        _abort_failure = "navigation";
++        return false;
++    }
++
++#if MODE_BRAKE_ENABLED
++    _abort_requested = true;
++    const bool changed_mode = copter.set_mode(Number::BRAKE, ModeReason::GCS_COMMAND);
++    _abort_requested = false;
++    if (changed_mode) {
++        return true;
++    }
++    _abort_failure = "brake_entry";
++#else
++    _abort_failure = "brake_disabled";
++#endif
++    return false;
++}
++
+ bool ModeFeatherLane::navigation_valid() const
+ {
+     return copter.ahrs.home_is_set() && copter.ekf_has_absolute_position() &&
+@@ -122,6 +194,10 @@ bool ModeFeatherLane::init(bool ignore_checks)
+     _height_reset_ms = ahrs.getLastPosDownReset(height_reset_m);
+     _executing = true;
+     _consumed = true;
++    _destination = destination;
++    _arrival_radius_m = task->radius_m;
++    _last_arrival_check_ms = AP_HAL::millis();
++    set_task_state(TaskState::RUNNING, "start");
+ 
+     GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 goal=%ld,%ld alt_cm=%ld",
+                   (long)destination.lat, (long)destination.lng, (long)destination.alt);
+@@ -150,10 +226,68 @@ bool ModeFeatherLane::reference_valid()
+            ahrs.getLastPosDownReset(height_reset_m) == _height_reset_ms;
+ }
+ 
++// all bounds must remain satisfied across a continuous series of native updates
++bool ModeFeatherLane::update_arrival()
++{
++    if (_task_state == TaskState::COMPLETE) {
++        return true;
++    }
++
++    Location current_location;
++    Vector3f velocity_ned_ms;
++    if (!ahrs.get_location(current_location) ||
++        !current_location.change_alt_frame(Location::AltFrame::ABSOLUTE) ||
++        !ahrs.get_velocity_NED(velocity_ned_ms) ||
++        !isfinite(velocity_ned_ms.x) || !isfinite(velocity_ned_ms.y) || !isfinite(velocity_ned_ms.z)) {
++        return false;
++    }
++
++    const uint32_t now_ms = AP_HAL::millis();
++    const bool update_gap = now_ms - _last_arrival_check_ms > MAX_ARRIVAL_UPDATE_GAP_MS;
++    _last_arrival_check_ms = now_ms;
++    const bool within_bounds = current_location.get_distance(_destination) <= _arrival_radius_m &&
++        velocity_ned_ms.xy().length() <= MAX_ARRIVAL_SPEED_MPS &&
++        fabsf(float(current_location.alt) - float(_destination.alt)) * CM_TO_METRES <= MAX_ARRIVAL_HEIGHT_ERROR_M &&
++        fabsf(velocity_ned_ms.z) <= MAX_ARRIVAL_VERTICAL_SPEED_MPS;
++
++    if (update_gap || !within_bounds) {
++        set_task_state(TaskState::RUNNING, update_gap ? "gap" : "bounds");
++        return true;
++    }
++    if (_task_state != TaskState::DWELLING) {
++        _dwell_start_ms = now_ms;
++        set_task_state(TaskState::DWELLING, "bounds");
++    }
++    if (now_ms - _dwell_start_ms >= ARRIVAL_DWELL_MS) {
++        set_task_state(TaskState::COMPLETE, "dwell");
++    }
++    return true;
++}
++
+ void ModeFeatherLane::run()
+ {
+-    if (!navigation_valid() || !reference_valid()) {
+-        GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "FL L10 guard reference/navigation");
++    // latch a failed execution's fallback even if an estimator flag later recovers
++    if (_fallback_requested) {
++        copter.set_mode_land_with_pause(ModeReason::FAILSAFE);
++        return;
++    }
++
++    const char *failure = nullptr;
++    if (!navigation_valid()) {
++        failure = "navigation";
++    } else if (!reference_valid()) {
++        failure = "reference";
++    } else if (!update_arrival()) {
++        failure = "measurement";
++    }
++    if (failure != nullptr) {
++        _fallback_requested = true;
++        if (_task_state == TaskState::COMPLETE) {
++            // keep the completed task result; subsequent flight safety still has authority
++            GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "FL L11 guard r=%s", failure);
++        } else {
++            set_task_state(TaskState::FAILED, failure);
++        }
+         copter.set_mode_land_with_pause(ModeReason::FAILSAFE);
+         return;
+     }
+@@ -165,6 +299,10 @@ void ModeFeatherLane::run()
+ void ModeFeatherLane::exit()
+ {
+     _executing = false;
++    if (_task_state == TaskState::RUNNING || _task_state == TaskState::DWELLING) {
++        set_task_state(_abort_requested ? TaskState::ABORTED : TaskState::INTERRUPTED,
++                       _abort_requested ? "operator" : "mode_exit");
++    }
+     GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 exit task=%u", unsigned(_task_id));
+ }
+ 

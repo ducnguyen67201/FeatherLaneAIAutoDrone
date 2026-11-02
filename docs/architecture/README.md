@@ -4,7 +4,7 @@
 
 This is the single maintained architecture for FeatherLane. It shows the native mission stack we intend to build inside our maintained ArduPilot-derived codebase and the upstream flight capabilities we reuse. The external console and optional perception supply requests and observations. Native C++ owns in-flight task progression and policy.
 
-**Status:** ArduPilot/macOS, native mission ownership, upstream maintenance and mission-selected optional perception are confirmed directions. L08’s SITL-only status observer and L09’s experimental version1 admission-only contract are implemented, manually observed and published. L10 now locally implements/observes one known-goal execution through SITL-only ModeFeatherLane (mode31). Its guided checkpoint is complete after clarification. Native arrival/typed abort (L11), broader coordination/ingress and resource budgets remain future work. Read the [phase registry](../phases/registry.json) for current acquisition/build progress; source acquisition is separate from a qualified executable, custom firmware or a successful simulation. Consolidating this page does not change implementation or UI/architecture approval flags.
+**Status:** ArduPilot/macOS, native mission ownership, upstream maintenance and mission-selected optional perception are confirmed directions. L08’s SITL-only status observer and L09’s experimental version1 admission-only contract are implemented, manually observed and published. L10 implements/observes one known-goal execution through SITL-only ModeFeatherLane (mode31), with its guided checkpoint complete and feature branches published. L11 locally implements/observes native arrival/dwell/continued hold and one explicit operator-abort to stock BRAKE. Its guided checkpoint is complete after clarification. Broader coordination/ingress, failure campaigns and resource budgets remain future work. Read the [phase registry](../phases/registry.json) for current acquisition/build progress; source acquisition is separate from a qualified executable, custom firmware or a successful simulation. Consolidating this page does not change implementation or UI/architecture approval flags.
 
 ## L08 current implementation slice
 
@@ -24,7 +24,15 @@ The user authorized L10 after publishing L09. The maintained core diagram showed
 
 Entry requires a qualified airborne stock GUIDED hover and valid authority/navigation/reference state. Generic Guided setpoint ingress and stock speed setters are disabled in this mode. Operator LAND exits through the stock lifecycle; reference/navigation guard fallback is source-inspected but not fault-injected. Guided-specific failsafe classification does not automatically apply. The adapter preserves admission-time home when converting the above-home goal; broader failure qualification remains open.
 
-Final mode31 flight peaked at0.99m/s, completed an offline measured two-second dwell at7.93s and held another50.27s before LAND/disarm. This is external arrival evidence, not an onboard completion transition; L11 remains unstarted. Exact-stock rollback rejected USER_2/mode31 and all owned sessions stopped disarmed/on-ground. L10 feature-branch publication is authorized. The initial29/client RATE_ACRO label conflict remains separate evidence; installed MAVProxy displays final31 as `Mode(31)`. There is no new process, hosting or deployment placement.
+Final mode31 flight peaked at0.99m/s, completed an offline measured two-second dwell at7.93s and held another50.27s before LAND/disarm. This is external arrival evidence, not an onboard completion transition; L11 adds native completion in the separately recorded slice below. Exact-stock rollback rejected USER_2/mode31 and all owned sessions stopped disarmed/on-ground. L10 feature branches are published. The initial29/client RATE_ACRO label conflict remains separate evidence; installed MAVProxy displays final31 as `Mode(31)`. There is no new process, hosting or deployment placement.
+
+## L11 observed lifecycle slice
+
+The user authorized L11 on2026-11-02 after the guided L10 walkthrough and publication. The proposed L11 scope was shown in the maintained core before implementation. The [four-file integration/evidence](../evidence/l11-native-arrival-abort/README.md) adds typed task state, in-process AHRS arrival/dwell and a versioned USER_3 operator-abort receiver. Controllers remain upstream; no process/deployment change is introduced.
+
+Native completion requires retained goal radius, low horizontal/vertical speed and bounded absolute-height error for2000ms, with estimator/reference validity and callback-gap checks. Nominal COMPLETE was observed7.79s after start, followed by29.76s qualifying sampled hold. COMPLETE keeps the target/controller loop active; operator LAND is separate. In a fresh flight USER_3 requested stock BRAKE; successful normal mode entry invoked exit and recorded ABORTED. External sampled stopping completed4.11s after acknowledgment, at least3.08m from the goal. ACK/state and achieved stopping are distinct evidence.
+
+Duplicates did not reinstall a goal, restart or re-arm, including abort retry after LAND. The consumed slot remains used after exit. A completed-task abort is denied; ordinary operator mode changes remain available. The exact retained L10 executable returned USER_3 UNSUPPORTED. Both flights ended LAND/disarm and all owned sessions stopped. Invalid-input/fallback, blocked BRAKE and INTERRUPTED branches are source-inspected rather than fault-injected. L11 is local/unpublished with guided checkpoint complete after clarification; L12 has not started.
 
 ## Module ownership
 
@@ -36,7 +44,8 @@ The diagram is a selected module/responsibility view, not an exhaustive call gra
 | BUILD L09 | `libraries/FL_TaskAdmission/` plus scoped Copter GCS handler | Local experimental v1 coordinate-task admission and RAM retention only; no execution. |
 | BUILD native | Candidate `FL_Mission`, proposed `libraries/FL_Mission/` | Bounded task state, required-input validity, motion limits, completion and abort/continue policy. |
 | BUILD L10 | `ModeFeatherLane`, `ArduCopter/mode_featherlane.cpp` plus scoped Copter integration | Local SITL known-goal execution; explicit start, reference checks, inherited Guided controller reuse and normal mode exit. |
-| BUILD integration | Scoped ingress and status/logging | Validate/version requests and observations; report actual native state, rejection and transition reasons. L09 USER_1 admission and L10 USER_2 start are experimental scoped mappings; broader ingress remains proposed. |
+| BUILD L11 | Task lifecycle in `ModeFeatherLane` and scoped USER_3 receiver | Local native arrival/dwell/COMPLETE and one explicit operator-abort to stock BRAKE, with retained state/events. |
+| BUILD integration | Scoped ingress and status/logging | Validate/version requests and observations; report actual native state, rejection and transition reasons. L09 USER_1 admission, L10 USER_2 start and L11 USER_3 abort are experimental scoped mappings; broader ingress remains proposed. |
 | REUSE | `GCS_MAVLink`, Copter handlers | Supported protocol requests, mission transfer and telemetry. Acceptance is separate from achieved behavior. |
 | REUSE | `AP_Mission`, stock AUTO/GUIDED/other modes | Stored mission facilities and stock execution choices. Only the selected mode owns flight execution. |
 | REUSE | `AC_WPNav` and qualified avoidance path | Navigation/reference generation; obstacle avoidance additionally needs usable sensing, configuration and mode integration. |
@@ -82,7 +91,7 @@ Existing arming restrictions, configured failsafes and manual override retain au
 
 ## Local deployment
 
-The initial flight runtime is our selected ArduPilot-derived SITL executable. Published L09 contains the L08 status observer and bounded task admission. Local L10 additionally executes one known goal through the SITL-only adapter alongside the reused flight stack. Native arrival/typed abort and broader mission coordination remain proposed. External local tooling supplies the console/API, owned-process lifecycle, optional perception and evidence. The browser is not required to keep the native control loop running.
+The initial flight runtime is our selected ArduPilot-derived SITL executable. Published L10 contains status/admission and one known-goal execution adapter. Local L11 additionally classifies native arrival/dwell and handles one explicit operator-abort through stock BRAKE alongside the reused flight stack. Broader mission coordination and fault qualification remain proposed. External local tooling supplies the console/API, owned-process lifecycle, optional perception and evidence. The browser is not required to keep the native control loop running.
 
 | Placement | Intended role | Qualification status |
 | --- | --- | --- |
@@ -116,7 +125,7 @@ Primary references supporting the reused responsibilities:
 
 The user's 2026-10-31 decisions selected ArduPilot/macOS, native in-flight mission ownership, deliberate upstream maintenance, optional perception by mission and a learning-first implementation plan. The subsequent cleanup request selected one maintained core architecture and removed competing views from this folder. See [D13–D18](../DECISIONS.md).
 
-This is the retained design baseline. Broader candidate modules/contracts/layout remain proposed; L08–L10 implementation is limited to the explicitly recorded slices above. Consolidation does not approve the whole design, hardware deployment or UI. Preserve actual approval source/date/scope when a detailed design is explicitly approved. Implementation progress belongs in the phase registry and evidence records.
+This is the retained design baseline. Broader candidate modules/contracts/layout remain proposed; L08–L11 implementation is limited to the explicitly recorded slices above. Consolidation does not approve the whole design, hardware deployment or UI. Preserve actual approval source/date/scope when a detailed design is explicitly approved. Implementation progress belongs in the phase registry and evidence records.
 
 ## Documentation maintenance
 

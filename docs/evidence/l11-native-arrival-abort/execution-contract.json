@@ -1,0 +1,63 @@
+{
+  "phase": "L11",
+  "declared_date": "2026-11-02",
+  "baseline_firmware": "11573fb26ffe99022431a32d0b40502d03f9b02a",
+  "prediction": "Same stored five-metre north goal at1m/s after stock GUIDED takeoff to3m. Native RUNNING\u2192DWELLING\u2192COMPLETE after2s bounded estimator observations, continued hold without landing. Second fresh session: explicit USER_3 during movement selects stock BRAKE and reports ABORTED, with measured stopping before goal. Operator LAND/disarm ends each flight.",
+  "goal": {
+    "latitude_e7": -353632172,
+    "longitude_e7": 1491652374,
+    "height_above_admission_home_m": 3,
+    "speed_mps": 1,
+    "radius_m": 1
+  },
+  "commands": {
+    "admit": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 1 1 1 -353632172 1491652374 3",
+    "start": "command_int MISSION USER_2 0 0 1 1 0 0 0 0 0",
+    "abort": "command_int MISSION USER_3 0 0 1 1 0 0 0 0 0"
+  },
+  "command_contract": "USER_2=31011 and USER_3=31012; COMMAND_INT only, configured GCS source, frameMISSION2, version exactly1, taskID exact stored ID, unused fields zero under existing checks.",
+  "native_arrival": {
+    "horizontal_radius_m": "retained task radius;1 for these runs",
+    "horizontal_speed_max_mps": 0.3,
+    "absolute_height_error_max_m": 0.2,
+    "absolute_vertical_speed_max_mps": 0.2,
+    "dwell_ms": 2000,
+    "maximum_callback_gap_ms": 250,
+    "clock": "AP_HAL::millis; unsigned elapsed subtraction",
+    "inputs": "AHRS estimated location in absolute frame and finite NED velocity, plus existing valid home/origin/navigation/failsafe and reference-reset guards. No simulator truth. API validity is used; no independent per-sensor age qualification claimed.",
+    "out_of_bounds": "reset dwell and report RUNNING",
+    "invalid_measurement": "FAILED then request existing stock LAND-with-pause; source-inspected, not a fault campaign",
+    "complete": "terminal task result; retain mode31 and controller target until operator mode change. No automatic land/disarm."
+  },
+  "abort": {
+    "allowed": "active RUNNING or DWELLING task with valid navigation/references and stock BRAKE compiled",
+    "mode_after_success": 17,
+    "state_after_success": "ABORTED when successful mode entry invokes native exit",
+    "mode_rejection": "DENIED, retain actual task state; never claim ABORTED. Operator LAND fallback.",
+    "duplicate": "after ABORTED, acknowledge same ID without changing mode or target, including after operator LAND",
+    "after_complete": "reject abort; COMPLETE stays terminal; normal operator LAND remains available"
+  },
+  "other_exit": "RUNNING/DWELLING external mode exit becomes INTERRUPTED; terminal COMPLETE/ABORTED/FAILED retained. No restart/rearm after exit.",
+  "manual_cases": [
+    "missing-task abort, wrong-ID abort and disarmed abort rejected",
+    "nominal COMPLETE and\u22655s hold, duplicate USER_2 keeps COMPLETE and installs no target",
+    "completed-task abort rejected; operator LAND/disarm; consumed start rejected",
+    "fresh interrupted flight, USER_3 during movement, stock BRAKE stop/hold\u22655s",
+    "duplicate USER_3 in BRAKE and after LAND changes no mode/target; consumed USER_2 rejected"
+  ],
+  "stop_observation": {
+    "speed_max_mps": 0.3,
+    "vertical_speed_max_mps": 0.2,
+    "height_error_max_m": 0.2,
+    "sampled_dwell_s": 2,
+    "fresh_message_age_max_s": 2.5,
+    "position_gap_max_s": 0.75,
+    "deadline_s": 10
+  },
+  "rollback": "Exact retained L10 executable; disarmed startup must return USER_3 UNSUPPORTED while keeping L10 custom mode support; no new rollback flight required.",
+  "scope_limits": [
+    "Native completion is terminal classification, not a guarantee of perpetual geometric containment; controllers continue holding and authority/failsafe checks continue.",
+    "No arbitrary fault framework, reconnection transport campaign, physical flight, UI, main merge or L11 publication.",
+    "Manual command sessions and passive recording only; no automated tests or external authoritative flight FSM."
+  ]
+}

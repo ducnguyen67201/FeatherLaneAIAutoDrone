@@ -1,0 +1,247 @@
+[
+  {
+    "path": ".local/l11/nominal/binaries.json",
+    "bytes": 590,
+    "sha256": "200496dbd6649285d5da4af4b07220f840c5027ced0a11c6ae0ad69720c72dfe"
+  },
+  {
+    "path": ".local/l11/nominal/console.log",
+    "bytes": 7497,
+    "sha256": "bd539e53eb0ec2417731787a774bcb18f90cac6c2a63a2e65d52da68bd5c8156"
+  },
+  {
+    "path": ".local/l11/nominal/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "de5d3723a6b43bbb17dfdd06aa445a0cd37819fe4ed29014a61f9b2fdb724062"
+  },
+  {
+    "path": ".local/l11/nominal/execution-contract.json",
+    "bytes": 4002,
+    "sha256": "55975c1ec7a911c74e813907249ca8ca0169084cfda131384f757bad7978d29b"
+  },
+  {
+    "path": ".local/l11/nominal/launch.zsh",
+    "bytes": 678,
+    "sha256": "3f9ef87bfa3b6b7973fb98851ef0f51fd1406dea0c3a5404b79b116870728b9a"
+  },
+  {
+    "path": ".local/l11/nominal/logs/00000001.BIN",
+    "bytes": 5378560,
+    "sha256": "64186f975866b5a0e95a5afbf1eca2d07616698d28cb702db0830c216bc9dce4"
+  },
+  {
+    "path": ".local/l11/nominal/logs/LASTLOG.TXT",
+    "bytes": 3,
+    "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+  },
+  {
+    "path": ".local/l11/nominal/mav.parm",
+    "bytes": 36338,
+    "sha256": "bfdd4398798662970670c5e8933fbdf9dde5e340397e2891daff69023eee7e27"
+  },
+  {
+    "path": ".local/l11/nominal/mav.tlog",
+    "bytes": 786857,
+    "sha256": "2abc289f3cb160a66ada139c37d24a16fb376691fccd8c5c47f42fbd71ac9f00"
+  },
+  {
+    "path": ".local/l11/nominal/mav.tlog.raw",
+    "bytes": 636567,
+    "sha256": "25c65f053066d65c38b4023cf1493f56ea3cc80dc7035945d18f0279a1fa0e97"
+  },
+  {
+    "path": ".local/l11/nominal/observations.jsonl",
+    "bytes": 5342054,
+    "sha256": "51cac9af5a876cc2e1eedc004b3f5b895342f73dd2b3d035e41c9422a4c2fad2"
+  },
+  {
+    "path": ".local/l11/nominal/params-after.parm",
+    "bytes": 36338,
+    "sha256": "bfdd4398798662970670c5e8933fbdf9dde5e340397e2891daff69023eee7e27"
+  },
+  {
+    "path": ".local/l11/nominal/params-before.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd"
+  },
+  {
+    "path": ".local/l11/nominal/ritw-20261102132853",
+    "bytes": 233,
+    "sha256": "de9d95b885e6d91f36099c433cee1d1a5e75a1b1046f0c3ba8ef4d6b1619c8a3"
+  },
+  {
+    "path": ".local/l11/nominal/shutdown.json",
+    "bytes": 1031,
+    "sha256": "bd26c745a3a8dfb70511051a429b0fc47eaf8f06aedd08ff13a65b1c64c97e80"
+  },
+  {
+    "path": ".local/l11/nominal/source.patch",
+    "bytes": 12797,
+    "sha256": "4635b7ad1be196c96c8884c3362f2581b7f53d2fe11dfcfe5d7a12aaeea5f5c0"
+  },
+  {
+    "path": ".local/l11/nominal/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".local/l11/abort/binaries.json",
+    "bytes": 590,
+    "sha256": "200496dbd6649285d5da4af4b07220f840c5027ced0a11c6ae0ad69720c72dfe"
+  },
+  {
+    "path": ".local/l11/abort/console.log",
+    "bytes": 7098,
+    "sha256": "8638d2f08f19f45e3330c9f5eef13c04c57985727f627b963329a5a4287e7494"
+  },
+  {
+    "path": ".local/l11/abort/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "f7ac4ba71d91d8097dfd98500d09716a6dee3b8acf5feeb9fff5c5caf38cc19d"
+  },
+  {
+    "path": ".local/l11/abort/execution-contract.json",
+    "bytes": 4002,
+    "sha256": "55975c1ec7a911c74e813907249ca8ca0169084cfda131384f757bad7978d29b"
+  },
+  {
+    "path": ".local/l11/abort/launch.zsh",
+    "bytes": 676,
+    "sha256": "5cf5f424db106b8c02af261d68317bd5a3aa082e5f12cfdfa45e6cbbc5f951c3"
+  },
+  {
+    "path": ".local/l11/abort/logs/00000001.BIN",
+    "bytes": 5106688,
+    "sha256": "0b34b1b04c9741d28354c37fff18383a22d50d59a88409696e3c098317da44ea"
+  },
+  {
+    "path": ".local/l11/abort/logs/LASTLOG.TXT",
+    "bytes": 3,
+    "sha256": "f1b2f662800122bed0ff255693df89c4487fbdcf453d3524a42d4ec20c3d9c04"
+  },
+  {
+    "path": ".local/l11/abort/mav.parm",
+    "bytes": 36338,
+    "sha256": "82eee52b02512a66d8a8b93b36231e715eb6da6981a64da9e543c0b84d0fc389"
+  },
+  {
+    "path": ".local/l11/abort/mav.tlog",
+    "bytes": 693283,
+    "sha256": "b24575dc39aac03818071c4461ceb1f223622159c406d57ae8049dc51470194c"
+  },
+  {
+    "path": ".local/l11/abort/mav.tlog.raw",
+    "bytes": 559860,
+    "sha256": "de293ec89ab40b00254eff5615ccd5c5677a67e9119fb9cd04cc2cb7ec070f06"
+  },
+  {
+    "path": ".local/l11/abort/observations.jsonl",
+    "bytes": 4701760,
+    "sha256": "71e0b302dbf4227e1c09c19048cdf25e7f61cb486fc35c2df98e0e545b6fd1c4"
+  },
+  {
+    "path": ".local/l11/abort/params-after.parm",
+    "bytes": 36338,
+    "sha256": "82eee52b02512a66d8a8b93b36231e715eb6da6981a64da9e543c0b84d0fc389"
+  },
+  {
+    "path": ".local/l11/abort/params-before.parm",
+    "bytes": 36336,
+    "sha256": "060267d787e281fff7fa8e4f6c96630f5b401646764cf52e0d5832ac6b9f05e5"
+  },
+  {
+    "path": ".local/l11/abort/ritw-20261102133132",
+    "bytes": 233,
+    "sha256": "de9d95b885e6d91f36099c433cee1d1a5e75a1b1046f0c3ba8ef4d6b1619c8a3"
+  },
+  {
+    "path": ".local/l11/abort/shutdown.json",
+    "bytes": 1030,
+    "sha256": "80e36dc4e25eb60df5b28ba446062c217a463a1bfc155eb23a6dd6c70150d384"
+  },
+  {
+    "path": ".local/l11/abort/source.patch",
+    "bytes": 12797,
+    "sha256": "4635b7ad1be196c96c8884c3362f2581b7f53d2fe11dfcfe5d7a12aaeea5f5c0"
+  },
+  {
+    "path": ".local/l11/abort/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".local/l11/rollback/binaries.json",
+    "bytes": 590,
+    "sha256": "200496dbd6649285d5da4af4b07220f840c5027ced0a11c6ae0ad69720c72dfe"
+  },
+  {
+    "path": ".local/l11/rollback/console.log",
+    "bytes": 4201,
+    "sha256": "14031905f7715380cdb8cb7af42ad5c2571728d547f294952479e06eef030050"
+  },
+  {
+    "path": ".local/l11/rollback/eeprom.bin",
+    "bytes": 16384,
+    "sha256": "29959fe9e3363cbbd664ba0a95ea83ebda0145093679d1dc9cbd77cdf8bd1ea8"
+  },
+  {
+    "path": ".local/l11/rollback/launch.zsh",
+    "bytes": 668,
+    "sha256": "a7d4c0171b1b33cb379c9ec13a992875a1ce13effc1a64c194aa76ca6230ebf3"
+  },
+  {
+    "path": ".local/l11/rollback/mav.parm",
+    "bytes": 36333,
+    "sha256": "8b416bda5cebe77cd408f0a766bff40b5655284d6dbe8f1f1054ee32fcfbcdfd"
+  },
+  {
+    "path": ".local/l11/rollback/mav.tlog",
+    "bytes": 216164,
+    "sha256": "1ae76a9a6b897b292b6e6f26322011c1784b778a70f9a5f37a92d4518e84fd0f"
+  },
+  {
+    "path": ".local/l11/rollback/mav.tlog.raw",
+    "bytes": 175148,
+    "sha256": "c8c932407923f4b16bc464c8e09e3832f3a4eb763f5c74891bb08bbb58d349ee"
+  },
+  {
+    "path": ".local/l11/rollback/observations.jsonl",
+    "bytes": 1414486,
+    "sha256": "063a6f0303b9209aa2cd1c392c89fe0ffd393d9b6894f3c7c82bac5eef8c1a28"
+  },
+  {
+    "path": ".local/l11/rollback/ritw-20261102133349",
+    "bytes": 222,
+    "sha256": "044f279df65ae4c17984975648d9aff99d0758547fc413786f101f9a77db9929"
+  },
+  {
+    "path": ".local/l11/rollback/shutdown.json",
+    "bytes": 1020,
+    "sha256": "41b2110b44303a1150cf383e1074420adc121b3b2c9f3b58be8feb119f7d4b8a"
+  },
+  {
+    "path": ".local/l11/rollback/terrain/S36E149.DAT",
+    "bytes": 0,
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  {
+    "path": ".local/l11/capture.py",
+    "bytes": 663,
+    "sha256": "96fcb58d8625da337c987da23ce2eedba5c768e36af1a21d7adef2fd399755c6"
+  },
+  {
+    "path": ".local/l11/read-state.py",
+    "bytes": 835,
+    "sha256": "83387272c812e119ceb40483783a6dc672966f3d1d63f140d0c59941b0662de8"
+  },
+  {
+    "path": ".local/l11/analyze.py",
+    "bytes": 10584,
+    "sha256": "fb6a277c74b530906f55dfae29e755892788dee0ae96d8c1a9cf679e00f06eee"
+  },
+  {
+    "path": ".local/l11/stop-owned.py",
+    "bytes": 1263,
+    "sha256": "5762a2043c58ae5e341bbeaf9c67be4d7359cdbb0348a33818e0a13a91eef21b"
+  }
+]
