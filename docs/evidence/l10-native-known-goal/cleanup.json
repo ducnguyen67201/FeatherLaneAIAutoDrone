@@ -1,0 +1,10 @@
+{
+  "owned_sitl_remaining": [],
+  "selected_sockets": "",
+  "lsof_exit_code": 1,
+  "stock_original_sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec",
+  "stock_retained_sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec",
+  "l09_retained_sha256": "72c75a4269fd52e6b8df2eaacae3fb835a81cdf5e27543533f4373b397bd9694",
+  "new_tests": false,
+  "l10_commits_or_pushes": false
+}

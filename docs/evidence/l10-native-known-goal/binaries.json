@@ -1,0 +1,27 @@
+{
+  "l10_custom": {
+    "path": ".local/l10/build/sitl/bin/arducopter",
+    "bytes": 4819944,
+    "sha256": "9960ce2b0b775888caa170c9517707df9a2121766f651a29b0a087dbd8bcc44b"
+  },
+  "l09_preserved": {
+    "path": ".local/l10/l09-arducopter",
+    "bytes": 4818568,
+    "sha256": "72c75a4269fd52e6b8df2eaacae3fb835a81cdf5e27543533f4373b397bd9694"
+  },
+  "stock_preserved": {
+    "path": ".local/l08/stock-arducopter",
+    "bytes": 4817736,
+    "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec"
+  },
+  "stock_original": {
+    "path": "ardupilot/build/sitl/bin/arducopter",
+    "bytes": 4817736,
+    "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec"
+  },
+  "initial_mode29_binary": {
+    "path": ".local/l10/build/sitl/bin/arducopter",
+    "bytes": 4819944,
+    "sha256": "e56b4b8300363191f7c238f0a5fefbefd1f78a16d7e5e334aacee64748a53e3f"
+  }
+}

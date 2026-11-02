@@ -1,0 +1,83 @@
+{
+  "heartbeat_samples": 98,
+  "heartbeat_span_s": 95.0646300315857,
+  "armed_samples": 0,
+  "modes": [
+    0
+  ],
+  "acks": [
+    {
+      "wall_time": 1793495461.559704,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 31011,
+        "result": 3,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    },
+    {
+      "wall_time": 1793495461.5598679,
+      "source_system": 1,
+      "source_component": 1,
+      "message": {
+        "mavpackettype": "COMMAND_ACK",
+        "command": 176,
+        "result": 4,
+        "progress": 0,
+        "result_param2": 0,
+        "target_system": 255,
+        "target_component": 230
+      }
+    }
+  ],
+  "custom_status_count": 0,
+  "shutdown": {
+    "time": 1793495539.277178,
+    "pid": 96441,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+      "--model",
+      "+",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../ardupilot/Tools/autotest/default_params/copter.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793495538.234268,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 81,
+          "custom_mode": 0,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793495539.081341,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  }
+}

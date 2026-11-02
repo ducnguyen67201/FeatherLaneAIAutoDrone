@@ -1,0 +1,13 @@
+{
+  "date": "2026-11-02",
+  "status": "guided_complete",
+  "learner_summary": "New native mode exercised in SITL; stored five-metre coordinate task at a one-metre-per-second speed limit.",
+  "clarifications": [
+    "Mode lifecycle uses virtual init/run/exit; set_mode explicitly calls init.",
+    "Stock GUIDED takeoff/hover occurs before FeatherLane entry.",
+    "Native mode installs the goal and runtime speed limit; upstream controllers and motor mixing produce motion/output.",
+    "FeatherLane remains active while accelerating, slowing and holding; explicit operator LAND follows."
+  ],
+  "assessment_limit": "Guided explanation, not an independent examination.",
+  "next_authorized_phase": "L11"
+}

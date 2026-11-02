@@ -89,8 +89,8 @@
       "label": "AP_Mission",
       "sublabel": "libraries/AP_Mission/",
       "pos": [
-        850,
-        720
+        40,
+        900
       ],
       "size": [
         300,
@@ -105,7 +105,7 @@
       "sublabel": "ArduCopter/mode_*.cpp",
       "pos": [
         40,
-        970
+        1120
       ],
       "size": [
         300,
@@ -120,7 +120,7 @@
       "sublabel": "libraries/AC_WPNav/",
       "pos": [
         40,
-        1220
+        1370
       ],
       "size": [
         300,
@@ -135,7 +135,7 @@
       "sublabel": "libraries/AC_AttitudeControl/",
       "pos": [
         430,
-        1220
+        1370
       ],
       "size": [
         300,
@@ -150,7 +150,7 @@
       "sublabel": "libraries/AC_AttitudeControl/",
       "pos": [
         850,
-        1220
+        1370
       ],
       "size": [
         300,
@@ -165,7 +165,7 @@
       "sublabel": "IMU · GPS · barometer · external nav",
       "pos": [
         40,
-        1470
+        1620
       ],
       "size": [
         300,
@@ -180,7 +180,7 @@
       "sublabel": "libraries/AP_AHRS/ · AP_NavEKF3/",
       "pos": [
         850,
-        970
+        1120
       ],
       "size": [
         300,
@@ -195,7 +195,7 @@
       "sublabel": "Upstream vehicle checks and configured failsafes retain authority",
       "pos": [
         40,
-        1720
+        1870
       ],
       "size": [
         1110,
@@ -210,7 +210,7 @@
       "sublabel": "libraries/AP_Motors/",
       "pos": [
         430,
-        1470
+        1620
       ],
       "size": [
         300,
@@ -225,7 +225,7 @@
       "sublabel": "libraries/AP_HAL/ + platform backend",
       "pos": [
         850,
-        1470
+        1620
       ],
       "size": [
         300,
@@ -250,11 +250,11 @@
     {
       "id": "native-mode",
       "type": "security",
-      "label": "BUILD · ModeFeatherLane (candidate)",
-      "sublabel": "PROPOSED ArduCopter mode adapter",
+      "label": "L10 · ModeFeatherLane",
+      "sublabel": "OBSERVED SITL · known goal · mode31",
       "pos": [
         430,
-        970
+        1120
       ],
       "size": [
         300,
@@ -374,12 +374,20 @@
     },
     {
       "kind": "region",
-      "label": "CURRENT L08 SCOPE · status only; stock modes keep flight authority",
+      "label": "OBSERVED L08 · status only; stock flight authority retained",
       "wraps": [
         "status-scheduler",
         "native-status"
       ],
       "pad": 15
+    },
+    {
+      "kind": "region",
+      "label": "OBSERVED L10 · native known-goal execution",
+      "wraps": [
+        "native-mode"
+      ],
+      "pad": 10
     }
   ],
   "connections": [
@@ -447,13 +455,13 @@
       "id": "native-adapter",
       "from": "native-mission",
       "to": "native-mode",
-      "label": "L10+ proposed"
+      "label": "stored task"
     },
     {
       "id": "native-nav",
       "from": "native-mode",
       "to": "nav",
-      "label": "Native references"
+      "label": "frame checks"
     },
     {
       "id": "auto-stock",
@@ -472,17 +480,46 @@
       "from": "native-status",
       "to": "gcs",
       "label": "STATUSTEXT · every 5 ticks"
+    },
+    {
+      "id": "native-start",
+      "from": "gcs",
+      "to": "native-mode",
+      "label": "USER_2 start"
+    },
+    {
+      "id": "native-guided-reuse",
+      "from": "native-mode",
+      "to": "modes",
+      "label": "reuse"
+    },
+    {
+      "id": "native-position",
+      "from": "native-mode",
+      "to": "position",
+      "label": "Pos targets"
     }
   ],
   "cards": [
     {
       "dot": "amber",
-      "title": "Current L09 observed scope · admission only",
+      "title": "L10 observed scope · one airborne native goal",
+      "items": [
+        "Stock GUIDED performs the operator-commanded takeoff. COMMAND_INT / USER_2 explicitly requests execution of the already admitted task ID; direct mode selection has no start authorization.",
+        "SITL-only mode31 ModeFeatherLane subclasses upstream ModeGuided. Only the selected native adapter runs; inherited Guided methods set the stored destination and drive existing position/attitude controllers. Standard Guided setpoint ingress is disabled for this mode.",
+        "Entry rechecks source/ID, armed airborne GUIDED state, low speed, usable home/absolute navigation, limits and reference consistency. The destination altitude is anchored to the saved admission home, then converted using the current valid estimator reference.",
+        "The adapter cannot arm or take off. Normal mode changes relinquish execution; a reference/navigation guard requests stock LAND. This is a nominal SITL slice: native arrival/typed abort remains L11, and failure/hardware qualification is not claimed.",
+        "Final source: 0.99m/s peak, externally measured two-second dwell at7.93s and50.27s additional qualifying hold, then operator LAND/disarm. Exact-stock rollback observed; L10 publication authorized, guided checkpoint complete after clarification."
+      ]
+    },
+    {
+      "dot": "amber",
+      "title": "L09 observed admission",
       "items": [
         "MAVProxy sends COMMAND_INT / USER_1 (31010) into a SITL-only Copter receiver and FL_TaskAdmission. Our version1 contract validates frame, source, vehicle/navigation prerequisites and bounded task fields.",
         "Final-source manual run: one acceptance, two duplicates and19 rejections; every later report preserved task1. All93 heartbeat samples remained disarmed, with on-ground telemetry.",
         "Version1 is exact; minimum height1cm avoids rounding a positive request to zero. Earlier source and observations remain separate evidence. One RAM slot holds the admitted goal, limits and home reference.",
-        "No execution/arm/mode/target/motor interface was added in L09. The preserved L08 binary returned UNSUPPORTED for USER_1 and retained L08 status. L09 firmware commit 39cf614d1aae2ee4acb93f9294ebf66178967acb is published; future mission/mode execution remains proposed."
+        "No execution/arm/mode/target/motor interface was added in L09. The preserved L08 binary returned UNSUPPORTED for USER_1 and retained L08 status. L09 firmware commit 39cf614d1aae2ee4acb93f9294ebf66178967acb is published; L10 execution is recorded separately."
       ]
     },
     {
@@ -492,14 +529,14 @@
         "FL_Status is a bounded observer, not a task coordinator or flight mode. The Copter hook copies actual mode/arming; stock GCS sends status.",
         "Custom SITL built and reported 13 status lines in a disarmed session. Stock modes retain authority; no target or motor writes were added.",
         "The preserved stock executable was then observed for 78 seconds of heartbeat telemetry with no FL L08 message. Both sessions were stopped disarmed/on-ground.",
-        "Only the observer/build/hook is implemented in firmware commit 3f467d90be284654c5721ac3d94c26863f771275 against Copter-4.7.2 fb773567896014da007bca58358704d4a0d8516f. Mission/mode/API boxes remain proposed; see L08 evidence."
+        "Only the observer/build/hook is implemented in firmware commit 3f467d90be284654c5721ac3d94c26863f771275 against Copter-4.7.2 fb773567896014da007bca58358704d4a0d8516f. Later admission/execution is recorded separately; see L08 evidence."
       ]
     },
     {
       "dot": "rose",
       "title": "BUILD inside the autopilot",
       "items": [
-        "FL_Mission / ModeFeatherLane are candidate names, not existing or implemented upstream modules.",
+        "ModeFeatherLane now implements the narrow local SITL L10 adapter. Broader FL_Mission coordination, native arrival and typed abort remain future slices.",
         "Our C++ extension owns in-flight mission state, observation freshness, stop/continue policy and mission events.",
         "The mode adapter reuses navigation/controllers. Existing arming, manual override and failsafe semantics must be qualified and retained.",
         "Mission-selected capabilities: coordinate/route tasks need no target detector; object-dependent steps require qualified perception/localization."
@@ -510,7 +547,7 @@
       "title": "REUSE and explicit interfaces",
       "items": [
         "Stock AUTO / AP_Mission and GUIDED remain baseline choices. Only the selected mode runs; custom behavior does not imply simultaneous AUTO execution.",
-        "The new mission/observation API and handler mapping remain unqualified; stock Guided messages do not automatically target the custom mode.",
+        "L09 USER_1 and L10 USER_2 are scoped project-local contracts. Broader observation ingress remains unqualified; stock Guided setpoints are disabled for the native mode.",
         "External perception supplies timestamped goals/estimates. No blocking inference, browser work or slow I/O belongs in critical callbacks."
       ]
     },
@@ -520,7 +557,7 @@
       "items": [
         "Maintain identifiable custom commits against pinned upstream/submodules. Review integrations and requalify before adopting an update.",
         "Native placement removes a process/message boundary for internal decisions; end-to-end latency benefit remains unmeasured.",
-        "Maintained core design. Native placement is user-confirmed; exact names, message contracts and timing budgets remain proposed. Current learning progress is recorded in the phase registry."
+        "Maintained core design. Native placement is user-confirmed; broader mission design, contracts and timing budgets remain proposed. Current learning progress is recorded in the phase registry."
       ]
     }
   ]

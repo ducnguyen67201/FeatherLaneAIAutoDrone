@@ -1,0 +1,38 @@
+{
+  "WP_SPD": {
+    "before": 10.0,
+    "after": 10.0
+  },
+  "WP_ACC": {
+    "before": 2.5,
+    "after": 2.5
+  },
+  "WP_ACC_Z": {
+    "before": 1.0,
+    "after": 1.0
+  },
+  "GUID_OPTIONS": {
+    "before": 0.0,
+    "after": 0.0
+  },
+  "FS_GCS_ENABLE": {
+    "before": 0.0,
+    "after": 0.0
+  },
+  "FS_EKF_ACTION": {
+    "before": 1.0,
+    "after": 1.0
+  },
+  "MAV_GCS_SYSID": {
+    "before": 255.0,
+    "after": 255.0
+  },
+  "MAV_GCS_SYSID_HI": {
+    "before": 0.0,
+    "after": 0.0
+  },
+  "LOG_DISARMED": {
+    "before": 0.0,
+    "after": 0.0
+  }
+}

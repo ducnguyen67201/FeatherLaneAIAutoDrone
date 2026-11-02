@@ -62,3 +62,8 @@ L07/L08 publication was remote-SHA verified at project `09c3229e3ed4cb7d9a8998b1
 
 
 The user subsequently authorized publishing completed L09 before L10. Firmware commit `39cf614d1aae2ee4acb93f9294ebf66178967acb` on `codex/l09-native-task-contract` contains the six-file admission-only slice and the requested naming/comments/build-list refinements. Its remote SHA was verified before preparing the parent pointer. The project publication includes the durable AGENTS.md coding convention and maintained evidence. Main and the stock firmware branch remain unchanged; L10 publication is outside this authorization.
+
+
+L09 project publication is now verified at `d8afe552351f4f246822857c49a6fa37edbc0bc7`, with gitlink `39cf614d1aae2ee4acb93f9294ebf66178967acb`. Both current local branches are `codex/l10-native-known-goal`, rooted in those published commits. L10 is an uncommitted seven-file firmware integration, with its exact patch, source/submodule manifest, separate build binary, nominal flight and rollback retained in [L10 evidence](evidence/l10-native-known-goal/README.md). No L10 publication or main/stock update occurred. The final native mode31 run and exact-stock rollback are observed; guided checkpoint pending.
+
+L10 firmware publication is remote-SHA verified at `11573fb26ffe99022431a32d0b40502d03f9b02a` on `codex/l10-native-known-goal`; its seven-file patch is identical to the final observed L10 source. The parent feature commit records this exact gitlink. The user authorized publishing both feature branches on2026-11-02 before local L11.

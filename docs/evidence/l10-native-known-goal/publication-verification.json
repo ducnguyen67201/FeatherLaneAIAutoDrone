@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-31",
+  "method": "git ls-remote exact branch refs; git ls-tree published project commit",
+  "project": {
+    "branch": "codex/l09-native-task-contract",
+    "remote_sha": "d8afe552351f4f246822857c49a6fa37edbc0bc7",
+    "main_unchanged": "c45c9e19ae279011d5779fa2669df3fac0f21a29"
+  },
+  "firmware": {
+    "branch": "codex/l09-native-task-contract",
+    "remote_sha": "39cf614d1aae2ee4acb93f9294ebf66178967acb",
+    "published_parent_gitlink": "39cf614d1aae2ee4acb93f9294ebf66178967acb",
+    "stock_branch_unchanged": "fb773567896014da007bca58358704d4a0d8516f"
+  },
+  "l10_publication": false,
+  "l10_local_branches": "codex/l10-native-known-goal"
+}

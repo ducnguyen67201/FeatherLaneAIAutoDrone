@@ -1,4 +1,4 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1225 1898" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5" data-reader-primary-text="14"><style>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1225 2048" role="img" lang="en" aria-labelledby="archify-diagram-title archify-diagram-description" data-animation="trace" data-preset="classic" data-quality-profile="showcase" data-node-ui="" data-reader-fit="intrinsic-height" data-reader-min-text="7.5" data-reader-primary-text="14"><style>
 /*
 JetBrains Mono variable WOFF2 subsets from Google Fonts service revision v24.
 These fixed bytes are shared by the viewer and its SVG/raster exports.
@@ -706,19 +706,21 @@ rect.c-bg-rect { fill: var(--bg); }
         <!-- Boundaries (behind everything) -->
         <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="0" data-composition-frame-label="EXTERNAL TOOLING — console/session API, perception and run evidence; no authoritative flight FSM" x="20" y="26" width="1150" height="324" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="1" data-composition-frame-label="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior" x="5" y="428" width="1180" height="1402" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="1" data-composition-frame-label="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior" x="5" y="428" width="1180" height="1552" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="2" data-composition-frame-label="L1 · Message entry, our native mission state and existing mission storage" x="25" y="696" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="2" data-composition-frame-label="L1 · Message entry, our native mission state and existing mission storage" x="25" y="696" width="720" height="314" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="3" data-composition-frame-label="L2 · Selected mode / adapter and shared estimated state" x="25" y="946" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="3" data-composition-frame-label="L2 · Selected mode / adapter and shared estimated state" x="25" y="1096" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="4" data-composition-frame-label="L3 · Reused navigation and controllers" x="25" y="1196" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="4" data-composition-frame-label="L3 · Reused navigation and controllers" x="25" y="1346" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="5" data-composition-frame-label="L4 · Sensor and platform interfaces / output" x="25" y="1446" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="5" data-composition-frame-label="L4 · Sensor and platform interfaces / output" x="25" y="1596" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="6" data-composition-frame-label="CROSS-CUTTING · Reused arming and failsafe behavior" x="25" y="1696" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="6" data-composition-frame-label="CROSS-CUTTING · Reused arming and failsafe behavior" x="25" y="1846" width="1140" height="134" rx="12" class="c-region" stroke-width="1"/>
 
-        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="7" data-composition-frame-label="CURRENT L08 SCOPE · status only; stock modes keep flight authority" x="415" y="446" width="750" height="134" rx="12" class="c-region" stroke-width="1"/>
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="7" data-composition-frame-label="OBSERVED L08 · status only; stock flight authority retained" x="415" y="446" width="750" height="134" rx="12" class="c-region" stroke-width="1"/>
+
+        <rect data-graph-role="structural-frame" data-composition-frame-kind="region" data-composition-frame-id="8" data-composition-frame-label="OBSERVED L10 · native known-goal execution" x="420" y="1096" width="320" height="134" rx="12" class="c-region" stroke-width="1"/>
 
         <!-- Connection paths (before components for correct z-order) -->
         <g data-graph-role="automatic-crossover" style="--step:0">
@@ -742,44 +744,56 @@ rect.c-bg-rect { fill: var(--bg); }
           <path data-edge-from="gcs" data-edge-to="client" data-edge-label="Telemetry / ACK" data-edge-key="4" data-edge-id="gcs-client" data-composition-points="177,720;177,330" data-composition-crossover="halo" data-composition-independent="true" d="M 177 720 L 177 330" class="a-default" data-animate="edge" style="--step:4" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:5">
-          <path data-graph-role="automatic-crossover-underlay" d="M 340 1272 L 430 1272" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="nav" data-edge-to="position" data-edge-label="References" data-edge-key="5" data-edge-id="nav-position" data-composition-points="340,1272;430,1272" data-composition-crossover="halo" data-composition-independent="true" d="M 340 1272 L 430 1272" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 340 1422 L 430 1422" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="nav" data-edge-to="position" data-edge-label="References" data-edge-key="5" data-edge-id="nav-position" data-composition-points="340,1422;430,1422" data-composition-crossover="halo" data-composition-independent="true" d="M 340 1422 L 430 1422" class="a-default" data-animate="edge" style="--step:5" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:6">
-          <path data-graph-role="automatic-crossover-underlay" d="M 730 1272 L 850 1272" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="position" data-edge-to="attitude" data-edge-label="Control targets" data-edge-key="6" data-edge-id="position-attitude" data-composition-points="730,1272;850,1272" data-composition-crossover="halo" data-composition-independent="true" d="M 730 1272 L 850 1272" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 730 1422 L 850 1422" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="position" data-edge-to="attitude" data-edge-label="Control targets" data-edge-key="6" data-edge-id="position-attitude" data-composition-points="730,1422;850,1422" data-composition-crossover="halo" data-composition-independent="true" d="M 730 1422 L 850 1422" class="a-default" data-animate="edge" style="--step:6" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:7">
-          <path data-graph-role="automatic-crossover-underlay" d="M 850 1015 L 798 1015 Q 790 1015 790 1023 L 790 1250 Q 790 1258 782 1258 L 730 1258" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="ahrs" data-edge-to="position" data-edge-label="State feedback" data-edge-key="7" data-edge-id="estimate-position" data-composition-points="850,1015;790,1015;790,1258;730,1258" data-composition-crossover="halo" data-composition-independent="true" d="M 850 1015 L 798 1015 Q 790 1015 790 1023 L 790 1250 Q 790 1258 782 1258 L 730 1258" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 850 1165 L 798 1165 Q 790 1165 790 1173 L 790 1400 Q 790 1408 782 1408 L 730 1408" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="ahrs" data-edge-to="position" data-edge-label="State feedback" data-edge-key="7" data-edge-id="estimate-position" data-composition-points="850,1165;790,1165;790,1408;730,1408" data-composition-crossover="halo" data-composition-independent="true" d="M 850 1165 L 798 1165 Q 790 1165 790 1173 L 790 1400 Q 790 1408 782 1408 L 730 1408" class="a-default" data-animate="edge" style="--step:7" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:8">
-          <path data-graph-role="automatic-crossover-underlay" d="M 730 1515 L 850 1515" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="motors" data-edge-to="hal" data-edge-label="Output API" data-edge-key="8" data-edge-id="motor-hal" data-composition-points="730,1515;850,1515" data-composition-crossover="halo" data-composition-independent="true" d="M 730 1515 L 850 1515" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 730 1665 L 850 1665" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="motors" data-edge-to="hal" data-edge-label="Output API" data-edge-key="8" data-edge-id="motor-hal" data-composition-points="730,1665;850,1665" data-composition-crossover="halo" data-composition-independent="true" d="M 730 1665 L 850 1665" class="a-default" data-animate="edge" style="--step:8" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:9">
-          <path data-graph-role="automatic-crossover-underlay" d="M 300 772 L 430 772" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="gcs" data-edge-to="native-mission" data-edge-label="L09 admit only" data-edge-key="9" data-edge-id="native-api" data-composition-points="300,772;430,772" data-composition-crossover="halo" data-composition-independent="true" d="M 300 772 L 430 772" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 300 765 L 430 765" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="gcs" data-edge-to="native-mission" data-edge-label="L09 admit only" data-edge-key="9" data-edge-id="native-api" data-composition-points="300,765;430,765" data-composition-crossover="halo" data-composition-independent="true" d="M 300 765 L 430 765" class="a-default" data-animate="edge" style="--step:9" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:10">
-          <path data-graph-role="automatic-crossover-underlay" d="M 580 810 L 580 970" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="native-mission" data-edge-to="native-mode" data-edge-label="L10+ proposed" data-edge-key="10" data-edge-id="native-adapter" data-composition-points="580,810;580,970" data-composition-crossover="halo" data-composition-independent="true" d="M 580 810 L 580 970" class="a-default" data-animate="edge" style="--step:10" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 580 810 L 580 1120" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="native-mission" data-edge-to="native-mode" data-edge-label="stored task" data-edge-key="10" data-edge-id="native-adapter" data-composition-points="580,810;580,1120" data-composition-crossover="halo" data-composition-independent="true" d="M 580 810 L 580 1120" class="a-default" data-animate="edge" style="--step:10" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:11">
-          <path data-graph-role="automatic-crossover-underlay" d="M 430 1015 L 393 1015 Q 385 1015 385 1023 L 385 1250 Q 385 1258 377 1258 L 340 1258" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="native-mode" data-edge-to="nav" data-edge-label="Native references" data-edge-key="11" data-edge-id="native-nav" data-composition-points="430,1015;385,1015;385,1258;340,1258" data-composition-crossover="halo" data-composition-independent="true" d="M 430 1015 L 393 1015 Q 385 1015 385 1023 L 385 1250 Q 385 1258 377 1258 L 340 1258" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 430 1179 L 393 1179 Q 385 1179 385 1187 L 385 1400 Q 385 1408 377 1408 L 340 1408" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="native-mode" data-edge-to="nav" data-edge-label="frame checks" data-edge-key="11" data-edge-id="native-nav" data-composition-points="430,1179;385,1179;385,1408;340,1408" data-composition-crossover="halo" data-composition-independent="true" d="M 430 1179 L 393 1179 Q 385 1179 385 1187 L 385 1400 Q 385 1408 377 1408 L 340 1408" class="a-default" data-animate="edge" style="--step:11" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:12">
-          <path data-graph-role="automatic-crossover-underlay" d="M 850 765 L 817 765 Q 809 765 809 773 L 809 946 Q 809 954 801 954 L 372 954 Q 364 954 364 962 L 364 1007 Q 364 1015 356 1015 L 340 1015" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="mission" data-edge-to="modes" data-edge-label="AUTO callbacks" data-edge-key="12" data-edge-id="auto-stock" data-composition-points="850,765;809,765;809,954;364,954;364,1015;340,1015" data-composition-crossover="halo" data-composition-independent="true" d="M 850 765 L 817 765 Q 809 765 809 773 L 809 946 Q 809 954 801 954 L 372 954 Q 364 954 364 962 L 364 1007 Q 364 1015 356 1015 L 340 1015" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 190 990 L 190 1120" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="mission" data-edge-to="modes" data-edge-label="AUTO callbacks" data-edge-key="12" data-edge-id="auto-stock" data-composition-points="190,990;190,1120" data-composition-crossover="halo" data-composition-independent="true" d="M 190 990 L 190 1120" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:13">
           <path data-graph-role="automatic-crossover-underlay" d="M 850 515 L 730 515" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
           <path data-edge-from="status-scheduler" data-edge-to="native-status" data-edge-label="1 Hz" data-edge-key="13" data-edge-id="schedule-status" data-composition-points="850,515;730,515" data-composition-crossover="halo" data-composition-independent="true" d="M 850 515 L 730 515" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
         <g data-graph-role="automatic-crossover" style="--step:14">
-          <path data-graph-role="automatic-crossover-underlay" d="M 430 544 L 292 544 Q 284 544 284 552 L 284 720" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
-          <path data-edge-from="native-status" data-edge-to="gcs" data-edge-label="STATUSTEXT · every 5 ticks" data-edge-key="14" data-edge-id="status-telemetry" data-composition-points="430,544;284,544;284,720" data-composition-crossover="halo" data-composition-independent="true" d="M 430 544 L 292 544 Q 284 544 284 552 L 284 720" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+          <path data-graph-role="automatic-crossover-underlay" d="M 430 515 L 199 515 Q 191 515 191 523 L 191 720" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="native-status" data-edge-to="gcs" data-edge-label="STATUSTEXT · every 5 ticks" data-edge-key="14" data-edge-id="status-telemetry" data-composition-points="430,515;191,515;191,720" data-composition-crossover="halo" data-composition-independent="true" d="M 430 515 L 199 515 Q 191 515 191 523 L 191 720" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        </g>
+        <g data-graph-role="automatic-crossover" style="--step:15">
+          <path data-graph-role="automatic-crossover-underlay" d="M 170 810 L 170 826 Q 170 834 178 834 L 558 834 Q 566 834 566 842 L 566 1120" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="gcs" data-edge-to="native-mode" data-edge-label="USER_2 start" data-edge-key="15" data-edge-id="native-start" data-composition-points="170,810;170,834;566,834;566,1120" data-composition-crossover="halo" data-composition-independent="true" d="M 170 810 L 170 826 Q 170 834 178 834 L 558 834 Q 566 834 566 842 L 566 1120" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        </g>
+        <g data-graph-role="automatic-crossover" style="--step:16">
+          <path data-graph-role="automatic-crossover-underlay" d="M 430 1165 L 340 1165" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="native-mode" data-edge-to="modes" data-edge-label="reuse" data-edge-key="16" data-edge-id="native-guided-reuse" data-composition-points="430,1165;340,1165" data-composition-crossover="halo" data-composition-independent="true" d="M 430 1165 L 340 1165" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
+        </g>
+        <g data-graph-role="automatic-crossover" style="--step:17">
+          <path data-graph-role="automatic-crossover-underlay" d="M 580 1210 L 580 1370" fill="none" stroke="var(--mask)" stroke-width="5.5" stroke-linecap="round" stroke-linejoin="round" pointer-events="none"/>
+          <path data-edge-from="native-mode" data-edge-to="position" data-edge-label="Pos targets" data-edge-key="17" data-edge-id="native-position" data-composition-points="580,1210;580,1370" data-composition-crossover="halo" data-composition-independent="true" d="M 580 1210 L 580 1370" class="a-default" data-animate="edge" style="--step:12" stroke-width="1.5" marker-end="url(#arrowhead)"/>
         </g>
 
         <!-- Components -->
@@ -842,113 +856,113 @@ rect.c-bg-rect { fill: var(--bg); }
 
         <g id="node-mission" data-node-id="mission" data-node-label="AP_Mission" tabindex="0" role="button" aria-label="Focus AP_Mission, libraries/AP_Mission/, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L1 · Message entry, our native mission state and existing mission storage" aria-pressed="false" data-node-kind="backend" data-node-sublabel="libraries/AP_Mission/" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L1 · Message entry, our native mission state and existing mission storage">
           <title>AP_Mission · libraries/AP_Mission/ · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L1 · Message entry, our native mission state and existing mission storage</title>
-          <rect x="850" y="720" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="850" y="720" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 726) scale(0.6875)">
+          <rect x="40" y="900" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="40" y="900" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 906) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1000" y="763" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_Mission</text>
-        <text data-detail="context" x="1000" y="779" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_Mission/</text>
+          <text data-node-label="" data-detail-anchor="" x="190" y="943" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_Mission</text>
+        <text data-detail="context" x="190" y="959" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_Mission/</text>
         </g>
 
         <g id="node-modes" data-node-id="modes" data-node-label="Stock AUTO / GUIDED / other modes" tabindex="0" role="button" aria-label="Focus Stock AUTO / GUIDED / other modes, ArduCopter/mode_*.cpp, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state" aria-pressed="false" data-node-kind="backend" data-node-sublabel="ArduCopter/mode_*.cpp" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state">
           <title>Stock AUTO / GUIDED / other modes · ArduCopter/mode_*.cpp · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state</title>
-          <rect x="40" y="970" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="40" y="970" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 976) scale(0.6875)">
+          <rect x="40" y="1120" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="40" y="1120" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 1126) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="190" y="1013" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Stock AUTO / GUIDED / other modes</text>
-        <text data-detail="context" x="190" y="1029" class="t-muted" font-size="9" text-anchor="middle">ArduCopter/mode_*.cpp</text>
+          <text data-node-label="" data-detail-anchor="" x="190" y="1163" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Stock AUTO / GUIDED / other modes</text>
+        <text data-detail="context" x="190" y="1179" class="t-muted" font-size="9" text-anchor="middle">ArduCopter/mode_*.cpp</text>
         </g>
 
         <g id="node-nav" data-node-id="nav" data-node-label="AC_WPNav" tabindex="0" role="button" aria-label="Focus AC_WPNav, libraries/AC_WPNav/, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers" aria-pressed="false" data-node-kind="backend" data-node-sublabel="libraries/AC_WPNav/" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers">
           <title>AC_WPNav · libraries/AC_WPNav/ · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers</title>
-          <rect x="40" y="1220" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="40" y="1220" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 1226) scale(0.6875)">
+          <rect x="40" y="1370" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="40" y="1370" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:5" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 1376) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="190" y="1263" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AC_WPNav</text>
-        <text data-detail="context" x="190" y="1279" class="t-muted" font-size="9" text-anchor="middle">libraries/AC_WPNav/</text>
+          <text data-node-label="" data-detail-anchor="" x="190" y="1413" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AC_WPNav</text>
+        <text data-detail="context" x="190" y="1429" class="t-muted" font-size="9" text-anchor="middle">libraries/AC_WPNav/</text>
         </g>
 
         <g id="node-position" data-node-id="position" data-node-label="AC_PosControl" tabindex="0" role="button" aria-label="Focus AC_PosControl, libraries/AC_AttitudeControl/, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers" aria-pressed="false" data-node-kind="backend" data-node-sublabel="libraries/AC_AttitudeControl/" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers">
           <title>AC_PosControl · libraries/AC_AttitudeControl/ · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers</title>
-          <rect x="430" y="1220" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="430" y="1220" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(436 1226) scale(0.6875)">
+          <rect x="430" y="1370" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="430" y="1370" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:6" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(436 1376) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="580" y="1263" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AC_PosControl</text>
-        <text data-detail="context" x="580" y="1279" class="t-muted" font-size="9" text-anchor="middle">libraries/AC_AttitudeControl/</text>
+          <text data-node-label="" data-detail-anchor="" x="580" y="1413" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AC_PosControl</text>
+        <text data-detail="context" x="580" y="1429" class="t-muted" font-size="9" text-anchor="middle">libraries/AC_AttitudeControl/</text>
         </g>
 
         <g id="node-attitude" data-node-id="attitude" data-node-label="AC_AttitudeControl" tabindex="0" role="button" aria-label="Focus AC_AttitudeControl, libraries/AC_AttitudeControl/, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers" aria-pressed="false" data-node-kind="backend" data-node-sublabel="libraries/AC_AttitudeControl/" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers">
           <title>AC_AttitudeControl · libraries/AC_AttitudeControl/ · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L3 · Reused navigation and controllers</title>
-          <rect x="850" y="1220" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="850" y="1220" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:7" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 1226) scale(0.6875)">
+          <rect x="850" y="1370" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="850" y="1370" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:7" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 1376) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1000" y="1263" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AC_AttitudeControl</text>
-        <text data-detail="context" x="1000" y="1279" class="t-muted" font-size="9" text-anchor="middle">libraries/AC_AttitudeControl/</text>
+          <text data-node-label="" data-detail-anchor="" x="1000" y="1413" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AC_AttitudeControl</text>
+        <text data-detail="context" x="1000" y="1429" class="t-muted" font-size="9" text-anchor="middle">libraries/AC_AttitudeControl/</text>
         </g>
 
         <g id="node-sensors" data-node-id="sensors" data-node-label="Sensor frontends / drivers" tabindex="0" role="button" aria-label="Focus Sensor frontends / drivers, IMU · GPS · barometer · external nav, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output" aria-pressed="false" data-node-kind="backend" data-node-sublabel="IMU · GPS · barometer · external nav" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output">
           <title>Sensor frontends / drivers · IMU · GPS · barometer · external nav · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output</title>
-          <rect x="40" y="1470" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="40" y="1470" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:10" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 1476) scale(0.6875)">
+          <rect x="40" y="1620" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="40" y="1620" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:10" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(46 1626) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="190" y="1513" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Sensor frontends / drivers</text>
-        <text data-detail="context" x="190" y="1529" class="t-muted" font-size="9" text-anchor="middle">IMU · GPS · barometer · external nav</text>
+          <text data-node-label="" data-detail-anchor="" x="190" y="1663" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Sensor frontends / drivers</text>
+        <text data-detail="context" x="190" y="1679" class="t-muted" font-size="9" text-anchor="middle">IMU · GPS · barometer · external nav</text>
         </g>
 
         <g id="node-ahrs" data-node-id="ahrs" data-node-label="AP_AHRS + configured EKF" tabindex="0" role="button" aria-label="Focus AP_AHRS + configured EKF, libraries/AP_AHRS/ · AP_NavEKF3/, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state" aria-pressed="false" data-node-kind="backend" data-node-sublabel="libraries/AP_AHRS/ · AP_NavEKF3/" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state">
           <title>AP_AHRS + configured EKF · libraries/AP_AHRS/ · AP_NavEKF3/ · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state</title>
-          <rect x="850" y="970" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="850" y="970" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:7" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 976) scale(0.6875)">
+          <rect x="850" y="1120" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="850" y="1120" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:7" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 1126) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1000" y="1013" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_AHRS + configured EKF</text>
-        <text data-detail="context" x="1000" y="1029" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_AHRS/ · AP_NavEKF3/</text>
+          <text data-node-label="" data-detail-anchor="" x="1000" y="1163" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_AHRS + configured EKF</text>
+        <text data-detail="context" x="1000" y="1179" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_AHRS/ · AP_NavEKF3/</text>
         </g>
 
         <g id="node-safety" data-node-id="safety" data-node-label="Arming checks / failsafe handlers" tabindex="0" role="button" aria-label="Focus Arming checks / failsafe handlers, Upstream vehicle checks and configured failsafes retain authority, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CROSS-CUTTING · Reused arming and failsafe behavior" aria-pressed="false" data-node-kind="security" data-node-sublabel="Upstream vehicle checks and configured failsafes retain authority" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CROSS-CUTTING · Reused arming and failsafe behavior">
           <title>Arming checks / failsafe handlers · Upstream vehicle checks and configured failsafes retain authority · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CROSS-CUTTING · Reused arming and failsafe behavior</title>
-          <rect x="40" y="1720" width="1110" height="90" rx="8" class="c-mask"/>
-          <rect x="40" y="1720" width="1110" height="90" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(46 1726) scale(0.6875)">
+          <rect x="40" y="1870" width="1110" height="90" rx="8" class="c-mask"/>
+          <rect x="40" y="1870" width="1110" height="90" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(46 1876) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="595" y="1763" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Arming checks / failsafe handlers</text>
-        <text data-detail="context" x="595" y="1779" class="t-muted" font-size="9" text-anchor="middle">Upstream vehicle checks and configured failsafes retain authority</text>
+          <text data-node-label="" data-detail-anchor="" x="595" y="1913" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">Arming checks / failsafe handlers</text>
+        <text data-detail="context" x="595" y="1929" class="t-muted" font-size="9" text-anchor="middle">Upstream vehicle checks and configured failsafes retain authority</text>
         </g>
 
         <g id="node-motors" data-node-id="motors" data-node-label="AP_Motors" tabindex="0" role="button" aria-label="Focus AP_Motors, libraries/AP_Motors/, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output" aria-pressed="false" data-node-kind="backend" data-node-sublabel="libraries/AP_Motors/" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output">
           <title>AP_Motors · libraries/AP_Motors/ · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output</title>
-          <rect x="430" y="1470" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="430" y="1470" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:8" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(436 1476) scale(0.6875)">
+          <rect x="430" y="1620" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="430" y="1620" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:8" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(436 1626) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="580" y="1513" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_Motors</text>
-        <text data-detail="context" x="580" y="1529" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_Motors/</text>
+          <text data-node-label="" data-detail-anchor="" x="580" y="1663" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_Motors</text>
+        <text data-detail="context" x="580" y="1679" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_Motors/</text>
         </g>
 
         <g id="node-hal" data-node-id="hal" data-node-label="AP_HAL + platform backend" tabindex="0" role="button" aria-label="Focus AP_HAL + platform backend, libraries/AP_HAL/ + platform backend, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output" aria-pressed="false" data-node-kind="backend" data-node-sublabel="libraries/AP_HAL/ + platform backend" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output">
           <title>AP_HAL + platform backend · libraries/AP_HAL/ + platform backend · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L4 · Sensor and platform interfaces / output</title>
-          <rect x="850" y="1470" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="850" y="1470" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:9" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 1476) scale(0.6875)">
+          <rect x="850" y="1620" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="850" y="1620" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:9" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 1626) scale(0.6875)">
             <path d="M6 3 3 8l3 5M10 3l3 5-3 5"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="1000" y="1513" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_HAL + platform backend</text>
-        <text data-detail="context" x="1000" y="1529" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_HAL/ + platform backend</text>
+          <text data-node-label="" data-detail-anchor="" x="1000" y="1663" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">AP_HAL + platform backend</text>
+        <text data-detail="context" x="1000" y="1679" class="t-muted" font-size="9" text-anchor="middle">libraries/AP_HAL/ + platform backend</text>
         </g>
 
         <g id="node-native-mission" data-node-id="native-mission" data-node-label="L09 · FL_TaskAdmission" tabindex="0" role="button" aria-label="Focus L09 · FL_TaskAdmission, OBSERVED v1 · validate and retain only, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L1 · Message entry, our native mission state and existing mission storage" aria-pressed="false" data-node-kind="security" data-node-sublabel="OBSERVED v1 · validate and retain only" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L1 · Message entry, our native mission state and existing mission storage">
@@ -963,20 +977,20 @@ rect.c-bg-rect { fill: var(--bg); }
         <text data-detail="context" x="580" y="779" class="t-muted" font-size="9" text-anchor="middle">OBSERVED v1 · validate and retain only</text>
         </g>
 
-        <g id="node-native-mode" data-node-id="native-mode" data-node-label="BUILD · ModeFeatherLane (candidate)" tabindex="0" role="button" aria-label="Focus BUILD · ModeFeatherLane (candidate), PROPOSED ArduCopter mode adapter, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state" aria-pressed="false" data-node-kind="security" data-node-sublabel="PROPOSED ArduCopter mode adapter" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state">
-          <title>BUILD · ModeFeatherLane (candidate) · PROPOSED ArduCopter mode adapter · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state</title>
-          <rect x="430" y="970" width="300" height="90" rx="8" class="c-mask"/>
-          <rect x="430" y="970" width="300" height="90" rx="8" class="c-security" data-animate="node" style="--step:11" stroke-width="1.5"/>
-          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(436 976) scale(0.6875)">
+        <g id="node-native-mode" data-node-id="native-mode" data-node-label="L10 · ModeFeatherLane" tabindex="0" role="button" aria-label="Focus L10 · ModeFeatherLane, OBSERVED SITL · known goal · mode31, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L10 · native known-goal execution" aria-pressed="false" data-node-kind="security" data-node-sublabel="OBSERVED SITL · known goal · mode31" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L10 · native known-goal execution">
+          <title>L10 · ModeFeatherLane · OBSERVED SITL · known goal · mode31 · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › L2 · Selected mode / adapter and shared estimated state › OBSERVED L10 · native known-goal execution</title>
+          <rect x="430" y="1120" width="300" height="90" rx="8" class="c-mask"/>
+          <rect x="430" y="1120" width="300" height="90" rx="8" class="c-security" data-animate="node" style="--step:11" stroke-width="1.5"/>
+          <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(436 1126) scale(0.6875)">
             <path d="M8 2.2 13 4v3.5c0 3.1-1.8 5.4-5 6.5-3.2-1.1-5-3.4-5-6.5V4Z"/>
             <path d="m5.8 8 1.5 1.5 3-3"/>
           </g>
-          <text data-node-label="" data-detail-anchor="" x="580" y="1013" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">BUILD · ModeFeatherLane (candidate)</text>
-        <text data-detail="context" x="580" y="1029" class="t-muted" font-size="9" text-anchor="middle">PROPOSED ArduCopter mode adapter</text>
+          <text data-node-label="" data-detail-anchor="" x="580" y="1163" class="t-primary" font-size="11" font-weight="600" text-anchor="middle">L10 · ModeFeatherLane</text>
+        <text data-detail="context" x="580" y="1179" class="t-muted" font-size="9" text-anchor="middle">OBSERVED SITL · known goal · mode31</text>
         </g>
 
-        <g id="node-status-scheduler" data-node-id="status-scheduler" data-node-label="Stock AP_Scheduler + Copter glue" tabindex="0" role="button" aria-label="Focus Stock AP_Scheduler + Copter glue, L08 hook · reads mode and armed state, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CURRENT L08 SCOPE · status only; stock modes keep flight authority" aria-pressed="false" data-node-kind="backend" data-node-sublabel="L08 hook · reads mode and armed state" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CURRENT L08 SCOPE · status only; stock modes keep flight authority">
-          <title>Stock AP_Scheduler + Copter glue · L08 hook · reads mode and armed state · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CURRENT L08 SCOPE · status only; stock modes keep flight authority</title>
+        <g id="node-status-scheduler" data-node-id="status-scheduler" data-node-label="Stock AP_Scheduler + Copter glue" tabindex="0" role="button" aria-label="Focus Stock AP_Scheduler + Copter glue, L08 hook · reads mode and armed state, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › OBSERVED L08 · status only; stock flight authority retained" aria-pressed="false" data-node-kind="backend" data-node-sublabel="L08 hook · reads mode and armed state" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › OBSERVED L08 · status only; stock flight authority retained">
+          <title>Stock AP_Scheduler + Copter glue · L08 hook · reads mode and armed state · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › OBSERVED L08 · status only; stock flight authority retained</title>
           <rect x="850" y="470" width="300" height="90" rx="8" class="c-mask"/>
           <rect x="850" y="470" width="300" height="90" rx="8" class="c-backend" data-animate="node" style="--step:12" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="backend" class="semantic-sigil s-backend" transform="translate(856 476) scale(0.6875)">
@@ -986,8 +1000,8 @@ rect.c-bg-rect { fill: var(--bg); }
         <text data-detail="context" x="1000" y="529" class="t-muted" font-size="9" text-anchor="middle">L08 hook · reads mode and armed state</text>
         </g>
 
-        <g id="node-native-status" data-node-id="native-status" data-node-label="L08 · FL_Status observer" tabindex="0" role="button" aria-label="Focus L08 · FL_Status observer, OBSERVED L08 commit · SITL status only, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CURRENT L08 SCOPE · status only; stock modes keep flight authority" aria-pressed="false" data-node-kind="security" data-node-sublabel="OBSERVED L08 commit · SITL status only" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CURRENT L08 SCOPE · status only; stock modes keep flight authority">
-          <title>L08 · FL_Status observer · OBSERVED L08 commit · SITL status only · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › CURRENT L08 SCOPE · status only; stock modes keep flight authority</title>
+        <g id="node-native-status" data-node-id="native-status" data-node-label="L08 · FL_Status observer" tabindex="0" role="button" aria-label="Focus L08 · FL_Status observer, OBSERVED L08 commit · SITL status only, OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › OBSERVED L08 · status only; stock flight authority retained" aria-pressed="false" data-node-kind="security" data-node-sublabel="OBSERVED L08 commit · SITL status only" data-node-context="OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › OBSERVED L08 · status only; stock flight authority retained">
+          <title>L08 · FL_Status observer · OBSERVED L08 commit · SITL status only · OUR ARDUPILOT-DERIVED C++ RUNTIME — REUSE upstream + BUILD native mission behavior › OBSERVED L08 · status only; stock flight authority retained</title>
           <rect x="430" y="470" width="300" height="90" rx="8" class="c-mask"/>
           <rect x="430" y="470" width="300" height="90" rx="8" class="c-security" data-animate="node" style="--step:12" stroke-width="1.5"/>
           <g aria-hidden="true" data-semantic-sigil="security" class="semantic-sigil s-security" transform="translate(436 476) scale(0.6875)">
@@ -1016,48 +1030,60 @@ rect.c-bg-rect { fill: var(--bg); }
           <text x="116" y="528" class="t-edge-default" font-size="8" text-anchor="middle">MAVLink request</text>
         </g>
         <g data-detail="context" data-edge-from="gcs" data-edge-to="client" data-edge-label="Telemetry / ACK" data-edge-key="4" data-edge-id="gcs-client">
-          <rect x="183" y="518" width="82" height="14" rx="3" class="c-mask"/>
-          <text x="224" y="528" class="t-edge-default" font-size="8" text-anchor="middle">Telemetry / ACK</text>
+          <rect x="183" y="371.75" width="82" height="14" rx="3" class="c-mask"/>
+          <text x="224" y="381.75" class="t-edge-default" font-size="8" text-anchor="middle">Telemetry / ACK</text>
         </g>
         <g data-detail="context" data-edge-from="nav" data-edge-to="position" data-edge-label="References" data-edge-key="5" data-edge-id="nav-position">
-          <rect x="356" y="1282" width="58" height="14" rx="3" class="c-mask"/>
-          <text x="385" y="1292" class="t-edge-default" font-size="8" text-anchor="middle">References</text>
+          <rect x="356" y="1432" width="58" height="14" rx="3" class="c-mask"/>
+          <text x="385" y="1442" class="t-edge-default" font-size="8" text-anchor="middle">References</text>
         </g>
         <g data-detail="context" data-edge-from="position" data-edge-to="attitude" data-edge-label="Control targets" data-edge-key="6" data-edge-id="position-attitude">
-          <rect x="749" y="1282" width="82" height="14" rx="3" class="c-mask"/>
-          <text x="790" y="1292" class="t-edge-default" font-size="8" text-anchor="middle">Control targets</text>
+          <rect x="749" y="1432" width="82" height="14" rx="3" class="c-mask"/>
+          <text x="790" y="1442" class="t-edge-default" font-size="8" text-anchor="middle">Control targets</text>
         </g>
         <g data-detail="context" data-edge-from="ahrs" data-edge-to="position" data-edge-label="State feedback" data-edge-key="7" data-edge-id="estimate-position">
-          <rect x="751.4" y="1116.5" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="790" y="1126.5" class="t-edge-default" font-size="8" text-anchor="middle">State feedback</text>
+          <rect x="751.4" y="1266.5" width="77.2" height="14" rx="3" class="c-mask"/>
+          <text x="790" y="1276.5" class="t-edge-default" font-size="8" text-anchor="middle">State feedback</text>
         </g>
         <g data-detail="context" data-edge-from="motors" data-edge-to="hal" data-edge-label="Output API" data-edge-key="8" data-edge-id="motor-hal">
-          <rect x="761" y="1495" width="58" height="14" rx="3" class="c-mask"/>
-          <text x="790" y="1505" class="t-edge-default" font-size="8" text-anchor="middle">Output API</text>
+          <rect x="761" y="1645" width="58" height="14" rx="3" class="c-mask"/>
+          <text x="790" y="1655" class="t-edge-default" font-size="8" text-anchor="middle">Output API</text>
         </g>
         <g data-detail="context" data-edge-from="gcs" data-edge-to="native-mission" data-edge-label="L09 admit only" data-edge-key="9" data-edge-id="native-api">
-          <rect x="326.4" y="752" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="365" y="762" class="t-edge-default" font-size="8" text-anchor="middle">L09 admit only</text>
+          <rect x="326.4" y="745" width="77.2" height="14" rx="3" class="c-mask"/>
+          <text x="365" y="755" class="t-edge-default" font-size="8" text-anchor="middle">L09 admit only</text>
         </g>
-        <g data-detail="context" data-edge-from="native-mission" data-edge-to="native-mode" data-edge-label="L10+ proposed" data-edge-key="10" data-edge-id="native-adapter">
-          <rect x="501.59999999999997" y="883" width="72.4" height="14" rx="3" class="c-mask"/>
-          <text x="537.8" y="893" class="t-edge-default" font-size="8" text-anchor="middle">L10+ proposed</text>
+        <g data-detail="context" data-edge-from="native-mission" data-edge-to="native-mode" data-edge-label="stored task" data-edge-key="10" data-edge-id="native-adapter">
+          <rect x="586" y="958" width="62.8" height="14" rx="3" class="c-mask"/>
+          <text x="617.4" y="968" class="t-edge-default" font-size="8" text-anchor="middle">stored task</text>
         </g>
-        <g data-detail="context" data-edge-from="native-mode" data-edge-to="nav" data-edge-label="Native references" data-edge-key="11" data-edge-id="native-nav">
-          <rect x="339.2" y="1116.5" width="91.6" height="14" rx="3" class="c-mask"/>
-          <text x="385" y="1126.5" class="t-edge-default" font-size="8" text-anchor="middle">Native references</text>
+        <g data-detail="context" data-edge-from="native-mode" data-edge-to="nav" data-edge-label="frame checks" data-edge-key="11" data-edge-id="native-nav">
+          <rect x="351.2" y="1273.5" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="385" y="1283.5" class="t-edge-default" font-size="8" text-anchor="middle">frame checks</text>
         </g>
         <g data-detail="context" data-edge-from="mission" data-edge-to="modes" data-edge-label="AUTO callbacks" data-edge-key="12" data-edge-id="auto-stock">
-          <rect x="770.4" y="839.5" width="77.2" height="14" rx="3" class="c-mask"/>
-          <text x="809" y="849.5" class="t-edge-default" font-size="8" text-anchor="middle">AUTO callbacks</text>
+          <rect x="106.80000000000001" y="1048" width="77.2" height="14" rx="3" class="c-mask"/>
+          <text x="145.4" y="1058" class="t-edge-default" font-size="8" text-anchor="middle">AUTO callbacks</text>
         </g>
         <g data-detail="context" data-edge-from="status-scheduler" data-edge-to="native-status" data-edge-label="1 Hz" data-edge-key="13" data-edge-id="schedule-status">
           <rect x="775" y="495" width="30" height="14" rx="3" class="c-mask"/>
           <text x="790" y="505" class="t-edge-default" font-size="8" text-anchor="middle">1 Hz</text>
         </g>
         <g data-detail="context" data-edge-from="native-status" data-edge-to="gcs" data-edge-label="STATUSTEXT · every 5 ticks" data-edge-key="14" data-edge-id="status-telemetry">
-          <rect x="216.6" y="612" width="134.8" height="14" rx="3" class="c-mask"/>
-          <text x="284" y="622" class="t-edge-default" font-size="8" text-anchor="middle">STATUSTEXT · every 5 ticks</text>
+          <rect x="243.1" y="495" width="134.8" height="14" rx="3" class="c-mask"/>
+          <text x="310.5" y="505" class="t-edge-default" font-size="8" text-anchor="middle">STATUSTEXT · every 5 ticks</text>
+        </g>
+        <g data-detail="context" data-edge-from="gcs" data-edge-to="native-mode" data-edge-label="USER_2 start" data-edge-key="15" data-edge-id="native-start">
+          <rect x="334.2" y="814" width="67.6" height="14" rx="3" class="c-mask"/>
+          <text x="368" y="824" class="t-edge-default" font-size="8" text-anchor="middle">USER_2 start</text>
+        </g>
+        <g data-detail="context" data-edge-from="native-mode" data-edge-to="modes" data-edge-label="reuse" data-edge-key="16" data-edge-id="native-guided-reuse">
+          <rect x="368" y="1145" width="34" height="14" rx="3" class="c-mask"/>
+          <text x="385" y="1155" class="t-edge-default" font-size="8" text-anchor="middle">reuse</text>
+        </g>
+        <g data-detail="context" data-edge-from="native-mode" data-edge-to="position" data-edge-label="Pos targets" data-edge-key="17" data-edge-id="native-position">
+          <rect x="511.20000000000005" y="1283" width="62.8" height="14" rx="3" class="c-mask"/>
+          <text x="542.6" y="1293" class="t-edge-default" font-size="8" text-anchor="middle">Pos targets</text>
         </g>
 
         <!-- Boundary labels (foreground masks keep routes out of titles) -->
@@ -1072,49 +1098,54 @@ rect.c-bg-rect { fill: var(--bg); }
         </g>
 
         <g data-graph-role="structural-frame-label" data-composition-frame-id="2" data-composition-frame-kind="region" data-composition-frame-label="L1 · Message entry, our native mission state and existing mission storage">
-          <rect data-graph-role="structural-frame-label-mask" x="292" y="700" width="404.2" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="296" y="713" class="t-cloud" font-size="9" font-weight="600">L1 · Message entry, our native mission state and existing mission storage</text>
+          <rect data-graph-role="structural-frame-label-mask" x="226" y="700" width="404.2" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="230" y="713" class="t-cloud" font-size="9" font-weight="600">L1 · Message entry, our native mission state and existing mission storage</text>
         </g>
 
         <g data-graph-role="structural-frame-label" data-composition-frame-id="3" data-composition-frame-kind="region" data-composition-frame-label="L2 · Selected mode / adapter and shared estimated state">
-          <rect data-graph-role="structural-frame-label-mask" x="29" y="950" width="307" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="33" y="963" class="t-cloud" font-size="9" font-weight="600">L2 · Selected mode / adapter and shared estimated state</text>
+          <rect data-graph-role="structural-frame-label-mask" x="854" y="1100" width="307" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="858" y="1113" class="t-cloud" font-size="9" font-weight="600">L2 · Selected mode / adapter and shared estimated state</text>
         </g>
 
         <g data-graph-role="structural-frame-label" data-composition-frame-id="4" data-composition-frame-kind="region" data-composition-frame-label="L3 · Reused navigation and controllers">
-          <rect data-graph-role="structural-frame-label-mask" x="29" y="1200" width="215.2" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="33" y="1213" class="t-cloud" font-size="9" font-weight="600">L3 · Reused navigation and controllers</text>
+          <rect data-graph-role="structural-frame-label-mask" x="29" y="1350" width="215.2" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="33" y="1363" class="t-cloud" font-size="9" font-weight="600">L3 · Reused navigation and controllers</text>
         </g>
 
         <g data-graph-role="structural-frame-label" data-composition-frame-id="5" data-composition-frame-kind="region" data-composition-frame-label="L4 · Sensor and platform interfaces / output">
-          <rect data-graph-role="structural-frame-label-mask" x="29" y="1450" width="247.6" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="33" y="1463" class="t-cloud" font-size="9" font-weight="600">L4 · Sensor and platform interfaces / output</text>
+          <rect data-graph-role="structural-frame-label-mask" x="29" y="1600" width="247.6" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="33" y="1613" class="t-cloud" font-size="9" font-weight="600">L4 · Sensor and platform interfaces / output</text>
         </g>
 
         <g data-graph-role="structural-frame-label" data-composition-frame-id="6" data-composition-frame-kind="region" data-composition-frame-label="CROSS-CUTTING · Reused arming and failsafe behavior">
-          <rect data-graph-role="structural-frame-label-mask" x="29" y="1700" width="285.4" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="33" y="1713" class="t-cloud" font-size="9" font-weight="600">CROSS-CUTTING · Reused arming and failsafe behavior</text>
+          <rect data-graph-role="structural-frame-label-mask" x="29" y="1850" width="285.4" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="33" y="1863" class="t-cloud" font-size="9" font-weight="600">CROSS-CUTTING · Reused arming and failsafe behavior</text>
         </g>
 
-        <g data-graph-role="structural-frame-label" data-composition-frame-id="7" data-composition-frame-kind="region" data-composition-frame-label="CURRENT L08 SCOPE · status only; stock modes keep flight authority">
-          <rect data-graph-role="structural-frame-label-mask" x="419" y="450" width="366.4" height="16" rx="3" class="c-mask"/>
-          <text data-boundary-label="" x="423" y="463" class="t-cloud" font-size="9" font-weight="600">CURRENT L08 SCOPE · status only; stock modes keep flight authority</text>
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="7" data-composition-frame-kind="region" data-composition-frame-label="OBSERVED L08 · status only; stock flight authority retained">
+          <rect data-graph-role="structural-frame-label-mask" x="419" y="450" width="328.59999999999997" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="423" y="463" class="t-cloud" font-size="9" font-weight="600">OBSERVED L08 · status only; stock flight authority retained</text>
+        </g>
+
+        <g data-graph-role="structural-frame-label" data-composition-frame-id="8" data-composition-frame-kind="region" data-composition-frame-label="OBSERVED L10 · native known-goal execution">
+          <rect data-graph-role="structural-frame-label-mask" x="424" y="1100" width="236.79999999999998" height="16" rx="3" class="c-mask"/>
+          <text data-boundary-label="" x="428" y="1113" class="t-cloud" font-size="9" font-weight="600">OBSERVED L10 · native known-goal execution</text>
         </g>
 
         <!-- Legend -->
         <g data-legend="" data-legend-bridge="">
-          <text x="40" y="1862" class="t-primary" font-size="12" font-weight="650">Legend</text>
-          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="40" data-legend-baseline="1882" data-legend-width="87">
-            <rect x="40" y="1873" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
-            <text x="62" y="1882" class="t-muted" font-size="10" font-weight="500">Backend</text>
+          <text x="40" y="2012" class="t-primary" font-size="12" font-weight="650">Legend</text>
+          <g data-legend-semantic-kind="backend" data-legend-kind="backend" data-legend-label="Backend" data-legend-x="40" data-legend-baseline="2032" data-legend-width="87">
+            <rect x="40" y="2023" width="16" height="10" rx="2.5" class="c-backend" stroke-width="1"/>
+            <text x="62" y="2032" class="t-muted" font-size="10" font-weight="500">Backend</text>
           </g>
-          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="149" data-legend-baseline="1882" data-legend-width="93">
-            <rect x="149" y="1873" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
-            <text x="171" y="1882" class="t-muted" font-size="10" font-weight="500">Database</text>
+          <g data-legend-semantic-kind="database" data-legend-kind="database" data-legend-label="Database" data-legend-x="149" data-legend-baseline="2032" data-legend-width="93">
+            <rect x="149" y="2023" width="16" height="10" rx="2.5" class="c-database" stroke-width="1"/>
+            <text x="171" y="2032" class="t-muted" font-size="10" font-weight="500">Database</text>
           </g>
-          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="Security" data-legend-x="264" data-legend-baseline="1882" data-legend-width="93">
-            <rect x="264" y="1873" width="16" height="10" rx="2.5" class="c-security" stroke-width="1"/>
-            <text x="286" y="1882" class="t-muted" font-size="10" font-weight="500">Security</text>
+          <g data-legend-semantic-kind="security" data-legend-kind="security" data-legend-label="Security" data-legend-x="264" data-legend-baseline="2032" data-legend-width="93">
+            <rect x="264" y="2023" width="16" height="10" rx="2.5" class="c-security" stroke-width="1"/>
+            <text x="286" y="2032" class="t-muted" font-size="10" font-weight="500">Security</text>
           </g>
         </g>
       </svg>

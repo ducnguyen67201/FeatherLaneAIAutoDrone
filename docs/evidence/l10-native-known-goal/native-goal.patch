@@ -1,0 +1,393 @@
+diff --git a/ArduCopter/Copter.h b/ArduCopter/Copter.h
+index a4c127a04a..7cae67fb44 100644
+--- a/ArduCopter/Copter.h
++++ b/ArduCopter/Copter.h
+@@ -218,6 +218,7 @@ public:
+     friend class ModeFlip;
+     friend class ModeFlowHold;
+     friend class ModeFollow;
++    friend class ModeFeatherLane;
+     friend class ModeGuided;
+     friend class ModeLand;
+     friend class ModeLoiter;
+@@ -1062,6 +1063,9 @@ private:
+ #endif
+ #if MODE_GUIDED_ENABLED
+     ModeGuided mode_guided;
++#if MODE_FEATHERLANE_ENABLED
++    ModeFeatherLane mode_featherlane;
++#endif
+ #if AP_SCRIPTING_ENABLED
+     // Custom modes registered at runtime
+     ModeGuidedCustom *mode_guided_custom[5];
+diff --git a/ArduCopter/GCS_MAVLink_Copter.cpp b/ArduCopter/GCS_MAVLink_Copter.cpp
+index d0ef4a0220..a144c36e57 100644
+--- a/ArduCopter/GCS_MAVLink_Copter.cpp
++++ b/ArduCopter/GCS_MAVLink_Copter.cpp
+@@ -557,10 +557,59 @@ MAV_RESULT GCS_MAVLINK_Copter::handle_featherlane_admission(const mavlink_comman
+ }
+ #endif // CONFIG_HAL_BOARD == HAL_BOARD_SITL
+ 
++#if MODE_FEATHERLANE_ENABLED
++MAV_RESULT GCS_MAVLINK_Copter::handle_featherlane_start(const mavlink_command_int_t &packet,
++                                                    const mavlink_message_t &msg)
++{
++    static constexpr float START_VERSION = 1.0f;
++
++    if (msg.msgid != MAVLINK_MSG_ID_COMMAND_INT) {
++        return MAV_RESULT_COMMAND_INT_ONLY;
++    }
++
++    if (!gcs().sysid_is_gcs(msg.sysid)) {
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied source");
++        return MAV_RESULT_DENIED;
++    }
++
++    // execution identifies a stored task; it does not accept another destination
++    if (packet.frame != MAV_FRAME_MISSION || packet.current != 0 || packet.autocontinue != 0 ||
++        !is_zero(packet.param3) || !is_zero(packet.param4) ||
++        packet.x != 0 || packet.y != 0 || !is_zero(packet.z)) {
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied fields");
++        return MAV_RESULT_UNSUPPORTED;
++    }
++
++    if (!isfinite(packet.param1) || packet.param1 < START_VERSION || packet.param1 > START_VERSION) {
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied version");
++        return MAV_RESULT_UNSUPPORTED;
++    }
++
++    const auto *task = copter.featherlane_task.task();
++    if (task == nullptr || !isfinite(packet.param2) || packet.param2 < task->id || packet.param2 > task->id) {
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied task");
++        return MAV_RESULT_DENIED;
++    }
++
++    if (!copter.mode_featherlane.start_task(task->id)) {
++        GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 denied %s", copter.mode_featherlane.start_failure());
++        return MAV_RESULT_DENIED;
++    }
++
++    GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 running task=%u", unsigned(task->id));
++    return MAV_RESULT_ACCEPTED;
++}
++#endif // MODE_FEATHERLANE_ENABLED
++
+ MAV_RESULT GCS_MAVLINK_Copter::handle_command_int_packet(const mavlink_command_int_t &packet, const mavlink_message_t &msg)
+ {
+     switch(packet.command) {
+ 
++#if MODE_FEATHERLANE_ENABLED
++    case MAV_CMD_USER_2:
++        return handle_featherlane_start(packet, msg);
++#endif
++
+ #if CONFIG_HAL_BOARD == HAL_BOARD_SITL
+     case MAV_CMD_USER_1:
+         return handle_featherlane_admission(packet, msg);
+diff --git a/ArduCopter/GCS_MAVLink_Copter.h b/ArduCopter/GCS_MAVLink_Copter.h
+index 511337b377..fdf84b3307 100644
+--- a/ArduCopter/GCS_MAVLink_Copter.h
++++ b/ArduCopter/GCS_MAVLink_Copter.h
+@@ -3,6 +3,7 @@
+ #include <GCS_MAVLink/GCS.h>
+ #include <AP_Winch/AP_Winch_config.h>
+ #include "defines.h"
++#include "config.h"
+ 
+ #ifndef AC_MAVLINK_SOLO_BUTTON_COMMAND_HANDLING_ENABLED
+ #define AC_MAVLINK_SOLO_BUTTON_COMMAND_HANDLING_ENABLED 1
+@@ -37,6 +38,9 @@ protected:
+     MAV_RESULT handle_command_int_do_reposition(const mavlink_command_int_t &packet);
+ #if CONFIG_HAL_BOARD == HAL_BOARD_SITL
+     MAV_RESULT handle_featherlane_admission(const mavlink_command_int_t &packet, const mavlink_message_t &msg);
++#endif
++#if MODE_FEATHERLANE_ENABLED
++    MAV_RESULT handle_featherlane_start(const mavlink_command_int_t &packet, const mavlink_message_t &msg);
+ #endif
+     MAV_RESULT handle_command_pause_continue(const mavlink_command_int_t &packet);
+ 
+diff --git a/ArduCopter/config.h b/ArduCopter/config.h
+index 7018165ed1..a54b0d8ef1 100644
+--- a/ArduCopter/config.h
++++ b/ArduCopter/config.h
+@@ -178,6 +178,11 @@
+ # define MODE_GUIDED_ENABLED 1
+ #endif
+ 
++// FeatherLane known-goal adapter is qualified only for native multicopter SITL
++#ifndef MODE_FEATHERLANE_ENABLED
++# define MODE_FEATHERLANE_ENABLED (MODE_GUIDED_ENABLED && CONFIG_HAL_BOARD == HAL_BOARD_SITL && FRAME_CONFIG == MULTICOPTER_FRAME)
++#endif
++
+ //////////////////////////////////////////////////////////////////////////////
+ // GuidedNoGPS mode - control vehicle's angles from GCS
+ #ifndef MODE_GUIDED_NOGPS_ENABLED
+diff --git a/ArduCopter/mode.cpp b/ArduCopter/mode.cpp
+index 394c28cfdd..2fcd8648b3 100644
+--- a/ArduCopter/mode.cpp
++++ b/ArduCopter/mode.cpp
+@@ -64,6 +64,11 @@ Mode *Copter::mode_from_mode_num(const Mode::Number mode)
+             return &mode_guided;
+ #endif
+ 
++#if MODE_FEATHERLANE_ENABLED
++        case Mode::Number::FEATHERLANE:
++            return &mode_featherlane;
++#endif
++
+         case Mode::Number::LAND:
+             return &mode_land;
+ 
+@@ -234,6 +239,9 @@ uint32_t Copter::get_available_mode_enabled_mask() const
+ #endif
+ #if MODE_GUIDED_ENABLED
+         &copter.mode_guided,
++#endif
++#if MODE_FEATHERLANE_ENABLED
++        &copter.mode_featherlane,
+ #endif
+         &copter.mode_land,
+ #if MODE_RTL_ENABLED
+diff --git a/ArduCopter/mode.h b/ArduCopter/mode.h
+index e2dca5d45e..bc26485acd 100644
+--- a/ArduCopter/mode.h
++++ b/ArduCopter/mode.h
+@@ -101,6 +101,7 @@ public:
+         AUTOROTATE =   26,  // Autonomous autorotation
+         AUTO_RTL =     27,  // Auto RTL, this is not a true mode, AUTO will report as this mode if entered to perform a DO_LAND_START Landing sequence
+         TURTLE =       28,  // Flip over after crash
++        FEATHERLANE =  31,  // project-local known-goal mode, enabled only in multicopter SITL
+ 
+         // Mode number 30 reserved for "offboard" for external/lua control.
+ 
+@@ -1238,6 +1239,53 @@ private:
+     bool _paused;
+ };
+ 
++#if MODE_FEATHERLANE_ENABLED
++class ModeFeatherLane : public ModeGuided {
++public:
++    using ModeGuided::Mode;
++    Number mode_number() const override { return Number::FEATHERLANE; }
++
++    bool start_task(uint16_t task_id);
++    const char *start_failure() const { return _start_failure != nullptr ? _start_failure : "none"; }
++
++    bool init(bool ignore_checks) override;
++    void run() override;
++    void exit() override;
++
++    // flight preparation uses the stock path; this mode consumes an airborne task
++    bool allows_arming(AP_Arming::Method method) const override { return false; }
++    bool has_user_takeoff(bool must_navigate) const override { return false; }
++    bool allows_GCS_or_SCR_arming_with_throttle_high() const override { return false; }
++
++    // do not route stock Guided setpoints into the native owner's controller state
++    bool in_guided_mode() const override { return false; }
++
++    // a task's limits are fixed for this execution; operator takeover uses a mode change
++    bool set_speed_NE_ms(float speed_ne_ms) override { return false; }
++    bool set_speed_up_ms(float speed_up_ms) override { return false; }
++    bool set_speed_down_ms(float speed_down_ms) override { return false; }
++
++protected:
++    const char *name() const override { return "FeatherLane"; }
++    const char *name4() const override { return "FLNE"; }
++
++private:
++    bool reject_start(const char *reason);
++    bool navigation_valid() const;
++    bool reference_valid();
++
++    bool _entry_requested = false;
++    bool _executing = false;
++    bool _consumed = false;
++    uint16_t _task_id = 0;
++    const char *_start_failure = nullptr;
++    Location _entry_home;
++    Location _entry_origin;
++    uint32_t _position_reset_ms = 0;
++    uint32_t _height_reset_ms = 0;
++};
++#endif // MODE_FEATHERLANE_ENABLED
++
+ #if AP_SCRIPTING_ENABLED
+ // Mode which behaves as guided with custom mode number and name
+ class ModeGuidedCustom : public ModeGuided {
+diff --git a/ArduCopter/mode_featherlane.cpp b/ArduCopter/mode_featherlane.cpp
+new file mode 100644
+index 0000000000..6604b4e93c
+--- /dev/null
++++ b/ArduCopter/mode_featherlane.cpp
+@@ -0,0 +1,171 @@
++/* SPDX-License-Identifier: GPL-3.0-or-later */
++#include "Copter.h"
++
++#if MODE_FEATHERLANE_ENABLED
++
++static constexpr float MAX_REFERENCE_SHIFT_M = 0.5f;
++static constexpr float MAX_ENTRY_SPEED_MPS = 0.3f;
++static constexpr float MAX_ENTRY_HEIGHT_ERROR_M = 0.5f;
++static constexpr float MAX_EXECUTION_DISTANCE_M = 20.0f;
++static constexpr float CM_TO_METRES = 0.01f;
++
++bool ModeFeatherLane::reject_start(const char *reason)
++{
++    _start_failure = reason;
++    return false;
++}
++
++// only the explicit task-start receiver grants the mode-entry latch
++bool ModeFeatherLane::start_task(uint16_t task_id)
++{
++    _start_failure = nullptr;
++    if (_executing && copter.flightmode == this && task_id == _task_id) {
++        return true;
++    }
++
++    if (_consumed) {
++        return reject_start("used");
++    }
++
++    _task_id = task_id;
++    _entry_requested = true;
++    const bool started = copter.set_mode(Number::FEATHERLANE, ModeReason::GCS_COMMAND);
++    _entry_requested = false;
++    if (!started && _start_failure == nullptr) {
++        return reject_start("mode_change");
++    }
++    return started;
++}
++
++bool ModeFeatherLane::navigation_valid() const
++{
++    return copter.ahrs.home_is_set() && copter.ekf_has_absolute_position() &&
++           copter.ekf_alt_ok() && !copter.any_failsafe_triggered();
++}
++
++// revalidate current authority and references before touching shared controllers
++bool ModeFeatherLane::init(bool ignore_checks)
++{
++    if (!_entry_requested) {
++        return reject_start("start_required");
++    }
++
++    const auto *task = copter.featherlane_task.task();
++    if (task == nullptr || task->id != _task_id) {
++        return reject_start("task");
++    }
++
++    if (!motors->armed() || copter.ap.land_complete || copter.flightmode != &copter.mode_guided) {
++        return reject_start("airborne_guided");
++    }
++
++    if (!navigation_valid()) {
++        return reject_start("navigation");
++    }
++
++    // qualify one position-controller path; other Guided options need their own slice
++    if (g2.guided_options.get() != 0) {
++        return reject_start("guided_options");
++    }
++
++    Vector3f velocity_ned_ms;
++    if (!ahrs.get_velocity_NED(velocity_ned_ms) || velocity_ned_ms.length() > MAX_ENTRY_SPEED_MPS) {
++        return reject_start("entry_speed");
++    }
++
++    const Location current_home = ahrs.get_home();
++    if (current_home.get_distance(task->admitted_home) > MAX_REFERENCE_SHIFT_M ||
++        fabsf(float(current_home.alt) - float(task->admitted_home.alt)) * CM_TO_METRES > MAX_REFERENCE_SHIFT_M) {
++        return reject_start("home_changed");
++    }
++
++    // preserve the admitted above-home altitude even if arming slightly updates home
++    const Location destination(task->goal.lat, task->goal.lng,
++                               task->admitted_home.alt + task->goal.alt,
++                               Location::AltFrame::ABSOLUTE);
++    Location current_location;
++    if (!ahrs.get_location(current_location) ||
++        !current_location.change_alt_frame(Location::AltFrame::ABSOLUTE) ||
++        !ahrs.get_origin(_entry_origin)) {
++        return reject_start("reference");
++    }
++
++    if (destination.get_distance(current_location) > MAX_EXECUTION_DISTANCE_M ||
++        fabsf(float(destination.alt) - float(current_location.alt)) * CM_TO_METRES > MAX_ENTRY_HEIGHT_ERROR_M) {
++        return reject_start("entry_distance");
++    }
++
++    Vector3p destination_ned_m;
++    bool terrain_alt;
++    if (!wp_nav->get_vector_NED_m(destination, destination_ned_m, terrain_alt) || terrain_alt) {
++        return reject_start("conversion");
++    }
++
++#if AP_FENCE_ENABLED
++    if (!copter.fence.check_destination_within_fence(destination)) {
++        return reject_start("fence");
++    }
++#endif
++
++    // initialise inherited controllers, then install the native owner's stored goal
++    if (!ModeGuided::init(ignore_checks) || !set_destination(destination)) {
++        copter.mode_guided.hold_position();
++        return reject_start("destination");
++    }
++
++    // set_destination initialises speed defaults, so apply the retained limit afterwards
++    ModeGuided::set_speed_NE_ms(task->speed_mps);
++    _entry_home = current_home;
++    Vector2f position_reset_m;
++    float height_reset_m;
++    _position_reset_ms = ahrs.getLastPosNorthEastReset(position_reset_m);
++    _height_reset_ms = ahrs.getLastPosDownReset(height_reset_m);
++    _executing = true;
++    _consumed = true;
++
++    GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 goal=%ld,%ld alt_cm=%ld",
++                  (long)destination.lat, (long)destination.lng, (long)destination.alt);
++    GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 speed=%.2fm/s task=%u", double(task->speed_mps), unsigned(_task_id));
++    return true;
++}
++
++// the global goal is converted once; stop using it if the estimator reference resets
++bool ModeFeatherLane::reference_valid()
++{
++    Location origin;
++    if (!ahrs.get_origin(origin) || origin.lat != _entry_origin.lat || origin.lng != _entry_origin.lng ||
++        fabsf(float(origin.alt) - float(_entry_origin.alt)) * CM_TO_METRES > MAX_REFERENCE_SHIFT_M) {
++        return false;
++    }
++
++    const Location home = ahrs.get_home();
++    if (home.get_distance(_entry_home) > MAX_REFERENCE_SHIFT_M ||
++        fabsf(float(home.alt) - float(_entry_home.alt)) * CM_TO_METRES > MAX_REFERENCE_SHIFT_M) {
++        return false;
++    }
++
++    Vector2f position_reset_m;
++    float height_reset_m;
++    return ahrs.getLastPosNorthEastReset(position_reset_m) == _position_reset_ms &&
++           ahrs.getLastPosDownReset(height_reset_m) == _height_reset_ms;
++}
++
++void ModeFeatherLane::run()
++{
++    if (!navigation_valid() || !reference_valid()) {
++        GCS_SEND_TEXT(MAV_SEVERITY_WARNING, "FL L10 guard reference/navigation");
++        copter.set_mode_land_with_pause(ModeReason::FAILSAFE);
++        return;
++    }
++
++    ModeGuided::run();
++}
++
++// do not alter shared controller state here: the next mode has already initialised
++void ModeFeatherLane::exit()
++{
++    _executing = false;
++    GCS_SEND_TEXT(MAV_SEVERITY_INFO, "FL L10 exit task=%u", unsigned(_task_id));
++}
++
++#endif // MODE_FEATHERLANE_ENABLED

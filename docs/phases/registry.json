@@ -2,7 +2,7 @@
   "schema_version": 1,
   "project": "FeatherLane AI Auto Drone",
   "recorded_date": "2026-10-31",
-  "scope": "Pinned ArduPilot/macOS stock flight learning plus one local SITL-only native C++ status observer; separate from FeatherLaneFlight and SkyDive",
+  "scope": "Pinned ArduPilot/macOS learning; published SITL status/admission plus local known-goal native execution; separate from FeatherLaneFlight and SkyDive",
   "autopilot": "ArduPilot",
   "development_os": "macOS",
   "active_implementation_phase": "P03",
@@ -94,8 +94,8 @@
   "execution_unit": "learning_phase",
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
-  "active_learning_phase": null,
-  "next_proposed_learning_phase": "L10",
+  "active_learning_phase": "L10",
+  "next_proposed_learning_phase": "L11",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -510,7 +510,7 @@
       "slug": "native-known-goal",
       "title": "Execute one accepted native goal",
       "group": "M03",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L09"
       ],
@@ -537,7 +537,7 @@
       ],
       "rollback": "Return to the retained stock build/mode and baseline scenario.",
       "teach_back": "Which part of the code changed the destination, and which generated motor demand?",
-      "record": null
+      "record": "[L10 evidence](../../evidence/l10-native-known-goal/README.md): final mode31 native goal executed at 0.99 m/s peak; two-second sampled dwell completed at 7.93 s, followed by 50.27 s qualifying hold and operator LAND/disarm. Duplicate/rejected command behavior, exact-stock rollback and cleanup observed. Guided learner checkpoint complete after the 2026-11-02 clarification; L10 feature publication authorized; L11 not started."
     },
     {
       "id": "L11",
@@ -1232,7 +1232,7 @@
     "origin": "https://github.com/ArduPilot/ardupilot.git",
     "tag": "Copter-4.7.2",
     "commit": "fb773567896014da007bca58358704d4a0d8516f",
-    "status": "native_macos_sitl_stock_baseline_plus_local_status_only_custom_diff_observed",
+    "status": "native_macos_stock_baseline_and_local_native_known_goal_execution_observed",
     "submodule_count": 21,
     "record": "../evidence/l01-source-and-orientation/README.md",
     "revision_manifest": "../evidence/l01-source-and-orientation/source-baseline.json",
@@ -1247,13 +1247,15 @@
     "speed_comparison_record": "../evidence/l06-one-speed-change/README.md",
     "arrival_record": "../evidence/l07-measure-arrival/README.md",
     "native_status_record": "../evidence/l08-native-status-slice/README.md",
-    "custom_working_branch": "codex/l09-native-task-contract",
+    "custom_working_branch": "codex/l10-native-known-goal",
     "native_status_scope": "SITL-only observer; no native task execution or custom mode. Custom commit is a five-file addition against the preserved stock base.",
     "custom_firmware_commit": "39cf614d1aae2ee4acb93f9294ebf66178967acb",
     "native_task_admission_record": "../evidence/l09-native-task-contract/README.md",
-    "native_task_admission_scope": "Six-file admission-only custom commit 39cf614d1aae2ee4acb93f9294ebf66178967acb against published L08; no task execution."
+    "native_task_admission_scope": "Six-file admission-only custom commit 39cf614d1aae2ee4acb93f9294ebf66178967acb against published L08; no task execution.",
+    "native_known_goal_record": "../evidence/l10-native-known-goal/README.md",
+    "native_known_goal_scope": "Seven-file uncommitted SITL adapter against published L09 39cf614d; mode31 final-source movement/hold/LAND observed. Native arrival/typed abort remains L11."
   },
-  "execution_summary": "L01–L08 and guided checkpoints are complete. L07/L08 publication was remote-SHA verified: project09c3229e3ed4cb7d9a8998b1f85ec16def0448a8 and firmware3f467d90be284654c5721ac3d94c26863f771275, main unchanged. [L09](evidence/l09-native-task-contract/README.md) locally implements admission-only typed coordinate tasks: final source observed22 explicit outcomes with stored-task preservation and no arming/movement, plus retained-L08 rollback. L09’s guided learner checkpoint is complete, including clarification of stored admission versus movement. The user authorized L09 publication before L10; firmware 39cf614d1aae2ee4acb93f9294ebf66178967acb was pushed and its remote branch verified. Project publication is being prepared; L10 has not started, and P01/P03 broader gates remain incomplete.",
+  "execution_summary": "L01–L09 and guided checkpoints complete; L09 published at project d8afe552351f4f246822857c49a6fa37edbc0bc7 and firmware 39cf614d1aae2ee4acb93f9294ebf66178967acb. L10 native build, known-goal execution/hold, selected rejections, operator LAND/disarm and exact-stock rollback observed locally; guided checkpoint complete after the 2026-11-02 clarification. Final flight peaked at 0.99 m/s; offline two-second dwell completed at 7.93 s with 50.27 s subsequent sampled hold. L10 firmware is published; parent feature publication authorized, L11 not started, main/stock pins unchanged; broader P01/P03 gates remain incomplete.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
@@ -1275,5 +1277,27 @@
     "remote_sha_verified": true,
     "main_unchanged": "c45c9e19ae279011d5779fa2669df3fac0f21a29",
     "authorization": "User explicitly selected Yes—push L07/L08, then start L09."
+  },
+  "publication_l09": {
+    "project_branch": "codex/l09-native-task-contract",
+    "project_commit": "d8afe552351f4f246822857c49a6fa37edbc0bc7",
+    "firmware_branch": "codex/l09-native-task-contract",
+    "firmware_commit": "39cf614d1aae2ee4acb93f9294ebf66178967acb",
+    "remote_sha_verified": true,
+    "main_unchanged": "c45c9e19ae279011d5779fa2669df3fac0f21a29",
+    "authorization": "User requested saving repository coding conventions, pushing completed L09 and continuing with L10."
+  },
+  "authorization_l10_publication_l11": {
+    "date": "2026-11-02",
+    "source": "User: I think I understand fully this phase. Push it and continue to L11.",
+    "scope": "Publish completed L10 feature branches and parent gitlink, then local L11 native arrival and one operator-abort slice; no main merge, L11 publication or physical operation."
+  },
+  "publication_l10": {
+    "project_branch": "codex/l10-native-known-goal",
+    "firmware_branch": "codex/l10-native-known-goal",
+    "firmware_commit": "11573fb26ffe99022431a32d0b40502d03f9b02a",
+    "firmware_remote_sha_verified": true,
+    "project_publication": "authorized; containing project commit and exact gitlink to be verified after push",
+    "main_unchanged": "c45c9e19ae279011d5779fa2669df3fac0f21a29"
   }
 }

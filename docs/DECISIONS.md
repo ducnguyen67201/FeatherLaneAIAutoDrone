@@ -107,3 +107,17 @@ L07/L08 publication completed with remote SHA verification: project `09c3229e3ed
 ## L09 publication, coding convention and L10 authorization
 
 On 2026-10-31, after the guided L09 checkpoint and code-style revisions, the user requested that AGENTS.md require matching the surrounding author/repository conventions, then explicitly requested pushing the code and continuing with L10. This authorizes the completed L09 feature branches and exact firmware gitlink publication, followed by the scoped native known-goal execution slice in local SITL. It does not authorize updating/merging main, publishing L10, physical operation, unrelated flight capabilities or an upstream update. The durable coding rule covers descriptive names, named limits with units, useful nearby comments, spacing/list conventions, scoped diffs and actual verification.
+
+
+## L09 publication and L10 observed native execution
+
+L09 publication completed with exact remote SHA verification: project `d8afe552351f4f246822857c49a6fa37edbc0bc7` and firmware `39cf614d1aae2ee4acb93f9294ebf66178967acb`, both on `codex/l09-native-task-contract`. The project includes the durable AGENTS.md author/repository-style rule. Main and the stock firmware branch remain unchanged.
+
+[L10 evidence](evidence/l10-native-known-goal/README.md) records the locally implemented seven-file SITL-only mode adapter, build and two actual native goal/hold/LAND/disarm sessions. The first used29, exposing an installed-client RATE_ACRO label conflict; the final fresh-source flight uses project-local31, displayed as `Mode(31)`. Final peak speed was0.99m/s; an offline sampled two-second dwell completed7.93s after start, followed by50.27s qualifying hold. Duplicate start installed no new goal, selected stock target/speed commands were rejected, and a consumed task did not restart after exit. The exact preserved stock binary returned USER_2 UNSUPPORTED and rejected mode31; all owned sessions stopped disarmed/on-ground with no selected sockets remaining.
+
+This is native goal selection and controller reuse, not native arrival/completion: L11 owns arrival/typed abort and has not started. Reference/navigation fallback is source-inspected but not fault-injected; no timing gain, full failsafe equivalence, hardware qualification, UI integration or broader milestone completion is claimed. L10 remains local/uncommitted/unpublished on `codex/l10-native-known-goal`; its guided checkpoint is pending. Detailed architecture/UI approval flags remain false.
+
+
+## L10 guided checkpoint and publication / L11 authorization
+
+On 2026-11-02 the learner confirmed understanding after the native-mode lifecycle walkthrough and explicitly requested: “push it and continue to L11.” L10’s guided checkpoint is complete after clarification of native goal ownership, inherited controller reuse, stock takeoff and operator LAND. This authorizes L10 feature-branch publication in both repositories with exact gitlink, followed by local L11 arrival/dwell and one explicit operator-abort path. Main merge, L11 publication, hardware and unrelated capabilities remain outside scope.

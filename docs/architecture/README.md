@@ -4,11 +4,11 @@
 
 This is the single maintained architecture for FeatherLane. It shows the native mission stack we intend to build inside our maintained ArduPilot-derived codebase and the upstream flight capabilities we reuse. The external console and optional perception supply requests and observations. Native C++ owns in-flight task progression and policy.
 
-**Status:** ArduPilot/macOS, native mission ownership, upstream maintenance and mission-selected optional perception are confirmed directions. L08’s local SITL-only status observer is implemented and manually observed; L09’s experimental version1 admission-only contract is implemented locally and manually observed. Native task execution, custom flight modes, broader ingress and resource budgets remain proposed. Read the [phase registry](../phases/registry.json) for current acquisition/build progress; source acquisition is separate from a qualified executable, custom firmware or a successful simulation. Consolidating this page does not change implementation or UI/architecture approval flags.
+**Status:** ArduPilot/macOS, native mission ownership, upstream maintenance and mission-selected optional perception are confirmed directions. L08’s SITL-only status observer and L09’s experimental version1 admission-only contract are implemented, manually observed and published. L10 now locally implements/observes one known-goal execution through SITL-only ModeFeatherLane (mode31). Its guided checkpoint is complete after clarification. Native arrival/typed abort (L11), broader coordination/ingress and resource budgets remain future work. Read the [phase registry](../phases/registry.json) for current acquisition/build progress; source acquisition is separate from a qualified executable, custom firmware or a successful simulation. Consolidating this page does not change implementation or UI/architecture approval flags.
 
 ## L08 current implementation slice
 
-The user explicitly selected the small native status component on 2026-10-31. The L08 row was shown before implementation. `FL_Status` is a SITL-only observer: Copter supplies actual stock mode/arming state at a nominal 1 Hz; a first/every-five-update report goes through stock `GCS_SEND_TEXT`/MAVLink to MAVProxy. The callback has no target, controller or motor-write interface. The custom mission coordinator and mode below it remain future proposals, rather than implemented neighbors of this observer.
+The user explicitly selected the small native status component on 2026-10-31. The L08 row was shown before implementation. `FL_Status` is a SITL-only observer: Copter supplies actual stock mode/arming state at a nominal 1 Hz; a first/every-five-update report goes through stock `GCS_SEND_TEXT`/MAVLink to MAVProxy. The callback has no target, controller or motor-write interface. L08 itself adds no mission coordinator or mode; later L09/L10 slices are recorded separately below.
 
 The [L08 record](../evidence/l08-native-status-slice/README.md) carries build, manual observation, resource notes and stock-binary rollback evidence. Phase authorization is not an approval of the entire detailed architecture. No new hosting, process or deployment placement is introduced; this component is compiled into the existing local SITL executable.
 
@@ -16,7 +16,15 @@ The [L08 record](../evidence/l08-native-status-slice/README.md) carries build, m
 
 The user authorized local L09 after the separately published L07/L08 records. The proposed L09 diagram scope was shown before implementation. `FL_TaskAdmission` receives the project-local `COMMAND_INT / MAV_CMD_USER_1` contract through a SITL-only Copter GCS handler. It checks the configured GCS system ID, disarmed/on-ground STABILIZE state, actual home/EKF prerequisites, version/frame/units and bounded fields; then retains one RAM task or reports a rejection. Native result text uses stock MAVLink status and acknowledgments.
 
-The final source’s [manual record](../evidence/l09-native-task-contract/README.md) includes 22 reports, stored-task preservation, fractional-version/sub-centimetre corrections, 93 disarmed heartbeat samples, and a return to the exact L08 binary. It exposes no execution/arm/mode/target/motor interface. Existing `FL_Status` still reports stock mode/arming. Future L10 must revalidate references and current authority before executing any admitted data. Detailed diagram/UI approval flags are unchanged; no new process/hosting/deployment placement is introduced.
+The final source’s [manual record](../evidence/l09-native-task-contract/README.md) includes 22 reports, stored-task preservation, fractional-version/sub-centimetre corrections, 93 disarmed heartbeat samples, and a return to the exact L08 binary. It exposes no execution/arm/mode/target/motor interface. Existing `FL_Status` still reports stock mode/arming. L10 revalidates references and current authority before executing admitted data. Detailed diagram/UI approval flags are unchanged; no new process/hosting/deployment placement is introduced.
+
+## L10 observed execution slice
+
+The user authorized L10 after publishing L09. The maintained core diagram showed the proposed scope before implementation. The [L10 record](../evidence/l10-native-known-goal/README.md) retains its exact seven-file firmware patch against published L09, successful native build and actual final-mode flight. USER_2 explicitly starts the retained task; the native adapter installs its goal and runtime speed limit, then delegates to inherited Guided position control. Upstream position/attitude/rate controllers and AP_Motors produce movement and individual outputs. Only the selected native mode runs.
+
+Entry requires a qualified airborne stock GUIDED hover and valid authority/navigation/reference state. Generic Guided setpoint ingress and stock speed setters are disabled in this mode. Operator LAND exits through the stock lifecycle; reference/navigation guard fallback is source-inspected but not fault-injected. Guided-specific failsafe classification does not automatically apply. The adapter preserves admission-time home when converting the above-home goal; broader failure qualification remains open.
+
+Final mode31 flight peaked at0.99m/s, completed an offline measured two-second dwell at7.93s and held another50.27s before LAND/disarm. This is external arrival evidence, not an onboard completion transition; L11 remains unstarted. Exact-stock rollback rejected USER_2/mode31 and all owned sessions stopped disarmed/on-ground. L10 feature-branch publication is authorized. The initial29/client RATE_ACRO label conflict remains separate evidence; installed MAVProxy displays final31 as `Mode(31)`. There is no new process, hosting or deployment placement.
 
 ## Module ownership
 
@@ -27,8 +35,8 @@ The diagram is a selected module/responsibility view, not an exhaustive call gra
 | BUILD L08 | `libraries/FL_Status/` plus Copter scheduling/status glue | SITL-only state observer; stock flight authority retained. See L08 evidence for actual execution status. |
 | BUILD L09 | `libraries/FL_TaskAdmission/` plus scoped Copter GCS handler | Local experimental v1 coordinate-task admission and RAM retention only; no execution. |
 | BUILD native | Candidate `FL_Mission`, proposed `libraries/FL_Mission/` | Bounded task state, required-input validity, motion limits, completion and abort/continue policy. |
-| BUILD native | Candidate `ModeFeatherLane`, proposed `ArduCopter/mode_featherlane.cpp` | Mode entry/exit and vehicle glue that uses qualified navigation/controllers. |
-| BUILD integration | Scoped ingress and status/logging | Validate/version requests and observations; report actual native state, rejection and transition reasons. Exact message mapping is undecided. |
+| BUILD L10 | `ModeFeatherLane`, `ArduCopter/mode_featherlane.cpp` plus scoped Copter integration | Local SITL known-goal execution; explicit start, reference checks, inherited Guided controller reuse and normal mode exit. |
+| BUILD integration | Scoped ingress and status/logging | Validate/version requests and observations; report actual native state, rejection and transition reasons. L09 USER_1 admission and L10 USER_2 start are experimental scoped mappings; broader ingress remains proposed. |
 | REUSE | `GCS_MAVLink`, Copter handlers | Supported protocol requests, mission transfer and telemetry. Acceptance is separate from achieved behavior. |
 | REUSE | `AP_Mission`, stock AUTO/GUIDED/other modes | Stored mission facilities and stock execution choices. Only the selected mode owns flight execution. |
 | REUSE | `AC_WPNav` and qualified avoidance path | Navigation/reference generation; obstacle avoidance additionally needs usable sensing, configuration and mode integration. |
@@ -74,7 +82,7 @@ Existing arming restrictions, configured failsafes and manual override retain au
 
 ## Local deployment
 
-The initial flight runtime is our selected ArduPilot-derived SITL executable. The published L08 build contains a status observer; local L09 additionally contains task admission alongside the reused flight stack. Native task execution remains proposed. External local tooling supplies the console/API, owned-process lifecycle, optional perception and evidence. The browser is not required to keep the native control loop running.
+The initial flight runtime is our selected ArduPilot-derived SITL executable. Published L09 contains the L08 status observer and bounded task admission. Local L10 additionally executes one known goal through the SITL-only adapter alongside the reused flight stack. Native arrival/typed abort and broader mission coordination remain proposed. External local tooling supplies the console/API, owned-process lifecycle, optional perception and evidence. The browser is not required to keep the native control loop running.
 
 | Placement | Intended role | Qualification status |
 | --- | --- | --- |
@@ -108,7 +116,7 @@ Primary references supporting the reused responsibilities:
 
 The user's 2026-10-31 decisions selected ArduPilot/macOS, native in-flight mission ownership, deliberate upstream maintenance, optional perception by mission and a learning-first implementation plan. The subsequent cleanup request selected one maintained core architecture and removed competing views from this folder. See [D13–D18](../DECISIONS.md).
 
-This is the retained design baseline. Exact candidate names/contracts/layout are still proposed; consolidation is not a firmware implementation, deployment or UI approval. Preserve actual approval source/date/scope when a detailed design is explicitly approved. Implementation progress belongs in the phase registry and evidence records.
+This is the retained design baseline. Broader candidate modules/contracts/layout remain proposed; L08–L10 implementation is limited to the explicitly recorded slices above. Consolidation does not approve the whole design, hardware deployment or UI. Preserve actual approval source/date/scope when a detailed design is explicitly approved. Implementation progress belongs in the phase registry and evidence records.
 
 ## Documentation maintenance
 

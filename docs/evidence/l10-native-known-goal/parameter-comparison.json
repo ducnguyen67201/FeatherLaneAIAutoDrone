@@ -1,0 +1,144 @@
+{
+  "run1": {
+    "parameter_count_before": 1370,
+    "parameter_count_after": 1370,
+    "changes": {
+      "COMPASS_DEC": {
+        "before": 0.0,
+        "after": 0.223357
+      },
+      "MAV1_ADSB": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA1": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA2": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA3": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXT_STAT": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_POSITION": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RAW_CTRL": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RAW_SENS": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RC_CHAN": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MOT_THST_HOVER": {
+        "before": 0.39,
+        "after": 0.364838
+      },
+      "STAT_DISTFLWN": {
+        "before": 0.0,
+        "after": 10.522954
+      },
+      "STAT_FLTCNT": {
+        "before": 0.0,
+        "after": 1.0
+      },
+      "STAT_FLTTIME": {
+        "before": 0.0,
+        "after": 93.0
+      },
+      "STAT_RUNTIME": {
+        "before": 30.0,
+        "after": 216.0
+      }
+    },
+    "WP_SPD_before": 10.0,
+    "WP_SPD_after": 10.0,
+    "GUID_OPTIONS_before": 0.0,
+    "GUID_OPTIONS_after": 0.0,
+    "operator_parameter_set_commands": 0
+  },
+  "run2": {
+    "parameter_count_before": 1370,
+    "parameter_count_after": 1370,
+    "changes": {
+      "COMPASS_DEC": {
+        "before": 0.0,
+        "after": 0.223357
+      },
+      "MAV1_ADSB": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA1": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA2": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXTRA3": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_EXT_STAT": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_POSITION": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RAW_CTRL": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RAW_SENS": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MAV1_RC_CHAN": {
+        "before": 0.0,
+        "after": 4.0
+      },
+      "MOT_THST_HOVER": {
+        "before": 0.39,
+        "after": 0.365182
+      },
+      "STAT_DISTFLWN": {
+        "before": 0.0,
+        "after": 10.662835
+      },
+      "STAT_FLTCNT": {
+        "before": 0.0,
+        "after": 1.0
+      },
+      "STAT_FLTTIME": {
+        "before": 0.0,
+        "after": 146.0
+      },
+      "STAT_RUNTIME": {
+        "before": 92.0,
+        "after": 260.0
+      }
+    },
+    "WP_SPD_before": 10.0,
+    "WP_SPD_after": 10.0,
+    "GUID_OPTIONS_before": 0.0,
+    "GUID_OPTIONS_after": 0.0,
+    "operator_parameter_set_commands": 0
+  }
+}

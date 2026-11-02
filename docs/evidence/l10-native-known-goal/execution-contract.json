@@ -1,0 +1,85 @@
+{
+  "phase": "L10",
+  "prediction": "After stock GUIDED takeoff/hold, explicit USER_2 task1 selects native mode29; it moves about5m north to the stored L05 coordinate with retained1m/s horizontal limit and about3m height above the admission home, then holds under reused Guided controllers. No native arrival completion is implemented. Operator LAND ends native mode and automatically disarms via stock logic.",
+  "goal": {
+    "latitude_e7": -353632172,
+    "longitude_e7": 1491652374,
+    "height_above_admission_home_m": 3,
+    "requested_speed_mps": 1,
+    "radius_m": 1
+  },
+  "admission_command": "command_int GLOBAL_RELATIVE_ALT_INT USER_1 0 0 1 1 1 1 -353632172 1491652374 3",
+  "execution_command": "command_int MISSION USER_2 0 0 1 1 0 0 0 0 0",
+  "execution_transport": {
+    "COMMAND_INT": 75,
+    "command": 31011,
+    "frame": 2,
+    "param1": "version exactly1",
+    "param2": "must match stored taskID exactly",
+    "param3_param4_z": "reserved zero under upstream is_zero check",
+    "x_y_current_autocontinue": 0,
+    "source": "configured GCS system ID range"
+  },
+  "mode": {
+    "number": 31,
+    "name": "FeatherLane",
+    "short": "FLNE",
+    "scope": "project-local multicopter SITL only; not an upstream-standard ID",
+    "implementation": "ModeFeatherLane subclass of ModeGuided; only selected adapter runs"
+  },
+  "entry": {
+    "armed": true,
+    "landed": false,
+    "from_mode": 4,
+    "guided_options": 0,
+    "max_3d_speed_mps": 0.3,
+    "max_height_difference_from_goal_m": 0.5,
+    "max_distance_to_goal_m": 20,
+    "home_reference_shift_max_horizontal_and_vertical_m": 0.5,
+    "valid_absolute_navigation_altitude_home_origin": true,
+    "active_failsafes": false,
+    "explicit_start_latch": true,
+    "same_task_already_running": "idempotent; no reinitialization",
+    "after_exit": "single use, reject consumed task"
+  },
+  "reference": "Freeze goal altitude at admitted_home.alt + stored above-home height, then use ABSOLUTE Location and current estimator origin conversion. Small arming-home updates are bounded; large shifts reject. Runtime watches position/height reset timestamps, home/origin consistency and stock validity/failsafe flags.",
+  "normal_execution": "ModeGuided::init, set_destination(stored destination), qualified ModeGuided::set_speed_NE_ms after destination initialization, ModeGuided::run each normal flight-mode update. No new controller/motor implementation or external mission FSM.",
+  "control_authority": "No native arming/takeoff; stock Guided setpoint ingress blocked via in_guided_mode false; stock speed setters reject while native active; normal stock mode changes exit; runtime invalid-reference/navigation requests stock set_mode_land_with_pause(FAILSAFE). Failure campaigns remain unqualified.",
+  "manual_observation": {
+    "horizontal_goal_error_max_m": 1,
+    "horizontal_speed_max_mps": 0.3,
+    "absolute_height_error_max_m": 0.2,
+    "absolute_vertical_speed_max_mps": 0.2,
+    "dwell_s": 2,
+    "maximum_position_gap_s": 0.75,
+    "state_message_age_max_s": 2.5,
+    "mode": 31,
+    "armed": true,
+    "landed_state": 2,
+    "flight_positioning_limit_s": 30,
+    "extra_observation_hold_s": 5
+  },
+  "manual_rejections": [
+    "USER_2 with no task",
+    "direct mode31 without start latch",
+    "USER_2 while disarmed/on-ground",
+    "wrong taskID before start"
+  ],
+  "during_native": [
+    "repeat USER_2 same task without resetting target",
+    "DO_CHANGE_SPEED should fail",
+    "DO_REPOSITION with flags0 should be denied without a mode change"
+  ],
+  "operator_fallback": "If entry rejected or not settled in30s, retain outcome and select stock LAND without bypass; wait on-ground/disarmed before owned process cleanup.",
+  "baselines": [
+    "docs/evidence/l06-one-speed-change/trajectory.csv (stock WP_SPD1m/s)",
+    "docs/evidence/l05-one-coordinate/trajectory.csv (stock WP_SPD10m/s)"
+  ],
+  "comparison_limits": [
+    "Nominal single custom flight compared with retained stock flights; not a repeatability or latency claim.",
+    "Same coordinate and intended height/speed; native runtime controller limit1 vs baseline WP_SPD1; native WP_SPD parameter remains10.",
+    "Native altitude frozen at admission home; small arming-home changes are recorded rather than silently changing reference."
+  ],
+  "rollback": "Select exact retained pure-stock executable .local/l08/stock-arducopter; observe disarmed start, unsupported USER_2 and clean shutdown. Retained L09 admission executable .local/l10/l09-arducopter is also preserved.",
+  "qualification_change": "Initial mode29 selected the native adapter correctly, but installed pymavlink labels29 RATE_ACRO. Final project-local31 is unmapped in the pinned firmware/client and is registered in firmware as FeatherLane (client may display Mode(31)). Run1 retained separately; repeat uses final31."
+}
