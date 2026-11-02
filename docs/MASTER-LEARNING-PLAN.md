@@ -2,7 +2,7 @@
 
 [Project home](../README.md) · [Capability roadmap](ROADMAP.md) · [Phase registry](phases/registry.json) · [First-seven-phase diagram](assets/learning/learning-workflow.svg)
 
-**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L14 and guided checkpoints complete; L14/CSV-TXT cleanup published at project681666aa52bf825ef170c00eb4324c6f435be535 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. Local L15 native stop integration manually observed in clear/blocked/reader-loss cases with LAND/disarm, exact-stock rollback and cleanup. Guided checkpoint pending; no L15 publication, L16, detour planner or hardware. Broader P01/P03/P05 gates remain open.
+**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L15 and guided checkpoints complete. L15 native stop integration, clear/blocked/reader-loss observations, LAND/disarm and exact-stock rollback are complete; user authorized feature-branch publication followed by local L16 disconnected React/MUI preview. Publication verification will be recorded after the pushes. No L17 integration, general planner, main merge or hardware operation is authorized.
 
 **Next small phase: L16.** Active learning phase: L15.
 

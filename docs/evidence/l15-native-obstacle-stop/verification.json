@@ -12,7 +12,7 @@
         "check": "pass",
         "browser-check": "pass"
       },
-      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l15-native-stop/review-2/l15-native-obstacle-stop.finalize.json",
+      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l15-native-stop/review-3/l15-native-obstacle-stop.finalize.json",
       "visual_review": "not-requested"
     },
     "core": {
@@ -23,7 +23,7 @@
         "check": "pass",
         "browser-check": "pass"
       },
-      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l15-core/review-3/ardupilot-code-stack.finalize.json",
+      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l15-core/review-4/ardupilot-code-stack.finalize.json",
       "visual_review": "not-requested"
     },
     "workflow": {
@@ -51,5 +51,5 @@
     "known_vulnerabilities": 0,
     "dependency_changes": "none"
   },
-  "scope": "L15 local/unpublished; guided checkpoint pending; no L16, planner, main merge or physical operation."
+  "scope": "L15 implementation and guided checkpoint complete; feature-branch publication authorized. L16 disconnected preview authorized next; no L17 integration, general planner, main merge or physical operation."
 }

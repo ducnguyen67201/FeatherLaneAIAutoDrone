@@ -509,7 +509,7 @@
         "Final observations: clear goal COMPLETE after2000ms native dwell; box-ahead BLOCKED and BRAKE; paused scan reader FAILED/observation at353ms receive age and BRAKE. Physical stopping was scored afterward. Restored readings did not resume the task.",
         "Selected forward corridor: requested speed0.5m/s, radius0.5m, goal5m north/3m height; bearing±3deg, tilt≤5deg, receive age≤350ms. Observed peak0.54m/s: target is not an instantaneous hard ceiling. No-return remains unknown.",
         "Initial2m margin missed the declared2m centre gap by5.3mm. Preserved attempt; both final comparison cases repeated with2.25m margin and WP_ACC0.25m/s². Final minimum centre/body-disc gaps2.260/1.560m. LAND/disarm and exact-stock disarmed rollback followed.",
-        "Local firmware77df2558; L15 remains unpublished, guided checkpoint pending. No detour, new process/hosting, hardware or full-body collision qualification. Existing navigation/reference LAND fallback and rejected-BRAKE/timeout branches are source-inspected, not fault-injected."
+        "Local firmware77df2558; L15 remains unpublished, guided checkpoint complete after BRAKE clarification; publication authorized. No detour, new process/hosting, hardware or full-body collision qualification. Existing navigation/reference LAND fallback and rejected-BRAKE/timeout branches are source-inspected, not fault-injected."
       ]
     },
     {

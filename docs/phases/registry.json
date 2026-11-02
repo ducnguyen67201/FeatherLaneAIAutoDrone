@@ -680,7 +680,7 @@
       "slug": "native-avoidance-integration",
       "title": "Reuse avoidance in our native path",
       "group": "M04",
-      "status": "in_progress",
+      "status": "complete",
       "depends_on": [
         "L14",
         "L11"
@@ -708,7 +708,7 @@
       ],
       "rollback": "Return to the last qualified native clear-scene build or the stock avoidance baseline.",
       "teach_back": "Which stock feature was reused, and which integration did we still need to write?",
-      "record": "Native stock-avoidance veto and receive-age guards implemented; clear COMPLETE, obstacle BLOCKED/BRAKE and reader-loss FAILED/BRAKE observed, LAND/disarm and exact-stock rollback passed. Initial margin miss retained and final2.25m profile compared. Guided checkpoint pending; local/unpublished; no detour/hardware."
+      "record": "Native stock-avoidance veto and receive-age guards implemented; clear COMPLETE, obstacle BLOCKED/BRAKE and reader-loss FAILED/BRAKE observed, LAND/disarm and exact-stock rollback passed. Initial margin miss retained and final2.25m profile compared. Guided checkpoint complete after BRAKE clarification and the user’s acknowledgment; publication authorized; no detour/hardware."
     },
     {
       "id": "L16",
@@ -1249,7 +1249,7 @@
     "native_status_record": "../evidence/l08-native-status-slice/README.md",
     "custom_working_branch": "codex/l15-native-obstacle-stop",
     "native_status_scope": "SITL-only observer; no native task execution or custom mode. Custom commit is a five-file addition against the preserved stock base.",
-    "custom_firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
+    "custom_firmware_commit": "77df25587413ab6d0183c6583c92b3cf4ba7bcab",
     "native_task_admission_record": "../evidence/l09-native-task-contract/README.md",
     "native_task_admission_scope": "Six-file admission-only custom commit 39cf614d1aae2ee4acb93f9294ebf66178967acb against published L08; no task execution.",
     "native_known_goal_record": "../evidence/l10-native-known-goal/README.md",
@@ -1257,9 +1257,10 @@
     "native_arrival_abort_record": "../evidence/l11-native-arrival-abort/README.md",
     "native_arrival_abort_scope": "Published four-file L11 commit a00f32be2a91639c8dee1c41c09e1c5e5635d547; arrival/BRAKE-abort/hold/rollback and guided checkpoint complete.",
     "instrumented_scene_record": "../evidence/l12-instrumented-scene/README.md",
-    "instrumented_scene_scope": "Published headless Gazebo8.10.0/physics7.5.0/DART6.19.5 + official plugin f116b035 and exact stock Copter4.7.2 JSON/X-frame flight; no firmware edits, native L11 transfer, GUI or body/obstacle collision qualification."
+    "instrumented_scene_scope": "Published headless Gazebo8.10.0/physics7.5.0/DART6.19.5 + official plugin f116b035 and exact stock Copter4.7.2 JSON/X-frame flight; no firmware edits, native L11 transfer, GUI or body/obstacle collision qualification.",
+    "native_stop_record": "../evidence/l15-native-obstacle-stop/README.md"
   },
-  "execution_summary": "L01–L14 and guided checkpoints complete; L14/CSV-TXT cleanup published at project681666aa52bf825ef170c00eb4324c6f435be535 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. Local L15 native stop integration manually observed in clear/blocked/reader-loss cases with LAND/disarm, exact-stock rollback and cleanup. Guided checkpoint pending; no L15 publication, L16, detour planner or hardware. Broader P01/P03/P05 gates remain open.",
+  "execution_summary": "L01–L15 and guided checkpoints complete. L15 native stop integration, clear/blocked/reader-loss observations, LAND/disarm and exact-stock rollback are complete; user authorized feature-branch publication followed by local L16 disconnected React/MUI preview. Publication verification will be recorded after the pushes. No L17 integration, general planner, main merge or hardware operation is authorized.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
@@ -1369,5 +1370,10 @@
     "firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
     "remote_sha_verified": true,
     "includes": "Completed L14,3D replay tooling and requested generated CSV/TXT cleanup."
+  },
+  "authorization_l15_publication_l16": {
+    "date": "2026-11-02",
+    "source": "User: Okay, got it. Let's push L15 and continue to L16.",
+    "scope": "Publish completed L15 feature branches and exact firmware gitlink, then build/show a local disconnected React/MUI preview. Explicit approval of the shown preview is required before L17 live integration. No L16 publication, main merge or physical operation."
   }
 }

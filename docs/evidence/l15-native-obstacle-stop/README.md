@@ -1,6 +1,6 @@
 # L15 — native obstacle-stop integration
 
-Status: implemented and manually observed locally on 2026-11-02; final clear/blocked/lost-observation flights ended with operator LAND and automatic disarm. Exact-stock disarmed rollback passed; owned sessions stopped. Guided checkpoint pending. L15 remains unpublished on `codex/l15-native-obstacle-stop` in both repositories. L14 and the CSV/TXT cleanup were published at project `681666aa52bf825ef170c00eb4324c6f435be535`, with unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547`.
+Status: implemented and manually observed locally on 2026-11-02; final clear/blocked/lost-observation flights ended with operator LAND and automatic disarm. Exact-stock disarmed rollback passed; owned sessions stopped. Guided checkpoint complete after BRAKE clarification and user acknowledgment. L15 publication is authorized and ready on `codex/l15-native-obstacle-stop` in both repositories. L14 and the CSV/TXT cleanup were published at project `681666aa52bf825ef170c00eb4324c6f435be535`, with unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547`.
 
 ## Concept and scope
 
@@ -68,3 +68,5 @@ The rollback used the unchanged preserved stock executable with the L14 profile,
 Onboard MODE/MSG agree with the native terminal reports and handoffs; RFND, blocked-run PRX/SA and RCOU records provide additional channels from the same simulation. PM samples report the 399–400Hz simulator loop and zero reported load/long loops; they do not measure host CPU overhead or establish a real-time bound. No latency improvement is claimed.
 
 Missing DART mesh `base_collision` remains an explicit limitation; the declared body disc is an evaluation envelope, not a qualified collision body. Full-volume coverage, arbitrary routes, sensor spoofing/capture-age guarantees, navigation-failure injection, failed BRAKE entry, timeout injection, detours, reliability campaigns and hardware remain unqualified. No CSV/TXT dumps were exported. Broader P01/P03/P05 gates and L16 remain open.
+
+The learner described the stop decision; we clarified that the native mode requests BRAKE and the stock BRAKE controllers perform deceleration/hold. The user then acknowledged understanding and explicitly requested L15 publication and L16. This completes the guided checkpoint after clarification; it does not imply an independently correct initial answer.

@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: in_progress.** M04 Observe one obstacle then avoid it · Track: core · Dependencies: [L14](l14-stock-obstacle-avoidance.md), [L11](l11-native-arrival-abort.md)
+**DRAFT phase card. Status: complete.** M04 Observe one obstacle then avoid it · Track: core · Dependencies: [L14](l14-stock-obstacle-avoidance.md), [L11](l11-native-arrival-abort.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -44,7 +44,7 @@ Retain:
 
 - Integration diff, scenario comparison, native reasons and actual trajectory.
 
-**Actual execution record:** Native stock-avoidance veto and receive-age guards implemented; clear COMPLETE, obstacle BLOCKED/BRAKE and reader-loss FAILED/BRAKE observed, LAND/disarm and exact-stock rollback passed. Initial margin miss retained and final2.25m profile compared. Guided checkpoint pending; local/unpublished; no detour/hardware.
+**Actual execution record:** Native stock-avoidance veto and receive-age guards implemented; clear COMPLETE, obstacle BLOCKED/BRAKE and reader-loss FAILED/BRAKE observed, LAND/disarm and exact-stock rollback passed. Initial margin miss retained and final2.25m profile compared. Guided checkpoint complete after BRAKE clarification and the user’s acknowledgment; publication authorized; no detour/hardware.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 
