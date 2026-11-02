@@ -1,6 +1,8 @@
 # L13 — observe one obstacle sensor
 
-Status: implemented and manually observed locally on2026-11-02; sensor-disabled rollback and cleanup complete. Guided checkpoint complete after the under-range clarification. L13 is uncommitted/unpublished on `codex/l13-obstacle-observation`. No flight, avoidance, firmware changes or automated tests were added.
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
+Status: implemented and manually observed locally on2026-11-02; sensor-disabled rollback and cleanup complete. Guided checkpoint complete after the under-range clarification. L13 was subsequently published on `codex/l13-obstacle-observation`. No flight, avoidance, firmware changes or automated tests were added.
 
 ## What runs, and where the information comes from
 
@@ -58,7 +60,7 @@ The21 rays span10deg horizontally in one plane. They do not cover the rear, side
 
 ![Actual front lidar samples and stock rangefinder status](obstacle-observations.png)
 
-**Graph provenance:** I generated this PNG with Python3.12/Matplotlib using the maintained [offline analyzer](../../../simulation/gazebo/analyze_range_observations.py), run as `.local/l02/venv/bin/python simulation/gazebo/analyze_range_observations.py`. The upper panel reads [adapter samples](samples.csv), the lower panel reads actual onboard [RFND records](rangefinder-log.csv) decoded from the retained BIN. The panels use separate host-reception and autopilot clocks; they are not a synchronized latency plot. The shaded interval is the manual pause of the adapter's owned Gazebo topic-reader process, not the physics server. No-return markers are drawn above8m for visibility and are not obstacle distances.
+**Graph provenance:** I generated this PNG with Python3.12/Matplotlib using the maintained [offline analyzer](../../../simulation/gazebo/analyze_range_observations.py), run as `.local/l02/venv/bin/python simulation/gazebo/analyze_range_observations.py`. The upper panel reads the retained raw adapter observations; the lower panel reads actual onboard RFND records decoded from the retained BIN. The intermediate CSV exports have been removed. The panels use separate host-reception and autopilot clocks; they are not a synchronized latency plot. The shaded interval is the manual pause of the adapter's owned Gazebo topic-reader process, not the physics server. No-return markers are drawn above8m for visibility and are not obstacle distances.
 
 ## Freshness and downstream behavior
 
@@ -81,3 +83,8 @@ Gazebo logged Metal renderer errors but emitted the actual LaserScan samples abo
 L12 publication is verified at project `7b1dc4a07bb335c960c2e72f855b0e3bf07d6885` and unchanged firmware on the matching feature branch. **The user's screenshot is still not included:** macOS denied its TemporaryItems path; a readable reattachment/copy is needed. L13 is local/unpublished, and L14 avoidance has not started. [Learner checkpoint](learner-checkpoint.json).
 
 The learner completed the checkpoint on2026-11-02: “Yes—the box could be inside the sensor’s0.2m minimum range.” This resolves the earlier suggestion that no-return could guarantee a clear3–5m region. L13 is complete locally; publication and L14 remain separate.
+
+
+## Publication update —2026-11-02
+
+The user authorized L13 publication and local L14. Published project `5e3a8fd6464fc6157a654e5714262272624177b1` and matching unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547` were remote-SHA verified. Earlier local/unpublished statements describe the original handoff. L14 records its modified observer profile and actual stock stopping flights separately; these L13 observations keep their original source identity. The screenshot remains pending a readable attachment.

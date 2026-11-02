@@ -44,7 +44,7 @@ Retain:
 
 - Sensor configuration, observation samples and comparison notes.
 
-**Actual execution record:** [L13 evidence](../../evidence/l13-obstacle-observation/README.md): one front 21-ray planar lidar, static box, bounded Python observation adapter and existing MAVLink rangefinder. Stable3m/5m returns, off-axis/beyond/under-range/above-plane no-return, reader dropout NoData/recovery and sensor-disabled baseline observed disarmed. No-return is not clearance; no flight/avoidance or firmware changes. Local/unpublished; guided checkpoint complete after the under-range clarification. Screenshot publication pending readable attachment.
+**Actual execution record:** [L13 evidence](../../evidence/l13-obstacle-observation/README.md): one front 21-ray planar lidar, static box, bounded Python observation adapter and existing MAVLink rangefinder. Stable3m/5m returns, off-axis/beyond/under-range/above-plane no-return, reader dropout NoData/recovery and sensor-disabled baseline observed disarmed. No-return is not clearance; no flight/avoidance or firmware changes. Published at project5e3a8fd6464fc6157a654e5714262272624177b1; guided checkpoint complete after the under-range clarification. Screenshot publication pending readable attachment.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

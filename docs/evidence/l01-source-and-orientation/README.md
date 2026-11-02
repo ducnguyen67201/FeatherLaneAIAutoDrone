@@ -1,5 +1,7 @@
 # L01 — ArduPilot source baseline and folder orientation
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 [Project home](../../../README.md) · [Learning card](../../phases/learning/l01-source-and-orientation.md) · [Master plan](../../MASTER-LEARNING-PLAN.md) · [Registry](../../phases/registry.json)
 
 Executed 2026-10-31 (America/Toronto). **Source acquisition and guided orientation complete. P01 remains in progress; L02 is next and has not started.** This is an unchanged source baseline, not a qualified build, simulator or flight result.
@@ -56,8 +58,8 @@ The connection is visible in [`ArduCopter/Copter.h:476`](https://github.com/Ardu
 ## Retained evidence and limits
 
 - [Revision manifest](source-baseline.json): exact main commit, credential-free origins and all 21 recursive submodule revisions, including nested dependencies.
-- [Raw recursive submodule listing](submodule-status.txt): each line starts with a space, indicating a checkout matching its parent's recorded commit.
-- [Observed Git output](git-evidence.txt): origin, HEAD/tag identity, commit metadata, shallow status, empty worktree status and empty diff. Every submodule was also checked individually with untracked files included.
+- Raw recursive submodule listing (generated export removed): each line starts with a space, indicating a checkout matching its parent's recorded commit.
+- Observed Git output (generated export removed): origin, HEAD/tag identity, commit metadata, shallow status, empty worktree status and empty diff. Every submodule was also checked individually with untracked files included.
 - Manual inspection confirmed the main folders and cited source declarations. The checkout had no `build/` directory, and no build launcher or simulator script was executed.
 - This is agent-observed evidence, not independent verification, signature authentication, build qualification or flight evidence. The Mac toolchain and simulator compatibility remain unexamined in L01.
 - No new automated tests, snapshots or test scaffolding were authored or run. Upstream test sources arrived unchanged as part of the requested source checkout.

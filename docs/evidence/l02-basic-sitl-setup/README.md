@@ -1,5 +1,7 @@
 # L02 — Native macOS build and disarmed SITL
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 [Project](../../../README.md) · [Learning card](../../phases/learning/l02-basic-sitl-setup.md) · [L01 source](../l01-source-and-orientation/README.md)
 
 Executed locally on 2026-10-31 after the user requested: “Okay, let's start L02. Walk me through building and running the simulator step by step, and explain what we're doing as we go.” Scope: local dependencies, unchanged Copter build, one disarmed instance at a time, state observation, stop and repeat. No firmware edits, arming, takeoff, new automated tests, product UI, remote publication or physical operation.
@@ -49,7 +51,7 @@ cd ..
 file ardupilot/build/sitl/bin/arducopter
 ```
 
-Configuration and build both exited 0. [Build summary](build-summary.txt) records the actual final output. Full configure/build logs remain in ignored `.local/l02/`. The linker warned that `-ld_classic` is deprecated; build still succeeded. Waf generated `ardupilot/build/sitl/libraries/GCS_MAVLink/include/mavlink/v2.0/all/version.h`. Editor include-path configuration was not changed or qualified.
+Configuration and build both exited 0. Build summary (generated export removed) records the actual final output. Full configure/build logs remain in ignored `.local/l02/`. The linker warned that `-ld_classic` is deprecated; build still succeeded. Waf generated `ardupilot/build/sitl/libraries/GCS_MAVLink/include/mavlink/v2.0/all/version.h`. Editor include-path configuration was not changed or qualified.
 
 ## Reproduce a disarmed launch
 
@@ -108,7 +110,7 @@ No output with exit 1 means lsof found no matching sockets. Preserve another tas
 
 ## Evidence and limitations
 
-The detailed actual run results and heartbeat counts are recorded in [run-results.json](run-results.json). Captured [run 1 console](run1-console.txt) and [run 2 console](run2-console.txt) retain startup, state queries and shutdown, with terminal escapes removed and whitespace/line endings normalized. Raw `.tlog`, `.tlog.raw`, parameter/EEPROM files, passive JSONL observations, process/session IDs, endpoints and cleanup records remain under ignored `.local/l02/run1/` and `.local/l02/run2/`. Passive observation used pymavlink on the forwarded UDP stream; it sent no commands. These are manual experiment artifacts, not new automated tests or test scaffolding.
+The detailed actual run results and heartbeat counts are recorded in [run-results.json](run-results.json). Captured run 1 console (generated export removed) and run 2 console (generated export removed) retain startup, state queries and shutdown, with terminal escapes removed and whitespace/line endings normalized. Raw `.tlog`, `.tlog.raw`, parameter/EEPROM files, passive JSONL observations, process/session IDs, endpoints and cleanup records remain under ignored `.local/l02/run1/` and `.local/l02/run2/`. Passive observation used pymavlink on the forwarded UDP stream; it sent no commands. These are manual experiment artifacts, not new automated tests or test scaffolding.
 
 Initial launch failed on missing `gnureadline`; the failure and scoped install are retained in `.local/l02/startup-attempt01/console.log` and `gnureadline-install.log`. The failed instance was stopped by stock session cleanup before retrying. An unexplained local venv reset removed packages during compilation; the recorded lock restored all packages, imports were verified and subsequent successful sessions used the frozen environment. Cause was not established. Raw dependency install/restore logs are retained.
 

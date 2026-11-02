@@ -1,5 +1,7 @@
 # L10 — execute one admitted native coordinate goal
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 Status: native execution/hold, operator LAND/disarm, exact-stock rollback and cleanup observed; ready for guided review. Guided learner checkpoint complete after clarification. AI-assisted C++/documentation. The user authorized L10 feature-branch publication on 2026-11-02, followed by local L11. Physical operation remains outside scope.
 
 ## Concept and prediction before the run
@@ -98,9 +100,9 @@ Those changes are consistent with pinned upstream code: `Compass::try_set_initia
 ## Review packet and remaining learning step
 
 - [Exact seven-file native patch](native-goal.patch), [source/submodule manifest](source-manifest.json), [binary identities](binaries.json).
-- [Predeclared contract](execution-contract.json), [detailed execution summary](execution-summary.json), [run2 trajectory](run2-trajectory.csv), [run2 dwell timeline](run2-arrival-timeline.csv).
-- [Run1 console](run1-console.txt), [final run2 console](run2-console.txt), [run2 launcher](run2-launch.zsh), [initial build failure](build-initial.txt), [successful final build](build-final.txt).
-- [Rollback console](rollback-console.txt), [raw artifact hashes](raw-artifacts.json), [cleanup](cleanup.json).
+- [Predeclared contract](execution-contract.json), [detailed execution summary](execution-summary.json), run2 trajectory (generated export removed), run2 dwell timeline (generated export removed).
+- Run1 console (generated export removed), final run2 console (generated export removed), [run2 launcher](run2-launch.zsh), initial build failure (generated export removed), successful final build (generated export removed).
+- Rollback console (generated export removed), [raw artifact hashes](raw-artifacts.json), [cleanup](cleanup.json).
 - [L09 publication verification](publication-verification.json), [final consistency/diagram checks](verification.json).
 
 All owned sessions were stopped only after fresh disarmed/on-ground telemetry. No selected sockets or owned simulator processes remain. The initial29 source and its label conflict are preserved separately from final31. No new automated tests, hardware operation or L10 push occurred.

@@ -1,0 +1,150 @@
+{
+  "selected_pulse": {
+    "RC2": 1000,
+    "start": 1793652019.8239691,
+    "start_boot_ms": 58989,
+    "end": 1793652037.980587,
+    "end_boot_ms": 76987
+  },
+  "input_boot_span_s": 17.998,
+  "input_receive_span_s": 18.156617879867554,
+  "peak_horizontal_speed_mps": 0.49,
+  "maximum_north_m": 4.063161413978632,
+  "maximum_north_through_neutral_hold_m": 4.063161413978632,
+  "maximum_lateral_magnitude_m": 0.009078093489824572,
+  "maximum_height_error_m": 0.009999999999999787,
+  "all_input_samples_armed_LOITER_fresh": true,
+  "stopped_while_forward_held": {
+    "first": {
+      "wall_time": 1793652031.666848,
+      "boot_ms": 70737,
+      "elapsed_s": 11.748,
+      "north_m": 3.9184460758381636,
+      "east_m": 0.0,
+      "height_m": 2.99,
+      "horizontal_speed_mps": 0.14,
+      "vertical_speed_down_mps": 0.0,
+      "armed": true,
+      "mode": 5,
+      "rc2": 1000,
+      "fresh_navigation": true,
+      "input_interval": true
+    },
+    "completed": {
+      "wall_time": 1793652033.685531,
+      "boot_ms": 72739,
+      "elapsed_s": 13.75,
+      "north_m": 3.8850502290008873,
+      "east_m": 0.0,
+      "height_m": 2.99,
+      "horizontal_speed_mps": 0.05,
+      "vertical_speed_down_mps": 0.0,
+      "armed": true,
+      "mode": 5,
+      "rc2": 1000,
+      "fresh_navigation": true,
+      "input_interval": true
+    },
+    "dwell_s": 2.0020000000000007
+  },
+  "minimum_center_to_wall_face_m": 2.236838586021368,
+  "sensor_observation_counts_during_pulse": {
+    "return": 181
+  },
+  "all_sensor_samples_sent": true,
+  "minimum_sensor_return_m": 1.9420292377471924,
+  "native_avoidance_records_during_pulse": 85,
+  "native_avoidance_records_without_backup": true,
+  "all_session_gazebo_evaluation": {
+    "pose_samples": 6182,
+    "minimum_center_to_box_xy_m": 2.230255432505814,
+    "body_envelope_radius_m": 0.7,
+    "minimum_declared_envelope_gap_m": 1.530255432505814,
+    "scope": "Known box geometry/poses are evaluation only; planar envelope bound is not mesh/contact or physical qualification."
+  },
+  "onboard_counts": {
+    "MODE": 5,
+    "RFND": 2098,
+    "PRX": 1048,
+    "SA": 101
+  },
+  "observer_events": {
+    "started": 1,
+    "stale": 1,
+    "sample": 1060,
+    "stopped": 1
+  },
+  "all_RC_intervals": [
+    {
+      "RC2": 1500,
+      "start": 1793651974.432269,
+      "start_boot_ms": 13987,
+      "end": 1793652019.8239691,
+      "end_boot_ms": 58989
+    },
+    {
+      "RC2": 1000,
+      "start": 1793652019.8239691,
+      "start_boot_ms": 58989,
+      "end": 1793652037.980587,
+      "end_boot_ms": 76987
+    }
+  ],
+  "operator_events": [
+    {
+      "wall_time": 1793652019.644307,
+      "event": "final_forward_requested",
+      "RC2": 1000,
+      "planned_pulse_s": 18
+    },
+    {
+      "wall_time": 1793652039.0326242,
+      "event": "final_neutral_requested",
+      "RC2": 1500
+    }
+  ],
+  "shutdown": {
+    "time": 1793652068.230707,
+    "pid": 75223,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+      "--model",
+      "JSON",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l14-stock-stop.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793652067.374481,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 89,
+          "custom_mode": 9,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793652067.800384,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  }
+}

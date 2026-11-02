@@ -87,7 +87,7 @@ AHRS is an internal ArduPilot software interface to estimation; it is not itself
 
 [The scheduler task table](https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/Copter.cpp#L113) schedules rate control, motor output, estimator/inertial updates and flight-mode work. [`update_flight_mode`](https://github.com/ArduPilot/ardupilot/blob/fb773567896014da007bca58358704d4a0d8516f/ArduCopter/mode.cpp#L497) dispatches the active mode. These tasks exchange state across repeated iterations; the conceptual arrows above do not imply they all execute immediately within the command receiver or in diagram order in one tick. The L03 saved profile has `SCHED_LOOP_RATE=400` and `FSTRATE_ENABLE=0`; these are configuration observations, not measured deadline, latency or achieved-rate guarantees.
 
-The existing [L03 event record](../l03-first-stock-flight/command-state-events.json), [onboard log summary](../l03-first-stock-flight/onboard-log-summary.json) and [trajectory](../l03-first-stock-flight/trajectory.csv) ground the explanation:
+The existing [L03 event record](../l03-first-stock-flight/command-state-events.json), [onboard log summary](../l03-first-stock-flight/onboard-log-summary.json) and trajectory (generated export removed) ground the explanation:
 
 | L03 reception time after first vehicle message | Observation | Connection to source responsibilities |
 | --- | --- | --- |

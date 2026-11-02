@@ -94,8 +94,8 @@
   "execution_unit": "learning_phase",
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
-  "active_learning_phase": "L13",
-  "next_proposed_learning_phase": "L14",
+  "active_learning_phase": "L14",
+  "next_proposed_learning_phase": "L15",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -227,7 +227,7 @@
       ],
       "rollback": "Keep the acquired source separate; revert only task-owned notes/checkout changes if needed and preserve unrelated paths.",
       "teach_back": "Which folder contains Copter-specific behavior, and which contains reused controllers?",
-      "record": "2026-10-31: source acquisition and guided orientation complete. Copter-4.7.2 at fb773567896014da007bca58358704d4a0d8516f; main worktree and all 21 recursive submodules clean and matching parent pins. Source only, not build/flight qualified. Learner identified ArduCopter/; shared-controller location clarified. [Execution record](../../evidence/l01-source-and-orientation/README.md), [revision manifest](../../evidence/l01-source-and-orientation/source-baseline.json) and [Git output](../../evidence/l01-source-and-orientation/git-evidence.txt). L02 remains planned; P01 remains in_progress. Follow-up location correction: visible `ardupilot/` development checkout on local branch `featherlane/dev`, with the source pin and all submodules unchanged."
+      "record": "2026-10-31: source acquisition and guided orientation complete. Copter-4.7.2 at fb773567896014da007bca58358704d4a0d8516f; main worktree and all 21 recursive submodules clean and matching parent pins. Source only, not build/flight qualified. Learner identified ArduCopter/; shared-controller location clarified. [Execution record](../../evidence/l01-source-and-orientation/README.md), [revision manifest](../../evidence/l01-source-and-orientation/source-baseline.json) and Git output (generated export removed). L02 remains planned; P01 remains in_progress. Follow-up location correction: visible `ardupilot/` development checkout on local branch `featherlane/dev`, with the source pin and all submodules unchanged."
     },
     {
       "id": "L02",
@@ -639,14 +639,14 @@
       ],
       "rollback": "Disable the new sensor/integration and retain the baseline scene.",
       "teach_back": "Can a target bounding box establish the distance or clearance measured by this sensor?",
-      "record": "[L13 evidence](../../evidence/l13-obstacle-observation/README.md): one front 21-ray planar lidar, static box, bounded Python observation adapter and existing MAVLink rangefinder. Stable3m/5m returns, off-axis/beyond/under-range/above-plane no-return, reader dropout NoData/recovery and sensor-disabled baseline observed disarmed. No-return is not clearance; no flight/avoidance or firmware changes. Local/unpublished; guided checkpoint complete after the under-range clarification. Screenshot publication pending readable attachment."
+      "record": "[L13 evidence](../../evidence/l13-obstacle-observation/README.md): one front 21-ray planar lidar, static box, bounded Python observation adapter and existing MAVLink rangefinder. Stable3m/5m returns, off-axis/beyond/under-range/above-plane no-return, reader dropout NoData/recovery and sensor-disabled baseline observed disarmed. No-return is not clearance; no flight/avoidance or firmware changes. Published at project5e3a8fd6464fc6157a654e5714262272624177b1; guided checkpoint complete after the under-range clarification. Screenshot publication pending readable attachment."
     },
     {
       "id": "L14",
       "slug": "stock-obstacle-avoidance",
       "title": "Qualify one stock avoidance scenario",
       "group": "M04",
-      "status": "planned",
+      "status": "complete",
       "depends_on": [
         "L13"
       ],
@@ -673,7 +673,7 @@
       ],
       "rollback": "Restore baseline parameters and the clear scene.",
       "teach_back": "What additional inputs made avoidance work compared with a plain waypoint command?",
-      "record": null
+      "record": "[L14 evidence](../../evidence/l14-stock-obstacle-stop/README.md): unchanged stock LOITER/Stop with front rangefinder/proximity. Final low-lean profile peaked0.49m/s in both cases; clear advanced about4.6m, blocked completed a2s low-speed dwell while input held at13.75s. Gazebo minimum center gap2.23m / declared0.7m-disc gap1.53m. LAND/disarm and default baseline rollback observed. Initial speed/timing failures retained. Local/unpublished; human3D-scene visibility confirmed and both logs replayed, guided checkpoint complete after the3D walkthrough; L15 not started."
     },
     {
       "id": "L15",
@@ -1247,7 +1247,7 @@
     "speed_comparison_record": "../evidence/l06-one-speed-change/README.md",
     "arrival_record": "../evidence/l07-measure-arrival/README.md",
     "native_status_record": "../evidence/l08-native-status-slice/README.md",
-    "custom_working_branch": "codex/l13-obstacle-observation",
+    "custom_working_branch": "codex/l14-stock-obstacle-stop",
     "native_status_scope": "SITL-only observer; no native task execution or custom mode. Custom commit is a five-file addition against the preserved stock base.",
     "custom_firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
     "native_task_admission_record": "../evidence/l09-native-task-contract/README.md",
@@ -1259,7 +1259,7 @@
     "instrumented_scene_record": "../evidence/l12-instrumented-scene/README.md",
     "instrumented_scene_scope": "Published headless Gazebo8.10.0/physics7.5.0/DART6.19.5 + official plugin f116b035 and exact stock Copter4.7.2 JSON/X-frame flight; no firmware edits, native L11 transfer, GUI or body/obstacle collision qualification."
   },
-  "execution_summary": "L01–L12 and guided checkpoints complete; L12 published at project7b1dc4a07bb335c960c2e72f855b0e3bf07d6885 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L13 locally observed one front lidar/static box, 3m/5m returns, no-return coverage/blind spot and stock rangefinder NoData/recovery, disarmed with avoidance disabled; baseline rollback and cleanup complete. L13 complete locally with guided checkpoint complete after the under-range clarification; unpublished. Screenshot inclusion pending readable attachment; L14 not started; broader P01/P03 gates incomplete.",
+  "execution_summary": "L01–L13 and guided checkpoints complete; L13 published at project5e3a8fd6464fc6157a654e5714262272624177b1 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L14 final stock LOITER/Stop clear/blocked flights and baseline rollback observed locally:0.49m/s peaks, blocked2s dwell while input held at13.75s, minimum evaluated center/envelope gaps2.23/1.53m. Initial speed/timing failures retained. L14 complete locally with guided checkpoint complete after the3D walkthrough; unpublished; human3D-scene visibility confirmed and both actual-recording segments replayed separately. No new firmware/native avoidance, L15 or hardware. Screenshot attachment pending; broader P01/P03 gates incomplete.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
@@ -1341,5 +1341,25 @@
     "date": "2026-11-02",
     "source": "User: push this and continue next phase.",
     "scope": "Publish completed L13 feature branches with unchanged firmware reference, then local L14 one stock avoidance configuration/static-scene comparison. No main merge, L14 publication, custom/native-mode avoidance or physical operation."
+  },
+  "publication_l13": {
+    "project_branch": "codex/l13-obstacle-observation",
+    "project_commit": "5e3a8fd6464fc6157a654e5714262272624177b1",
+    "firmware_branch": "codex/l13-obstacle-observation",
+    "firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
+    "remote_sha_verified": true,
+    "firmware_changes": "none",
+    "screenshot": "pending readable attachment"
+  },
+  "generated_dump_retention": {
+    "date": "2026-11-02",
+    "source": "User requested removing all generated CSV and TXT system dumps.",
+    "scope": "Generated evidence exports and project-local dumps; source/build files, dependency locks, summaries, figures and simulator recordings preserved.",
+    "note": "../evidence/README.md"
+  },
+  "authorization_l14_publication_l15": {
+    "date": "2026-11-02",
+    "source": "User: push for me and continue next phase.",
+    "scope": "Publish completed L14 and requested CSV/TXT cleanup on feature branches with unchanged firmware reference; then local L15 native avoidance integration and bounded blocked/invalid outcomes. No main merge, L15 publication, general planner or physical operation."
   }
 }

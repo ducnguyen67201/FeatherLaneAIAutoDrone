@@ -1,5 +1,7 @@
 # L03 — One stock simulated takeoff, hold and landing
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 [Project](../../../README.md) · [Learning card](../../phases/learning/l03-first-stock-flight.md) · [L02 setup/runbook](../l02-basic-sitl-setup/README.md)
 
 Executed locally on 2026-10-31, approximately 17:27–17:29 America/Toronto (21:27–21:29 UTC). The user requested publication of L02 followed by “CO3 in new track”; the new-chat handoff explicitly identifies that next phase as L03. Work is local on `codex/l03-first-stock-flight`, created from published L02 commit `7a2c6652dbd8088b66d8d9c2cb123c0bc52a78ee`. The simulator exercise itself made no commit, push or merge. After the guided checkpoint, the user authorized saving and pushing the L03 records before moving to the next phase; publication scope is recorded below.
@@ -36,9 +38,9 @@ env -u DISPLAY SITL_RITW_TERMINAL=bash TMPDIR="$l03_run_dir/" \
   --mavproxy-args=--default-modules=log,param,mode,arm,rc,cmdlong,output
 ```
 
-The existing `cmdlong` module provides `takeoff` and `long`; no additional module was needed. The `quad` profile resolves to the stock `+` model and `copter.parm`, at speedup 1. The saved [selected parameters](selected-parameters.txt) include `ARMING_SKIPCHK=0`, `ARMING_OPTIONS=0`, `LAND_SPD_MS=0.5` and `FS_GCS_ENABLE=0`. No parameter-write or forced-arm command was issued. Stock configuration is recorded as observed, not presented as a hardware or link-loss safety profile.
+The existing `cmdlong` module provides `takeoff` and `long`; no additional module was needed. The `quad` profile resolves to the stock `+` model and `copter.parm`, at speedup 1. The saved selected parameters (generated export removed) include `ARMING_SKIPCHK=0`, `ARMING_OPTIONS=0`, `LAND_SPD_MS=0.5` and `FS_GCS_ENABLE=0`. No parameter-write or forced-arm command was issued. Stock configuration is recorded as observed, not presented as a hardware or link-loss safety profile.
 
-Console command sequence, with observation/wait boundaries retained in the [transcript](console.txt):
+Console command sequence, with observation/wait boundaries retained in the transcript (generated export removed):
 
 ```text
 long SET_MESSAGE_INTERVAL 245 500000
@@ -96,7 +98,7 @@ Maximum estimated height was **3.069 m** during the climb/settling. In the decla
 
 ![Measured L03 height and vertical speed](flight-trajectory.png)
 
-[Trajectory CSV](trajectory.csv) retains every received global-position sample with latest mode/arming/landed state and their ages. [Command/state events](command-state-events.json) retain all acknowledgments, status text and mode/arming/landed transitions from vehicle source `1:1`; console source `255:230` is separate. [Run results](run-results.json) include counts and hold metrics. There were 120 vehicle heartbeats, 45 armed heartbeats and nine accepted command acknowledgments. No flight-command rejection occurred; the early readiness failure is preserved rather than relabeled as success.
+Trajectory CSV (generated export removed) retains every received global-position sample with latest mode/arming/landed state and their ages. [Command/state events](command-state-events.json) retain all acknowledgments, status text and mode/arming/landed transitions from vehicle source `1:1`; console source `255:230` is separate. [Run results](run-results.json) include counts and hold metrics. There were 120 vehicle heartbeats, 45 armed heartbeats and nine accepted command acknowledgments. No flight-command rejection occurred; the early readiness failure is preserved rather than relabeled as success.
 
 The [onboard log summary](onboard-log-summary.json) separately parses the actual stock DataFlash log. `MAVC` records show normal arm with parameter 2 equal to zero, takeoff in relative-altitude frame 3 with altitude 3 m, and LAND mode 9, all accepted. The terminal ARM record reports disarmed and `Forced=0`; no ERR records were parsed. This is corroboration within the same simulated system, not independent verification. Logging starts around arming (`LOG_DISARMED=0`); telemetry/console retain earlier startup and the unready check.
 

@@ -1,5 +1,7 @@
 # L06 — Change one speed setting on the same route
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 [Project](../../../README.md) · [Learning card](../../phases/learning/l06-one-speed-change.md) · [L05 baseline](../l05-one-coordinate/README.md)
 
 Executed locally on 2026-10-31, approximately 18:25–18:28 America/Toronto (22:25–22:28 UTC). The user explicitly requested pushing completed L05 and continuing to the next phase. L05 was published as `9dd52dc050401887de4b4d352d26b368c2a54251`, with remote SHA independently compared against local Git and `main` unchanged at `c45c9e19ae279011d5779fa2669df3fac0f21a29`. L06 was prepared locally on `codex/l06-one-speed-change`, branched from that L05 commit. The user subsequently gave separate L06 publication approval after its guided checkpoint.
@@ -38,7 +40,7 @@ l06_run_dir="$l06_root/.local/l06/run1"
 env -u DISPLAY SITL_RITW_TERMINAL=bash TMPDIR="$l06_run_dir/"   PATH="$l06_root/.local/l02/venv/bin:/usr/bin:/bin:/usr/sbin:/sbin"   /usr/bin/script -q "$l06_run_dir/console.log"   "$l06_root/.local/l02/venv/bin/python"   "$l06_root/ardupilot/Tools/autotest/sim_vehicle.py"   -v ArduCopter -f quad -N --use-dir "$l06_run_dir"   --no-extra-ports --out 127.0.0.1:14550   --mavproxy-args=--default-modules=log,param,mode,arm,rc,cmdlong,output
 ```
 
-Each flight action was explained before execution. Main console commands, with the waits/readbacks in the [transcript](console.txt):
+Each flight action was explained before execution. Main console commands, with the waits/readbacks in the transcript (generated export removed):
 
 ```text
 long SET_MESSAGE_INTERVAL 245 500000
@@ -98,7 +100,7 @@ Both five-second windows have 20 position samples and all sampled bounds pass. T
 
 ![Aligned comparison of measured goal error, speed and height](speed-comparison.png)
 
-The image was generated after the flight by our `.local/l06/compare.py` using Python/Matplotlib, reading both retained trajectory CSVs. Curves are aligned at each received DO_REPOSITION acceptance, not simulator launch or the operator-selected hold window. Startup invalid positions are excluded from derived distances/plots using the same explicit validity rule as L05; raw coordinates and validity flags remain in [trajectory.csv](trajectory.csv). The [full changed-run chart](coordinate-flight-trajectory.png) separately shows takeoff and landing. [Comparison JSON](comparison.json) preserves metrics, goal equality, recorded home/reference differences and interpretation limits.
+The image was generated after the flight by our `.local/l06/compare.py` using Python/Matplotlib, reading both retained trajectory CSVs. Curves are aligned at each received DO_REPOSITION acceptance, not simulator launch or the operator-selected hold window. Startup invalid positions are excluded from derived distances/plots using the same explicit validity rule as L05; raw coordinates and validity flags remain in trajectory.csv (generated export removed). The [full changed-run chart](coordinate-flight-trajectory.png) separately shows takeoff and landing. [Comparison JSON](comparison.json) preserves metrics, goal equality, recorded home/reference differences and interpretation limits.
 
 L06 had 612 global-position samples (131 retained startup-invalid samples), 166 vehicle heartbeats and 13 accepted command acknowledgments. No prearm failure or command rejection was reported. The onboard MAVC records corroborate normal arming, takeoff, the identical COMMAND_INT reposition and LAND; automatic disarm followed. Times from the first recorded vehicle message at 22:25:02.779 UTC: GUIDED accepted 60.708 s, arm 61.810 s, takeoff 65.417 s, coordinate 90.394 s, LAND 108.990 s, ON_GROUND 117.431 s and first disarmed heartbeat 117.851 s. Final saved position showed height 0.008 m, zero reported vertical speed, ON_GROUND and disarmed LAND. Simulator ground-contact text is retained separately from estimator/land-detector state.
 
@@ -114,7 +116,7 @@ The full before/during cached snapshots each contained 1,370 parameters. Their o
 | STAT_FLTCNT | 0 | 1 |
 | STAT_RUNTIME | 30 | 117 |
 
-`MOT_HOVER_LEARN=2` was unchanged: stock ArduPilot learns hover throttle and saves it on disarm. The flight/time/distance counters also update themselves. No other configuration difference remained. [Parameter comparison](parameter-comparison.json) records the intentional change/restoration separately from those automatic updates. Full raw snapshots stay under `.local/l06/run1/` and are hashed in the manifest. The [selected during-flight parameters](selected-parameters.txt) show WP_SPD=1, unchanged acceleration/controller settings and the stock profile.
+`MOT_HOVER_LEARN=2` was unchanged: stock ArduPilot learns hover throttle and saves it on disarm. The flight/time/distance counters also update themselves. No other configuration difference remained. [Parameter comparison](parameter-comparison.json) records the intentional change/restoration separately from those automatic updates. Full raw snapshots stay under `.local/l06/run1/` and are hashed in the manifest. The selected during-flight parameters (generated export removed) show WP_SPD=1, unchanged acceleration/controller settings and the stock profile.
 
 The baseline’s DataFlash log also records hover learning from 0.39 to about 0.366061; L06 records 0.39 to about 0.366839. Both started with the same stock hover estimate. Their adaptive estimates and small state differences are observational limitations; this one pair is evidence consistent with the speed-setting prediction, not a perfectly isolated statistical performance proof.
 

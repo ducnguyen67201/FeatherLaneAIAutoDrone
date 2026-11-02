@@ -1,5 +1,7 @@
 # L09 — admit one typed coordinate task
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 Status: native builds, final-source manual admission and retained-L08 rollback verified; guided checkpoint complete. L09 remains local/uncommitted and unpublished. AI-assisted C++ and documentation. No flight execution or publication authorized in L09.
 
 ## Concept and prediction before the run
@@ -76,7 +78,7 @@ The final source also uses exact equality for the wire version field. Upstream `
 | source, ID, coordinate, height, speed, radius, range, ID conflict | DENIED (2) |
 | COMMAND_LONG used instead of COMMAND_INT | COMMAND_INT_ONLY (8) |
 
-[Source manifest](source-manifest.json) · [Scoped patch](task-admission.patch) · [Executable hashes](binaries.json) · [Initial build](build.txt) · [Final build](build-final.txt) · [Configuration](configure.txt) · [Execution summary](execution-summary.json) · [Admission timeline](admission-timeline.csv) · [Raw manifest](raw-artifacts.json) · [Selected parameters](selected-parameters.txt) · [Cleanup](cleanup.json).
+[Source manifest](source-manifest.json) · [Scoped patch](task-admission.patch) · [Executable hashes](binaries.json) · Initial build (generated export removed) · Final build (generated export removed) · Configuration (generated export removed) · [Execution summary](execution-summary.json) · Admission timeline (generated export removed) · [Raw manifest](raw-artifacts.json) · Selected parameters (generated export removed) · [Cleanup](cleanup.json).
 
 The run console/launch pairs and direct-submission JSON records accompany the summary. Original logs, telemetry and helpers remain ignored in `.local/l09/`; copied transcripts have trailing spaces removed, while applicable patch context is preserved.
 
@@ -85,7 +87,7 @@ Scope limits: this establishes selected manual admission outcomes while disarmed
 
 ## Run3 observations before style cleanup
 
-Final source produced 22 admission reports: one acceptance, two duplicate acknowledgments and 19 rejections across the manually chosen examples. Every report after the initial acceptance retained task 1. The fractional version `0.99999994` was rejected; the early otherwise-valid request was rejected for unavailable navigation. Sub-centimetre height was rejected both before and after acceptance. The normal 3 m task was accepted after EKF/GPS readiness. The two TCP5762 submissions separately returned `source` and `flags`; the remaining commands were typed into MAVProxy. [Final console](run3-console.txt) and [launch command](run3-launch.zsh) retain the actual inputs and responses.
+Final source produced 22 admission reports: one acceptance, two duplicate acknowledgments and 19 rejections across the manually chosen examples. Every report after the initial acceptance retained task 1. The fractional version `0.99999994` was rejected; the early otherwise-valid request was rejected for unavailable navigation. Sub-centimetre height was rejected both before and after acceptance. The normal 3 m task was accepted after EKF/GPS readiness. The two TCP5762 submissions separately returned `source` and `flags`; the remaining commands were typed into MAVProxy. Final console (generated export removed) and [launch command](run3-launch.zsh) retain the actual inputs and responses.
 
 All 93 observed vehicle heartbeats over 88.04s were disarmed; all received extended states were on-ground. Estimated horizontal position varied at most 0.0144m from the first valid estimate, maximum reported horizontal speed was 0.0283m/s, and relative altitude ranged from -0.002 to 0.006m. These small on-ground estimate variations are distinct from executing the accepted 3m-height goal. This is sampled evidence plus source inspection, not an armed flight qualification.
 
@@ -96,7 +98,7 @@ The rollback run retained 40 disarmed STABILIZE heartbeats across 37.04s, seven 
 
 The user requested following the repository’s coding conventions when reviewing `Context`. The Copter handler now zero-initializes `Request`/`Context` and assigns named fields individually, following the existing MAVLink message-building pattern and GNU C++11 baseline. Each original field binding and condition is preserved. This also wraps the status call and aligns its function continuation; no admission contract/policy was changed.
 
-The incremental native build and whitespace check passed. Manual SITL scenarios were not rerun for this style-only adjustment. [Observed patch](observed-task-admission.patch) identifies the bytes exercised by run3; [current patch](task-admission.patch), [style receipt](style-followup.json), [build output](build-style-followup.txt) and updated source/binary manifests distinguish the subsequent build. Both binaries are retained locally; L09 remains unpublished and its learning checkpoint is complete.
+The incremental native build and whitespace check passed. Manual SITL scenarios were not rerun for this style-only adjustment. [Observed patch](observed-task-admission.patch) identifies the bytes exercised by run3; [current patch](task-admission.patch), [style receipt](style-followup.json), build output (generated export removed) and updated source/binary manifests distinguish the subsequent build. Both binaries are retained locally; L09 remains unpublished and its learning checkpoint is complete.
 
 The user subsequently clarified visual spacing in the result switch. Blank lines now separate the logging, type alias and switch, and separate groups that return different MAV_RESULT values. Case-label alignment follows the existing Linux-style formatter settings. This last edit was verified to change whitespace only; no rebuild or simulator rerun was needed for added blank lines. The current patch/hash includes it.
 
@@ -104,9 +106,9 @@ At the user’s request, short repository-style comments now explain the admissi
 
 The checkpoint clarification follows the learner’s explanation of payload checking and the receive/return flow. L09 is already integrated and manually observed in SITL. Admission stores `_task` and sets `_has_task`; result mapping reports the outcome. No movement execution was added. L09 is complete locally; L10 remains unstarted, and no L09 publication is authorized.
 
-The build-file style follow-up moves the two FeatherLane entries into a normal one-entry-per-line `sitl_libraries` list under an explicit `BOARD == sitl` condition. Library selection and ordering are preserved. The [incremental native build](build-libraries-followup.txt) and scoped whitespace check passed; current source/binary identities are updated. No simulator rerun or publication was performed for this build-list cleanup.
+The build-file style follow-up moves the two FeatherLane entries into a normal one-entry-per-line `sitl_libraries` list under an explicit `BOARD == sitl` condition. Library selection and ordering are preserved. The incremental native build (generated export removed) and scoped whitespace check passed; current source/binary identities are updated. No simulator rerun or publication was performed for this build-list cleanup.
 
-The requested readability refactor renames `r`/`c` to `request`/`context` and names the version/ID/height/speed/radius/home-distance bounds using file-scope `static constexpr` values and units. Values and validation behavior are preserved. The named version constant triggered the compiler’s float-equality rule, so its exact finite check now uses equivalent lower/upper comparisons. The [build](build-readability-followup.txt), source-equivalence review and whitespace check passed; [receipt](readability-followup.json) distinguishes this build from earlier manual observations. No manual SITL rerun or publication was performed for the refactor.
+The requested readability refactor renames `r`/`c` to `request`/`context` and names the version/ID/height/speed/radius/home-distance bounds using file-scope `static constexpr` values and units. Values and validation behavior are preserved. The named version constant triggered the compiler’s float-equality rule, so its exact finite check now uses equivalent lower/upper comparisons. The build (generated export removed), source-equivalence review and whitespace check passed; [receipt](readability-followup.json) distinguishes this build from earlier manual observations. No manual SITL rerun or publication was performed for the refactor.
 
 
 ## Publication after the guided checkpoint

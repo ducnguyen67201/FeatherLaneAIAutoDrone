@@ -1,10 +1,8 @@
 """Offline analysis of the manually moved obstacle and recorded observation path."""
 from pathlib import Path
 import collections
-import csv
 import hashlib
 import json
-import re
 import statistics
 from pymavlink import mavutil
 import matplotlib
@@ -19,11 +17,6 @@ def load_lines(path):
     return [json.loads(line) for line in path.read_text().splitlines()]
 def save(name, value):
     (OUT / name).write_text(json.dumps(value, indent=2) + '\n')
-def csv_file(name, rows):
-    with (OUT / name).open('w', newline='') as output:
-        writer = csv.DictWriter(output, fieldnames=list(rows[0]), lineterminator='\n')
-        writer.writeheader()
-        writer.writerows(rows)
 
 observer = load_lines(RUN / 'observer2.jsonl')
 samples = [row for row in observer if row['event'] == 'sample']
@@ -85,13 +78,7 @@ summary={'phase':'L13','case_results':summary_cases,
         'Renderer warnings and missing DART mesh collision retained; no collision/hardware or reliability claim.']}
 save('observation-summary.json',summary)
 save('case-markers.json',cases)
-csv_file('samples.csv',[{key:row[key] for key in ['wall_time','monotonic_s','source_stamp_s','observation_status','distance_m','wire_distance_cm','sent']} for row in samples])
-csv_file('rangefinder-log.csv',rfnd)
-csv_file('rangefinder-telemetry.csv',[{'wall_time':row['wall_time'],**row['message']} for row in distance])
 save('example-scans.json',{status:next(row for row in samples if row['observation_status']==status) for status in ['return','no_return']})
-for source,name in [(RUN/'sitl/console.log','console.txt'),(RUN/'gazebo-metal.log','gazebo-console.txt')]:
-    text=re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]','',source.read_text(errors='replace')).replace('\r','')
-    (OUT/name).write_text('\n'.join(line.rstrip() for line in text.splitlines())+'\n')
 start=cases[0]['wall_time']
 fig,axes=plt.subplots(2,1,figsize=(11,6),sharex=False)
 selected=[row for row in samples if row['wall_time']>=start]

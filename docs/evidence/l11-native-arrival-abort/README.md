@@ -1,5 +1,7 @@
 # L11 — native arrival and one operator abort
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 Status: final-source native build, nominal arrival/continued hold, operator abort/BRAKE stop, LAND/disarm and exact-L10 rollback observed; ready for guided review. Guided checkpoint pending. AI-assisted C++ and evidence tooling; no automated tests added. L11 is local/unpublished.
 
 ## Concept and prediction
@@ -68,11 +70,11 @@ Native dwell resets, invalid-input/fallback paths, blocked BRAKE entry and exter
 ## Evidence entry points
 
 - [Predeclared contract](execution-contract.json), [exact integration patch](native-arrival-abort.patch), [source/submodule manifest](source-manifest.json), [binary identities](binaries.json).
-- [Nominal summary](nominal-summary.json), [nominal trajectory](nominal-trajectory.csv), [nominal console](nominal-console.txt), [nominal launch](nominal-launch.zsh).
-- [Abort summary](abort-summary.json), [abort trajectory](abort-trajectory.csv), [abort console](abort-console.txt), [abort launch](abort-launch.zsh).
-- [Rollback summary](rollback-summary.json), [rollback console](rollback-console.txt), [rollback launch](rollback-launch.zsh).
+- [Nominal summary](nominal-summary.json), nominal trajectory (generated export removed), nominal console (generated export removed), [nominal launch](nominal-launch.zsh).
+- [Abort summary](abort-summary.json), abort trajectory (generated export removed), abort console (generated export removed), [abort launch](abort-launch.zsh).
+- [Rollback summary](rollback-summary.json), rollback console (generated export removed), [rollback launch](rollback-launch.zsh).
 - [L10 publication verification](l10-publication-verification.json), [final checks](verification.json).
-- [Initial full build](build-initial.txt), [final-source build](build-final.txt), [configure](configure.txt), [cleanup](cleanup.json), [raw artifact hashes](raw-artifacts.json).
+- Initial full build (generated export removed), final-source build (generated export removed), configure (generated export removed), [cleanup](cleanup.json), [raw artifact hashes](raw-artifacts.json).
 
 The guided checkpoint is complete after clarification: a COMPLETE task can still be airborne; the existing controller continues holding until operator mode change. L12 has not started. L11 remains uncommitted/unpublished on its local feature branches.
 

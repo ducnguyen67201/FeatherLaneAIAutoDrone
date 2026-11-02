@@ -1,5 +1,7 @@
 # L12 — connect one instrumented simulator scene
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 Status: native Mac headless Gazebo/official-plugin/stock-SITL flight, fresh disarmed connection and basic-SITL rollback observed; guided checkpoint complete. L12 was subsequently published; see the publication update below. AI-assisted build/world/launch configuration and evidence analysis; no automated tests or firmware edits added.
 
 ## What changed and what was predicted
@@ -56,10 +58,10 @@ DART logged that the official Iris mesh `base_collision` could not be created; p
 
 [Onboard MODE/RCOU summary](onboard-log-summary.json) is another channel from this simulation. RCOU count947 records actual autopilot output; JSN1/JSN2 were absent from this selected build/log and are not claimed. [Parameter comparison](parameter-comparison.json) preserves actual cached-before/fresh-after differences rather than asserting all parameters stayed frozen. [Binary identities](binary-identities.json) distinguish plugin, stock and preserved native executable hashes.
 
-- [Flight summary](flight-summary.json), [MAVLink trajectory](trajectory.csv), [Gazebo poses](gazebo-poses.csv), [flight console](flight-console.txt), [Gazebo console](gazebo-console.txt), [topic inventory](gazebo-topics.txt).
-- [Fresh connection](repeat-summary.json), [repeat console](repeat-console.txt), [basic rollback](rollback-summary.json), [rollback console](rollback-console.txt).
+- [Flight summary](flight-summary.json), MAVLink trajectory (generated export removed), Gazebo poses (generated export removed), flight console (generated export removed), Gazebo console (generated export removed), topic inventory (generated export removed).
+- [Fresh connection](repeat-summary.json), repeat console (generated export removed), [basic rollback](rollback-summary.json), rollback console (generated export removed).
 - [Cleanup](cleanup.json), [verification](verification.json), [guided checkpoint](learner-checkpoint.json).
-- [Plugin configure](plugin-configure.txt), [initial launcher/configure failure](plugin-configure-attempt1.txt), [plugin build](plugin-build.txt), [package identities](environment-packages.json), [raw artifact hashes](raw-artifacts.json).
+- Plugin configure (generated export removed), initial launcher/configure failure (generated export removed), plugin build (generated export removed), [package identities](environment-packages.json), [raw artifact hashes](raw-artifacts.json).
 
 All owned sessions stopped after fresh disarmed/on-ground evidence; Gazebo then exited via its owned launch session, and recorders stopped. No remaining scene/SITL/recorders or selected control sockets remain. Raw transport/state logs and the environment remain ignored local evidence; final source/world/launch/lock files and curated observations are reviewable.
 
@@ -72,7 +74,7 @@ The guided checkpoint is complete: which process calculates flight control, and 
 
 ## Follow-up GUI probe
 
-The user asked to see the3D interface after the headless qualification. A fresh server and GUI were launched without SITL or any flight commands. The GUI created its main window and loaded the world, but the default and requested-OpenGL attempts both logged Ogre renderer load errors; the runtime still selected Metal. Desktop observation was unavailable because the CUA native pipe failed, so no visible3D rendering success is claimed. Both owned launch sessions were stopped. [Probe summary](gui-probe-summary.json), [default log](gui-probe-default.txt), [OpenGL-request log](gui-probe-opengl.txt). This does not change the earlier headless flight qualification or establish GUI support.
+The user asked to see the3D interface after the headless qualification. A fresh server and GUI were launched without SITL or any flight commands. The GUI created its main window and loaded the world, but the default and requested-OpenGL attempts both logged Ogre renderer load errors; the runtime still selected Metal. Desktop observation was unavailable because the CUA native pipe failed, so no visible3D rendering success is claimed. Both owned launch sessions were stopped. [Probe summary](gui-probe-summary.json), default log (generated export removed), OpenGL-request log (generated export removed). This does not change the earlier headless flight qualification or establish GUI support.
 
 
 The user subsequently answered the visibility question: “A window with the3D drone/scene.” Static3D GUI visibility is therefore human-confirmed despite the renderer error logs. The probe had already been stopped when that answer arrived. No flight was started in the GUI probe; the earlier headless flight, static GUI visibility and unavailable agent screenshot validation remain distinct evidence.

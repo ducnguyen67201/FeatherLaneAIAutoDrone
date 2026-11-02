@@ -65,3 +65,18 @@ simulation/gazebo/run-sitl.sh "$PWD/.local/l13/new-session" l13
 The adapter connects to existing TCP5762 and sends only DISTANCE_SENSOR. It reads real LaserScan samples, never model poses. The world/profile retain the L12 plant/JSON setup and explicitly add21 front rays across10deg in one plane over0.2–8m. Samples/no-return/stale state are written to a new exclusive JSONL file. Source and receive clocks are separate; capture latency is unqualified.
 
 No-return is not clearance: a box below the0.2m minimum produced the same all-infinity output as one beyond8m. The801cm MAVLink value is an out-of-range sentinel, not a measured obstacle. Read the coverage/consumer limitations before any later control integration. Stop the observer after inspection; after fresh disarmed/on-ground evidence stop the owned SITL/recorder/server. Rollback is the default L12 world/profile in another fresh directory, without the observer or `l13` argument. The actual rollback confirmed RNGFND1_TYPE0 and no front_scan topic. L14 avoidance is not implemented by these launchers.
+
+## L14 stock stopping and recorded 3D playback
+
+[L14 evidence](../../docs/evidence/l14-stock-obstacle-stop/README.md) qualifies one head-on stock LOITER/Stop case, with a clear comparison. Use the same launchers with a fresh directory and second argument `l14`; start the observer with `--phase l14`. The profile enables rangefinder-based proximity and stock Stop, limits LOITER speed to 0.5 m/s and pilot lean to 1.5 degrees. Initial speed/timing failures are retained separately. This is operator-controlled stopping, not autonomous detouring or native ModeFeatherLane avoidance.
+
+To watch the actual retained flights without running SITL, use separate terminals on macOS:
+
+```sh
+simulation/gazebo/replay-l14.sh server blocked
+simulation/gazebo/replay-l14.sh gui blocked
+```
+
+Playback starts paused. In a third terminal, `simulation/gazebo/replay-l14.sh cue` seeks to 55 s, just before the recorded forward approach; `simulation/gazebo/replay-l14.sh play` starts playback and `simulation/gazebo/replay-l14.sh pause` pauses it. The GUI also has playback controls. The drone approaches the box, holds before it, then later lands because that operator command is in the recording. For the clear case, stop both owned playback terminals and start them with `clear` instead of `blocked`. The shared camera shows the starting area and box. Stop both terminals with Ctrl-C when finished.
+
+These commands replay recorded entity states, not a new live flight or new evidence of control. The large state logs remain ignored under `.local/l14/{clear,blocked}-final/gazebo-record/`; they must exist locally. The recorder hashes and source identity are retained in L14 evidence. Current desktop observation is unavailable; GUI-visible flight is only claimed if the human confirms it.

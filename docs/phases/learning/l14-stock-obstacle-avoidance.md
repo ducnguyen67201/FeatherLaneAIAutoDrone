@@ -2,7 +2,7 @@
 
 [Master learning plan](../../MASTER-LEARNING-PLAN.md) · [Capability roadmap](../../ROADMAP.md) · [Registry](../registry.json)
 
-**DRAFT phase card. Status: planned.** M04 Observe one obstacle then avoid it · Track: core · Dependencies: [L13](l13-observe-one-obstacle.md)
+**DRAFT phase card. Status: complete.** M04 Observe one obstacle then avoid it · Track: core · Dependencies: [L13](l13-observe-one-obstacle.md)
 
 Generated from the learning-phase record in `docs/phases/registry.json` and `docs/phases/learning-phase.template.md`. Change those sources and run `python3 scripts/render-learning-plan.py`; do not hand-edit this generated card. Planning or generating this card does not perform its work.
 
@@ -44,7 +44,7 @@ Retain:
 
 - Exact parameters, sensor profile, route/clearance observations and failures.
 
-**Actual execution record:** none; this phase has not been executed.
+**Actual execution record:** [L14 evidence](../../evidence/l14-stock-obstacle-stop/README.md): unchanged stock LOITER/Stop with front rangefinder/proximity. Final low-lean profile peaked0.49m/s in both cases; clear advanced about4.6m, blocked completed a2s low-speed dwell while input held at13.75s. Gazebo minimum center gap2.23m / declared0.7m-disc gap1.53m. LAND/disarm and default baseline rollback observed. Initial speed/timing failures retained. Local/unpublished; human3D-scene visibility confirmed and both logs replayed, guided checkpoint complete after the3D walkthrough; L15 not started.
 
 Use proportionate existing checks and manual observations. Do not create automated tests, snapshots or test scaffolding without an explicit user request. A successful install/build is evidence only for that operation.
 

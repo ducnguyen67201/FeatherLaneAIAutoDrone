@@ -1,0 +1,21 @@
+{
+  "phase": "L14",
+  "final_profile_checks": {
+    "clear_advance_at_least4m_after_neutral_hold": true,
+    "both_peak_speeds_at_most0.65mps": true,
+    "blocked_low_speed_dwell_2s_while_input_held": true,
+    "both_inputs_within20s_receive_and_boot": true,
+    "blocked_center_gap_at_least2m": true,
+    "declared_body_envelope_gap_at_least1m": true,
+    "both_height_error_at_most0.4m": true,
+    "both_lateral_error_at_most0.4m": true,
+    "both_armed_LOITER_fresh_navigation": true,
+    "blocked_native_avoidance_records": true
+  },
+  "all_final_checks_pass": true,
+  "minimum_sensor_return_m": 1.9420292377471924,
+  "sensor_margin_note": "Configured2m margin is not a hard minimum: actual sensor return reached1.942m. Evaluation center/envelope criteria are separate.",
+  "initial_profile_failed": "Peak1.68/1.71m/s exceeded0.65m/s bound; initial-configuration evidence preserved.",
+  "operator_timing_failed_then_repeated": "Original blocked input32.5boot seconds exceeded20s; retained, final18s pulse corrected.",
+  "checks_are": "Offline scoring of retained manual-flight data, not new automated tests."
+}

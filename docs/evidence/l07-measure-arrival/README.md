@@ -1,5 +1,7 @@
 # L07 — Measure entry, stopping and held arrival
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 [Project](../../../README.md) · [Learning card](../../phases/learning/l07-measure-arrival.md) · [L05 stock route](../l05-one-coordinate/README.md) · [L06 speed comparison](../l06-one-speed-change/README.md)
 
 Executed locally on 2026-10-31, approximately 18:37–18:40 America/Toronto (22:37–22:40 UTC), after the user explicitly requested pushing completed L06 and going to the next phase. L06 was published as `c26ffa094744a8c4122af60ab91ca13534b3d9f9`; remote/local SHA comparison passed, and `main` stayed at `c45c9e19ae279011d5779fa2669df3fac0f21a29`. L07 is local, uncommitted work on `codex/l07-measure-arrival`, branched from that L06 commit. L06 publication approval does not publish L07.
@@ -48,7 +50,7 @@ l07_run_dir="$l07_root/.local/l07/run1"
 env -u DISPLAY SITL_RITW_TERMINAL=bash TMPDIR="$l07_run_dir/"   PATH="$l07_root/.local/l02/venv/bin:/usr/bin:/bin:/usr/sbin:/sbin"   /usr/bin/script -q "$l07_run_dir/console.log"   "$l07_root/.local/l02/venv/bin/python"   "$l07_root/ardupilot/Tools/autotest/sim_vehicle.py"   -v ArduCopter -f quad -N --use-dir "$l07_run_dir"   --no-extra-ports --out 127.0.0.1:14550   --mavproxy-args=--default-modules=log,param,mode,arm,rc,cmdlong,output
 ```
 
-The experiment and each flight action were explained before execution. Main console sequence, with actual waits/state checks retained in the [transcript](console.txt):
+The experiment and each flight action were explained before execution. Main console sequence, with actual waits/state checks retained in the transcript (generated export removed):
 
 ```text
 long SET_MESSAGE_INTERVAL 245 500000
@@ -100,7 +102,7 @@ Maximum recorded northward overshoot beyond the target was **0.1002 m**. The lon
 
 ![Recorded position, speed and dwell evidence](arrival-observation.png)
 
-This graph was generated after the flight by our local `.local/l07/plot-arrival.py` using Python/Matplotlib from [arrival-timeline.csv](arrival-timeline.csv). The green interval shows the required dwell; the displayed dwell is capped at 2 s. Lines connect samples for readability and do not add measurements between them. [Arrival analysis](arrival-analysis.json) retains exact first-entry/start/completion samples, state ages, both time spans, gaps, overshoot and continued-hold metrics. Our `.local/l07/analyze-arrival.py` performs passive analysis of the manual recording, not flight control or automated testing. [Full trajectory](trajectory.csv) and [full-flight chart](coordinate-flight-trajectory.png) retain the wider takeoff/approach/landing context.
+This graph was generated after the flight by our local `.local/l07/plot-arrival.py` using Python/Matplotlib from arrival-timeline.csv (generated export removed). The green interval shows the required dwell; the displayed dwell is capped at 2 s. Lines connect samples for readability and do not add measurements between them. [Arrival analysis](arrival-analysis.json) retains exact first-entry/start/completion samples, state ages, both time spans, gaps, overshoot and continued-hold metrics. Our `.local/l07/analyze-arrival.py` performs passive analysis of the manual recording, not flight control or automated testing. Full trajectory (generated export removed) and [full-flight chart](coordinate-flight-trajectory.png) retain the wider takeoff/approach/landing context.
 
 ## Waypoint indicator versus the declared rule
 

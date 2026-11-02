@@ -30,3 +30,9 @@ docs/phases/*.browser-check.json
 # Phase-scoped simulator deployment viewer; retain JSON and exported SVG.
 docs/phases/l12-simulator-deployment.html
 docs/phases/l13-obstacle-observation.html
+docs/phases/l14-stock-obstacle-stop.html
+
+# Generated measurement/transcript exports; dependency locks remain source inputs.
+docs/evidence/**/*.csv
+docs/evidence/**/*.txt
+!docs/evidence/**/*.lock.txt

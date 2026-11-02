@@ -149,7 +149,7 @@
       "dot": "amber",
       "title": "Observed scope and limits",
       "items": [
-        "Local L13 integration observed disarmed. Adapter sends DISTANCE_SENSOR only; no arming, targets, mode commands, dodge or obstacle control. No firmware change; L12 published, L13 local/unpublished.",
+        "Local L13 integration observed disarmed. Adapter sends DISTANCE_SENSOR only; no arming, targets, mode commands, dodge or obstacle control. No firmware change; L12 published, L13 published at5e3a8fd.",
         "Observed nearest3.00018m and5.00031m. The21-ray10deg fan covers one plane over0.2–8m. Off-axis, above-plane, beyond8m and below0.2m produced no-return: no proof of free space or swept-body clearance.",
         "Reader pause produced stale receive state after0.356s and stock RFND Good→NoData→Good. NoData distance0 is invalid, and max+1cm is a no-return sentinel. Receive freshness is not synchronized capture-age qualification.",
         "Known box geometry is scoring truth only. Sensor-disabled baseline and cleanup observed. Renderer/mesh limits retained; malformed guards source-reviewed, not injected. Guided checkpoint complete after clarification; screenshot attachment pending."

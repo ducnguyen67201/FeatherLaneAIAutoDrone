@@ -173,3 +173,31 @@ The learner correctly answered that a box could still be0.1m ahead because it is
 ## L13 publication / L14 authorization —2026-11-02
 
 After the completed guided checkpoint and clarification of real sensors versus simulated observations, the user requested pushing L13 and continuing the next phase. This authorizes L13 feature-branch publication with the unchanged firmware reference, followed by local L14 one documented stock avoidance configuration and clear/blocked static-scene comparison. It does not authorize main merge, L14 publication, custom/native avoidance or hardware operation. The unreadable screenshot remains pending.
+
+
+## L13 publication and L14 stock stopping observations —2026-11-02
+
+L13 feature-branch publication was verified at project `5e3a8fd6464fc6157a654e5714262272624177b1` with unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547`. The authorized L14 scope uses stock LOITER/Stop with existing front rangefinder/proximity and AC_Avoid; no firmware, custom planner or native-mode avoidance was added. Proposal diagrams were shown before configuration/code.
+
+The initial small RC input was too slow; abrupt full stick with default pilot lean then peaked1.68/1.71m/s, failing the conservative0.65m/s bound. An initial blocked input also exceeded its20s operator timing bound. Those failures remain separate evidence. Limiting LOIT_ANG_MAX to1.5deg and delivering timed forward/neutral commands in one action produced fresh final clear/blocked sessions, both peaking0.49m/s. Clear progressed about4.6m after neutral; blocked completed a2s low-speed dwell at13.75s while full forward input was still held. Actual sensor margin briefly reached1.942m against a2m target; separate Gazebo centre/envelope minima were2.23/1.53m. LAND/disarm and a sensor-disabled original-profile rollback followed.
+
+The learner requested seeing the drone fly before completing the checkpoint. Actual blocked-run log playback was opened in a separate Gazebo GUI/server, without SITL or new flight commands, paused before the approach; visible-scene confirmation is pending because the desktop native pipe is unavailable. This does not establish GUI-observed flight yet. L14 remains unpublished with visual walkthrough pending; L15 and physical operation are not started.
+
+
+The user then confirmed the visible3D drone/box scene. The actual blocked and clear recordings were played in sequence with no SITL/new flight commands. Human scene visibility, recorded pose movement and unavailable agent desktop inspection are retained separately; the mechanism checkpoint remains pending. The clear playback remains paused for viewing.
+
+
+## L14 guided checkpoint complete —2026-11-02
+
+After the actual-recording3D walkthrough and clarification of operator-neutral stopping versus obstacle stopping, the learner correctly identified the cause: “The front distance readings, processed by stock avoidance in LOITER.” L14 is complete locally. This answer does not authorize L14 publication or starting L15; the clear recorded playback remains paused for inspection, with no live flight/SITL running.
+
+## Generated CSV/TXT export cleanup — 2026-11-02
+
+The user requested removal of generated CSV and TXT system dumps after the L14 walkthrough. Removed 94 maintained evidence exports and 24 ignored project-generated dumps; source/build files, dependency locks, original diagram-authoring input, JSON summaries, figures and native recordings remain. Direct Markdown links to the removed exports were replaced with explicit removal notes, and phase records link to the maintained evidence-retention note. Historical manifests retain original paths/hashes as provenance, with their later deletion explained there.
+
+The maintained L13/L14 analyzers no longer emit CSV or TXT exports. Numerical calculations, figures, flight configuration and autopilot behavior are unchanged. This is local cleanup, not a flight rerun, next-phase start or publication.
+
+
+## L14/cleanup publication and L15 authorization — 2026-11-02
+
+The user requested pushing the completed work and continuing the next phase after the L14 explanation and generated CSV/TXT cleanup. This authorizes L14 and cleanup feature-branch publication with the unchanged firmware reference, followed by local L15 one native avoidance integration and bounded blocked/invalid policy. Main merge, L15 publication, a general planner and physical operation remain outside scope.

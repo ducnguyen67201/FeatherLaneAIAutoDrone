@@ -78,3 +78,6 @@ L11 parent publication is verified at `56b32a2c6d10bc58a85ae4ebab4ff98520da3acc`
 
 
 L12 publication is remote-SHA verified at project `7b1dc4a07bb335c960c2e72f855b0e3bf07d6885` on `codex/l12-instrumented-scene`, linking unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547` on the matching branch. The screenshot remains pending a readable attachment. Both current local branches are `codex/l13-obstacle-observation`; firmware has no working diff. [L13 evidence](evidence/l13-obstacle-observation/README.md) records disarmed sensor observations/timeout/rollback only. L13 is uncommitted/unpublished; main and stock pins remain unchanged.
+
+
+L13 publication is remote-SHA verified at project `5e3a8fd6464fc6157a654e5714262272624177b1` and unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547` on matching `codex/l13-obstacle-observation` branches. Both current local branches are `codex/l14-stock-obstacle-stop`. Project-only local commits `15e4b22` and `a1961f7` retain the source walkthrough and exact executed L14 configuration/observation tools; L14 evidence/status remain uncommitted and no L14 push occurred. Firmware/main/stock pins are unchanged.

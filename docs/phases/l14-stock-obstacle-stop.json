@@ -1,0 +1,217 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "L14 observed stock stopping path — sensor to controller",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "docs/phases/l14-stock-obstacle-stop.html",
+    "repository": {
+      "url": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
+      "revision": "a1961f7562e5b92d0788e4927e5b5ef69f10fcf4",
+      "link_mode": "local-only"
+    }
+  },
+  "components": [
+    {
+      "id": "sensor",
+      "type": "backend",
+      "label": "Gazebo front lidar",
+      "sublabel": "L14 scene · narrow front fan",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        300,
+        95
+      ],
+      "sources": [
+        {
+          "path": "simulation/gazebo/worlds/l14-stock-stop.sdf",
+          "line": 63,
+          "end_line": 109
+        }
+      ]
+    },
+    {
+      "id": "adapter",
+      "type": "backend",
+      "label": "Observation adapter",
+      "sublabel": "L14 profile · observations only",
+      "pos": [
+        450,
+        40
+      ],
+      "size": [
+        300,
+        95
+      ],
+      "sources": [
+        {
+          "path": "simulation/gazebo/range_observer.py",
+          "line": 69,
+          "end_line": 155
+        }
+      ]
+    },
+    {
+      "id": "rangefinder",
+      "type": "backend",
+      "label": "Stock MAVLink rangefinder",
+      "sublabel": "Existing backend · metres / validity",
+      "pos": [
+        880,
+        40
+      ],
+      "size": [
+        300,
+        95
+      ],
+      "sources": [
+        {
+          "path": "docs/guides/l14-stock-stop-source.md",
+          "line": 8,
+          "end_line": 38
+        }
+      ]
+    },
+    {
+      "id": "proximity",
+      "type": "backend",
+      "label": "Stock proximity from ranges",
+      "sublabel": "PRX1_TYPE4 · existing boundary",
+      "pos": [
+        880,
+        320
+      ],
+      "size": [
+        300,
+        95
+      ],
+      "sources": [
+        {
+          "path": "docs/guides/l14-stock-stop-source.md",
+          "line": 39,
+          "end_line": 82
+        }
+      ]
+    },
+    {
+      "id": "avoid",
+      "type": "backend",
+      "label": "Stock AC_Avoid limiter",
+      "sublabel": "Stop ·2m target margin · no backup",
+      "pos": [
+        880,
+        600
+      ],
+      "size": [
+        300,
+        95
+      ],
+      "sources": [
+        {
+          "path": "docs/guides/l14-stock-stop-source.md",
+          "line": 83,
+          "end_line": 157
+        }
+      ]
+    },
+    {
+      "id": "loiter",
+      "type": "backend",
+      "label": "Stock LOITER / controllers",
+      "sublabel": "Speed limit0.5m/s · pilot lean1.5deg",
+      "pos": [
+        880,
+        880
+      ],
+      "size": [
+        300,
+        95
+      ],
+      "sources": [
+        {
+          "path": "docs/guides/l14-stock-stop-source.md",
+          "line": 158,
+          "end_line": 185
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "scan",
+      "from": "sensor",
+      "to": "adapter",
+      "label": "LaserScan"
+    },
+    {
+      "id": "measurement",
+      "from": "adapter",
+      "to": "rangefinder",
+      "label": "DISTANCE_SENSOR / TCP5762"
+    },
+    {
+      "id": "range",
+      "from": "rangefinder",
+      "to": "proximity",
+      "label": "Forward range / validity"
+    },
+    {
+      "id": "boundary",
+      "from": "proximity",
+      "to": "avoid",
+      "label": "Observed front boundary"
+    },
+    {
+      "id": "limited",
+      "from": "avoid",
+      "to": "loiter",
+      "label": "Adjusted desired velocity"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Gazebo process · L14 sensor scene",
+      "wraps": [
+        "sensor"
+      ],
+      "pad": 18
+    },
+    {
+      "kind": "region",
+      "label": "Local Python process · observations only",
+      "wraps": [
+        "adapter"
+      ],
+      "pad": 18
+    },
+    {
+      "kind": "region",
+      "label": "Existing stock ArduCopter SITL process",
+      "wraps": [
+        "rangefinder",
+        "proximity",
+        "avoid",
+        "loiter"
+      ],
+      "pad": 20
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "Observed L14 scope and retained limits",
+      "items": [
+        "Unchanged stock firmware and existing local processes. Final rangefinder/proximity/LOITER configuration and front observation adapter were exercised in clear/blocked flights. Python sends sensor messages only; MAVProxy supplies operator commands.",
+        "Final profile: PRX1_TYPE4, AVOID_ENABLE2, Stop,2m target margin, no backup, LOIT_SPEED_MS0.5, LOIT_ANG_MAX1.5deg. Both final peaks0.49m/s; clear advanced about4.6m, blocked completed2s low-speed dwell at13.75s while forward input stayed held.",
+        "Initial default-lean speed peaks1.68/1.71m/s and an overlong input failed declared bounds; retained separately, then corrected/repeated. Configured2m margin briefly yielded1.942m sensor return. Gazebo minimum centre/disc-envelope gaps2.23/1.53m are separate evaluation measurements.",
+        "Same10deg single-plane fan,0.2–8m. No-return is not clearance; coarse proximity sectors do not expand measured coverage. No detour/native-mode inheritance, sensor-loss fallback, full-volume collision, reliability or hardware qualification.",
+        "All flight sessions ended LAND/disarm; original sensor-disabled profile rollback observed. L13 published, L14 local/unpublished. Human3D-scene visibility confirmed; both actual-log segments replayed. Guided checkpoint complete after the3D walkthrough. L15 not started."
+      ]
+    }
+  ]
+}

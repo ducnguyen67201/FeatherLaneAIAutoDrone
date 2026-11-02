@@ -1,5 +1,7 @@
 # L08 — native status observer
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 Status: custom build, manual disarmed observation and stock rollback check passed. Guided learning checkpoint complete. AI-assisted C++ and documentation; no flight claim.
 
 ## Concept and prediction recorded before the run
@@ -43,7 +45,7 @@ Scheduling: requested 1 Hz, priority 171, declared 100 µs allowance. That allow
 
 ## Observation, resource notes and rollback
 
-The isolated build completed successfully in 1m8.500s. The full [build output](build.txt) and [configuration output](configure.txt) are retained. Copied build/configuration/console transcripts have trailing spaces removed for publication; original byte-for-byte logs remain under `.local/l08/`. The applicable patch preserves Git context-line prefixes, including blank context lines. There were 223 compiler warning records in upstream paths, including macro redefinitions and existing conversion/move warnings; no warning names an added FL_Status source. This is a successful build with warnings, not a warning-free claim.
+The isolated build completed successfully in 1m8.500s. The full build output (generated export removed) and configuration output (generated export removed) are retained. Copied build/configuration/console transcripts have trailing spaces removed for publication; original byte-for-byte logs remain under `.local/l08/`. The applicable patch preserves Git context-line prefixes, including blank context lines. There were 223 compiler warning records in upstream paths, including macro redefinitions and existing conversion/move warnings; no warning names an added FL_Status source. This is a successful build with warnings, not a warning-free claim.
 
 The custom manual run retained 13 `FL L08` messages, tick 1 through 61, always stepping by five. Reception intervals were 4.996–5.005 s. Stock heartbeat observations covered 66.04 s and modes 0/4; all 71 vehicle heartbeat samples were disarmed. All received extended states were on-ground. Each custom report matched the nearest stock heartbeat’s mode/arming state (at most 0.409 s apart). STABILIZE → GUIDED → STABILIZE was requested manually; no arm, takeoff or destination request was sent.
 
@@ -53,7 +55,7 @@ FL L08 tick=46 mode=4 armed=0
 FL L08 tick=61 mode=0 armed=0
 ```
 
-The upstream `@SYS/tasks.txt` interface was read via MAVProxy’s existing FTP module. The first read enabled task statistics in RAM; the second produced [task details](tasks-end.txt), including the new scheduled callback with zero reported time/overruns/slips. **Zero is not a host CPU measurement:** `AP_Scheduler` uses `AP_HAL::micros()`, and SITL’s stopped simulation clock is returned by `AP_HAL_SITL/system.cpp` while callbacks run. All task rows reported zero. No measured 100 µs worst-case bound, hardware qualification or mission-latency improvement is claimed. The custom update contains fixed state copies/counter/countdown operations and calls the existing bounded status queue at the report cadence. Further profiling belongs to a separately scoped measurement.
+The upstream `@SYS/tasks.txt` interface was read via MAVProxy’s existing FTP module. The first read enabled task statistics in RAM; the second produced task details (generated export removed), including the new scheduled callback with zero reported time/overruns/slips. **Zero is not a host CPU measurement:** `AP_Scheduler` uses `AP_HAL::micros()`, and SITL’s stopped simulation clock is returned by `AP_HAL_SITL/system.cpp` while callbacks run. All task rows reported zero. No measured 100 µs worst-case bound, hardware qualification or mission-latency improvement is claimed. The custom update contains fixed state copies/counter/countdown operations and calls the existing bounded status queue at the report cadence. Further profiling belongs to a separately scoped measurement.
 
 The custom executable file is 4,818,072 bytes versus 4,817,736 bytes for the retained stock binary (+336 bytes). File size includes build metadata/alignment and is not a runtime RAM measurement; Mach-O segment sizes round to the same values. SHA-256 identities are retained in [binaries.json](binaries.json).
 
@@ -78,7 +80,7 @@ The first `long` requests on-ground state telemetry. The FTP commands read diagn
 ## Evidence and limits
 
 - [Scoped five-file patch](native-status.patch) and [baseline/submodule manifest](source-manifest.json). The executable was built from the stock base plus the retained patch. The subsequently created firmware commit `3f467d90be284654c5721ac3d94c26863f771275` identifies exactly those five-file changes; the source manifest keeps both identities. Branch publication is not a qualified release.
-- [Custom console](custom-run-console.txt), [execution summary](execution-summary.json), [raw artifact paths/hashes](raw-artifacts.json), [task statistics initialization](tasks-start.txt) and [task statistics](tasks-end.txt). [Stock console](stock-run-console.txt) is retained too. Raw passive MAVLink JSONL, tlog and session files remain under ignored `.local/l08/`.
+- Custom console (generated export removed), [execution summary](execution-summary.json), [raw artifact paths/hashes](raw-artifacts.json), task statistics initialization (generated export removed) and task statistics (generated export removed). Stock console (generated export removed) is retained too. Raw passive MAVLink JSONL, tlog and session files remain under ignored `.local/l08/`.
 - Observations are sampled telemetry and source/build evidence from one custom disarmed session; they do not qualify armed flight, hardware, another vehicle, failure behavior or a native mission contract. Simulator truth messages may exist in the raw stock stream; this status component consumes only the stock mode/arming values, not truth position.
 - Startup connection refusal before the executable opened its TCP port and reconnect refusal after deliberate shutdown are recorded lifecycle events, not proof of fault recovery. No failed/rejected-connection campaign was performed; P01/P03 broader gates remain open.
 

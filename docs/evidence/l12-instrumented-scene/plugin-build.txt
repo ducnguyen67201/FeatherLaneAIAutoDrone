@@ -1,5 +1,0 @@
-[ 50%] Building CXX object CMakeFiles/ArduPilotPlugin.dir/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/src/ardupilot_gazebo/src/SocketUDP.cc.o
-[ 50%] Building CXX object CMakeFiles/ArduPilotPlugin.dir/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/src/ardupilot_gazebo/src/Util.cc.o
-[ 75%] Building CXX object CMakeFiles/ArduPilotPlugin.dir/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/src/ardupilot_gazebo/src/ArduPilotPlugin.cc.o
-[100%] Linking CXX shared library libArduPilotPlugin.dylib
-[100%] Built target ArduPilotPlugin

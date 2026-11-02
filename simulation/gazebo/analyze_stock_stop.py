@@ -1,10 +1,8 @@
 """Analyze retained L14 manual flights offline; never connects to a vehicle."""
 from pathlib import Path
 import collections
-import csv
 import json
 import math
-import re
 
 import matplotlib
 matplotlib.use('Agg')
@@ -28,15 +26,6 @@ def read_rows(path):
 
 def write_json(name, value):
     (OUTPUT_ROOT / name).write_text(json.dumps(value, indent=2) + '\n')
-
-
-def write_csv(name, rows):
-    if not rows:
-        return
-    with (OUTPUT_ROOT / name).open('w', newline='') as output:
-        writer = csv.DictWriter(output, fieldnames=list(rows[0]), lineterminator='\n')
-        writer.writeheader()
-        writer.writerows(rows)
 
 
 def analyze_case(case):
@@ -165,14 +154,6 @@ def analyze_case(case):
         'shutdown': json.loads((run / 'sitl/shutdown.json').read_text()),
     }
     write_json(f'{case}-summary.json', summary)
-    write_csv(f'{case}-trajectory.csv', trajectory)
-    write_csv(f'{case}-avoidance.csv', avoidance)
-    write_csv(f'{case}-gazebo-poses.csv', pose_samples)
-    write_csv(f'{case}-rangefinder.csv', [row for row in onboard if row['mavpackettype'] == 'RFND'])
-    for source, name in [(run / 'sitl/console.log', f'{case}-console.txt'),
-                         (RUN_ROOT / f'{case}-final-gazebo.log', f'{case}-gazebo-console.txt')]:
-        text = re.sub(r'\x1b\[[0-?]*[ -/]*[@-~]', '', source.read_text(errors='replace')).replace('\r', '')
-        (OUTPUT_ROOT / name).write_text('\n'.join(line.rstrip() for line in text.splitlines()) + '\n')
     return summary, trajectory, avoidance, pose_samples
 
 

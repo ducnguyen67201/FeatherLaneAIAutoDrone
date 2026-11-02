@@ -1,0 +1,587 @@
+{
+  "observed_at_utc": "2026-11-02T21:07:26.267605+00:00",
+  "project_local_implementation_commit": "a1961f7562e5b92d0788e4927e5b5ef69f10fcf4",
+  "project_main": "c45c9e19ae279011d5779fa2669df3fac0f21a29",
+  "firmware_HEAD": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
+  "firmware_stock_branch": "fb773567896014da007bca58358704d4a0d8516f",
+  "firmware_status": "",
+  "recursive_pins_equal_L01": true,
+  "recursive_submodule_count": 21,
+  "case_parameters": {
+    "clear-final": {
+      "selected": {
+        "RNGFND1_TYPE": 10.0,
+        "RNGFND1_ORIENT": 0.0,
+        "PRX1_TYPE": 4.0,
+        "AVOID_ENABLE": 2.0,
+        "AVOID_BEHAVE": 1.0,
+        "AVOID_MARGIN": 2.0,
+        "AVOID_BACKUP_SPD": 0.0,
+        "LOIT_SPEED_MS": 0.5,
+        "LOIT_ANG_MAX": 1.5,
+        "OA_TYPE": 0.0
+      },
+      "all_before_after_changes": {
+        "BARO1_GND_PRESS": [
+          94501.695312,
+          101322.71875
+        ],
+        "BARO2_GND_PRESS": [
+          94501.976562,
+          101322.945312
+        ],
+        "COMPASS_DEC": [
+          0.0,
+          0.223357
+        ],
+        "MAV1_ADSB": [
+          0.0,
+          4.0
+        ],
+        "MAV1_EXTRA1": [
+          0.0,
+          4.0
+        ],
+        "MAV1_EXTRA2": [
+          0.0,
+          4.0
+        ],
+        "MAV1_EXTRA3": [
+          0.0,
+          4.0
+        ],
+        "MAV1_EXT_STAT": [
+          0.0,
+          4.0
+        ],
+        "MAV1_POSITION": [
+          0.0,
+          4.0
+        ],
+        "MAV1_RAW_CTRL": [
+          0.0,
+          4.0
+        ],
+        "MAV1_RAW_SENS": [
+          0.0,
+          4.0
+        ],
+        "MAV1_RC_CHAN": [
+          0.0,
+          4.0
+        ],
+        "MOT_THST_HOVER": [
+          0.39,
+          0.33072
+        ],
+        "STAT_DISTFLWN": [
+          0.0,
+          5.991071
+        ],
+        "STAT_FLTCNT": [
+          0.0,
+          1.0
+        ],
+        "STAT_FLTTIME": [
+          0.0,
+          61.0
+        ],
+        "STAT_RUNTIME": [
+          30.0,
+          98.0
+        ]
+      }
+    },
+    "blocked-final": {
+      "selected": {
+        "RNGFND1_TYPE": 10.0,
+        "RNGFND1_ORIENT": 0.0,
+        "PRX1_TYPE": 4.0,
+        "AVOID_ENABLE": 2.0,
+        "AVOID_BEHAVE": 1.0,
+        "AVOID_MARGIN": 2.0,
+        "AVOID_BACKUP_SPD": 0.0,
+        "LOIT_SPEED_MS": 0.5,
+        "LOIT_ANG_MAX": 1.5,
+        "OA_TYPE": 0.0
+      },
+      "all_before_after_changes": {
+        "BARO1_GND_PRESS": [
+          94501.695312,
+          101322.71875
+        ],
+        "BARO2_GND_PRESS": [
+          94501.976562,
+          101322.945312
+        ],
+        "COMPASS_DEC": [
+          0.0,
+          0.223357
+        ],
+        "MAV1_ADSB": [
+          0.0,
+          4.0
+        ],
+        "MAV1_EXTRA1": [
+          0.0,
+          4.0
+        ],
+        "MAV1_EXTRA2": [
+          0.0,
+          4.0
+        ],
+        "MAV1_EXTRA3": [
+          0.0,
+          4.0
+        ],
+        "MAV1_EXT_STAT": [
+          0.0,
+          4.0
+        ],
+        "MAV1_POSITION": [
+          0.0,
+          4.0
+        ],
+        "MAV1_RAW_CTRL": [
+          0.0,
+          4.0
+        ],
+        "MAV1_RAW_SENS": [
+          0.0,
+          4.0
+        ],
+        "MAV1_RC_CHAN": [
+          0.0,
+          4.0
+        ],
+        "MOT_THST_HOVER": [
+          0.39,
+          0.330912
+        ],
+        "STAT_DISTFLWN": [
+          0.0,
+          6.035246
+        ],
+        "STAT_FLTCNT": [
+          0.0,
+          1.0
+        ],
+        "STAT_FLTTIME": [
+          0.0,
+          59.0
+        ],
+        "STAT_RUNTIME": [
+          30.0,
+          102.0
+        ]
+      }
+    }
+  },
+  "rollback": {
+    "selected": {
+      "RNGFND1_TYPE": 0.0,
+      "RNGFND1_ORIENT": null,
+      "PRX1_TYPE": 0.0,
+      "AVOID_ENABLE": 3.0,
+      "AVOID_BEHAVE": 0.0,
+      "AVOID_MARGIN": 2.0,
+      "AVOID_BACKUP_SPD": 0.75,
+      "LOIT_SPEED_MS": 12.5,
+      "LOIT_ANG_MAX": 0.0,
+      "OA_TYPE": 0.0
+    },
+    "disabled_fields_not_exposed": [
+      "RNGFND1_ORIENT"
+    ],
+    "reported_selected_equal_original_L12_profile": true,
+    "heartbeats": 58,
+    "all_disarmed": true,
+    "no_front_scan_topic": true
+  },
+  "shutdowns": {
+    "clear": {
+      "time": 1793651252.3094232,
+      "pid": 66912,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+        "--model",
+        "JSON",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l14-stock-stop.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793651251.38223,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 89,
+            "custom_mode": 9,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793651252.153643,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "blocked": {
+      "time": 1793651612.6343849,
+      "pid": 69397,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+        "--model",
+        "JSON",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l14-stock-stop.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793651612.4004521,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 89,
+            "custom_mode": 9,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793651612.112575,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "rollback": {
+      "time": 1793651814.689915,
+      "pid": 72937,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+        "--model",
+        "JSON",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l12-baseline.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793651813.896636,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793651814.458556,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "clear-final": {
+      "time": 1793651957.202822,
+      "pid": 74354,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+        "--model",
+        "JSON",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l14-stock-stop.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793651956.736047,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 89,
+            "custom_mode": 9,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793651957.096294,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "blocked-final": {
+      "time": 1793652068.230707,
+      "pid": 75223,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+        "--model",
+        "JSON",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l14-stock-stop.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793652067.374481,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 89,
+            "custom_mode": 9,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793652067.800384,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    },
+    "rollback-final": {
+      "time": 1793652128.906402,
+      "pid": 77661,
+      "command": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+        "--model",
+        "JSON",
+        "--speedup",
+        "1",
+        "--slave",
+        "0",
+        "--defaults",
+        "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l12-baseline.parm",
+        "--sim-address=127.0.0.1",
+        "-I0"
+      ],
+      "action": "SIGTERM only owned disarmed/on-ground SITL",
+      "state": {
+        "HEARTBEAT": {
+          "wall_time": 1793652128.517461,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "HEARTBEAT",
+            "type": 2,
+            "autopilot": 3,
+            "base_mode": 81,
+            "custom_mode": 0,
+            "system_status": 3,
+            "mavlink_version": 3
+          }
+        },
+        "EXTENDED_SYS_STATE": {
+          "wall_time": 1793652128.549514,
+          "source_system": 1,
+          "source_component": 1,
+          "message": {
+            "mavpackettype": "EXTENDED_SYS_STATE",
+            "vtol_state": 3,
+            "landed_state": 1
+          }
+        }
+      }
+    }
+  },
+  "remaining_flight_processes": [],
+  "selected_flight_ports_for_current_user": [],
+  "requested_playback_processes": [
+    {
+      "cmdline": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/micromamba/bin/micromamba",
+        "--no-rc",
+        "run",
+        "-p",
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/gazebo-env",
+        "gz",
+        "sim",
+        "-s",
+        "-v",
+        "4",
+        "--playback",
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l14/clear-final/gazebo-record"
+      ],
+      "pid": 89014
+    },
+    {
+      "cmdline": [
+        "gz sim -s -v 4 --playback /Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l14/clear-final/gazebo-record",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "pid": 89018
+    },
+    {
+      "cmdline": [
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/micromamba/bin/micromamba",
+        "--no-rc",
+        "run",
+        "-p",
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/gazebo-env",
+        "gz",
+        "sim",
+        "-g",
+        "-v",
+        "4",
+        "--gui-config",
+        "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l14/playback-clear-gui.config"
+      ],
+      "pid": 89065
+    },
+    {
+      "cmdline": [
+        "gz sim -g -v 4 --gui-config /Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l14/playback-clear-gui.config",
+        "",
+        "",
+        "",
+        "",
+        "",
+        "",
+        ""
+      ],
+      "pid": 89081
+    }
+  ],
+  "playback_scope": "Actual recorded-state playback only, no SITL. Human confirmed3D scene; recorded blocked and clear segments played, clear now paused for viewing. Agent desktop native pipe unavailable.",
+  "playback_reader_teardown_warning": "Both final observer topic readers emitted libc++ mutex-lock errors during Ctrl-C teardown. Adapter sessions exited0 and all flight/recorder/server processes stopped.",
+  "link_errors": [],
+  "checks": {
+    "Python_AST": "pass",
+    "shell_syntax": "pass",
+    "SDF_and_GUI_fragment_parse": "pass",
+    "diff_check": "pass",
+    "new_automated_tests": "none",
+    "dependency_audit": "29 unchanged locked packages, no known vulnerabilities",
+    "firmware_build": "unchanged exact stock executable reused"
+  },
+  "artifact_gates": {
+    "phase-observed-finalize": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "update_notice_required": false
+    },
+    "core-observed-finalize": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "update_notice_required": false
+    },
+    "l13-publication-finalize": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "update_notice_required": false
+    },
+    "learning-workflow-finalize": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "update_notice_required": false
+    }
+  },
+  "L14_published": false,
+  "learning_checkpoint": "Complete after3D walkthrough and correct front-distance/stock-avoidance explanation;2026-11-02"
+}

@@ -2,9 +2,9 @@
 
 [Project home](../README.md) · [Capability roadmap](ROADMAP.md) · [Phase registry](phases/registry.json) · [First-seven-phase diagram](assets/learning/learning-workflow.svg)
 
-**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L12 and guided checkpoints complete; L12 published at project7b1dc4a07bb335c960c2e72f855b0e3bf07d6885 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L13 locally observed one front lidar/static box, 3m/5m returns, no-return coverage/blind spot and stock rangefinder NoData/recovery, disarmed with avoidance disabled; baseline rollback and cleanup complete. L13 complete locally with guided checkpoint complete after the under-range clarification; unpublished. Screenshot inclusion pending readable attachment; L14 not started; broader P01/P03 gates incomplete.
+**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L13 and guided checkpoints complete; L13 published at project5e3a8fd6464fc6157a654e5714262272624177b1 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L14 final stock LOITER/Stop clear/blocked flights and baseline rollback observed locally:0.49m/s peaks, blocked2s dwell while input held at13.75s, minimum evaluated center/envelope gaps2.23/1.53m. Initial speed/timing failures retained. L14 complete locally with guided checkpoint complete after the3D walkthrough; unpublished; human3D-scene visibility confirmed and both actual-recording segments replayed separately. No new firmware/native avoidance, L15 or hardware. Screenshot attachment pending; broader P01/P03 gates incomplete.
 
-**Next small phase: L14.** Active learning phase: L13.
+**Next small phase: L15.** Active learning phase: L14.
 
 This is the execution entry point. `L01`, `L02`, and so on are small learning phases. Existing `P01`–`P09` references remain capability milestones in the roadmap and architecture; their numbers do not dictate the learning order. Master groups organize related results without turning a group into one large implementation task. A phase passing does not automatically complete its parent capability milestone.
 

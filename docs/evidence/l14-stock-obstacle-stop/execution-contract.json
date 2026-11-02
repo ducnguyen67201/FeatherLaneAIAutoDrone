@@ -1,0 +1,100 @@
+{
+  "phase": "L14",
+  "date": "2026-11-02",
+  "scope": "One stock LOITER/Stop comparison; unchanged stock executable, no custom controller/planner or native-mode integration.",
+  "prediction": "Under same bounded forward RC input, clear scene advances while blocked scene slows and holds before the box. Stop is a bounded blocked outcome, not a detour or route completion.",
+  "configuration": {
+    "RNGFND1_TYPE": 10,
+    "PRX1_TYPE": 4,
+    "AVOID_ENABLE": 2,
+    "AVOID_BEHAVE": 1,
+    "AVOID_MARGIN": 2,
+    "AVOID_BACKUP_SPD": 0,
+    "OA_TYPE": 0,
+    "LOIT_SPEED_MS": 0.5,
+    "LOIT_ANG_MAX": 1.5
+  },
+  "sensor": {
+    "range_m": [
+      0.2,
+      8
+    ],
+    "horizontal_fov_deg": 10,
+    "rays": 21,
+    "vertical_planes": 1,
+    "same_mount_as_L13": true,
+    "truth_not_input": true
+  },
+  "scene": {
+    "box_size_ENU_m": [
+      2,
+      0.5,
+      4
+    ],
+    "blocked_center_ENU_m": [
+      0,
+      6.55,
+      2
+    ],
+    "clear_center_ENU_m": [
+      5,
+      6.55,
+      2
+    ],
+    "front_face_north_m": 6.3,
+    "initial_predicted_sensor_distance_m": 6
+  },
+  "manual_sequence": [
+    "Fresh scene/profile; verify disarmed sensor/rangefinder/proximity health.",
+    "Normal GUIDED arm/takeoff3m; observe healthy hover.",
+    "Neutral RC/throttle1500, switch LOITER, verify mode/altitude.",
+    "Apply same forward pitch RC1400; clear case neutralize near5m progress; blocked case observe stop while input held, maximum20s.",
+    "Neutral RC, hold, LAND, automatic disarm/on-ground; stop only owned sessions."
+  ],
+  "criteria": {
+    "clear_advance_min_m": 4,
+    "blocked_stopping_speed_max_mps": 0.15,
+    "blocked_stop_dwell_s": 2,
+    "forward_input_still_held_during_stop": true,
+    "altitude_m": 3,
+    "altitude_error_max_m": 0.4,
+    "lateral_error_max_m": 0.4,
+    "peak_speed_review_bound_mps": 0.65,
+    "minimum_center_to_front_face_m": 2,
+    "declared_horizontal_body_envelope_radius_m": 0.7,
+    "minimum_evaluation_envelope_gap_m": 1,
+    "telemetry_max_gap_s": 0.75
+  },
+  "operator_bounds": {
+    "neutralize_before_north_m": 5,
+    "neutralize_on_sensor_loss_or_invalid_navigation": true,
+    "hold_input_max_s": 20,
+    "no_inflight_fault_injection": true
+  },
+  "rollback": "Fresh default L12 scene/profile, no observation adapter; verify RNGFND1_TYPE0 and prior avoidance values, disarmed/on-ground. Stop all owned processes.",
+  "limitations": [
+    "No-return never establishes clearance; known single primitive wall/corridor is evaluation context.",
+    "No full obstacle/body collision qualification; DART mesh issue remains.",
+    "No stock avoidance loss-of-sensor fail-safe qualification, global route feasibility, detour, reliability or hardware.",
+    "No automated tests added."
+  ],
+  "protocol_amendment_before_comparison": {
+    "wall_time": 1793651081.261837,
+    "initial_calibration": "RC2=1400 yielded only about0.07m/s; neutralized, returning to home hover. Preserve this segment separately from qualification.",
+    "comparison_input_RC2": 1000,
+    "comparison_clear_pulse_s": 10,
+    "comparison_blocked_pulse_s": 18,
+    "delivery": "Bounded timed operator-console pulses; stock autopilot owns control and stopping. Same command in both cases, never a Python mission state machine."
+  },
+  "configuration_revision_before_final_flights": {
+    "wall_time": 1793651849.449099,
+    "reason": "Initial abrupt full-stick flights peaked1.68/1.71m/s, exceeding the declared0.65m/s review bound. Stock LOITER speed limit is not a hard actual-speed guarantee.",
+    "change": "LOIT_ANG_MAX0→1.5deg to bound pilot-requested acceleration; same unchanged firmware and avoidance path.",
+    "retained_failures": "initial-configuration/ and original.local/l14/clear,blocked raw sessions remain.",
+    "final_runs": [
+      "clear-final",
+      "blocked-final"
+    ],
+    "criteria_unchanged": true
+  }
+}

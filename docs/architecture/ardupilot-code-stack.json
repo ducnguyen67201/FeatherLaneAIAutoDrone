@@ -503,12 +503,23 @@
   "cards": [
     {
       "dot": "amber",
+      "title": "L14 observed slice · stock LOITER/Stop",
+      "items": [
+        "Unchanged stock firmware and existing local processes. Final rangefinder/proximity/LOITER configuration and front observation adapter were exercised in clear/blocked flights. Python sends sensor messages only; MAVProxy supplies operator commands.",
+        "Final profile: PRX1_TYPE4, AVOID_ENABLE2, Stop,2m target margin, no backup, LOIT_SPEED_MS0.5, LOIT_ANG_MAX1.5deg. Both final peaks0.49m/s; clear advanced about4.6m, blocked completed2s low-speed dwell at13.75s while forward input stayed held.",
+        "Initial default-lean speed peaks1.68/1.71m/s and an overlong input failed declared bounds; retained separately, then corrected/repeated. Configured2m margin briefly yielded1.942m sensor return. Gazebo minimum centre/disc-envelope gaps2.23/1.53m are separate evaluation measurements.",
+        "Same10deg single-plane fan,0.2–8m. No-return is not clearance; coarse proximity sectors do not expand measured coverage. No detour/native-mode inheritance, sensor-loss fallback, full-volume collision, reliability or hardware qualification.",
+        "L14 guided checkpoint complete after human3D-scene confirmation and actual blocked/clear log replays. L14 remains local/unpublished; L15 is not started."
+      ]
+    },
+    {
+      "dot": "amber",
       "title": "L13 observed scope · front sensor, no control",
       "items": [
         "One front Gazebo GPU lidar/static box is locally observed:21 rays,10Hz,0.2–8m,±5deg horizontal in one vertical plane. No flight or dodge commands.",
         "A bounded Python observation adapter maps new valid LaserScan data into DISTANCE_SENSOR on existing TCP5762. Existing AP_RangeFinder_MAVLink consumes it; no firmware changes or external flight FSM.",
         "Stable3m/5m returns match declared box geometry. Off-axis, above-plane, beyond range and below minimum all produced no-return; this is not clearance. Geometry is separate evaluation truth.",
-        "Reader pause triggered stale receive state after0.356s; onboard RFND recorded Good→NoData→Good with the existing500ms backend timeout. Capture latency is unmeasured. Sensor-disabled rollback/cleanup passed; local/unpublished, guided checkpoint complete after clarification."
+        "Reader pause triggered stale receive state after0.356s; onboard RFND recorded Good→NoData→Good with the existing500ms backend timeout. Capture latency is unmeasured. Sensor-disabled rollback/cleanup passed; published at5e3a8fd, guided checkpoint complete after clarification."
       ]
     },
     {

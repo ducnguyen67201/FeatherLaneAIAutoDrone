@@ -1,0 +1,13 @@
+{
+  "phase": "L14",
+  "status": "complete",
+  "question": "What made the drone stop while forward input was still held, and did it find a route around the box?",
+  "answer_summary": "Learner sees the blocked speed/progress drop in the graph, is unsure of the cause and asks to see the drone fly in the simulator.",
+  "clarification": "Stock proximity observations and AC_Avoid reduced forward motion in LOITER while RC input stayed held. The vehicle hovered before the box; no route around it was demonstrated.",
+  "visual_follow_up": "Human confirmed the3D drone/red-box scene. Actual blocked and clear recordings were played from55s toabout81s in Gazebo; software/measurement mechanism checkpoint pending. Agent desktop viewing remains unavailable.",
+  "L15_started": false,
+  "follow_up_question": "What told ArduPilot to stop: front distance readings processed by stock avoidance in LOITER, or reaching a preset GPS waypoint?",
+  "completed_date": "2026-11-02",
+  "follow_up_answer": "The front distance readings, processed by stock avoidance in LOITER.",
+  "completion_basis": "After the graph explanation, human3D-scene confirmation and both recorded playback segments, learner correctly identified the sensor/proximity/stock-avoidance cause of stopping."
+}

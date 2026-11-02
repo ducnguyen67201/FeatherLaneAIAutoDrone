@@ -1,5 +1,7 @@
 # L05 — One known GPS-coordinate flight
 
+**Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
+
 [Project](../../../README.md) · [Learning card](../../phases/learning/l05-one-coordinate.md) · [L03 flight baseline](../l03-first-stock-flight/README.md) · [L04 source walkthrough](../l04-trace-one-command/README.md)
 
 Executed locally on 2026-10-31, approximately 18:11–18:13 America/Toronto (22:11–22:13 UTC), after the user explicitly requested pushing completed L04 and starting L05. L04 was committed/pushed as `c0f6254470fea3c4c22d4de43cfae0df21cef07d`; its remote branch was compared with the local SHA, and `main` remained `c45c9e19ae279011d5779fa2669df3fac0f21a29`. L05 runs on local branch `codex/l05-one-coordinate`, created from that published L04 commit. The flight exercise itself made no commit, push or merge. The user subsequently authorized publishing this completed L05 record before starting L06.
@@ -44,7 +46,7 @@ l05_run_dir="$l05_root/.local/l05/run1"
 env -u DISPLAY SITL_RITW_TERMINAL=bash TMPDIR="$l05_run_dir/"   PATH="$l05_root/.local/l02/venv/bin:/usr/bin:/bin:/usr/sbin:/sbin"   /usr/bin/script -q "$l05_run_dir/console.log"   "$l05_root/.local/l02/venv/bin/python"   "$l05_root/ardupilot/Tools/autotest/sim_vehicle.py"   -v ArduCopter -f quad -N --use-dir "$l05_run_dir"   --no-extra-ports --out 127.0.0.1:14550   --mavproxy-args=--default-modules=log,param,mode,arm,rc,cmdlong,output
 ```
 
-The console was the sole command source. Main commands, interspersed with the waits/observations in the [transcript](console.txt):
+The console was the sole command source. Main commands, interspersed with the waits/observations in the transcript (generated export removed):
 
 ```text
 long SET_MESSAGE_INTERVAL 245 500000
@@ -83,7 +85,7 @@ long REQUEST_MESSAGE GPS_GLOBAL_ORIGIN
 status
 ```
 
-The three `set` commands restate installed MAVProxy defaults and were queried back as True/AboveHome/m. They are console settings, not firmware parameter writes. [Selected stock parameters](selected-parameters.txt) retain `GUID_OPTIONS=0`, `ARMING_SKIPCHK=0`, `WP_SPD=10`, `WP_ACC=2.5`, `WP_SPD_UP=2.5`, `LAND_SPD_MS=0.5` and `FS_GCS_ENABLE=0`. None was changed; the speed parameter is a limit, not a claim that this short flight reached 10 m/s. No forced arming or failsafe/prearm bypass occurred.
+The three `set` commands restate installed MAVProxy defaults and were queried back as True/AboveHome/m. They are console settings, not firmware parameter writes. Selected stock parameters (generated export removed) retain `GUID_OPTIONS=0`, `ARMING_SKIPCHK=0`, `WP_SPD=10`, `WP_ACC=2.5`, `WP_SPD_UP=2.5`, `LAND_SPD_MS=0.5` and `FS_GCS_ENABLE=0`. None was changed; the speed parameter is a limit, not a claim that this short flight reached 10 m/s. No forced arming or failsafe/prearm bypass occurred.
 
 ## Destination acceptance in the pinned source
 
@@ -116,7 +118,7 @@ There were 522 global-position samples, 141 vehicle heartbeats and 16 accepted c
 
 ![Recorded north movement, height and horizontal speed](coordinate-flight-trajectory.png)
 
-This image was generated after flight by our local `.local/l05/curate.py` using Python/Matplotlib from the captured messages. `sim_vehicle.py` is the flight-session entry point; the processing script is only an offline recorder/graph-support artifact. [Trajectory CSV](trajectory.csv) retains raw latitude/longitude, validity, GPS/EKF flags, derived north/east/error, height/speed and sampled state ages. [Run results](run-results.json), [events](command-state-events.json), [onboard summary](onboard-log-summary.json) and [raw-artifact manifest](raw-artifacts.json) retain the actual results, command/state transitions and raw-log hashes/locations. Full telemetry and DataFlash log remain ignored locally under `.local/l05/run1/`.
+This image was generated after flight by our local `.local/l05/curate.py` using Python/Matplotlib from the captured messages. `sim_vehicle.py` is the flight-session entry point; the processing script is only an offline recorder/graph-support artifact. Trajectory CSV (generated export removed) retains raw latitude/longitude, validity, GPS/EKF flags, derived north/east/error, height/speed and sampled state ages. [Run results](run-results.json), [events](command-state-events.json), [onboard summary](onboard-log-summary.json) and [raw-artifact manifest](raw-artifacts.json) retain the actual results, command/state transitions and raw-log hashes/locations. Full telemetry and DataFlash log remain ignored locally under `.local/l05/run1/`.
 
 ## Invalid startup state and limitations
 

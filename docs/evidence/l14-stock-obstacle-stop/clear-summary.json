@@ -1,0 +1,116 @@
+{
+  "selected_pulse": {
+    "RC2": 1000,
+    "start": 1793651909.861731,
+    "start_boot_ms": 56764,
+    "end": 1793651919.918553,
+    "end_boot_ms": 66764
+  },
+  "input_boot_span_s": 10.0,
+  "input_receive_span_s": 10.056822061538696,
+  "peak_horizontal_speed_mps": 0.49,
+  "maximum_north_m": 3.8850502290008873,
+  "maximum_north_through_neutral_hold_m": 4.5863630204934225,
+  "maximum_lateral_magnitude_m": 0.009078093489824572,
+  "maximum_height_error_m": 0.009999999999999787,
+  "all_input_samples_armed_LOITER_fresh": true,
+  "stopped_while_forward_held": null,
+  "minimum_center_to_wall_face_m": null,
+  "sensor_observation_counts_during_pulse": {
+    "no_return": 100
+  },
+  "all_sensor_samples_sent": true,
+  "minimum_sensor_return_m": null,
+  "native_avoidance_records_during_pulse": 0,
+  "native_avoidance_records_without_backup": true,
+  "all_session_gazebo_evaluation": {
+    "pose_samples": 5983,
+    "minimum_center_to_box_xy_m": 4.326091373336199,
+    "body_envelope_radius_m": 0.7,
+    "minimum_declared_envelope_gap_m": 3.626091373336199,
+    "scope": "Known box geometry/poses are evaluation only; planar envelope bound is not mesh/contact or physical qualification."
+  },
+  "onboard_counts": {
+    "MODE": 5,
+    "RFND": 2030
+  },
+  "observer_events": {
+    "started": 1,
+    "stale": 1,
+    "sample": 1025,
+    "stopped": 1
+  },
+  "all_RC_intervals": [
+    {
+      "RC2": 1500,
+      "start": 1793651866.750355,
+      "start_boot_ms": 14014,
+      "end": 1793651909.861731,
+      "end_boot_ms": 56764
+    },
+    {
+      "RC2": 1000,
+      "start": 1793651909.861731,
+      "start_boot_ms": 56764,
+      "end": 1793651919.918553,
+      "end_boot_ms": 66764
+    }
+  ],
+  "operator_events": [
+    {
+      "wall_time": 1793651909.6580951,
+      "event": "final_forward_requested",
+      "RC2": 1000,
+      "planned_pulse_s": 10
+    },
+    {
+      "wall_time": 1793651923.043318,
+      "event": "final_neutral_requested",
+      "RC2": 1500
+    }
+  ],
+  "shutdown": {
+    "time": 1793651957.202822,
+    "pid": 74354,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+      "--model",
+      "JSON",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l14-stock-stop.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793651956.736047,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 89,
+          "custom_mode": 9,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793651957.096294,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  }
+}
