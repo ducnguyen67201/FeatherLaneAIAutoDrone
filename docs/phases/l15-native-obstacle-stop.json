@@ -1,0 +1,219 @@
+{
+  "schema_version": 1,
+  "diagram_type": "architecture",
+  "meta": {
+    "title": "L15 observed native stop check — selected autopilot integration",
+    "locale": "en",
+    "quality_profile": "showcase",
+    "output": "docs/phases/l15-native-obstacle-stop.html",
+    "repository": {
+      "url": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
+      "revision": "ec1ac84f4fa88f359c236b6c4af1a7751a3685bd",
+      "link_mode": "local-only"
+    }
+  },
+  "components": [
+    {
+      "id": "observations",
+      "type": "external",
+      "label": "Qualified front observations",
+      "sublabel": "Existing Gazebo + observation adapter",
+      "pos": [
+        40,
+        40
+      ],
+      "size": [
+        270,
+        95
+      ],
+      "sources": [
+        {
+          "path": "simulation/gazebo/range_observer.py",
+          "line": 69,
+          "end_line": 155
+        }
+      ]
+    },
+    {
+      "id": "stock",
+      "type": "backend",
+      "label": "Stock sensing / avoidance",
+      "sublabel": "Range + proximity + AC_Avoid",
+      "pos": [
+        450,
+        40
+      ],
+      "size": [
+        300,
+        95
+      ],
+      "sources": [
+        {
+          "path": "docs/guides/l15-native-stop-source.md",
+          "line": 112,
+          "end_line": 150
+        },
+        {
+          "path": "docs/guides/l15-native-stop-source.md",
+          "line": 151,
+          "end_line": 182
+        },
+        {
+          "path": "docs/guides/l14-stock-stop-source.md",
+          "line": 35,
+          "end_line": 90
+        }
+      ]
+    },
+    {
+      "id": "native",
+      "type": "backend",
+      "label": "Native task supervision",
+      "sublabel": "LOCAL receive-age guard + stop veto",
+      "pos": [
+        450,
+        350
+      ],
+      "size": [
+        300,
+        105
+      ],
+      "sources": [
+        {
+          "path": "docs/guides/l15-native-stop-source.md",
+          "line": 268,
+          "end_line": 432
+        }
+      ]
+    },
+    {
+      "id": "guided",
+      "type": "backend",
+      "label": "Inherited Guided position control",
+      "sublabel": "Existing goal tracking / native dwell",
+      "pos": [
+        450,
+        700
+      ],
+      "size": [
+        300,
+        95
+      ],
+      "sources": [
+        {
+          "path": "docs/guides/l15-native-stop-source.md",
+          "line": 8,
+          "end_line": 75
+        },
+        {
+          "path": "docs/guides/l15-native-stop-source.md",
+          "line": 76,
+          "end_line": 111
+        }
+      ]
+    },
+    {
+      "id": "stop",
+      "type": "backend",
+      "label": "Stock stop / fallback modes",
+      "sublabel": "BRAKE accepted; else LAND fallback",
+      "pos": [
+        875,
+        350
+      ],
+      "size": [
+        300,
+        105
+      ],
+      "sources": [
+        {
+          "path": "docs/guides/l15-native-stop-source.md",
+          "line": 372,
+          "end_line": 432
+        },
+        {
+          "path": "docs/guides/l15-native-stop-source.md",
+          "line": 76,
+          "end_line": 111
+        },
+        {
+          "path": "docs/guides/l15-native-stop-source.md",
+          "line": 183,
+          "end_line": 266
+        }
+      ]
+    }
+  ],
+  "connections": [
+    {
+      "id": "input",
+      "from": "observations",
+      "to": "stock",
+      "label": "DISTANCE_SENSOR"
+    },
+    {
+      "id": "probe",
+      "from": "native",
+      "to": "stock",
+      "label": "Probe velocity"
+    },
+    {
+      "id": "limit",
+      "from": "stock",
+      "to": "native",
+      "label": "Limits + age"
+    },
+    {
+      "id": "continue",
+      "from": "native",
+      "to": "guided",
+      "label": "Clear: continue goal"
+    },
+    {
+      "id": "handoff",
+      "from": "native",
+      "to": "stop",
+      "label": "BRAKE / fallback"
+    },
+    {
+      "id": "result",
+      "from": "stop",
+      "to": "native",
+      "label": "Entry result"
+    }
+  ],
+  "boundaries": [
+    {
+      "kind": "region",
+      "label": "Existing local observation processes · expanded in L14",
+      "wraps": [
+        "observations"
+      ],
+      "pad": 18
+    },
+    {
+      "kind": "region",
+      "label": "Existing SITL autopilot process · native stop wiring proposed",
+      "wraps": [
+        "stock",
+        "native",
+        "guided",
+        "stop"
+      ],
+      "pad": 20
+    }
+  ],
+  "cards": [
+    {
+      "dot": "amber",
+      "title": "L15 observed local slice; broader autonomy remains proposed",
+      "items": [
+        "Native C++ retains goal/arrival ownership and probes stock AC_Avoid. The adjusted local velocity is a stop veto, never an installed flight target. Existing Guided position tracking and stock BRAKE/controllers remain responsible for motion.",
+        "Final observations: clear goal COMPLETE after2000ms native dwell; box-ahead BLOCKED and BRAKE; paused scan reader FAILED/observation at353ms receive age and BRAKE. Physical stopping was scored afterward. Restored readings did not resume the task.",
+        "Selected forward corridor: requested speed0.5m/s, radius0.5m, goal5m north/3m height; bearing±3deg, tilt≤5deg, receive age≤350ms. Observed peak0.54m/s: target is not an instantaneous hard ceiling. No-return remains unknown.",
+        "Initial2m margin missed the declared2m centre gap by5.3mm. Preserved attempt; both final comparison cases repeated with2.25m margin and WP_ACC0.25m/s². Final minimum centre/body-disc gaps2.260/1.560m. LAND/disarm and exact-stock disarmed rollback followed.",
+        "Local firmware77df2558; L15 remains unpublished, guided checkpoint pending. No detour, new process/hosting, hardware or full-body collision qualification. Existing navigation/reference LAND fallback and rejected-BRAKE/timeout branches are source-inspected, not fault-injected."
+      ]
+    }
+  ]
+}

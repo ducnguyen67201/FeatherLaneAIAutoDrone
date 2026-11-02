@@ -94,8 +94,8 @@
   "execution_unit": "learning_phase",
   "capability_milestone_ids_preserved": true,
   "master_learning_plan": "../MASTER-LEARNING-PLAN.md",
-  "active_learning_phase": "L14",
-  "next_proposed_learning_phase": "L15",
+  "active_learning_phase": "L15",
+  "next_proposed_learning_phase": "L16",
   "learning_direction_confirmed": {
     "date": "2026-10-31",
     "source": "User requested one master plan and small focused phases: acquire ArduPilot, set up simulation, run a simple simulation, then learn through small changes.",
@@ -680,7 +680,7 @@
       "slug": "native-avoidance-integration",
       "title": "Reuse avoidance in our native path",
       "group": "M04",
-      "status": "planned",
+      "status": "in_progress",
       "depends_on": [
         "L14",
         "L11"
@@ -708,7 +708,7 @@
       ],
       "rollback": "Return to the last qualified native clear-scene build or the stock avoidance baseline.",
       "teach_back": "Which stock feature was reused, and which integration did we still need to write?",
-      "record": null
+      "record": "Native stock-avoidance veto and receive-age guards implemented; clear COMPLETE, obstacle BLOCKED/BRAKE and reader-loss FAILED/BRAKE observed, LAND/disarm and exact-stock rollback passed. Initial margin miss retained and final2.25m profile compared. Guided checkpoint pending; local/unpublished; no detour/hardware."
     },
     {
       "id": "L16",
@@ -1247,7 +1247,7 @@
     "speed_comparison_record": "../evidence/l06-one-speed-change/README.md",
     "arrival_record": "../evidence/l07-measure-arrival/README.md",
     "native_status_record": "../evidence/l08-native-status-slice/README.md",
-    "custom_working_branch": "codex/l14-stock-obstacle-stop",
+    "custom_working_branch": "codex/l15-native-obstacle-stop",
     "native_status_scope": "SITL-only observer; no native task execution or custom mode. Custom commit is a five-file addition against the preserved stock base.",
     "custom_firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
     "native_task_admission_record": "../evidence/l09-native-task-contract/README.md",
@@ -1259,7 +1259,7 @@
     "instrumented_scene_record": "../evidence/l12-instrumented-scene/README.md",
     "instrumented_scene_scope": "Published headless Gazebo8.10.0/physics7.5.0/DART6.19.5 + official plugin f116b035 and exact stock Copter4.7.2 JSON/X-frame flight; no firmware edits, native L11 transfer, GUI or body/obstacle collision qualification."
   },
-  "execution_summary": "L01–L13 and guided checkpoints complete; L13 published at project5e3a8fd6464fc6157a654e5714262272624177b1 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L14 final stock LOITER/Stop clear/blocked flights and baseline rollback observed locally:0.49m/s peaks, blocked2s dwell while input held at13.75s, minimum evaluated center/envelope gaps2.23/1.53m. Initial speed/timing failures retained. L14 complete locally with guided checkpoint complete after the3D walkthrough; unpublished; human3D-scene visibility confirmed and both actual-recording segments replayed separately. No new firmware/native avoidance, L15 or hardware. Screenshot attachment pending; broader P01/P03 gates incomplete.",
+  "execution_summary": "L01–L14 and guided checkpoints complete; L14/CSV-TXT cleanup published at project681666aa52bf825ef170c00eb4324c6f435be535 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. Local L15 native stop integration manually observed in clear/blocked/reader-loss cases with LAND/disarm, exact-stock rollback and cleanup. Guided checkpoint pending; no L15 publication, L16, detour planner or hardware. Broader P01/P03/P05 gates remain open.",
   "repositories": {
     "project": "https://github.com/ducnguyen67201/FeatherLaneAIAutoDrone",
     "firmware": "https://github.com/ducnguyen67201/FeatherLaneArduPilot",
@@ -1361,5 +1361,13 @@
     "date": "2026-11-02",
     "source": "User: push for me and continue next phase.",
     "scope": "Publish completed L14 and requested CSV/TXT cleanup on feature branches with unchanged firmware reference; then local L15 native avoidance integration and bounded blocked/invalid outcomes. No main merge, L15 publication, general planner or physical operation."
+  },
+  "publication_l14": {
+    "project_branch": "codex/l14-stock-obstacle-stop",
+    "project_commit": "681666aa52bf825ef170c00eb4324c6f435be535",
+    "firmware_branch": "codex/l14-stock-obstacle-stop",
+    "firmware_commit": "a00f32be2a91639c8dee1c41c09e1c5e5635d547",
+    "remote_sha_verified": true,
+    "includes": "Completed L14,3D replay tooling and requested generated CSV/TXT cleanup."
   }
 }

@@ -2,9 +2,9 @@
 
 [Project home](../README.md) · [Capability roadmap](ROADMAP.md) · [Phase registry](phases/registry.json) · [First-seven-phase diagram](assets/learning/learning-workflow.svg)
 
-**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L13 and guided checkpoints complete; L13 published at project5e3a8fd6464fc6157a654e5714262272624177b1 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. L14 final stock LOITER/Stop clear/blocked flights and baseline rollback observed locally:0.49m/s peaks, blocked2s dwell while input held at13.75s, minimum evaluated center/envelope gaps2.23/1.53m. Initial speed/timing failures retained. L14 complete locally with guided checkpoint complete after the3D walkthrough; unpublished; human3D-scene visibility confirmed and both actual-recording segments replayed separately. No new firmware/native avoidance, L15 or hardware. Screenshot attachment pending; broader P01/P03 gates incomplete.
+**DRAFT detailed plan, recorded 2026-10-31.** The user confirmed learning through small, focused phases. Detailed cards, future extensions and diagram layout remain proposed. L01–L14 and guided checkpoints complete; L14/CSV-TXT cleanup published at project681666aa52bf825ef170c00eb4324c6f435be535 with unchanged firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547. Local L15 native stop integration manually observed in clear/blocked/reader-loss cases with LAND/disarm, exact-stock rollback and cleanup. Guided checkpoint pending; no L15 publication, L16, detour planner or hardware. Broader P01/P03/P05 gates remain open.
 
-**Next small phase: L15.** Active learning phase: L14.
+**Next small phase: L16.** Active learning phase: L15.
 
 This is the execution entry point. `L01`, `L02`, and so on are small learning phases. Existing `P01`–`P09` references remain capability milestones in the roadmap and architecture; their numbers do not dictate the learning order. Master groups organize related results without turning a group into one large implementation task. A phase passing does not automatically complete its parent capability milestone.
 

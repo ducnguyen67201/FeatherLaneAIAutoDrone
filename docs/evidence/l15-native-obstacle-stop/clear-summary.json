@@ -1,0 +1,85 @@
+{
+  "case": "clear",
+  "native_events": [
+    {
+      "task_id": 1,
+      "state": "running",
+      "reason": "start",
+      "boot_ms": 83476,
+      "received_wall_time": 1793656438.7386801
+    },
+    {
+      "task_id": 1,
+      "state": "dwelling",
+      "reason": "bounds",
+      "boot_ms": 94310,
+      "received_wall_time": 1793656449.6231391
+    },
+    {
+      "task_id": 1,
+      "state": "complete",
+      "reason": "dwell",
+      "boot_ms": 96311,
+      "received_wall_time": 1793656451.630989
+    }
+  ],
+  "native_terminal_seconds_after_start": 12.835,
+  "peak_recorded_horizontal_speed_mps": 0.54,
+  "maximum_recorded_north_progress_m": 5.009377085697311,
+  "height_above_home_range_m": [
+    2.99,
+    3.0
+  ],
+  "maximum_position_sample_gap_s": 0.252,
+  "flight_mode_sequence_after_start": [
+    31,
+    9
+  ],
+  "shutdown": {
+    "time": 1793656481.490582,
+    "pid": 29528,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l15/build/sitl/bin/arducopter",
+      "--model",
+      "JSON",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l15-native-stop.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793656480.475971,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 89,
+          "custom_mode": 9,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793656481.1832662,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  },
+  "native_dwell_ms": 2001,
+  "sampled_hold_after_complete_s": 8.215,
+  "maximum_goal_error_after_complete_m": 0.03339584723798207
+}

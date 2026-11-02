@@ -1,0 +1,75 @@
+{
+  "firmware_commit": "77df25587413ab6d0183c6583c92b3cf4ba7bcab",
+  "firmware_branch": "codex/l15-native-obstacle-stop",
+  "firmware_clean": true,
+  "upstream_pin": "fb773567896014da007bca58358704d4a0d8516f",
+  "recursive_submodules": [
+    "d103983f4362e5506bcf7062ccacf345fc0c0859 modules/ChibiOS (d103983)",
+    " 599965086437137ec0fe66e185611f43f335f889 modules/CrashDebug (heads/master)",
+    " 4cf6e11df3a081b0f573a7834ed8e1e4000af73e modules/CrashDebug/CrashCatcher (4cf6e11)",
+    " 011f371fdb5d7e441fb023be67295783e053df4a modules/CrashDebug/CrashCatcher/CppUTest (heads/master)",
+    " b35c89451b41a45b7f5b580acaff555315ac88e2 modules/CrashDebug/mri (heads/master)",
+    " 011f371fdb5d7e441fb023be67295783e053df4a modules/CrashDebug/mri/CppUTest (heads/master)",
+    " 04e0e818b06c180eb1720fcdf16484d0f12895ee modules/DroneCAN/DSDL (04e0e81)",
+    " de47a8972b7d8c59e50c3acfab5754db29798caa modules/DroneCAN/dronecan_dsdlc (de47a89)",
+    " 601ed35467e0ac38819df17cd7c918de19f62d58 modules/DroneCAN/libcanard (heads/master)",
+    " 9c6bc9118de66d6edaf1b8539e2b9717ba26d123 modules/DroneCAN/libcanard/drivers/avr/avr-can-lib (heads/master)",
+    " 08cda37aaf2958657399606653b99ceb5a6beae0 modules/DroneCAN/pydronecan (v1.0.27)",
+    " 3d1b17703c7cf4f22def2910bc845bdb5152d7b5 modules/Micro-CDR (heads/master)",
+    " 97175304425c5bee87c6fddd99de1ef8d0c394dc modules/Micro-XRCE-DDS-Client (heads/master)",
+    " d572f4777349d43653b21d6c2fc63020ab326db2 modules/gbenchmark (v1.7.1)",
+    " e1f690585d4803402584962bfaa8240ecaf1db30 modules/gsoap (heads/master)",
+    " c5fed93f941865a0e912e9baf46ded713506590a modules/gtest (c5fed93)",
+    " 34be692aafaaf4319a18e415b08aa4332697408b modules/littlefs (34be692)",
+    " a6bf350c679ed8ba042ad58bf81cc540d61bb605 modules/lwip (a6bf350)",
+    " 288b907c384a892c8519bfe271682424b1e1a3a0 modules/mavlink (288b907)",
+    " ec06837a50688b5974094876c3c9d1b8bf86629d modules/mavlink/pymavlink (ec06837)",
+    " 35eadbb64e2052099a853b571e507c33032b392c modules/waf (heads/master)"
+  ],
+  "plugin_pin": "f116b03552d05c8d0b0bed5ed67033a1183121d1",
+  "identities": {
+    "native": {
+      "path": ".local/l15/build/sitl/bin/arducopter",
+      "sha256": "de0c83a9507f1e0f2ac72908e53db2fbc8d6130d63d92f87c3fea01b0e5e880c",
+      "bytes": 4820792
+    },
+    "stock": {
+      "path": ".local/l08/stock-arducopter",
+      "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec",
+      "bytes": 4817736
+    },
+    "retained_l11": {
+      "path": ".local/l11/build/sitl/bin/arducopter",
+      "sha256": "6902e57e625ebf89c4c05e20c2413a2bfcbd90e284126cf71ce107167cbbeb38",
+      "bytes": 4820360
+    },
+    "plugin": {
+      "path": ".local/l12/plugin-build/libArduPilotPlugin.dylib",
+      "sha256": "093f82526a767f56febe3ae072d665a0fd03df7af82125a199ec900fa6b855b5",
+      "bytes": 675496
+    },
+    "final_profile": {
+      "path": "simulation/gazebo/l15-native-stop.parm",
+      "sha256": "2fc571e6f5662f0c701bf231754374dcbf140d110cb99faefc250218053c7e8a",
+      "bytes": 594
+    },
+    "world": {
+      "path": "simulation/gazebo/worlds/l15-native-stop.sdf",
+      "sha256": "5f3563e3f0b9ccad240ecf5256a39d585fa39b2cf9ffc1ff530aafc7ef245b3d",
+      "bytes": 4213
+    },
+    "observer": {
+      "path": "simulation/gazebo/range_observer.py",
+      "sha256": "7ab7c0385bf49d357f33aeb77ace6d2620b587d38b00009ef6a08888831c163b",
+      "bytes": 8976
+    }
+  },
+  "builds": {
+    "configure": "passed",
+    "initial": "failed: private AP_AHRS roll member; corrected to repository get_*_rad() accessors",
+    "corrected": "passed",
+    "final_source": "passed with embedded 77df2558"
+  },
+  "publication": "L15 local only; L14 project681666aa52bf825ef170c00eb4324c6f435be535, firmwarea00f32be2a91639c8dee1c41c09e1c5e5635d547 published and remote verified",
+  "project_source_commit": "ec1ac84f4fa88f359c236b6c4af1a7751a3685bd"
+}

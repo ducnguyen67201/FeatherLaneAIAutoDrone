@@ -1,0 +1,34 @@
+{
+  "status": "predeclared before L15 simulation flights",
+  "scope": "one slow forward corridor; stock avoidance veto and BRAKE, no detour",
+  "native_limits": {
+    "speed_mps": 0.5,
+    "radius_m": 0.5,
+    "goal_north_m": 5,
+    "height_above_home_m": 3,
+    "max_backend_receive_age_ms": 350,
+    "timeout_ms": 30000
+  },
+  "cases": {
+    "clear": "native COMPLETE after continuous 2 s arrival dwell, then hold",
+    "blocked": "native BLOCKED and BRAKE; measured horizontal speed <= 0.3 m/s for 2 s; center gap >= 2 m and declared 0.7 m body-disc gap >= 1 m",
+    "observation_loss": "stop observation forwarding only during native motion; FAILED/observation and BRAKE, measured stop, no automatic resume",
+    "rollback": "fresh disarmed exact preserved stock binary and L14 profile; healthy range/proximity"
+  },
+  "retention": "JSON summaries and figures; raw recordings ignored; no CSV/TXT exports",
+  "limitations": [
+    "sensor receive age is not end-to-end capture age",
+    "no-return is unknown; corridor selected in advance",
+    "Gazebo truth used only for offline scoring",
+    "DART base mesh collision missing; no full-body contact qualification"
+  ],
+  "revisions": [
+    {
+      "reason": "Initial blocked run met stop/BRAKE behavior but minimum Gazebo center gap was 1.994707785 m, below the predeclared 2 m criterion. Preserve attempt; repeat both clear and blocked with extra BRAKE settling allowance.",
+      "initial_avoid_margin_m": 2,
+      "final_avoid_margin_m": 2.25,
+      "criteria_unchanged": true,
+      "applies_before_final_comparison": true
+    }
+  ]
+}

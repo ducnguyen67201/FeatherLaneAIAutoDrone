@@ -502,6 +502,17 @@
   ],
   "cards": [
     {
+      "dot": "emerald",
+      "title": "L15 observed local slice · native stop veto / honest outcomes",
+      "items": [
+        "Native C++ retains goal/arrival ownership and probes stock AC_Avoid. The adjusted local velocity is a stop veto, never an installed flight target. Existing Guided position tracking and stock BRAKE/controllers remain responsible for motion.",
+        "Final observations: clear goal COMPLETE after2000ms native dwell; box-ahead BLOCKED and BRAKE; paused scan reader FAILED/observation at353ms receive age and BRAKE. Physical stopping was scored afterward. Restored readings did not resume the task.",
+        "Selected forward corridor: requested speed0.5m/s, radius0.5m, goal5m north/3m height; bearing±3deg, tilt≤5deg, receive age≤350ms. Observed peak0.54m/s: target is not an instantaneous hard ceiling. No-return remains unknown.",
+        "Initial2m margin missed the declared2m centre gap by5.3mm. Preserved attempt; both final comparison cases repeated with2.25m margin and WP_ACC0.25m/s². Final minimum centre/body-disc gaps2.260/1.560m. LAND/disarm and exact-stock disarmed rollback followed.",
+        "Local firmware77df2558; L15 remains unpublished, guided checkpoint pending. No detour, new process/hosting, hardware or full-body collision qualification. Existing navigation/reference LAND fallback and rejected-BRAKE/timeout branches are source-inspected, not fault-injected."
+      ]
+    },
+    {
       "dot": "amber",
       "title": "L14 observed slice · stock LOITER/Stop",
       "items": [
@@ -509,7 +520,7 @@
         "Final profile: PRX1_TYPE4, AVOID_ENABLE2, Stop,2m target margin, no backup, LOIT_SPEED_MS0.5, LOIT_ANG_MAX1.5deg. Both final peaks0.49m/s; clear advanced about4.6m, blocked completed2s low-speed dwell at13.75s while forward input stayed held.",
         "Initial default-lean speed peaks1.68/1.71m/s and an overlong input failed declared bounds; retained separately, then corrected/repeated. Configured2m margin briefly yielded1.942m sensor return. Gazebo minimum centre/disc-envelope gaps2.23/1.53m are separate evaluation measurements.",
         "Same10deg single-plane fan,0.2–8m. No-return is not clearance; coarse proximity sectors do not expand measured coverage. No detour/native-mode inheritance, sensor-loss fallback, full-volume collision, reliability or hardware qualification.",
-        "L14 guided checkpoint complete after human3D-scene confirmation and actual blocked/clear log replays. L14 remains local/unpublished; L15 is not started."
+        "L14 guided checkpoint complete after human3D-scene confirmation and actual blocked/clear log replays. L14 is published; L15 native stopping is a separate local slice recorded above."
       ]
     },
     {

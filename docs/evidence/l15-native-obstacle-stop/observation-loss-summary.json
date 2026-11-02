@@ -1,0 +1,94 @@
+{
+  "case": "observation-loss",
+  "native_events": [
+    {
+      "task_id": 1,
+      "state": "running",
+      "reason": "start",
+      "boot_ms": 50346,
+      "received_wall_time": 1793656860.988487
+    },
+    {
+      "task_id": 1,
+      "state": "failed",
+      "reason": "observation",
+      "boot_ms": 56746,
+      "received_wall_time": 1793656867.416178
+    }
+  ],
+  "native_terminal_seconds_after_start": 6.4,
+  "peak_recorded_horizontal_speed_mps": 0.54,
+  "maximum_recorded_north_progress_m": 3.462036163670808,
+  "height_above_home_range_m": [
+    2.98,
+    3.0
+  ],
+  "maximum_position_sample_gap_s": 0.2519999999999989,
+  "flight_mode_sequence_after_start": [
+    31,
+    17,
+    9
+  ],
+  "shutdown": {
+    "time": 1793656904.523618,
+    "pid": 33668,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l15/build/sitl/bin/arducopter",
+      "--model",
+      "JSON",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l15-native-stop.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793656903.78546,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 89,
+          "custom_mode": 9,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793656904.43722,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  },
+  "sampled_two_second_stop_after_handoff_s": 2.98,
+  "observation_age_reports": [
+    "FL L15 observation age_ms=353"
+  ],
+  "injection": {
+    "action": "SIGSTOP only owned scan reader; observation adapter, Gazebo physics and native SITL continue",
+    "pid": 33686,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l12/gazebo-env/libexec/gz/transport13/gz-transport-topic",
+      "-e",
+      "-t",
+      "/l15/front_scan",
+      "--json-output"
+    ],
+    "wall_time": 1793656867.135384,
+    "restored_wall_time": 1793656883.192675,
+    "restore_action": "SIGCONT same owned reader; no flight command"
+  }
+}

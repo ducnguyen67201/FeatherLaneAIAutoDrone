@@ -31,6 +31,7 @@ docs/phases/*.browser-check.json
 docs/phases/l12-simulator-deployment.html
 docs/phases/l13-obstacle-observation.html
 docs/phases/l14-stock-obstacle-stop.html
+docs/phases/l15-native-obstacle-stop.html
 
 # Generated measurement/transcript exports; dependency locks remain source inputs.
 docs/evidence/**/*.csv

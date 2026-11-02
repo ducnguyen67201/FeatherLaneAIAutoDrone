@@ -1,0 +1,1272 @@
+{
+  "clear-final": {
+    "log_path": ".local/l15/clear-final/sitl/logs/00000001.BIN",
+    "counts": {
+      "MSG": 60,
+      "MODE": 5,
+      "RFND": 1684,
+      "RCOU": 842,
+      "PM": 8
+    },
+    "modes": [
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 2646975,
+        "Mode": 0,
+        "ModeNum": 0,
+        "Rsn": 26
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 17024850,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 32322477,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 49859649,
+        "Mode": 31,
+        "ModeNum": 31,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 70950310,
+        "Mode": 9,
+        "ModeNum": 9,
+        "Rsn": 2
+      }
+    ],
+    "native_messages": [
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 3641975,
+        "ID": 20,
+        "Seq": 0,
+        "Message": "FL L08 tick=1 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 8642203,
+        "ID": 27,
+        "Seq": 0,
+        "Message": "FL L08 tick=6 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 13642203,
+        "ID": 33,
+        "Seq": 0,
+        "Message": "FL L08 tick=11 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 17024850,
+        "ID": 34,
+        "Seq": 0,
+        "Message": "FL L09 accepted kept=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 18642293,
+        "ID": 36,
+        "Seq": 0,
+        "Message": "FL L08 tick=16 mode=4 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 23642572,
+        "ID": 39,
+        "Seq": 0,
+        "Message": "FL L08 tick=21 mode=4 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 28642852,
+        "ID": 40,
+        "Seq": 0,
+        "Message": "FL L08 tick=26 mode=4 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 33642649,
+        "ID": 42,
+        "Seq": 0,
+        "Message": "FL L08 tick=31 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 38642649,
+        "ID": 43,
+        "Seq": 0,
+        "Message": "FL L08 tick=36 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 43642649,
+        "ID": 46,
+        "Seq": 0,
+        "Message": "FL L08 tick=41 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 48642649,
+        "ID": 47,
+        "Seq": 0,
+        "Message": "FL L08 tick=46 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 49859649,
+        "ID": 48,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=running r=start ms=49859"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 49859649,
+        "ID": 49,
+        "Seq": 0,
+        "Message": "FL L10 goal=-353632172,1491652374 alt_cm=58719"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 49859649,
+        "ID": 50,
+        "Seq": 0,
+        "Message": "FL L10 speed=0.50m/s task=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 49859649,
+        "ID": 51,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=running"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 53642649,
+        "ID": 54,
+        "Seq": 0,
+        "Message": "FL L08 tick=51 mode=31 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 58642649,
+        "ID": 55,
+        "Seq": 0,
+        "Message": "FL L08 tick=56 mode=31 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 60702649,
+        "ID": 56,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=dwelling r=bounds ms=60702"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 62702649,
+        "ID": 57,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=complete r=dwell ms=62702"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 63642649,
+        "ID": 58,
+        "Seq": 0,
+        "Message": "FL L08 tick=61 mode=31 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 68642086,
+        "ID": 59,
+        "Seq": 0,
+        "Message": "FL L08 tick=66 mode=31 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 70950310,
+        "ID": 60,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=complete"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 70950310,
+        "ID": 61,
+        "Seq": 0,
+        "Message": "FL L10 exit task=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 73642405,
+        "ID": 62,
+        "Seq": 0,
+        "Message": "FL L08 tick=71 mode=9 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 78642725,
+        "ID": 63,
+        "Seq": 0,
+        "Message": "FL L08 tick=76 mode=9 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 83642044,
+        "ID": 65,
+        "Seq": 0,
+        "Message": "FL L08 tick=81 mode=9 armed=0"
+      }
+    ],
+    "performance_samples": [
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 12642203,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 3999,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656726495770
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 22642916,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656736496677
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 32642262,
+        "LR": 399,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 2999,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656746496023
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 42642649,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656756496410
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 52642649,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656766496410
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 62642649,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656776496410
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 72642741,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656786496502
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 82642380,
+        "LR": 399,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 2999,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656796496141
+      }
+    ]
+  },
+  "blocked-final": {
+    "log_path": ".local/l15/blocked-final/sitl/logs/00000001.BIN",
+    "counts": {
+      "MSG": 61,
+      "MODE": 6,
+      "RFND": 1848,
+      "RCOU": 924,
+      "PRX": 920,
+      "PM": 9,
+      "SA": 1
+    },
+    "modes": [
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 2386973,
+        "Mode": 0,
+        "ModeNum": 0,
+        "Rsn": 26
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 45322647,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 45322647,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 60442647,
+        "Mode": 31,
+        "ModeNum": 31,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 68040286,
+        "Mode": 17,
+        "ModeNum": 17,
+        "Rsn": 25
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 78704702,
+        "Mode": 9,
+        "ModeNum": 9,
+        "Rsn": 2
+      }
+    ],
+    "native_messages": [
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 3381973,
+        "ID": 20,
+        "Seq": 0,
+        "Message": "FL L08 tick=1 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 8382205,
+        "ID": 27,
+        "Seq": 0,
+        "Message": "FL L08 tick=6 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 13382201,
+        "ID": 30,
+        "Seq": 0,
+        "Message": "FL L08 tick=11 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 18382381,
+        "ID": 31,
+        "Seq": 0,
+        "Message": "FL L08 tick=16 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 23382660,
+        "ID": 34,
+        "Seq": 0,
+        "Message": "FL L08 tick=21 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 28382939,
+        "ID": 35,
+        "Seq": 0,
+        "Message": "FL L08 tick=26 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 33382762,
+        "ID": 36,
+        "Seq": 0,
+        "Message": "FL L08 tick=31 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 38382647,
+        "ID": 37,
+        "Seq": 0,
+        "Message": "FL L08 tick=36 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 43382647,
+        "ID": 43,
+        "Seq": 0,
+        "Message": "FL L08 tick=41 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 45322647,
+        "ID": 44,
+        "Seq": 0,
+        "Message": "FL L09 accepted kept=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 48382647,
+        "ID": 46,
+        "Seq": 0,
+        "Message": "FL L08 tick=46 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 53382647,
+        "ID": 49,
+        "Seq": 0,
+        "Message": "FL L08 tick=51 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 58382647,
+        "ID": 50,
+        "Seq": 0,
+        "Message": "FL L08 tick=56 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 60442647,
+        "ID": 51,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=running r=start ms=60442"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 60442647,
+        "ID": 52,
+        "Seq": 0,
+        "Message": "FL L10 goal=-353632172,1491652374 alt_cm=58719"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 60442647,
+        "ID": 53,
+        "Seq": 0,
+        "Message": "FL L10 speed=0.50m/s task=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 60442647,
+        "ID": 54,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=running"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 63382647,
+        "ID": 55,
+        "Seq": 0,
+        "Message": "FL L08 tick=61 mode=31 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 68040286,
+        "ID": 56,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=blocked r=obstacle ms=68040"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 68040286,
+        "ID": 57,
+        "Seq": 0,
+        "Message": "FL L10 exit task=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 68040286,
+        "ID": 58,
+        "Seq": 0,
+        "Message": "FL L15 handoff r=obstacle ms=68040"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 68382171,
+        "ID": 59,
+        "Seq": 0,
+        "Message": "FL L08 tick=66 mode=17 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 73382491,
+        "ID": 60,
+        "Seq": 0,
+        "Message": "FL L08 tick=71 mode=17 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 78382810,
+        "ID": 61,
+        "Seq": 0,
+        "Message": "FL L08 tick=76 mode=17 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 78704702,
+        "ID": 62,
+        "Seq": 0,
+        "Message": "FL L11 denied used"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 83382130,
+        "ID": 63,
+        "Seq": 0,
+        "Message": "FL L08 tick=81 mode=9 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 88382449,
+        "ID": 65,
+        "Seq": 0,
+        "Message": "FL L08 tick=86 mode=9 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 93382768,
+        "ID": 66,
+        "Seq": 0,
+        "Message": "FL L08 tick=91 mode=9 armed=0"
+      }
+    ],
+    "performance_samples": [
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 12382201,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 3999,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656620295770
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 22382004,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656630295747
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 32382435,
+        "LR": 399,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 2999,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656640296202
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 42382647,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656650296414
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 52382647,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656660296414
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 62382647,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656670296414
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 72382827,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656680296594
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 82382466,
+        "LR": 399,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 2999,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656690296233
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 92382105,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 2999,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656700295872
+      }
+    ]
+  },
+  "observation-loss": {
+    "log_path": ".local/l15/observation-loss/sitl/logs/00000001.BIN",
+    "counts": {
+      "MSG": 61,
+      "MODE": 6,
+      "RFND": 1818,
+      "RCOU": 909,
+      "PM": 9
+    },
+    "modes": [
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 2670975,
+        "Mode": 0,
+        "ModeNum": 0,
+        "Rsn": 26
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 30029375,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 30031374,
+        "Mode": 4,
+        "ModeNum": 4,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 50346649,
+        "Mode": 31,
+        "ModeNum": 31,
+        "Rsn": 2
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 56746649,
+        "Mode": 17,
+        "ModeNum": 17,
+        "Rsn": 25
+      },
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 77551091,
+        "Mode": 9,
+        "ModeNum": 9,
+        "Rsn": 2
+      }
+    ],
+    "native_messages": [
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 3665975,
+        "ID": 20,
+        "Seq": 0,
+        "Message": "FL L08 tick=1 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 8666203,
+        "ID": 27,
+        "Seq": 0,
+        "Message": "FL L08 tick=6 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 13666203,
+        "ID": 30,
+        "Seq": 0,
+        "Message": "FL L08 tick=11 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 18666285,
+        "ID": 31,
+        "Seq": 0,
+        "Message": "FL L08 tick=16 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 23666564,
+        "ID": 34,
+        "Seq": 0,
+        "Message": "FL L08 tick=21 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 28666843,
+        "ID": 38,
+        "Seq": 0,
+        "Message": "FL L08 tick=26 mode=0 armed=0"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 30029375,
+        "ID": 39,
+        "Seq": 0,
+        "Message": "FL L09 accepted kept=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 33666649,
+        "ID": 41,
+        "Seq": 0,
+        "Message": "FL L08 tick=31 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 38666649,
+        "ID": 44,
+        "Seq": 0,
+        "Message": "FL L08 tick=36 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 43666649,
+        "ID": 45,
+        "Seq": 0,
+        "Message": "FL L08 tick=41 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 48666649,
+        "ID": 46,
+        "Seq": 0,
+        "Message": "FL L08 tick=46 mode=4 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 50346649,
+        "ID": 47,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=running r=start ms=50346"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 50346649,
+        "ID": 48,
+        "Seq": 0,
+        "Message": "FL L10 goal=-353632172,1491652374 alt_cm=58719"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 50346649,
+        "ID": 49,
+        "Seq": 0,
+        "Message": "FL L10 speed=0.50m/s task=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 50346649,
+        "ID": 50,
+        "Seq": 0,
+        "Message": "FL L11 reply t=1 s=running"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 53666649,
+        "ID": 53,
+        "Seq": 0,
+        "Message": "FL L08 tick=51 mode=31 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 56746649,
+        "ID": 54,
+        "Seq": 0,
+        "Message": "FL L15 observation age_ms=353"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 56746649,
+        "ID": 55,
+        "Seq": 0,
+        "Message": "FL L11 t=1 s=failed r=observation ms=56746"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 56746649,
+        "ID": 56,
+        "Seq": 0,
+        "Message": "FL L10 exit task=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 56746649,
+        "ID": 57,
+        "Seq": 0,
+        "Message": "FL L15 handoff r=observation ms=56746"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 58666649,
+        "ID": 58,
+        "Seq": 0,
+        "Message": "FL L08 tick=56 mode=17 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 63666649,
+        "ID": 59,
+        "Seq": 0,
+        "Message": "FL L08 tick=61 mode=17 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 68666078,
+        "ID": 60,
+        "Seq": 0,
+        "Message": "FL L08 tick=66 mode=17 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 73666397,
+        "ID": 61,
+        "Seq": 0,
+        "Message": "FL L08 tick=71 mode=17 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 77549092,
+        "ID": 62,
+        "Seq": 0,
+        "Message": "FL L11 denied used"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 78666717,
+        "ID": 63,
+        "Seq": 0,
+        "Message": "FL L08 tick=76 mode=9 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 83666036,
+        "ID": 64,
+        "Seq": 0,
+        "Message": "FL L08 tick=81 mode=9 armed=1"
+      },
+      {
+        "mavpackettype": "MSG",
+        "TimeUS": 88666356,
+        "ID": 66,
+        "Seq": 0,
+        "Message": "FL L08 tick=86 mode=9 armed=0"
+      }
+    ],
+    "performance_samples": [
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 12666203,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 3999,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656823495770
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 22666908,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656833496678
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 32666246,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 2999,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656843496016
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 42666649,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656853496419
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 52666649,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656863496419
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 62666649,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656873496419
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 72666733,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656883496503
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 82666372,
+        "LR": 399,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 2999,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656893496142
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 92666011,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 2999,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656903495781
+      }
+    ]
+  },
+  "rollback": {
+    "log_path": ".local/l15/rollback/sitl/logs/00000001.BIN",
+    "counts": {
+      "MSG": 22,
+      "MODE": 1,
+      "RFND": 512,
+      "RCOU": 256,
+      "PRX": 256,
+      "PM": 2
+    },
+    "modes": [
+      {
+        "mavpackettype": "MODE",
+        "TimeUS": 1933952,
+        "Mode": 0,
+        "ModeNum": 0,
+        "Rsn": 26
+      }
+    ],
+    "native_messages": [],
+    "performance_samples": [
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 11929180,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 3999,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656926895770
+      },
+      {
+        "mavpackettype": "PM",
+        "TimeUS": 21929139,
+        "LR": 400,
+        "NLon": 0,
+        "NL": 4000,
+        "MaxT": 3000,
+        "Mem": 524288,
+        "Load": 0,
+        "ErrL": 0,
+        "InE": 0,
+        "ErC": 0,
+        "SPIC": 0,
+        "I2CC": 0,
+        "I2CI": 0,
+        "Ex": 0,
+        "R": 1793656936895884
+      }
+    ]
+  }
+}

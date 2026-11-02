@@ -145,7 +145,7 @@
       "dot": "rose",
       "title": "One phase, one observable result",
       "items": [
-        "Next proposed learning phase: L15. Statuses and actual evidence are recorded in the registry.",
+        "Next proposed learning phase: L16. Statuses and actual evidence are recorded in the registry.",
         "Before a change, explain the behavior and predict the result. Afterward, retain evidence and explain the difference.",
         "L01–L04 add no custom flight behavior. L05–L07 reuse stock behavior; early learning needs no detector or application UI."
       ]

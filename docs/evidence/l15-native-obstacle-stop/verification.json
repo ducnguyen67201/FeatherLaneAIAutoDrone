@@ -1,0 +1,55 @@
+{
+  "python_ast": "pass",
+  "shell_syntax": "pass",
+  "world_xml": "pass",
+  "svg_export_xml": "pass; native geometry from finalized viewers, existing embedded-font dual-theme stylesheet",
+  "archify": {
+    "diagram": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l15-native-stop/review-2/l15-native-obstacle-stop.finalize.json",
+      "visual_review": "not-requested"
+    },
+    "core": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l15-core/review-3/ardupilot-code-stack.finalize.json",
+      "visual_review": "not-requested"
+    },
+    "workflow": {
+      "status": "pass",
+      "gates": {
+        "validate": "pass",
+        "deliver": "pass",
+        "check": "pass",
+        "browser-check": "pass"
+      },
+      "receipt": "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.archify/l15-workflow/review-2/learning-workflow.finalize.json",
+      "visual_review": "not-requested"
+    }
+  },
+  "scoped_markdown_links": {
+    "broken": []
+  },
+  "generated_csv_txt_exports": [],
+  "diff_whitespace": "pass",
+  "remaining_owned_session_processes": [],
+  "no_new_automated_tests": "No test files or test scaffolding created or modified; existing build/manual simulator/offline analysis only.",
+  "dependency_audit": {
+    "record": ".local/l15/precommit-dependency-audit.json",
+    "packages": 29,
+    "known_vulnerabilities": 0,
+    "dependency_changes": "none"
+  },
+  "scope": "L15 local/unpublished; guided checkpoint pending; no L16, planner, main merge or physical operation."
+}

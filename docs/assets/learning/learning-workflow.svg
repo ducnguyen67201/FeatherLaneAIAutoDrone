@@ -398,115 +398,240 @@ svg[data-preset="editorial"] { --flow-halo-peak: 0.07; --flow-glow-peak: 0.28; -
 }
 @keyframes archify-relay-ripple {
   0% { r: 2px; opacity: var(--flow-peak, 0.6); }
-  14.098%, 100% { r: 20px; opacity: 0; }
+  9.592%, 100% { r: 20px; opacity: 0; }
 }
 @keyframes archify-relay-comet-0 {
   0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  1.579% { opacity: var(--flow-peak, 0.9); }
-  7.895% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
-  10.902%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+  1.074% { opacity: var(--flow-peak, 0.9); }
+  5.371% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  7.418%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
 }
 @keyframes archify-relay-wake-0 {
   0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  7.895% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
-  24.812%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+  5.371% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  16.882%, 100% { stroke-dashoffset: 0px; opacity: 0; }
 }
 @keyframes archify-relay-comet-1 {
   0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  1.579% { opacity: var(--flow-peak, 0.9); }
-  7.895% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
-  10.902%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+  1.096% { opacity: var(--flow-peak, 0.9); }
+  5.481% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  7.527%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
 }
 @keyframes archify-relay-wake-1 {
   0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  7.895% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
-  24.812%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+  5.481% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  16.991%, 100% { stroke-dashoffset: 0px; opacity: 0; }
 }
 @keyframes archify-relay-comet-2 {
   0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  1.579% { opacity: var(--flow-peak, 0.9); }
-  7.895% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
-  10.902%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+  1.074% { opacity: var(--flow-peak, 0.9); }
+  5.371% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  7.418%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
 }
 @keyframes archify-relay-wake-2 {
   0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  7.895% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
-  24.812%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+  5.371% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  16.882%, 100% { stroke-dashoffset: 0px; opacity: 0; }
 }
 @keyframes archify-relay-comet-3 {
   0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  1.579% { opacity: var(--flow-peak, 0.9); }
-  7.895% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
-  10.902%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+  1.535% { opacity: var(--flow-peak, 0.9); }
+  19.184% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  21.23%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
 }
 @keyframes archify-relay-wake-3 {
   0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  7.895% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
-  24.812%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+  19.184% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  30.694%, 100% { stroke-dashoffset: 0px; opacity: 0; }
 }
 @keyframes archify-relay-comet-4 {
   0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  1.579% { opacity: var(--flow-peak, 0.9); }
-  7.895% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
-  10.902%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+  1.535% { opacity: var(--flow-peak, 0.9); }
+  18.315% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  20.361%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
 }
 @keyframes archify-relay-wake-4 {
   0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  7.895% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
-  24.812%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+  18.315% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  29.825%, 100% { stroke-dashoffset: 0px; opacity: 0; }
 }
 @keyframes archify-relay-comet-5 {
   0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  1.579% { opacity: var(--flow-peak, 0.9); }
-  7.895% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
-  10.902%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+  1.074% { opacity: var(--flow-peak, 0.9); }
+  5.371% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  7.418%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
 }
 @keyframes archify-relay-wake-5 {
   0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
-  7.895% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
-  24.812%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+  5.371% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  16.882%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+}
+@keyframes archify-relay-comet-6 {
+  0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  1.096% { opacity: var(--flow-peak, 0.9); }
+  5.481% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  7.527%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+}
+@keyframes archify-relay-wake-6 {
+  0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  5.481% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  16.991%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+}
+@keyframes archify-relay-comet-7 {
+  0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  1.535% { opacity: var(--flow-peak, 0.9); }
+  16.305% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  18.351%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+}
+@keyframes archify-relay-wake-7 {
+  0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  16.305% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  27.815%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+}
+@keyframes archify-relay-comet-8 {
+  0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  1.096% { opacity: var(--flow-peak, 0.9); }
+  5.481% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  7.527%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+}
+@keyframes archify-relay-wake-8 {
+  0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  5.481% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  16.991%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+}
+@keyframes archify-relay-comet-9 {
+  0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  1.074% { opacity: var(--flow-peak, 0.9); }
+  5.371% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  7.418%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+}
+@keyframes archify-relay-wake-9 {
+  0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  5.371% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  16.882%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+}
+@keyframes archify-relay-comet-10 {
+  0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  1.535% { opacity: var(--flow-peak, 0.9); }
+  14.935% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  16.981%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+}
+@keyframes archify-relay-wake-10 {
+  0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  14.935% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  26.445%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+}
+@keyframes archify-relay-comet-11 {
+  0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  1.462% { opacity: var(--flow-peak, 0.9); }
+  7.308% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  9.354%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+}
+@keyframes archify-relay-wake-11 {
+  0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  7.308% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  18.818%, 100% { stroke-dashoffset: 0px; opacity: 0; }
+}
+@keyframes archify-relay-comet-12 {
+  0% { stroke-dashoffset: calc(var(--flow-len, 0px) + var(--flow-shift, 0px)); opacity: 0; animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  1.535% { opacity: var(--flow-peak, 0.9); }
+  16.624% { stroke-dashoffset: var(--flow-shift, 0px); opacity: var(--flow-peak, 0.9); }
+  18.671%, 100% { stroke-dashoffset: var(--flow-shift, 0px); opacity: 0; }
+}
+@keyframes archify-relay-wake-12 {
+  0% { stroke-dashoffset: var(--flow-len, 0px); opacity: var(--flow-peak, 0.3); animation-timing-function: cubic-bezier(0.45, 0.05, 0.35, 1); }
+  16.624% { stroke-dashoffset: 0px; opacity: var(--flow-peak, 0.3); }
+  28.135%, 100% { stroke-dashoffset: 0px; opacity: 0; }
 }
 @keyframes archify-relay-node-0 {
   0%, 100% { filter: var(--ambient-node-base-filter, none); }
   0% { filter: var(--ambient-node-base-filter, none); }
-  2.256%, 7.895% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
-  22.556% { filter: var(--ambient-node-base-filter, none); }
+  1.535%, 5.371% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  15.347% { filter: var(--ambient-node-base-filter, none); }
 }
 @keyframes archify-relay-node-1 {
   0%, 100% { filter: var(--ambient-node-base-filter, none); }
-  7.895% { filter: var(--ambient-node-base-filter, none); }
-  10.15%, 15.789% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
-  30.451% { filter: var(--ambient-node-base-filter, none); }
+  0% { filter: var(--ambient-node-base-filter, none); }
+  1.535%, 5.371% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  15.347% { filter: var(--ambient-node-base-filter, none); }
 }
 @keyframes archify-relay-node-2 {
   0%, 100% { filter: var(--ambient-node-base-filter, none); }
-  17.669% { filter: var(--ambient-node-base-filter, none); }
-  19.925%, 25.564% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
-  40.226% { filter: var(--ambient-node-base-filter, none); }
+  0% { filter: var(--ambient-node-base-filter, none); }
+  1.535%, 5.371% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  15.347% { filter: var(--ambient-node-base-filter, none); }
 }
 @keyframes archify-relay-node-3 {
   0%, 100% { filter: var(--ambient-node-base-filter, none); }
-  27.444% { filter: var(--ambient-node-base-filter, none); }
-  29.699%, 35.338% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
-  50% { filter: var(--ambient-node-base-filter, none); }
+  0% { filter: var(--ambient-node-base-filter, none); }
+  1.535%, 5.371% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  15.347% { filter: var(--ambient-node-base-filter, none); }
 }
 @keyframes archify-relay-node-4 {
   0%, 100% { filter: var(--ambient-node-base-filter, none); }
-  37.218% { filter: var(--ambient-node-base-filter, none); }
-  39.474%, 45.113% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
-  59.774% { filter: var(--ambient-node-base-filter, none); }
+  0% { filter: var(--ambient-node-base-filter, none); }
+  1.535%, 5.371% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  15.347% { filter: var(--ambient-node-base-filter, none); }
 }
 @keyframes archify-relay-node-5 {
   0%, 100% { filter: var(--ambient-node-base-filter, none); }
-  46.992% { filter: var(--ambient-node-base-filter, none); }
-  49.248%, 54.887% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
-  69.549% { filter: var(--ambient-node-base-filter, none); }
+  5.371% { filter: var(--ambient-node-base-filter, none); }
+  6.906%, 10.743% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  20.718% { filter: var(--ambient-node-base-filter, none); }
 }
 @keyframes archify-relay-node-6 {
   0%, 100% { filter: var(--ambient-node-base-filter, none); }
-  56.767% { filter: var(--ambient-node-base-filter, none); }
-  59.023%, 64.662% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
-  79.323% { filter: var(--ambient-node-base-filter, none); }
+  16.305% { filter: var(--ambient-node-base-filter, none); }
+  17.839%, 21.676% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  31.652% { filter: var(--ambient-node-base-filter, none); }
+}
+@keyframes archify-relay-node-7 {
+  0%, 100% { filter: var(--ambient-node-base-filter, none); }
+  5.481% { filter: var(--ambient-node-base-filter, none); }
+  7.016%, 10.852% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  20.828% { filter: var(--ambient-node-base-filter, none); }
+}
+@keyframes archify-relay-node-8 {
+  0%, 100% { filter: var(--ambient-node-base-filter, none); }
+  16.624% { filter: var(--ambient-node-base-filter, none); }
+  18.159%, 21.996% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  31.971% { filter: var(--ambient-node-base-filter, none); }
+}
+@keyframes archify-relay-node-9 {
+  0%, 100% { filter: var(--ambient-node-base-filter, none); }
+  12.022% { filter: var(--ambient-node-base-filter, none); }
+  13.556%, 17.393% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  27.369% { filter: var(--ambient-node-base-filter, none); }
+}
+@keyframes archify-relay-node-10 {
+  0%, 100% { filter: var(--ambient-node-base-filter, none); }
+  32.484% { filter: var(--ambient-node-base-filter, none); }
+  34.019%, 37.856% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  47.831% { filter: var(--ambient-node-base-filter, none); }
+}
+@keyframes archify-relay-node-11 {
+  0%, 100% { filter: var(--ambient-node-base-filter, none); }
+  23.065% { filter: var(--ambient-node-base-filter, none); }
+  24.599%, 28.436% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  38.412% { filter: var(--ambient-node-base-filter, none); }
+}
+@keyframes archify-relay-node-12 {
+  0%, 100% { filter: var(--ambient-node-base-filter, none); }
+  39.135% { filter: var(--ambient-node-base-filter, none); }
+  40.669%, 44.506% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  54.481% { filter: var(--ambient-node-base-filter, none); }
+}
+@keyframes archify-relay-node-13 {
+  0%, 100% { filter: var(--ambient-node-base-filter, none); }
+  55.348% { filter: var(--ambient-node-base-filter, none); }
+  56.883%, 60.719% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  70.695% { filter: var(--ambient-node-base-filter, none); }
+}
+@keyframes archify-relay-node-14 {
+  0%, 100% { filter: var(--ambient-node-base-filter, none); }
+  63.935% { filter: var(--ambient-node-base-filter, none); }
+  65.47%, 69.306% { filter: var(--ambient-node-base-filter,) drop-shadow(0 0 10px var(--arrow-emphasis)); }
+  79.282% { filter: var(--ambient-node-base-filter, none); }
 }
 svg[data-node-ui] [data-node-id] &gt; rect:not(.c-mask) { stroke-width: 1.25px; }
 :is([data-theme="dark"] svg[data-node-ui], svg[data-node-ui][data-theme="dark"]) [data-node-id] &gt; rect:not(.c-mask).c-frontend { fill: color-mix(in srgb, var(--frontend-stroke) 13%, var(--mask)); stroke: color-mix(in srgb, var(--frontend-stroke) 72%, var(--mask)); }

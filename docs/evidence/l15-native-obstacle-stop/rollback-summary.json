@@ -1,0 +1,85 @@
+{
+  "scope": "Fresh disarmed exact-stock L14 profile, no rollback flight",
+  "binary": {
+    "path": ".local/l08/stock-arducopter",
+    "sha256": "66388e5b874c16867992a31fdae17e17bdb9a9568935a40a9af3303543ef61ec",
+    "bytes": 4817736
+  },
+  "heartbeat_count": 28,
+  "all_heartbeats_disarmed_stabilize": true,
+  "command_acknowledgments": [
+    {
+      "mavpackettype": "COMMAND_ACK",
+      "command": 511,
+      "result": 0,
+      "progress": 0,
+      "result_param2": 0,
+      "target_system": 255,
+      "target_component": 230
+    },
+    {
+      "mavpackettype": "COMMAND_ACK",
+      "command": 31011,
+      "result": 3,
+      "progress": 0,
+      "result_param2": 0,
+      "target_system": 255,
+      "target_component": 230
+    },
+    {
+      "mavpackettype": "COMMAND_ACK",
+      "command": 176,
+      "result": 4,
+      "progress": 0,
+      "result_param2": 0,
+      "target_system": 255,
+      "target_component": 230
+    }
+  ],
+  "healthy_forwarded_returns": 265,
+  "native_events_seen": false,
+  "shutdown": {
+    "time": 1793656944.374042,
+    "pid": 34452,
+    "command": [
+      "/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/.local/l08/stock-arducopter",
+      "--model",
+      "JSON",
+      "--speedup",
+      "1",
+      "--slave",
+      "0",
+      "--defaults",
+      "../../../../ardupilot/Tools/autotest/default_params/copter.parm,../../../../ardupilot/Tools/autotest/default_params/gazebo-iris.parm,/Users/ducng/Desktop/workspace/FeatherLaneAIAutoDrone/simulation/gazebo/l14-stock-stop.parm",
+      "--sim-address=127.0.0.1",
+      "-I0"
+    ],
+    "action": "SIGTERM only owned disarmed/on-ground SITL",
+    "state": {
+      "HEARTBEAT": {
+        "wall_time": 1793656943.807425,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "HEARTBEAT",
+          "type": 2,
+          "autopilot": 3,
+          "base_mode": 81,
+          "custom_mode": 0,
+          "system_status": 3,
+          "mavlink_version": 3
+        }
+      },
+      "EXTENDED_SYS_STATE": {
+        "wall_time": 1793656944.0832489,
+        "source_system": 1,
+        "source_component": 1,
+        "message": {
+          "mavpackettype": "EXTENDED_SYS_STATE",
+          "vtol_state": 3,
+          "landed_state": 1
+        }
+      }
+    }
+  }
+}

@@ -2,7 +2,7 @@
 
 **Retention update — 2026-11-02:** generated CSV/TXT exports were removed at the user’s request. References below describe the original export provenance; retained summaries/figures and source/recording identities remain. See the [retention note](../README.md).
 
-Status: final configuration manually observed locally on 2026-11-02; flights ended with LAND/disarm, the sensor-disabled baseline was restored and all owned flight/rollback sessions stopped. A requested recording-playback pair is paused for viewing; guided checkpoint complete after the 3D walkthrough. L14 is unpublished on `codex/l14-stock-obstacle-stop`; L15 has not started. No firmware, custom planner, native-mode avoidance or automated tests were added.
+Status: completed and published on `codex/l14-stock-obstacle-stop` at project `681666aa52bf825ef170c00eb4324c6f435be535`, unchanged firmware `a00f32be2a91639c8dee1c41c09e1c5e5635d547`; remote SHAs verified. Guided checkpoint complete after the actual3D walkthrough. Flight/rollback sessions and the old playback are stopped. No firmware, custom planner or native-mode avoidance was added in L14; subsequent local L15 work is recorded separately.
 
 ## What this phase does
 
